@@ -8,7 +8,7 @@ Grasscutter launcher for easily switching between Official and Private servers
 0. Clone the repository
 1. Ensure you have [NodeJS](https://nodejs.org/en/download/) installed.
 2. Install the `neu` CLI tool: `npm install -g @neutralinojs/neu`
-3. Install the dependancies: `npm install`
+3. Install the dependencies: `npm install` AND `neu update`
 4. Compile and run:
    * For testing: `npm run dev`
    * For production: `npm run build`
