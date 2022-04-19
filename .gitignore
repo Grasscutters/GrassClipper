@@ -3,3 +3,5 @@ node_modules/
 bin/
 dist/
 resources/js/neutralino.js
+
+neutralinojs.log
