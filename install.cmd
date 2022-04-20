@@ -6,12 +6,12 @@ if not exist "./ext" mkdir "ext"
 if not exist "./temp" mkdir "temp"
 
 :: Begin by retrieving mitmproxy 8.0.0
-:: powershell Invoke-WebRequest -Uri https://snapshots.mitmproxy.org/8.0.0/mitmproxy-8.0.0-windows.zip -OutFile "./temp/mitmproxy-8.0.0-windows.zip"
+powershell Invoke-WebRequest -Uri https://snapshots.mitmproxy.org/8.0.0/mitmproxy-8.0.0-windows.zip -OutFile "./temp/mitmproxy-8.0.0-windows.zip"
 
 echo Extracting...
 
 :: Extract from temp/ to ext/ with powershell
-:: powershell Expand-Archive -Path "./temp/mitmproxy-8.0.0-windows.zip" -DestinationPath "./ext/" -Force
+powershell Expand-Archive -Path "./temp/mitmproxy-8.0.0-windows.zip" -DestinationPath "./ext/" -Force
 
 del /s /q "./temp"
 
