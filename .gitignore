@@ -4,4 +4,7 @@ bin/
 dist/
 resources/js/neutralino.js
 
+.storage/
+.tmp/
+
 neutralinojs.log

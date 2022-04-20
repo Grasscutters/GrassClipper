@@ -23,8 +23,8 @@
   "modes": {
     "window": {
       "title": "GrassClipper",
-      "width": 1000,
-      "height": 800,
+      "width": 1280,
+      "height": 720,
       "minWidth": 400,
       "minHeight": 200,
       "fullScreen": false,

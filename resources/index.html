@@ -2,6 +2,8 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style/index.css" />
+    <script src="js/neutralino.js"></script>
+    <script src="js/index.js"></script>
   </head>
   <body>
     <div id="halvesContainer">
@@ -15,7 +17,8 @@
     
     <div id="bottomBar">
       <div class="bottomSection">
-        <button class="smolBtn">Set Genshin Impact folder</button>
+        <button class="smolBtn" onclick="setGenshinImpactFolder()">Set Genshin Impact folder</button>
+        <span id="genshinPath" style="margin-top: 4px;"></span>
       </div>
     </div>
   </body>
