@@ -18,10 +18,10 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v Pr
 :: Start proxy server
 start "Proxy Server" ./ext/mitmdump.exe -s "./proxy/proxy.py" --ssl-insecure --set ip=%ip%
 
-echo Opening %gamePath%/Genshin Impact Game/GenshinImpact.exe
+echo Opening %gamePath%
 
 :: Launch game
-"%gamePath%/Genshin Impact Game/GenshinImpact.exe"
+"%gamePath%"
 
 :: On exit clean proxy stuff
 :EXIT

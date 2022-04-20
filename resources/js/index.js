@@ -75,10 +75,21 @@ async function setGenshinImpactFolder() {
   setBackgroundImage()
 }
 
+async function getGenshinExecName() {
+  // Scan genshin dir
+  const config = await getCfg()
+  const genshinDir = await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/Genshin Impact Game')
+
+  // Find the executable
+  const genshinExec = genshinDir.find(file => file.entry.endsWith('.exe'))
+
+  return genshinExec.entry
+}
+
 async function launchOfficial() {
   const config = await getCfg()
 
-  Neutralino.os.execCommand(config.genshinImpactFolder + '/Genshin Impact Game/GenshinImpact.exe')
+  Neutralino.os.execCommand(config.genshinImpactFolder + '/Genshin Impact Game/' + await getGenshinExecName())
 }
 
 async function launchPrivate() {
@@ -89,5 +100,5 @@ async function launchPrivate() {
   console.log('connecting to ' + ip)
   
   // Pass IP and game folder to the private server launcher
-  Neutralino.os.execCommand(`${NL_CWD}/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}"`).catch(e => console.log(e))
+  Neutralino.os.execCommand(`${NL_CWD}/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/Genshin Impact Game/${await getGenshinExecName()}"`).catch(e => console.log(e))
 }
