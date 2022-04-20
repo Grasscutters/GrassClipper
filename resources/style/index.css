@@ -1,9 +1,13 @@
 body {
   overflow: none;
-  height: 100vh;
+  height: 85vh;
 }
 
-button {
+.playBtn:hover, .smolBtn:hover {
+  cursor: pointer;
+}
+
+.playBtn {
   padding: 0 30px;
   border-radius: 5px;
   border: none;
@@ -12,6 +16,24 @@ button {
   font-weight: bold;
   height: 50px;
   font-size: 20px;
+}
+
+.smolBtn {
+  padding: 0 20px;
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(#ffd326, #ffc61e);
+  color: #704a1d;
+  font-weight: bold;
+  height: 40px;
+  font-size: 14px;
+}
+
+#bottomBar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0px;
 }
 
 #halvesContainer {
