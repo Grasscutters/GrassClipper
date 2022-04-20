@@ -75,10 +75,12 @@ async function launchOfficial() {
 }
 
 async function launchPrivate() {
-  const ip = 'localhost'
+  const ip = document.getElementById('ip').value || 'localhost'
   const port = ''
 
   const config = await getCfg()
+
+  console.log('connecting to ' + ip)
   
   // Pass IP and game folder to the private server launcher
   Neutralino.os.execCommand(`${NL_CWD}/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}"`).catch(e => console.log(e))

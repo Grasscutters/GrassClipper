@@ -5,6 +5,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+input[type="text"] {
+  height: 20px;
+}
+
 .playBtn:hover, .smolBtn:hover {
   cursor: pointer;
 }
