@@ -7,13 +7,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 })
 
 async function getCfg() {
-  return JSON.parse(await Neutralino.storage.getData('config').catch(e => {
+  const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
     Neutralino.storage.setData('config', JSON.stringify({
       genshinImpactFolder: '',
       lastConnect: ''
     }))
-  }))
+  })
+  
+  if (!cfgStr) return {
+    genshinImpactFolder: '',
+    lastConnect: ''
+  }
+
+  return JSON.parse(cfgStr)
 }
 
 async function displayGenshinFolder() {
@@ -76,7 +83,6 @@ async function launchOfficial() {
 
 async function launchPrivate() {
   const ip = document.getElementById('ip').value || 'localhost'
-  const port = ''
 
   const config = await getCfg()
 
