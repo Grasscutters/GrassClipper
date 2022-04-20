@@ -20,4 +20,6 @@ powershell Expand-Archive -Path "./temp/mitmproxy-8.0.0-windows.zip" -Destinatio
 
 del /s /q "./temp"
 
+pause
+
 echo Done! You can now open GrassClipper.exe!
