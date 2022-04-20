@@ -33,10 +33,12 @@ async function displayGenshinFolder() {
 async function setBackgroundImage() {
   const config = await getCfg()
 
-  const images = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/bg')).filter(file => file.type === 'FILE')
+  const officialImages = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/bg')).filter(file => file.type === 'FILE')
+  const privImages = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE')
 
   // Pick one of the images
-  const image = images[Math.floor(Math.random() * images.length)].entry
+  const image = officialImages[Math.floor(Math.random() * officialImages.length)].entry
+  const privImage = privImages[Math.floor(Math.random() * privImages.length)].entry
   const path = config.genshinImpactFolder.replace('\\', '/') + '/bg/' + image
 
   // Check if resources folder exists
@@ -58,14 +60,15 @@ async function setBackgroundImage() {
   }
 
   // Copy to backgrounds folder
-  const bgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
+  const officialBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
 
-  if (!bgs.find(file => file.entry === image)) {
+  if (!officialBgs.find(file => file.entry === image)) {
     await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + image)
   }
 
   // Set the background image
   document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
+  document.querySelector('#secondHalf').style.backgroundImage = `url("../bg/private/${privImage}")`
 }
 
 async function setGenshinImpactFolder() {

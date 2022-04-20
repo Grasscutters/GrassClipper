@@ -5,7 +5,7 @@ dist/
 ext/
 temp/
 resources/js/neutralino.js
-resources/bg
+resources/bg/official
 
 .storage/
 .tmp/
