@@ -2,6 +2,7 @@ node_modules/
 
 bin/
 dist/
+ext/
 resources/js/neutralino.js
 
 .storage/
