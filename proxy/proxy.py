@@ -20,14 +20,23 @@
 #
 ##
 
+import string
+from mitmproxy import ctx
 from mitmproxy import http
 
 class MlgmXyysd_Genshin_Impact_Proxy:
 
+    def load(self, loader):
+        loader.add_option(
+            name = "ip",
+            typespec = str,
+            default = "localhost",
+            help = "IP address to replace",
+        )
+
     def request(self, flow: http.HTTPFlow) -> None:
-        
         # This can also be replaced with another IP address.
-        REMOTE_HOST = "localhost"
+        REMOTE_HOST = ctx.options.ip
         
         LIST_DOMAINS = [
             "api-os-takumi.mihoyo.com",
