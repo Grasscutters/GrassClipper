@@ -6,7 +6,9 @@
   "license": "Apache-2.0",
   "scripts": {
     "dev": "neu run",
-    "build": "neu build && npm run move_files",
-    "move_files": "cp -r ./ext ./dist/GrassClipper && cp -r ./proxy ./dist/GrassClipper"
+    "build": "npm run clean_dist && neu build && npm run move_files && npm run rename_exe",
+    "move_files": "cp -r ./ext ./dist/GrassClipper && cp -r ./proxy ./dist/GrassClipper && cp install.cmd ./dist/GrassClipper && cp -r ./scripts ./dist/GrassClipper",
+    "rename_exe": "mv ./dist/GrassClipper/GrassClipper-win_x64.exe ./dist/GrassClipper/GrassClipper.exe",
+    "clean_dist": "rm -rf ./dist"
   }
 }

@@ -100,5 +100,5 @@ async function launchPrivate() {
   console.log('connecting to ' + ip)
   
   // Pass IP and game folder to the private server launcher
-  Neutralino.os.execCommand(`${NL_CWD}/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/Genshin Impact Game/${await getGenshinExecName()}"`).catch(e => console.log(e))
+  Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/Genshin Impact Game/${await getGenshinExecName()}"`).catch(e => console.log(e))
 }
