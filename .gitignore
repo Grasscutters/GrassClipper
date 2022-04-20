@@ -3,6 +3,7 @@ node_modules/
 bin/
 dist/
 ext/
+temp/
 resources/js/neutralino.js
 resources/bg
 

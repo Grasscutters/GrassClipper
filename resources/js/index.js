@@ -71,8 +71,9 @@ async function setGenshinImpactFolder() {
   config.genshinImpactFolder = folder
   Neutralino.storage.setData('config', JSON.stringify(config))
 
-  // Refresh background
+  // Refresh background and path
   setBackgroundImage()
+  displayGenshinFolder()
 }
 
 async function getGenshinExecName() {
