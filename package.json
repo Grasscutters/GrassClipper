@@ -6,6 +6,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "dev": "neu run",
-    "build": "neu build"
+    "build": "neu build && npm run move_files",
+    "move_files": "cp -r ./ext ./dist/GrassClipper && cp -r ./proxy ./dist/GrassClipper"
   }
 }
