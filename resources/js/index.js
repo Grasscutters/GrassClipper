@@ -49,17 +49,18 @@ async function setBackgroundImage() {
   const bgDir = await Neutralino.filesystem.readDirectory(NL_CWD + '/resources')
   if (!bgDir.find(dir => dir.entry === 'bg')) {
     await Neutralino.filesystem.createDirectory(NL_CWD + '/resources/bg')
+    await Neutralino.filesystem.createDirectory(NL_CWD + '/resources/bg/official')
   }
 
   // Copy to backgrounds folder
-  const bgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/')).filter(file => file.type === 'FILE')
+  const bgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
 
   if (!bgs.find(file => file.entry === image)) {
-    await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/' + image)
+    await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + image)
   }
 
   // Set the background image
-  document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/${image}")`
+  document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
 }
 
 async function setGenshinImpactFolder() {
