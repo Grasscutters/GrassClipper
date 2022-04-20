@@ -53,3 +53,9 @@ async function setGenshinImpactFolder() {
   config.genshinImpactFolder = folder
   Neutralino.storage.setData('config', JSON.stringify(config))
 }
+
+async function launchOfficial() {
+  const config = await getCfg()
+
+  Neutralino.os.execCommand(config.genshinImpactFolder + '/Genshin Impact Game/GenshinImpact.exe')
+}

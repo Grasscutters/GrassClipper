@@ -76,7 +76,7 @@ body {
 /* Move the button to the position on the png */
 #firstHalf button {
   position: relative;
-  transform: translate(130px, 500px);
-  width: 400px;
-  height: 70px;
+  transform: translate(115px, 480px);
+  width: 300px;
+  height: 60px;
 }
