@@ -49,6 +49,11 @@ async function setBackgroundImage() {
   const bgDir = await Neutralino.filesystem.readDirectory(NL_CWD + '/resources')
   if (!bgDir.find(dir => dir.entry === 'bg')) {
     await Neutralino.filesystem.createDirectory(NL_CWD + '/resources/bg')
+  }
+
+  // Ensure official folder exists
+  const officialDir = await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg')
+  if (!officialDir.find(dir => dir.entry === 'official')) {
     await Neutralino.filesystem.createDirectory(NL_CWD + '/resources/bg/official')
   }
 
