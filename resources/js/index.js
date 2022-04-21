@@ -153,6 +153,12 @@ async function handleFavoriteInput() {
   }
 }
 
+async function setIp(ip) {
+  const ipInput = document.querySelector('#ip')
+
+  ipInput.value = ip
+}
+
 async function handleFavoriteList() {
   const ipArr = await getFavIps()
   const ipList = document.querySelector('#ipList')
@@ -167,6 +173,7 @@ async function handleFavoriteList() {
     for (const ip of ipArr) {
       const elm = document.createElement('li')
       elm.innerHTML = ip
+      elm.addEventListener('click', () => setIp(ip))
       list.appendChild(elm)
     }
 

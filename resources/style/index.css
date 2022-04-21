@@ -36,6 +36,11 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
+#ipList li:hover {
+  color: #ffc61e;
+  cursor: pointer;
+}
+
 #ipList li:last-child {
   border-bottom: none;
 }
