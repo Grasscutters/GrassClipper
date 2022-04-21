@@ -14,10 +14,10 @@ if "%PROXY_IP%" EQU "localhost" (
 
 :loop
   :: Check if the game is even running
-  @REM QPROCESS "%GAME_EXE_NAME%">NUL
-  @REM IF %ERRORLEVEL% NEQ 0 (
-  @REM   exit /b
-  @REM )
+  @rem QPROCESS "%GAME_EXE_NAME%">NUL
+  @rem IF %ERRORLEVEL% NEQ 0 (
+  @rem   exit /b
+  @rem )
 
   :: Check if the proxy server process is running
   :: https://stackoverflow.com/questions/162291/how-to-check-if-a-process-is-running-via-a-batch-script

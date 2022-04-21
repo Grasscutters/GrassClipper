@@ -8,11 +8,11 @@
 
 echo Starting Proxy Server
 
-SET ip=%1
-SET gamePath=%2
-SET gamePath=%gamePath:"=%
-SET ORIGIN=%3
-SET ORIGIN=%ORIGIN:"=%
+set ip=%1
+set gamePath=%2
+set gamePath=%gamePath:"=%
+set ORIGIN=%3
+set ORIGIN=%ORIGIN:"=%
 
 set PROXY=true
 @rem Store original proxy settings
