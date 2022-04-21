@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (ipArr.includes(config.lastConnect)) {
     document.querySelector('#star').src = 'icons/star_filled.svg'
   }
+  
+
+  // Exit favorites list when clicking outside of it
+  window.addEventListener("click", function() {
+    const favList = document.querySelector('#ipList')
+    if (favList.style.display !== 'none') {
+      favList.style.display = 'none'
+    }
+  });
 })
 
 async function getFavIps() {
