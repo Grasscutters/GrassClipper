@@ -90,22 +90,33 @@ async function setBackgroundImage() {
   }
 
   if (config.genshinImpactFolder) {
-    const officialImages = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/bg')).filter(file => file.type === 'FILE')
+    const officialImages = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/../bg')).filter(file => file.type === 'FILE')
 
-    // Pick one of the images
-    const image = officialImages[Math.floor(Math.random() * officialImages.length)].entry
-    const path = config.genshinImpactFolder.replace('\\', '/') + '/bg/' + image
-    
-    // Copy to backgrounds folder
-    const officialBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
-    if (!officialBgs.find(file => file.entry === image)) {
-      await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + image).catch(e => {
-        // TODO: Handle error
+    if (officialImages.length > 0) {
+      
+      // Copy to backgrounds folder
+      const officialBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
+
+      officialBgs.forEach(async bg => {
+        const path = config.genshinImpactFolder.replace('\\', '/') + '/../bg/' + bg.entry
+
+        // See if the file exists already
+        const currentBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
+
+        if (!currentBgs.find(file => file.entry === bg.entry)) {
+          await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + bg.entry).catch(e => {
+            // TODO: Handle error
+          })
+        }
       })
-    }
 
-    // Set background image
-    document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
+      // Pick one of the images
+      const localImg = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official')).filter(file => file.type === 'FILE')
+      const image = localImg[Math.floor(Math.random() * localImg.length)].entry
+
+      // Set background image
+      document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
+    }
   }
 
   const privImages = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE' && !file.entry.includes('default'))
@@ -116,7 +127,7 @@ async function setBackgroundImage() {
 }
 
 async function setGenshinImpactFolder() {
-  const folder = await Neutralino.os.showFolderDialog('Select Genshin Impact folder')
+  const folder = await Neutralino.os.showFolderDialog('Select Genshin Impact Game folder')
 
   // Set the folder in our configuration
   const config = await getCfg()
@@ -133,7 +144,7 @@ async function setGenshinImpactFolder() {
 async function getGenshinExecName() {
   // Scan genshin dir
   const config = await getCfg()
-  const genshinDir = await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/Genshin Impact Game')
+  const genshinDir = await Neutralino.filesystem.readDirectory(config.genshinImpactFolder)
 
   // Find the executable
   const genshinExec = genshinDir.find(file => file.entry.endsWith('.exe'))
@@ -144,7 +155,7 @@ async function getGenshinExecName() {
 async function launchOfficial() {
   const config = await getCfg()
 
-  Neutralino.os.execCommand(config.genshinImpactFolder + '/Genshin Impact Game/' + await getGenshinExecName())
+  Neutralino.os.execCommand(config.genshinImpactFolder + '/' + await getGenshinExecName())
 }
 
 async function launchPrivate() {
