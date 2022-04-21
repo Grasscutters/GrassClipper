@@ -55,18 +55,17 @@ async function getFavIps() {
  * @returns {Promise<string>}
  */
 async function getCfg() {
+  const defaultConf = {
+    genshinImpactFolder: '',
+    lastConnect: '',
+    enableKillswitch: false
+  }
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
-    Neutralino.storage.setData('config', JSON.stringify({
-      genshinImpactFolder: '',
-      lastConnect: ''
-    }))
+    Neutralino.storage.setData('config', JSON.stringify(defaultConf))
   })
 
-  const config = cfgStr ? JSON.parse(cfgStr) : {
-    genshinImpactFolder: '',
-    lastConnect: ''
-  }
+  const config = cfgStr ? JSON.parse(cfgStr) : defaultConf
 
   return config
 }
