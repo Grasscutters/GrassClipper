@@ -93,10 +93,6 @@ async function setBackgroundImage() {
     const officialImages = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/../bg')).filter(file => file.type === 'FILE')
 
     if (officialImages.length > 0) {
-      
-      // Copy to backgrounds folder
-      const officialBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
-
       for (const bg of officialImages) {
         const path = config.genshinImpactFolder.replace('\\', '/') + '/../bg/' + bg.entry
 
@@ -127,6 +123,10 @@ async function setBackgroundImage() {
 
   // Set the background image
   document.querySelector('#secondHalf').style.backgroundImage = `url("../bg/private/${privImage}")`
+}
+
+async function handleFavoriteInput() {
+  
 }
 
 async function setGenshinImpactFolder() {
