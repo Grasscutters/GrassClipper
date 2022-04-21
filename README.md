@@ -38,6 +38,7 @@ Grasscutter launcher for easily switching between Official and Private servers
   * [ ] Custom images for private server sections (anyone is welcome to submit a pull request to add some!)
   * [ ] Optional username/password creation for servers before entering (not implemented in GrassCutter yet)
   * [x] Kill switch script (optional)
+  * [ ] Automatically run `install.cmd` when opening for the first time
 * Proxy service
   * [x] Local proxy server
   * [x] Intercept and modify GI requests like with Fiddler, allow anything else to pass through
