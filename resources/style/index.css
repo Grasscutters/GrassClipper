@@ -5,10 +5,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-input[type="text"] {
-  height: 20px;
-}
-
 .playBtn:hover, .smolBtn:hover {
   cursor: pointer;
 }
@@ -24,6 +20,10 @@ input[type="text"] {
   font-size: 20px;
 }
 
+.playBtn:hover {
+  background: linear-gradient(#ffc61e, #ffd326);
+}
+
 .smolBtn {
   padding: 0 20px;
   border-radius: 5px;
@@ -33,6 +33,10 @@ input[type="text"] {
   font-weight: bold;
   height: 40px;
   font-size: 14px;
+}
+
+.smolBtn:hover {
+  background: linear-gradient(#ffc61e, #ffd326);
 }
 
 #bottomBar {
@@ -77,10 +81,45 @@ input[type="text"] {
   background-position: -340px;
 }
 
-/* Move the button to the position on the png */
+/* Move the first official button to the position on the png */
 #firstHalf button {
   position: relative;
   transform: translate(115px, 480px);
+  width: 300px;
+  height: 60px;
+}
+
+#ip {
+  display: block;
+}
+
+#secondHalf button {
+  display: block;
+  width: 300px;
+  height: 60px;
+}
+
+#secondHalf input {
+  margin-bottom: 4px;
+  height: 20px;
+  background: white;
+  border: none;
+  border-bottom: 2px solid #4d4d4d;
+  padding: 8px;
+
+  /* border bottom anim */
+  transition: border-bottom 0.1s ease-in-out;
+}
+
+#secondHalf input:focus {
+  outline: none;
+  border-bottom: 2px solid #ffc61e;
+}
+
+/* Move the second private button the near-bottom */
+#secondControlContainer {
+  position: relative;
+  transform: translate(115px, 446px);
   width: 300px;
   height: 60px;
 }

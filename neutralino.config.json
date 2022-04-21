@@ -34,7 +34,7 @@
       "borderless": false,
       "maximize": false,
       "hidden": false,
-      "resizable": true,
+      "resizable": false,
       "exitProcessOnClose": true
     },
     "browser": {},
