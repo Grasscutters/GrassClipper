@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   displayGenshinFolder();
 
   const config = await getCfg()
+  const ipArr = await getFavIps()
 
   if (!config.genshinImpactFolder) {
     handleGenshinFolderNotSet()
@@ -12,7 +13,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Set last connect
   document.querySelector('#ip').value = config.lastConnect
+
+  if (ipArr.includes(config.lastConnect)) {
+    document.querySelector('#star').src = 'icons/star_filled.svg'
+  }
 })
+
+async function getFavIps() {
+  const ipStr = await Neutralino.storage.getData('favorites').catch(e => {
+    // The data isn't set, so this is our first time opening
+    Neutralino.storage.setData('favorites', JSON.stringify([]))
+  })
+
+  const ipArr = ipStr ? JSON.parse(ipStr) : []
+
+  return ipArr
+}
 
 async function getCfg() {
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
@@ -126,7 +142,39 @@ async function setBackgroundImage() {
 }
 
 async function handleFavoriteInput() {
-  
+  console.log('onchange')
+  const ip = document.querySelector('#ip').value
+  const ipArr = await getFavIps()
+
+  if (!ip || !ipArr.includes(ip)) {
+    document.querySelector('#star').src = 'icons/star_empty.svg'
+  } else {
+    document.querySelector('#star').src = 'icons/star_filled.svg'
+  }
+}
+
+async function setFavorite() {
+  const ip = document.querySelector('#ip').value
+  const ipArr = await getFavIps()
+
+  // Set star icon
+  const star = document.querySelector('#star')
+
+  if (star.src.includes('filled') && ip) {
+    star.src = 'icons/star_empty.svg'
+
+    // remove from list
+    ipArr.splice(ipArr.indexOf(ip), 1)
+  } else {
+    star.src = 'icons/star_filled.svg'
+
+    // add to list
+    if (ip && !ipArr.includes(ip)) {
+      ipArr.push(ip)
+    }
+  }
+
+  Neutralino.storage.setData('favorites', JSON.stringify(ipArr))
 }
 
 async function setGenshinImpactFolder() {
@@ -173,7 +221,7 @@ async function launchPrivate() {
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   // Pass IP and game folder to the private server launcher
-  Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/Genshin Impact Game/${await getGenshinExecName()}"`).catch(e => console.log(e))
+  Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/${await getGenshinExecName()}"`).catch(e => console.log(e))
 }
 
 function minimizeWin() {

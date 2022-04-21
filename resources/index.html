@@ -27,8 +27,8 @@
       <div id="secondHalf">
         <div id="secondControlContainer">
           <div id="serverInput">
-            <input type="text" id="ip" placeholder="IP Address" />
-            <img src="icons/star_empty.svg" id="star" />
+            <input type="text" id="ip" placeholder="IP Address" oninput="handleFavoriteInput()"/>
+            <img src="icons/star_empty.svg" id="star" onclick="setFavorite()" />
           </div>
           <button class="playBtn" id="playPrivate" onclick="launchPrivate()">Play Private</button>
         </div>
