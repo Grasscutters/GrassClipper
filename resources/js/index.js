@@ -301,11 +301,25 @@ async function setFavorite() {
 
 async function openSettings() {
   const settings = document.querySelector('#settingsPanel')
-  const settingsBtn = document.querySelector('#settingsBtn')
+  const config = await getCfg()
 
   if (settings.style.display === 'none') {
     settings.style.removeProperty('display')
   }
+
+  // Fill setting options with what is currently set in config
+  const killSwitch = document.querySelector('#killswitchOption')
+
+  killSwitch.checked = config.enableKillswitch
+}
+
+async function toggleKillSwitch() {
+  const killSwitch = document.querySelector('#killswitchOption')
+  const config = await getCfg()
+
+  config.enableKillswitch = killSwitch.checked
+
+  Neutralino.storage.setData('config', JSON.stringify(config))
 }
 
 /**
