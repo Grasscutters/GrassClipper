@@ -151,7 +151,6 @@ async function setBackgroundImage() {
 }
 
 async function handleFavoriteInput() {
-  console.log('onchange')
   const ip = document.querySelector('#ip').value
   const ipArr = await getFavIps()
 
@@ -178,6 +177,14 @@ async function handleFavoriteList() {
     const list = ipList.appendChild(
       document.createElement('ul')
     )
+
+    if (ipArr.length < 1) {
+      const listItem = list.appendChild(
+        document.createElement('li')
+      )
+
+      listItem.innerHTML = 'No favorites set'
+    }
 
     for (const ip of ipArr) {
       const elm = document.createElement('li')
