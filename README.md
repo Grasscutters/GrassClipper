@@ -23,21 +23,24 @@ Grasscutter launcher for easily switching between Official and Private servers
 # TODO
 
 * Interface
-  * UI
+  * ~~UI~~
   * ~~Official and Private options~~
   * ~~Server IP input~~
-  * Fun fancy CSS styling n stuff (CoD: MW 2019-style vertical menu for choosing between official and private servers? [See this](https://charlieintel.com/wp-content/uploads/2020/11/MW-new-menu.png))
+  * ~~Fun fancy CSS styling n stuff (CoD: MW 2019-style vertical menu for choosing between official and private servers? [See this](https://charlieintel.com/wp-content/uploads/2020/11/MW-new-menu.png))~~
+  * Custom images for private server sections (anyone is welcome to submit a pull request to add some!)
+  * Optional username/password creation for servers before entering (not implemented in GrassCutter yet)
 * Proxy service
   * ~~Local proxy server~~~~
   * ~~Intercept and modify GI requests like with Fiddler, allow anything else to pass through~~
+  * Fix Discord and YouTube issues (not sure what's up with them?)
 
 # Having problems?
 
 Below are some scenarios you may encounter and their solutions.
 
-### My Discord is not letting my send messages or load images!
+### My Discord is not letting my send messages or load images/My Youtube is acting strange!
 
-Discord does not seem to be a fan of the proxy server. You may need to disable it by either closing mitmdump or by disabling your proxy in the Windows proxy settings.
+Discord/YouTube (plus surely some others) does not seem to be a fan of the proxy server. You may need to disable it by either closing mitmdump or by disabling your proxy in the Windows proxy settings.
 
 ### I have no internet after closing everything/restarting my PC!
 
