@@ -5,6 +5,54 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#controlBar {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 34px;
+  background-color: #141414;
+  z-index: 1;
+}
+
+#controlBar div {
+  color: #c3c3c3;
+  width: 20px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0px 6px;
+  margin: 0px 2px;
+  padding-top: 4px;
+}
+
+#controlBar div:hover {
+  cursor: pointer;
+  background-color: #353535;
+}
+
+#controlBar div img {
+  /* https://codepen.io/sosuke/pen/Pjoqqp */
+  filter: invert(95%) sepia(0%) saturate(18%) hue-rotate(153deg) brightness(88%) contrast(81%);
+  height: 70%;
+  vertical-align: middle;
+}
+
+#closeBtn:hover {
+  background-color: #ff0000 !important;
+}
+
+#closeBtn:hover img {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(142deg) brightness(107%) contrast(101%);
+}
+
+#minBtn {
+  /* Move all components to the right since this is the first button */
+  margin-left: auto !important;
+}
+
+
 .playBtn:hover, .smolBtn:hover {
   cursor: pointer;
 }
@@ -119,7 +167,7 @@ body {
 /* Move the second private button the near-bottom */
 #secondControlContainer {
   position: relative;
-  transform: translate(115px, 446px);
+  transform: translate(115px, 436px);
   width: 300px;
   height: 60px;
 }
