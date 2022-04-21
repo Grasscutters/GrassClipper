@@ -1,5 +1,9 @@
 Neutralino.init();
 
+/**
+ * Every autofill, such as backgrounds and the game folder,
+ * should be done here to ensure DOM contents are loaded.
+ */
 document.addEventListener('DOMContentLoaded', async () => {
   setBackgroundImage();
   displayGenshinFolder();
@@ -29,6 +33,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 })
 
+/**
+ * Get the list of favorite IPs
+ * 
+ * @returns {Promise<string[]>}
+ */
 async function getFavIps() {
   const ipStr = await Neutralino.storage.getData('favorites').catch(e => {
     // The data isn't set, so this is our first time opening
@@ -40,6 +49,11 @@ async function getFavIps() {
   return ipArr
 }
 
+/**
+ * Get configuration
+ * 
+ * @returns {Promise<string>}
+ */
 async function getCfg() {
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
@@ -57,6 +71,9 @@ async function getCfg() {
   return config
 }
 
+/**
+ * Enable play buttons
+ */
 async function enableButtons() {
   const offBtn = document.querySelector('#playOfficial')
   const privBtn = document.querySelector('#playPrivate')
@@ -68,6 +85,9 @@ async function enableButtons() {
   privBtn.disabled = false
 }
 
+/**
+ * Disable buttons when the game folder is not set
+ */
 async function handleGenshinFolderNotSet() {
   // Set buttons to greyed out and disable
   document.querySelector('#genshinPath').innerHTML = 'Not set'
@@ -87,6 +107,9 @@ async function handleGenshinFolderNotSet() {
   // TODO show a dialog of sorts
 }
 
+/**
+ * Show the game folder under the select button
+ */
 async function displayGenshinFolder() {
   const elm = document.querySelector('#genshinPath')
   const config = await getCfg()
@@ -94,6 +117,9 @@ async function displayGenshinFolder() {
   elm.innerHTML = config.genshinImpactFolder
 }
 
+/**
+ * Set the background images of both the private and public sections
+ */
 async function setBackgroundImage() {
   const config = await getCfg()
 
@@ -151,6 +177,9 @@ async function setBackgroundImage() {
   document.querySelector('#secondHalf').style.backgroundImage = `url("../bg/private/${privImage}")`
 }
 
+/**
+ * When an IP is being input, check if it is part of the favorites
+ */
 async function handleFavoriteInput() {
   const ip = document.querySelector('#ip').value
   const ipArr = await getFavIps()
@@ -162,6 +191,11 @@ async function handleFavoriteInput() {
   }
 }
 
+/**
+ * Set the IP input value
+ * 
+ * @param {String} ip 
+ */
 async function setIp(ip) {
   const ipInput = document.querySelector('#ip')
 
@@ -173,6 +207,9 @@ async function setIp(ip) {
   ipInput.value = ip
 }
 
+/**
+ * Create/hide the favorites list
+ */
 async function handleFavoriteList() {
   const ipArr = await getFavIps()
   const ipList = document.querySelector('#ipList')
@@ -211,6 +248,11 @@ async function handleFavoriteList() {
   }
 }
 
+/**
+ * Add the current value of the IP input to the favorites list
+ * OR
+ * Remove the current value of the IP input from the favorites list 
+ */
 async function setFavorite() {
   const ip = document.querySelector('#ip').value
   const ipArr = await getFavIps()
@@ -235,6 +277,9 @@ async function setFavorite() {
   Neutralino.storage.setData('favorites', JSON.stringify(ipArr))
 }
 
+/**
+ * Set the game folder by opening a folder picker
+ */
 async function setGenshinImpactFolder() {
   const folder = await Neutralino.os.showFolderDialog('Select Genshin Impact Game folder')
 
@@ -250,6 +295,11 @@ async function setGenshinImpactFolder() {
   enableButtons()
 }
 
+/**
+ * Get the name of the game executable
+ * 
+ * @returns {Promise<String>}
+ */
 async function getGenshinExecName() {
   // Scan genshin dir
   const config = await getCfg()
@@ -261,12 +311,18 @@ async function getGenshinExecName() {
   return genshinExec.entry
 }
 
+/**
+ * Launch the game with no modifications nor proxy
+ */
 async function launchOfficial() {
   const config = await getCfg()
 
   Neutralino.os.execCommand(config.genshinImpactFolder + '/' + await getGenshinExecName())
 }
 
+/**
+ * Launch the game with a proxy
+ */
 async function launchPrivate() {
   const ip = document.getElementById('ip').value || 'localhost'
 
@@ -282,11 +338,17 @@ async function launchPrivate() {
   Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/${await getGenshinExecName()}"`).catch(e => console.log(e))
 }
 
+/**
+ * Minimize the window
+ */
 function minimizeWin() {
   console.log('min')
   Neutralino.window.minimize()
 }
 
+/**
+ * Close the window
+ */
 function closeWin() {
   console.log('close')
   Neutralino.app.exit()

@@ -6,6 +6,7 @@ let draggable;
 document.addEventListener('DOMContentLoaded', () => {
   draggable = document.getElementById('controlBar');
 
+  // Listen to hovers
   draggable.onmousedown = function (e) {
     posX = e.pageX, posY = e.pageY;
     dragging = true;
