@@ -3,6 +3,14 @@ Grasscutter launcher for easily switching between Official and Private servers
 
 [Download Here!](https://github.com/Grasscutters/GrassClipper/releases/)
 
+# Table of Contents
+
+* [Setup (for users)](#setup-for-users)
+* [Setup (for development)](#setup-for-development)
+* [TODO](#todo)
+* [Common Problems](#having-problems)
+* [Screenshots](#screenshots)
+
 # Setup (for Users)
 
 1. Download the zip file
