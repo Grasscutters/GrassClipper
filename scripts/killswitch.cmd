@@ -5,6 +5,12 @@ set GAME_EXE_NAME=%GAME_EXE_NAME:"=%
 set PROXY_IP=%2
 set PROXY_IP=%PROXY_IP:"=%
 
+:: Get current wifi SSID to reconnect
+for /f "delims=: tokens=2" %%n in ('netsh wlan show interface name="Wi-Fi" ^| findstr "Profile"') do set "WIFI=%%n"
+set WIFI=%WIFI: =%
+
+echo Wifi to reconnect to (if using Wifi): %WIFI%
+
 echo Starting killswitch...
 
 if "%PROXY_IP%" EQU "localhost" (
@@ -58,7 +64,24 @@ if "%PROXY_IP%" EQU "localhost" (
   goto loop
 
 :killgame
-  echo Proxy server not running properly, killing %GAME_EXE_NAME%
-  netsh interface set interface "Ethernet" disabled
+  echo Proxy server not running properly, killing %GAME_EXE_NAME% and disabling internet...
+
+  :: Disable WiFi
+  netsh wlan disconnect
+
+  ::Disable ethernet
+  netsh interface set interface "Ethernet" disable
+
   taskkill /f /im "%GAME_EXE_NAME%"
+
+  echo Re-enabling internet...
+
+  :: Once the game is dead, bring back the internet
+  netsh interface set interface "Ethernet" enable
+
+  echo Reconnecting to %WIFI%...
+
+  :: Reconnect to the WiFi
+  netsh wlan connect name="%WIFI%"
+
   exit
