@@ -8,9 +8,9 @@
 
 echo Starting Proxy Server
 
-set ip=%1
-set gamePath=%2
-set gamePath=%gamePath:"=%
+set IP=%1
+set GAME_PATH=%2
+set GAME_PATH=%GAME_PATH:"=%
 set ORIGIN=%3
 set ORIGIN=%ORIGIN:"=%
 
@@ -24,22 +24,22 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v Pr
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer /d "127.0.0.1:8080" /f >nul 2>nul
 
 :: Start proxy server
-start "Proxy Server" ./ext/mitmdump.exe -s "%ORIGIN%/proxy/proxy.py" --ssl-insecure --set ip=%ip%
+start "Proxy Server" ./ext/mitmdump.exe -s "%ORIGIN%/proxy/proxy.py" --ssl-insecure --set ip=%IP%
 
-echo Opening %gamePath%
+echo Opening %GAME_PATH%
 
 :: Allow the proxy server to create the certificates
 ping 127.0.0.1 -n 5 > nul
 
-For %%A in ("%gamePath%") do (
+For %%A in ("%GAME_PATH%") do (
   Set GAME_EXE=%%~nxA
 )
 
 :: Start killswitch
-start /b %ORIGIN%\scripts\killswitch.cmd "%GAME_EXE%" %ip%"
+start /b %ORIGIN%\scripts\killswitch.cmd "%GAME_EXE%" %IP%"
 
 :: Launch game
-"%gamePath%"
+"%GAME_PATH%"
 
 :: On exit clean proxy stuff
 :EXIT
