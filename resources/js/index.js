@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!config.genshinImpactFolder) {
     handleGenshinFolderNotSet()
   }
+
+  // Set last connect
+  document.querySelector('#ip').value = config.lastConnect
 })
 
 async function getCfg() {
@@ -148,6 +151,10 @@ async function launchPrivate() {
   const config = await getCfg()
 
   console.log('connecting to ' + ip)
+
+  // Set the last connect
+  config.lastConnect = ip
+  Neutralino.storage.setData('config', JSON.stringify(config))
 
   // Pass IP and game folder to the private server launcher
   Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/Genshin Impact Game/${await getGenshinExecName()}"`).catch(e => console.log(e))
