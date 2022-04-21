@@ -97,7 +97,7 @@ async function setBackgroundImage() {
       // Copy to backgrounds folder
       const officialBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
 
-      officialBgs.forEach(async bg => {
+      for (const bg of officialImages) {
         const path = config.genshinImpactFolder.replace('\\', '/') + '/../bg/' + bg.entry
 
         // See if the file exists already
@@ -108,7 +108,7 @@ async function setBackgroundImage() {
             // TODO: Handle error
           })
         }
-      })
+      }
 
       // Pick one of the images
       const localImg = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official')).filter(file => file.type === 'FILE')
@@ -116,6 +116,9 @@ async function setBackgroundImage() {
 
       // Set background image
       document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
+    } else {
+      // Set default image
+      document.querySelector('#firstHalf').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
     }
   }
 
