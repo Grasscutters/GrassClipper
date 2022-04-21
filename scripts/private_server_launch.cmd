@@ -1,7 +1,5 @@
 @echo off
 
-echo Killswitch %4
-
 :: Ensure admin
 >nul 2>&1 reg query "HKU\S-1-5-19" || (
 	set params = %*:"="""%
