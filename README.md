@@ -49,7 +49,7 @@ The launcher most likely did not close correctly, and was unable to clean your p
 
 ### The game will not launch/background launcher images don't load!
 
-Ensure you have selected to correct path to Genshin Impact. This is ***not*** your `Genshin Impact Game` folder, but instead the main `Genshin Impact` folder (where the `bg` folder and `launcher.exe` can be found).
+Ensure you have selected to correct path to Genshin Impact. This is ***not*** your `Genshin Impact` folder, but instead the `Genshin Impact Game` folder found within the main folder (or just in general, if you do not use the launcher).
 
 # Screenshots
 
