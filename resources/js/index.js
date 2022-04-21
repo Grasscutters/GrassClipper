@@ -4,6 +4,12 @@ Neutralino.init();
 document.addEventListener('DOMContentLoaded', async () => {
   setBackgroundImage();
   displayGenshinFolder();
+
+  const config = await getCfg()
+
+  if (!config.genshinImpactFolder) {
+    handleGenshinFolderNotSet()
+  }
 })
 
 async function getCfg() {
@@ -14,13 +20,40 @@ async function getCfg() {
       lastConnect: ''
     }))
   })
-  
-  if (!cfgStr) return {
+
+  const config = cfgStr ? JSON.parse(cfgStr) : {
     genshinImpactFolder: '',
     lastConnect: ''
   }
 
-  return JSON.parse(cfgStr)
+  return config
+}
+
+async function enableButtons() {
+  const offBtn = document.querySelector('#playOfficial')
+  const privBtn = document.querySelector('#playPrivate')
+
+  offBtn.classList.remove('disabled')
+  offBtn.disabled = false
+
+  privBtn.classList.remove('disabled')
+  privBtn.disabled = false
+}
+
+async function handleGenshinFolderNotSet() {
+  // Set buttons to greyed out and disable
+  document.querySelector('#genshinPath').innerHTML = 'Not set'
+
+  const offBtn = document.querySelector('#playOfficial')
+  const privBtn = document.querySelector('#playPrivate')
+
+  offBtn.classList.add('disabled')
+  offBtn.disabled = true
+
+  privBtn.classList.add('disabled')
+  privBtn.disabled = true
+
+  // TODO show a dialog of sorts
 }
 
 async function displayGenshinFolder() {
@@ -32,14 +65,6 @@ async function displayGenshinFolder() {
 
 async function setBackgroundImage() {
   const config = await getCfg()
-
-  const officialImages = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/bg')).filter(file => file.type === 'FILE')
-  const privImages = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE')
-
-  // Pick one of the images
-  const image = officialImages[Math.floor(Math.random() * officialImages.length)].entry
-  const privImage = privImages[Math.floor(Math.random() * privImages.length)].entry
-  const path = config.genshinImpactFolder.replace('\\', '/') + '/bg/' + image
 
   // Check if resources folder exists
   const mainDir = await Neutralino.filesystem.readDirectory(NL_CWD)
@@ -59,15 +84,29 @@ async function setBackgroundImage() {
     await Neutralino.filesystem.createDirectory(NL_CWD + '/resources/bg/official')
   }
 
-  // Copy to backgrounds folder
-  const officialBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
+  if (config.genshinImpactFolder) {
+    const officialImages = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/bg')).filter(file => file.type === 'FILE')
 
-  if (!officialBgs.find(file => file.entry === image)) {
-    await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + image)
+    // Pick one of the images
+    const image = officialImages[Math.floor(Math.random() * officialImages.length)].entry
+    const path = config.genshinImpactFolder.replace('\\', '/') + '/bg/' + image
+    
+    // Copy to backgrounds folder
+    const officialBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
+    if (!officialBgs.find(file => file.entry === image)) {
+      await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + image).catch(e => {
+        // TODO: Handle error
+      })
+    }
+
+    // Set background image
+    document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
   }
 
+  const privImages = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE')
+  const privImage = privImages[Math.floor(Math.random() * privImages.length)].entry
+
   // Set the background image
-  document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
   document.querySelector('#secondHalf').style.backgroundImage = `url("../bg/private/${privImage}")`
 }
 
@@ -76,13 +115,14 @@ async function setGenshinImpactFolder() {
 
   // Set the folder in our configuration
   const config = await getCfg()
-  
+
   config.genshinImpactFolder = folder
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   // Refresh background and path
   setBackgroundImage()
   displayGenshinFolder()
+  enableButtons()
 }
 
 async function getGenshinExecName() {
@@ -108,7 +148,7 @@ async function launchPrivate() {
   const config = await getCfg()
 
   console.log('connecting to ' + ip)
-  
+
   // Pass IP and game folder to the private server launcher
   Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/Genshin Impact Game/${await getGenshinExecName()}"`).catch(e => console.log(e))
 }

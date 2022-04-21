@@ -86,6 +86,12 @@ body {
   background: linear-gradient(#ffc61e, #ffd326);
 }
 
+.playBtn.disabled {
+  background: linear-gradient(#9c9c9c, #949494);
+  color: rgb(226, 226, 226);
+  cursor: default;
+}
+
 .smolBtn {
   padding: 0 20px;
   border-radius: 5px;
