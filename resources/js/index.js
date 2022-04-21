@@ -153,6 +153,29 @@ async function handleFavoriteInput() {
   }
 }
 
+async function handleFavoriteList() {
+  const ipArr = await getFavIps()
+  const ipList = document.querySelector('#ipList')
+
+  if (ipList.style.display === 'none') {
+    ipList.innerHTML = ''
+
+    const list = ipList.appendChild(
+      document.createElement('ul')
+    )
+
+    for (const ip of ipArr) {
+      const elm = document.createElement('li')
+      elm.innerHTML = ip
+      list.appendChild(elm)
+    }
+
+    ipList.style.display = 'block'
+  } else {
+    ipList.style.display = 'none'
+  }
+}
+
 async function setFavorite() {
   const ip = document.querySelector('#ip').value
   const ipArr = await getFavIps()

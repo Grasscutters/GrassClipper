@@ -11,6 +11,35 @@ body {
   filter: brightness(0.6);
 }
 
+#ipList {
+  position: absolute;
+  z-index: 99;
+  padding: 10px;
+  transform: translate(150px, 370px);
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+#ipList ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+#ipList li {
+  padding: 4px;
+  border-bottom: 1px solid #ccc;
+}
+
+#ipList li:last-child {
+  border-bottom: none;
+}
+
 #controlBar {
   display: flex;
   flex-direction: row;
