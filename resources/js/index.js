@@ -1,6 +1,5 @@
 Neutralino.init();
 
-
 document.addEventListener('DOMContentLoaded', async () => {
   setBackgroundImage();
   displayGenshinFolder();
@@ -46,6 +45,9 @@ async function enableButtons() {
 async function handleGenshinFolderNotSet() {
   // Set buttons to greyed out and disable
   document.querySelector('#genshinPath').innerHTML = 'Not set'
+
+  // Set official server background to default
+  document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/private/default.png")`
 
   const offBtn = document.querySelector('#playOfficial')
   const privBtn = document.querySelector('#playPrivate')
@@ -106,7 +108,7 @@ async function setBackgroundImage() {
     document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
   }
 
-  const privImages = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE')
+  const privImages = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE' && !file.entry.includes('default'))
   const privImage = privImages[Math.floor(Math.random() * privImages.length)].entry
 
   // Set the background image

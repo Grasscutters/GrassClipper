@@ -7,6 +7,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.darken {
+  filter: brightness(0.6);
+}
+
 #controlBar {
   display: flex;
   flex-direction: row;
@@ -65,7 +69,6 @@ body {
   /* Move all components to the right since this is the first button */
   margin-left: auto !important;
 }
-
 
 .playBtn:hover, .smolBtn:hover {
   cursor: pointer;
@@ -142,6 +145,12 @@ body {
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+
+  transition: width 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+#firstHalf:hover, #secondHalf:hover {
+  width: calc(100% + 150px);
 }
 
 #firstHalf {
