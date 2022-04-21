@@ -114,9 +114,11 @@ async function launchPrivate() {
 }
 
 function minimizeWin() {
+  console.log('min')
   Neutralino.window.minimize()
 }
 
 function closeWin() {
+  console.log('close')
   Neutralino.app.exit()
 }
