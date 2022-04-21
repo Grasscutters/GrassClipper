@@ -66,6 +66,21 @@ body {
   font-weight: normal;
 }
 
+#settingsClose {
+  display: inline-block;
+  margin-left: 65%;
+  transition: filter 0.1s ease-in-out;
+}
+
+#settingsClose img {
+  height: 20px;
+}
+
+#settingsClose:hover {
+  filter: invert(85%) sepia(31%) saturate(560%) hue-rotate(329deg) brightness(100%) contrast(92%);
+  cursor: pointer;
+}
+
 #ipList {
   position: absolute;
   z-index: 99;

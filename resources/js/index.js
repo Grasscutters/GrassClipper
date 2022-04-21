@@ -313,6 +313,12 @@ async function openSettings() {
   killSwitch.checked = config.enableKillswitch
 }
 
+async function closeSettings() {
+  const settings = document.querySelector('#settingsPanel')
+
+  settings.style.display = 'none'
+}
+
 async function toggleKillSwitch() {
   const killSwitch = document.querySelector('#killswitchOption')
   const config = await getCfg()

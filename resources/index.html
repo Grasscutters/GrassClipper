@@ -8,8 +8,11 @@
     <script src="js/index.js"></script>
   </head>
   <body>
-    <div id="settingsPanel">
+    <div id="settingsPanel" style="display: none;">
       <span id="fullSettingsTitle">Settings</span>
+      <div id="settingsClose">
+        <img src="icons/close.svg" onclick="closeSettings()" />
+      </div>
       <div id="settingsPanelInner">
         <div class="settingTitle">
           <span>Scripts</span>
