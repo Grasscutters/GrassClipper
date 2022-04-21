@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const favList = document.querySelector('#ipList')
     if (favList.style.display !== 'none') {
       favList.style.display = 'none'
+      favList.style.transform = ''
     }
   });
 })
@@ -164,6 +165,11 @@ async function handleFavoriteInput() {
 async function setIp(ip) {
   const ipInput = document.querySelector('#ip')
 
+  // Set star
+  if (ip) {
+    document.querySelector('#star').src = 'icons/star_filled.svg'
+  }
+
   ipInput.value = ip
 }
 
@@ -194,8 +200,14 @@ async function handleFavoriteList() {
     }
 
     ipList.style.display = 'block'
-  } else {
-    ipList.style.display = 'none'
+
+    const transform = window.getComputedStyle(document.querySelector('#ipList')).transform
+    const xy = [ transform.split(',')[4], transform.split(',')[5] ]
+    let newY = parseInt(xy[1].replace(')', '')) - (27 * ipArr.length)
+
+    if (ipArr.length === 0) newY -= 27
+
+    ipList.style.transform = `translate(${xy[0]}px, ${newY}px)`
   }
 }
 
