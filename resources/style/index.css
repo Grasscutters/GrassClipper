@@ -60,6 +60,12 @@ body {
   margin-right: 50%;
 }
 
+.settingSubtitle {
+  color: rgb(165, 165, 165);
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
 #ipList {
   position: absolute;
   z-index: 99;
