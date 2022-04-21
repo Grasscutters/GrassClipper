@@ -20,6 +20,9 @@ start "Proxy Server" ./ext/mitmdump.exe -s "./proxy/proxy.py" --ssl-insecure --s
 
 echo Opening %gamePath%
 
+:: Allow the proxy server to create the certificates
+ping 127.0.0.1 -n 5 > nul
+
 :: Launch game
 "%gamePath%"
 
