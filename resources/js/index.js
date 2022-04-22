@@ -175,6 +175,17 @@ async function displayGenshinFolder() {
 async function setBackgroundImage() {
   const config = await getCfg()
 
+  const privImages = (await filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE' && !file.entry.includes('default'))
+  const privImage = privImages[Math.floor(Math.random() * privImages.length)].entry
+  
+  // Set default image, it will change if the bg folder exists
+  document.querySelector('#firstHalf').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
+
+  return
+
+  // Set the background image
+  document.querySelector('#secondHalf').style.backgroundImage = `url("../bg/private/${privImage}")`
+
   // Check if resources folder exists
   const mainDir = await filesystem.readDirectory(NL_CWD)
   if (!mainDir.find(dir => dir.entry === 'resources')) {
@@ -192,9 +203,6 @@ async function setBackgroundImage() {
   if (!officialDir.find(dir => dir.entry === 'official')) {
     await filesystem.createDirectory(NL_CWD + '/resources/bg/official')
   }
-
-  // Set default image, it will change if the bg folder exists
-  document.querySelector('#firstHalf').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
 
   if (config.genshinImpactFolder) {
     // See if bg folder exists in parent dir
@@ -227,12 +235,6 @@ async function setBackgroundImage() {
       }
     }
   }
-
-  const privImages = (await filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE' && !file.entry.includes('default'))
-  const privImage = privImages[Math.floor(Math.random() * privImages.length)].entry
-
-  // Set the background image
-  document.querySelector('#secondHalf').style.backgroundImage = `url("../bg/private/${privImage}")`
 }
 
 /**
