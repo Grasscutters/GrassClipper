@@ -27,8 +27,8 @@ if "%PROXY_IP%" EQU "localhost" (
 
   :: Check if the proxy server process is running
   :: https://stackoverflow.com/questions/162291/how-to-check-if-a-process-is-running-via-a-batch-script
-  qprocess "mitmdump.exe">NUL
-  if %ERRORLEVEL% NEQ 0 (
+  tasklist /fi "ImageName eq mitmdump.exe" /fo csv 2>NUL | find /I "mitmdump.exe">NUL
+  if "%ERRORLEVEL%" NEQ "0" (
     goto killgame
   )
 
