@@ -1,5 +1,11 @@
 @echo off
 
+:: Ensure admin
+>nul 2>&1 reg query "HKU\S-1-5-19" || (
+	set params = %*:"="""%
+	cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
+)
+
 echo Downloading proxy server...
 
 if not exist "./ext" mkdir "ext"

@@ -11,6 +11,29 @@ body {
   filter: brightness(0.6);
 }
 
+.boldTitle {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 6px;
+}
+
+#firstTimeBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#firstTimeBtns button {
+  margin: 10px;
+}
+
+#firstTimeNotice span {
+  display: block;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+#firstTimeNotice,
 #settingsPanel {
   display: block;
   position: absolute;
@@ -23,9 +46,12 @@ body {
   background-color: #fff;
   border-radius: 2px;
   border: 1px solid #141414;
+  font-family: system-ui;
+}
+
+#settingsPanel {
   width: 30%;
   height: 60%;
-  font-family: system-ui;
 }
 
 #fullSettingsTitle {
@@ -176,6 +202,21 @@ body {
 
 .playBtn:hover, .smolBtn:hover {
   cursor: pointer;
+}
+
+.altBtn {
+  background: none;
+  color: #525252;
+  text-decoration: underline;
+  border: none;
+  line-height: 2px;
+
+  transition: color 0.05s ease-in-out;
+}
+
+.altBtn:hover {
+  cursor: pointer;
+  color: #ffd326;
 }
 
 .playBtn {

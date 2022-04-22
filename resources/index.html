@@ -8,6 +8,18 @@
     <script src="js/index.js"></script>
   </head>
   <body>
+    <div id="firstTimeNotice">
+      <span>
+        <span class="boldTitle">Looks like this is your first time opening GrassClipper!<br/></span>
+        First of all, welcome, happy to see you here! :)<br/><br/>
+        Would you like to run the proxy installer?<br/>
+        (required to connect to private servers)
+      </span>
+      <div id="firstTimeBtns">
+        <button class="playBtn" id="firstTimeBtn" onclick="runInstallScript()">Install</button>
+        <button class="altBtn" id="firstTimeBtn">No thanks</button>
+      </div>
+    </div>
     <div id="settingsPanel" style="display: none;">
       <span id="fullSettingsTitle">Settings</span>
       <div id="settingsClose">
