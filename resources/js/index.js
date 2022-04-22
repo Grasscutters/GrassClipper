@@ -181,32 +181,39 @@ async function setBackgroundImage() {
     await Neutralino.filesystem.createDirectory(NL_CWD + '/resources/bg/official')
   }
 
+  
+  // Set default image, it will change if the bg folder exists
+  document.querySelector('#firstHalf').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
+
   if (config.genshinImpactFolder) {
-    const officialImages = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/../bg')).filter(file => file.type === 'FILE')
+    // See if bg folder exists in parent dir
+    const parentDir = await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/..')
 
-    if (officialImages.length > 0) {
-      for (const bg of officialImages) {
-        const path = config.genshinImpactFolder.replace('\\', '/') + '/../bg/' + bg.entry
+    if (parentDir.find(dir => dir.entry === 'bg')) {
 
-        // See if the file exists already
-        const currentBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
+      const officialImages = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/../bg')).filter(file => file.type === 'FILE')
 
-        if (!currentBgs.find(file => file.entry === bg.entry)) {
-          await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + bg.entry).catch(e => {
-            // TODO: Handle error
-          })
+      if (officialImages.length > 0) {
+        for (const bg of officialImages) {
+          const path = config.genshinImpactFolder.replace('\\', '/') + '/../bg/' + bg.entry
+  
+          // See if the file exists already
+          const currentBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
+  
+          if (!currentBgs.find(file => file.entry === bg.entry)) {
+            await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + bg.entry).catch(e => {
+              // TODO: Handle error
+            })
+          }
         }
+  
+        // Pick one of the images
+        const localImg = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official')).filter(file => file.type === 'FILE')
+        const image = localImg[Math.floor(Math.random() * localImg.length)].entry
+  
+        // Set background image
+        document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
       }
-
-      // Pick one of the images
-      const localImg = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official')).filter(file => file.type === 'FILE')
-      const image = localImg[Math.floor(Math.random() * localImg.length)].entry
-
-      // Set background image
-      document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
-    } else {
-      // Set default image
-      document.querySelector('#firstHalf').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
     }
   }
 
