@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!curDirList.find(f => f.entry === 'ext')) {
     playPriv.classList.add('disabled')
     playPriv.disabled = true
-  }
+  } else {
+    const extFiles = await Neutralino.filesystem.readDirectory(NL_CWD + '/ext')
 
-  const extFiles = await Neutralino.filesystem.readDirectory(NL_CWD + '/ext')
-
-  if (!extFiles.find(f => f.entry === 'mitmdump.exe')) {
-    playPriv.classList.add('disabled')
-    playPriv.disabled = true
+    if (!extFiles.find(f => f.entry === 'mitmdump.exe')) {
+      playPriv.classList.add('disabled')
+      playPriv.disabled = true
+    }
   }
 
   // Exit favorites list and settings panel when clicking outside of it

@@ -82,14 +82,24 @@ body {
   display:inline-block;
   font-size: 1em;
   font-weight: normal;
-  margin-bottom: 10px;
-  margin-right: 50%;
+  margin: 10px 0px;
 }
 
 .settingSubtitle {
   color: rgb(165, 165, 165);
   font-size: 0.8em;
   font-weight: normal;
+}
+
+.settingSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settingSection .smolBtn {
+  height: 30px;
 }
 
 #settingsClose {
