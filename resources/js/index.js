@@ -181,10 +181,10 @@ async function setBackgroundImage() {
   // Set default image, it will change if the bg folder exists
   document.querySelector('#firstHalf').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
 
-  return
-
-  // Set the background image
+  // Set the private background image
   document.querySelector('#secondHalf').style.backgroundImage = `url("../bg/private/${privImage}")`
+
+  return
 
   // Check if resources folder exists
   const mainDir = await filesystem.readDirectory(NL_CWD)
