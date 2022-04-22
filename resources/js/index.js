@@ -1,5 +1,7 @@
 Neutralino.init();
 
+const filesystem = Neutralino.filesystem
+
 /**
  * Every autofill, such as backgrounds and the game folder,
  * should be done here to ensure DOM contents are loaded.
@@ -24,18 +26,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Disable private game launch if proxy IP or proxy server is not found
   const playPriv = document.querySelector('#playPrivate') 
-  const curDirList = await Neutralino.filesystem.readDirectory(NL_CWD)
-  
-  if (!curDirList.find(f => f.entry === 'ext')) {
+
+  if (!(await proxyIsInstalled())) {
     playPriv.classList.add('disabled')
     playPriv.disabled = true
-  } else {
-    const extFiles = await Neutralino.filesystem.readDirectory(NL_CWD + '/ext')
-
-    if (!extFiles.find(f => f.entry === 'mitmdump.exe')) {
-      playPriv.classList.add('disabled')
-      playPriv.disabled = true
-    }
   }
 
   // Exit favorites list and settings panel when clicking outside of it
@@ -121,8 +115,11 @@ async function enableButtons() {
   offBtn.classList.remove('disabled')
   offBtn.disabled = false
 
-  privBtn.classList.remove('disabled')
-  privBtn.disabled = false
+  // Check if the proxy server is installed
+  if (await proxyIsInstalled()) {
+    privBtn.classList.remove('disabled')
+    privBtn.disabled = false
+  }
 }
 
 /**
@@ -147,6 +144,21 @@ async function handleGenshinFolderNotSet() {
   // TODO show a dialog of sorts
 }
 
+async function proxyIsInstalled() {
+  // Check if the proxy server is installed
+  const curDirList = await filesystem.readDirectory(NL_CWD)
+
+  if (curDirList.find(f => f.entry === 'ext')) {
+    const extFiles = await filesystem.readDirectory(NL_CWD + '/ext')
+
+    if (extFiles.find(f => f.entry === 'mitmdump.exe')) {
+      return true
+    }
+  }
+
+  return false
+}
+
 /**
  * Show the game folder under the select button
  */
@@ -164,51 +176,50 @@ async function setBackgroundImage() {
   const config = await getCfg()
 
   // Check if resources folder exists
-  const mainDir = await Neutralino.filesystem.readDirectory(NL_CWD)
+  const mainDir = await filesystem.readDirectory(NL_CWD)
   if (!mainDir.find(dir => dir.entry === 'resources')) {
-    await Neutralino.filesystem.createDirectory(NL_CWD + '/resources')
+    await filesystem.createDirectory(NL_CWD + '/resources')
   }
 
   // Ensure bg folder exists
-  const bgDir = await Neutralino.filesystem.readDirectory(NL_CWD + '/resources')
+  const bgDir = await filesystem.readDirectory(NL_CWD + '/resources')
   if (!bgDir.find(dir => dir.entry === 'bg')) {
-    await Neutralino.filesystem.createDirectory(NL_CWD + '/resources/bg')
+    await filesystem.createDirectory(NL_CWD + '/resources/bg')
   }
 
   // Ensure official folder exists
-  const officialDir = await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg')
+  const officialDir = await filesystem.readDirectory(NL_CWD + '/resources/bg')
   if (!officialDir.find(dir => dir.entry === 'official')) {
-    await Neutralino.filesystem.createDirectory(NL_CWD + '/resources/bg/official')
+    await filesystem.createDirectory(NL_CWD + '/resources/bg/official')
   }
 
-  
   // Set default image, it will change if the bg folder exists
   document.querySelector('#firstHalf').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
 
   if (config.genshinImpactFolder) {
     // See if bg folder exists in parent dir
-    const parentDir = await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/..')
+    const parentDir = await filesystem.readDirectory(config.genshinImpactFolder + '/..')
 
     if (parentDir.find(dir => dir.entry === 'bg')) {
 
-      const officialImages = (await Neutralino.filesystem.readDirectory(config.genshinImpactFolder + '/../bg')).filter(file => file.type === 'FILE')
+      const officialImages = (await filesystem.readDirectory(config.genshinImpactFolder + '/../bg')).filter(file => file.type === 'FILE')
 
       if (officialImages.length > 0) {
         for (const bg of officialImages) {
           const path = config.genshinImpactFolder.replace('\\', '/') + '/../bg/' + bg.entry
   
           // See if the file exists already
-          const currentBgs = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
+          const currentBgs = (await filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
   
           if (!currentBgs.find(file => file.entry === bg.entry)) {
-            await Neutralino.filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + bg.entry).catch(e => {
+            await filesystem.copyFile(path, NL_CWD + '/resources/bg/official/' + bg.entry).catch(e => {
               // TODO: Handle error
             })
           }
         }
   
         // Pick one of the images
-        const localImg = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/official')).filter(file => file.type === 'FILE')
+        const localImg = (await filesystem.readDirectory(NL_CWD + '/resources/bg/official')).filter(file => file.type === 'FILE')
         const image = localImg[Math.floor(Math.random() * localImg.length)].entry
   
         // Set background image
@@ -217,7 +228,7 @@ async function setBackgroundImage() {
     }
   }
 
-  const privImages = (await Neutralino.filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE' && !file.entry.includes('default'))
+  const privImages = (await filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE' && !file.entry.includes('default'))
   const privImage = privImages[Math.floor(Math.random() * privImages.length)].entry
 
   // Set the background image
@@ -342,6 +353,14 @@ async function closeSettings() {
   const settings = document.querySelector('#settingsPanel')
 
   settings.style.display = 'none'
+
+  // In case we installed the proxy server
+  if (await proxyIsInstalled()) {
+    const playPriv = document.querySelector('#playPrivate')
+    
+    playPriv.classList.remove('disabled')
+    playPriv.disabled = false
+  }
 }
 
 async function toggleKillSwitch() {
@@ -374,7 +393,7 @@ async function setGenshinImpactFolder() {
   const config = await getCfg()
 
   // See if the actual game folder is inside this one
-  const folderList = await Neutralino.filesystem.readDirectory(folder)
+  const folderList = await filesystem.readDirectory(folder)
   const gameFolder = folderList.filter(file => file.entry.includes('Genshin Impact Game'))
 
   if (gameFolder.length > 0) {
@@ -400,7 +419,7 @@ async function setGenshinImpactFolder() {
 async function getGenshinExecName() {
   // Scan genshin dir
   const config = await getCfg()
-  const genshinDir = await Neutralino.filesystem.readDirectory(config.genshinImpactFolder)
+  const genshinDir = await filesystem.readDirectory(config.genshinImpactFolder)
 
   // Find the executable
   const genshinExec = genshinDir.find(file => file.entry.endsWith('.exe'))
