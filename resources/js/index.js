@@ -354,7 +354,7 @@ async function openSettings() {
   killSwitch.checked = config.enableKillswitch
 
   // Check for updates
-  checkForUpdatesAndShow()
+  //checkForUpdatesAndShow()
 }
 
 async function closeSettings() {
