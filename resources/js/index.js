@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   setBackgroundImage();
   displayGenshinFolder();
 
+  // Set title version
+  document.querySelector('#version').innerHTML = NL_APPVERSION
+
   const config = await getCfg()
   const ipArr = await getFavIps()
 
@@ -349,6 +352,9 @@ async function openSettings() {
   const killSwitch = document.querySelector('#killswitchOption')
 
   killSwitch.checked = config.enableKillswitch
+
+  // Check for updates
+  checkForUpdatesAndShow()
 }
 
 async function closeSettings() {
@@ -383,6 +389,26 @@ async function runInstallScript() {
   Neutralino.os.execCommand(`${NL_CWD}/scripts/install.cmd "${NL_CWD}"`)
 
   closeFirstTimePopup()
+}
+
+async function updateResources() {
+
+} 
+
+async function checkForUpdatesAndShow() {
+  const updateBtn = document.querySelector('#updateBtn')
+  const subtitle = document.querySelector('#updateSubtitle')
+  const url = 'https://github.com/Grasscutters/GrassClipper/releases/latest/download/'
+  const manifest = await Neutralino.updater.checkForUpdates(url)
+
+  // Version mismatch? Update!
+  if (manifest?.version !== NL_APPVERSION) {
+    subtitle.innerHTML = "New update available!"
+    updateBtn.classList.remove('disabled')
+  } else {
+    subtitle.innerHTML = "You are on the latest version! :)"
+    updateBtn.classList.add('disabled')
+  }
 }
 
 /**
