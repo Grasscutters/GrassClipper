@@ -30,7 +30,7 @@ del /s /q "%ORIGIN%/temp"
 echo Running proxy server in order to generate certificates...
 
 :: Start proxy server
-start "Proxy Server" ./ext/mitmdump.exe --ssl-insecure --set ip=%ip%
+start "Proxy Server" %ORIGIN%/ext/mitmdump.exe --ssl-insecure --set ip=%ip%
 
 :: Allow the proxy server to create the certificates
 ping 127.0.0.1 -n 6 > nul
