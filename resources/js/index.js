@@ -86,6 +86,9 @@ async function getCfg() {
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
     Neutralino.storage.setData('config', JSON.stringify(defaultConf))
+
+    // Show the first time notice if there is no config
+    document.querySelector('#firstTimeNotice').style.display = 'block'
   })
 
   const config = cfgStr ? JSON.parse(cfgStr) : defaultConf
@@ -326,6 +329,17 @@ async function toggleKillSwitch() {
   config.enableKillswitch = killSwitch.checked
 
   Neutralino.storage.setData('config', JSON.stringify(config))
+}
+
+async function closeFirstTimePopup() {
+  const firstTimePopup = document.querySelector('#firstTimeNotice')
+  firstTimePopup.style.display = 'none'
+}
+
+async function runInstallScript() {
+  Neutralino.os.execCommand(`${NL_CWD}/scripts/install.cmd "${NL_CWD}"`)
+
+  closeFirstTimePopup()
 }
 
 /**

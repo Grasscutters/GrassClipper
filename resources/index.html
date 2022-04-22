@@ -8,7 +8,7 @@
     <script src="js/index.js"></script>
   </head>
   <body>
-    <div id="firstTimeNotice">
+    <div id="firstTimeNotice" style="display: none">
       <span>
         <span class="boldTitle">Looks like this is your first time opening GrassClipper!<br/></span>
         First of all, welcome, happy to see you here! :)<br/><br/>
@@ -17,7 +17,7 @@
       </span>
       <div id="firstTimeBtns">
         <button class="playBtn" id="firstTimeBtn" onclick="runInstallScript()">Install</button>
-        <button class="altBtn" id="firstTimeBtn">No thanks</button>
+        <button class="altBtn" id="firstTimeBtn" onclick="closeFirstTimePopup()">No thanks</button>
       </div>
     </div>
     <div id="settingsPanel" style="display: none;">
@@ -41,7 +41,7 @@
     <div id="controlBar">
       <span id="titleSection">
         GrassClipper
-        <span id="version">0.4.0</span>
+        <span id="version">0.4.1</span>
       </span>
       <div id="settingsBtn" onclick="openSettings()">
         <img src="icons/cog.svg" />
