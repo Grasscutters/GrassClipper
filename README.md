@@ -15,8 +15,7 @@ Grasscutter launcher for easily switching between Official and Private servers
 
 1. Download the zip file
 2. Extract the zip file somewhere
-3. Run `install.cmd` as administrator. This will install the proxy server.
-4. Run `GrassClipper.exe` and set your `Genshin Impact` folder!
+3. Run `GrassClipper.exe`, install the proxy server, and set your `Genshin Impact` folder!
 
 # Setup (for Development)
 

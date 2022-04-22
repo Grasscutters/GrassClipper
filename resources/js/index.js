@@ -22,8 +22,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('#star').src = 'icons/star_filled.svg'
   }
   
+  // Disable private game launch if proxy IP or proxy server is not found
+  const playPriv = document.querySelector('#playPrivate') 
+  const curDirList = await Neutralino.filesystem.readDirectory(NL_CWD)
+  
+  if (!curDirList.find(f => f.entry === 'ext')) {
+    playPriv.classList.add('disabled')
+    playPriv.disabled = true
+  }
 
-  // Exit favorites list when clicking outside of it
+  const extFiles = await Neutralino.filesystem.readDirectory(NL_CWD + '/ext')
+
+  if (!extFiles.find(f => f.entry === 'mitmdump.exe')) {
+    playPriv.classList.add('disabled')
+    playPriv.disabled = true
+  }
+
+  // Exit favorites list and settings panel when clicking outside of it
   window.addEventListener("click", function(e) {
     const favList = document.querySelector('#ipList')
     const settingsPanel = document.querySelector('#settingsPanel')
