@@ -366,7 +366,17 @@ async function setGenshinImpactFolder() {
   // Set the folder in our configuration
   const config = await getCfg()
 
-  config.genshinImpactFolder = folder
+  // See if the actual game folder is inside this one
+  const folderList = await Neutralino.filesystem.readDirectory(folder)
+  const gameFolder = folderList.filter(file => file.entry.includes('Genshin Impact Game'))
+
+  if (gameFolder.length > 0) {
+    config.genshinImpactFolder = folder + '\\Genshin Impact Game'
+    Neutralino.storage.setData('config', JSON.stringify(config))
+  } else {
+    config.genshinImpactFolder = folder
+  }
+
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   // Refresh background and path
