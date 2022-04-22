@@ -291,7 +291,7 @@ body {
   font-size: 14px;
 }
 
-#halvesContainer {
+#panelContainer {
   width: 100%;
   height: 100%;
   position: relative;
@@ -299,7 +299,7 @@ body {
   display: flex;
 }
 
-#firstHalf, #secondHalf {
+#firstPanel, #secondPanel, #thirdPanel {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -309,17 +309,17 @@ body {
   transition: width 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 
-#firstHalf:hover, #secondHalf:hover {
+#firstPanel:hover, #secondPanel:hover, #thirdPanel:hover {
   width: calc(100% + 150px);
 }
 
-#firstHalf {
+#firstPanel, #secondPanel {
   border-right: 6px solid #141414;
   background-position: -340px;
 }
 
 /* Move the first official button to the position on the png */
-#firstHalf button {
+#firstPanel button {
   position: relative;
   transform: translate(140px, 500px);
   width: 300px;
@@ -330,13 +330,13 @@ body {
   display: block;
 }
 
-#secondHalf button {
+#secondPanel button {
   display: block;
   width: 300px;
   height: 60px;
 }
 
-#secondHalf input {
+#secondPanel input {
   margin-bottom: 4px;
   height: 20px;
   background: white;
@@ -348,7 +348,7 @@ body {
   transition: border-bottom 0.1s ease-in-out;
 }
 
-#secondHalf input:focus {
+#secondPanel input:focus {
   outline: none;
   border-bottom: 2px solid #ffc61e;
 }
