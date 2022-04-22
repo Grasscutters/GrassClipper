@@ -244,10 +244,15 @@ body {
   background: linear-gradient(#ffc61e, #ffd326);
 }
 
-.playBtn.disabled {
+.playBtn.disabled,
+.smolBtn.disabled {
   background: linear-gradient(#9c9c9c, #949494);
   color: rgb(226, 226, 226);
   cursor: default;
+}
+
+.smolBtn.disabled:hover {
+  background: linear-gradient(#949494, #9c9c9c);
 }
 
 .smolBtn {

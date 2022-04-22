@@ -1,6 +1,6 @@
 {
   "applicationId": "js.grassclipper.app",
-  "version": "1.0.0",
+  "version": "0.4.6",
   "defaultMode": "window",
   "port": 0,
   "documentRoot": "/resources/",
