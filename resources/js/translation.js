@@ -20,6 +20,12 @@ async function doTranslation() {
   // Begin filling in values
   set('titleSection', localeObj.appName)
 
+  const verSpan = document.createElement('span')
+  verSpan.id = 'version'
+  verSpan.innerHTML = ` v${NL_APPVERSION}`
+
+  document.querySelector('#titleSection').appendChild(verSpan)
+
   // Play buttons
   set('playOfficial', localeObj.playOfficial)
   set('playPrivate', localeObj.playPrivate)
