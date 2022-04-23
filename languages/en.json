@@ -3,11 +3,11 @@
   "appName": "GrassClipper",
 
   "playOfficial": "Play Official",
-  "playPrivate": "Play Private",
+  "playPrivate": "Play on Grasscutter",
   "launchLocalServer": "Launch Local Server",
 
   "genshinFolderSet": "Set \"Genshin Impact Game\" folder",
-  "grasscutterFileSet": "Set \"GrassCutter\" .jar file",
+  "grasscutterFileSet": "Set \"Grasscutter\" .jar file",
   "folderNotSet": "Not set",
 
   "ipPlaceholder": "IP Address",
@@ -20,7 +20,7 @@
   "proxyOption": "Proxy",
   "proxySubtitle": "Install the proxy server via the install script",
   "updateOption": "Update",
-  "updateSubtitle": "Auto updating is temporarily disabled. Check GitHub for the newest releease.",
+  "updateSubtitle": "Auto updating is temporarily disabled. Check GitHub for the newest release.",
   "languageOption": "Language",
   "languageSubtitle": "Select your language!",
   "enableServerLauncherOption": "Enable Server Launcher",
@@ -35,5 +35,5 @@
   "proxyInstallDeny": "No thanks",
 
   "genshinFolderDialog": "Select Genshin Impact Game folder",
-  "grasscutterFileDialog": "Select GrassCutter server jar file"
+  "grasscutterFileDialog": "Select Grasscutter server jar file"
 }
