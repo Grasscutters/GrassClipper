@@ -12,7 +12,6 @@ Grasscutter launcher for easily switching between Official and Private servers
   * [White Screen Fix](#white-screen-fix)
   * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
   * [No internet](#i-have-no-internet-after-closing-everything-restarting-my-pc)
-  * []
 * [Screenshots](#screenshots)
 
 # Setup (for Users)
