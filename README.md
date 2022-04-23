@@ -70,6 +70,7 @@ Thank you to everyone who has provided translations! <3
 
 * ZH - nuoxianCN
 * PT-BR - na.na
+* Vietnamese - labalityowo
 
 # Screenshots
 
