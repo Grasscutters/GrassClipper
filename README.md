@@ -12,6 +12,7 @@ Grasscutter launcher for easily switching between Official and Private servers
   * [White Screen Fix](#white-screen-fix)
   * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
   * [No internet](#i-have-no-internet-after-closing-everything-restarting-my-pc)
+* [Translation Credits](#translation-credits)
 * [Screenshots](#screenshots)
 
 # Setup (for Users)
@@ -62,6 +63,13 @@ Discord/YouTube (plus surely some others) does not seem to be a fan of the proxy
 ### I have no internet after closing everything/restarting my PC!
 
 The launcher most likely did not close correctly, and was unable to clean your proxy settings back to what they were. Disable your proxy in the Windows proxy settings.
+
+# Translation Credits
+
+Thank you to everyone who has provided translations!
+
+* ZH - nuoxianCN
+* PT-BR - na.na
 
 # Screenshots
 
