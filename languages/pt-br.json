@@ -1,0 +1,39 @@
+{
+  "fullLangName": "Portugues Brasileiro",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Jogar (Oficial)",
+  "playPrivate": "Jogar (Privado)",
+  "launchLocalServer": "Abrir Servidor Local",
+
+  "genshinFolderSet": "Definir a pasta: \"Genshin Impact Game\" ",
+  "grasscutterFileSet": "Definir o arquivo .jar de \"GrassCutter\" ",
+  "folderNotSet": "Não Definida",
+
+  "ipPlaceholder": "Endereço Ip",
+  "noFavorites": "Nenhum favorito definido",
+
+  "settingsTitle": "Configurações",
+  "scriptsSectionTitle": "Scripts",
+  "killswitchOption": "Kill Switch",
+  "killswitchSubtitle": "Apenas para aqueles paranoicos sobre banimentos. Finaliza o processo do jogo *e a sua internet* se algo acontecer com o proxy",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Instalar o servidor proxy a partir do script instalador",
+  "updateOption": "Atualizar",
+  "updateSubtitle": "A atualização automática esta temporariamente desativada. Cheque o Github para a versão mais atualizada",
+  "languageOption": "Idioma",
+  "languageSubtitle": "Selecione seu idioma!",
+  "enableServerLauncherOption": "Permitir ao launcher ligar o servidor",
+  "enableServerLauncherSubtitle": "Permitir ao launcher iniciar uma instancia local do GrassCutter",
+
+  "introSen1": "Parece que essa é a sua primeira vez usando o GrassClipper!",
+  "introSen2": "Primeiramente, bem-vindo, estou feliz de te ver aqui! :)",
+  "introSen3": "Você gostaria de instalar o proxy?",
+  "introSen4": "(necessário para conectar a servidores privados)",
+
+  "proxyInstallBtn": "Instalar",
+  "proxyInstallDeny": "Não obrigado",
+
+  "genshinFolderDialog": "Selecione a pasta Genshin Impact Game",
+  "grasscutterFileDialog": "Selecione o arquivo jar do GrassCutter"
+}
