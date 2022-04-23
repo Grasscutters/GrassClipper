@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     handleServerNotSet()
   }
 
+  if (config.serverLaunchPanel) {
+    displayServerLaunchSection()
+  }
+
   // Set last connect
   document.querySelector('#ip').value = config.lastConnect
 
@@ -396,8 +400,12 @@ async function openSettings() {
 
   // Fill setting options with what is currently set in config
   const killSwitch = document.querySelector('#killswitchOption')
+  const serverLaunch = document.querySelector('#serverLaunchOption')
 
   killSwitch.checked = config.enableKillswitch
+  serverLaunch.checked = config.serverLaunchPanel
+
+  console.log(config)
 
   // Check for updates
   //checkForUpdatesAndShow()
@@ -458,15 +466,20 @@ async function checkForUpdatesAndShow() {
   }
 }
 
-async function toggleServerLaunchSection() {
+async function displayServerLaunchSection() {
   const serverPanel = document.querySelector('#thirdPanel')
-  const config = await getCfg()
 
   if (serverPanel.style.display === 'none') {
     serverPanel.style.removeProperty('display')
   } else {
     serverPanel.style.display = 'none'
   }
+}
+
+async function toggleServerLaunchSection() {
+  const config = await getCfg()
+
+  displayServerLaunchSection()
 
   // Save setting
   config.serverLaunchPanel = !config.serverLaunchPanel
@@ -502,7 +515,11 @@ async function setGenshinImpactFolder() {
 }
 
 async function setGrassCutterFolder() {
-  const folder = await Neutralino.os.showFolderDialog('Select GrassCutter folder')
+  const folder = await Neutralino.os.showOpenDialog('Select GrassCutter server jar', {
+    filters: [
+      { name: 'Jar files', extensions: ['jar'] }
+    ]
+  })
 
   // Set the folder in our configuration
   const config = await getCfg()
@@ -555,6 +572,12 @@ async function launchPrivate() {
 
   // Pass IP and game folder to the private server launcher
   Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/${await getGenshinExecName()}" "${NL_CWD}" ${config.enableKillswitch}`).catch(e => console.log(e))
+}
+
+async function launchLocalServer() {
+  const config = await getCfg()
+
+  Neutralino.os.execCommand(`${NL_CWD}/scripts/local_server_launch.cmd "${config.serverFolder}"`).catch(e => console.log(e))
 }
 
 /**
