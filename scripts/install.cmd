@@ -17,13 +17,13 @@ cd "%ORIGIN%"
 if not exist "%ORIGIN%/ext" mkdir "%ORIGIN%/ext"
 if not exist "%ORIGIN%/temp" mkdir "%ORIGIN%/temp"
 
-:: Begin by retrieving mitmproxy 8.0.0
-powershell Invoke-WebRequest -Uri https://snapshots.mitmproxy.org/8.0.0/mitmproxy-8.0.0-windows.zip -OutFile "%ORIGIN%/temp/mitmproxy-8.0.0-windows.zip"
+:: Begin by retrieving mitmproxy 7.0.4
+powershell Invoke-WebRequest -Uri https://snapshots.mitmproxy.org/7.0.4/mitmproxy-7.0.4-windows.zip -OutFile "%ORIGIN%/temp/mitmproxy-7.0.4-windows.zip"
 
 echo Extracting...
 
 :: Extract from temp/ to ext/ with powershell
-powershell Expand-Archive -Path "%ORIGIN%/temp/mitmproxy-8.0.0-windows.zip" -DestinationPath "%ORIGIN%/ext/" -Force
+powershell Expand-Archive -Path "%ORIGIN%/temp/mitmproxy-7.0.4-windows.zip" -DestinationPath "%ORIGIN%/ext/" -Force
 
 del /s /q "%ORIGIN%/temp"
 
