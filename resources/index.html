@@ -56,6 +56,15 @@
             Auto updating is temporarily disabled. Check GitHub for the newest release.
           </span>
         </div>
+        <div class="settingsRow">
+          <div class="settingSection">
+            <span class="settingLabel">Enable Server Launcher</span>
+            <input type="checkbox" id="serverLaunchOption" onchange="toggleServerLaunchSection()" />
+          </div>
+          <span class="settingSubtitle" id="serverSubtitle">
+            Enable to server launcher tile for launcher a local Grasscutter instance.
+          </span>
+        </div>
       </div>
     </div>
     <div id="controlBar">
@@ -88,7 +97,7 @@
           <button class="playBtn" id="playPrivate" onclick="launchPrivate()">Play Private</button>
         </div>
       </div>
-      <div id="thirdPanel">
+      <div id="thirdPanel" style="display: none;">
         <button class="playBtn" id="serverLaunch">Launch Local Server</button>
       </div>
     </div>

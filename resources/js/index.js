@@ -93,7 +93,8 @@ async function getCfg() {
   const defaultConf = {
     genshinImpactFolder: '',
     lastConnect: '',
-    enableKillswitch: false
+    enableKillswitch: false,
+    serverLaunchPanel: false
   }
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
@@ -415,6 +416,21 @@ async function checkForUpdatesAndShow() {
     subtitle.innerHTML = "You are on the latest version! :)"
     updateBtn.classList.add('disabled')
   }
+}
+
+async function toggleServerLaunchSection() {
+  const serverPanel = document.querySelector('#thirdPanel')
+  const config = await getCfg()
+
+  if (serverPanel.style.display === 'none') {
+    serverPanel.style.removeProperty('display')
+  } else {
+    serverPanel.style.display = 'none'
+  }
+
+  // Save setting
+  config.serverLaunchPanel = !config.serverLaunchPanel
+  Neutralino.storage.setData('config', JSON.stringify(config))
 }
 
 /**

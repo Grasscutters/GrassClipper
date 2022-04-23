@@ -50,7 +50,7 @@ body {
 }
 
 #settingsPanel {
-  width: 30%;
+  width: 35%;
   height: 60%;
 }
 
@@ -65,7 +65,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 20%;
+  padding: 10px 10%;
 }
 
 .settingsRow {
@@ -104,7 +104,7 @@ body {
 
 #settingsClose {
   display: inline-block;
-  margin-left: 65%;
+  margin-left: 70%;
   transition: filter 0.1s ease-in-out;
 }
 
@@ -365,7 +365,7 @@ body {
 }
 
 #secondControlContainer, #firstPanel button, #thirdPanel button {
-  margin-top: 100%;
+  margin-top: 62vh;
 }
 
 #serverInput input, #serverInput img{
