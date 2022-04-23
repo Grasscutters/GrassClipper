@@ -6,6 +6,9 @@
 	cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %1 "%2" ""%cd%"" %4", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
 )
 
+:: Use to force task kill
+title PS Launcher Script
+
 echo Starting Proxy Server
 
 set IP=%1
@@ -59,6 +62,11 @@ if "%PROXY%" == "" (
 
 	:: Kill proxy server
 	taskkill /f /im mitmdump.exe
+
+	echo Done! See you next time!
+
+	timeout /t 2 /nobreak >nul
+	taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Launcher Script"
 
 	exit /b
 )

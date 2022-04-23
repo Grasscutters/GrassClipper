@@ -5,6 +5,9 @@ set GAME_EXE_NAME=%GAME_EXE_NAME:"=%
 set PROXY_IP=%2
 set PROXY_IP=%PROXY_IP:"=%
 
+:: For task killing
+title PS Killswitch
+
 :: Get current wifi SSID to reconnect
 for /f "delims=: tokens=2" %%n in ('netsh wlan show interface name="Wi-Fi" ^| findstr "Profile"') do set "WIFI=%%n"
 set WIFI=%WIFI: =%
@@ -83,5 +86,7 @@ if "%PROXY_IP%" EQU "localhost" (
 
   :: Reconnect to the WiFi
   netsh wlan connect name="%WIFI%"
+
+	taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Killswitch"
 
   exit
