@@ -29,11 +29,11 @@
   "introSen1": "看来这是你第一次使用GrassClipper启动器！",
   "introSen2": "首先，欢迎你使用GrassClipper启动器，其次很高兴在这里见到你！ :)",
   "introSen3": "是否要运行代理安装程序？",
-  "introSen4": "（需要连接到专用服务器）",
+  "introSen4": "（需要连接到私人服务器）",
 
   "proxyInstallBtn": "安装",
   "proxyInstallDeny": "不用了，谢谢",
 
-  "genshinFolderDialog": "选择Genshin Impact Game文件夹",
+  "genshinFolderDialog": "选择原神文件夹",
   "grasscutterFileDialog": "选择GrassCutter服务器jar文件"
 }
