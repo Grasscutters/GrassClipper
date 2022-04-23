@@ -63,7 +63,14 @@ class MlgmXyysd_Genshin_Impact_Proxy:
             "sdk-os-static.hoyoverse.com",
             "api-account-os.hoyoverse.com",
             "hk4e-sdk-os.hoyoverse.com",
-            "overseauspider.yuanshen.com"
+            "overseauspider.yuanshen.com",
+            "gameapi-account.mihoyo.com",
+            "minor-api.mihoyo.com",
+            "public-data-api.mihoyo.com",
+            "uspider.yuanshen.com",
+            "sdk-static.mihoyo.com",
+            "abtest-api-data-sg.hoyoverse.com",
+            "log-upload-os.hoyoverse.com"
         ]
         
         if flow.request.host in LIST_DOMAINS:
