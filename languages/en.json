@@ -1,8 +1,8 @@
 {
   "appName": "GrassClipper",
 
-  "officialPlay": "Play Official",
-  "privatePlay": "Play Private",
+  "playOfficial": "Play Official",
+  "playPrivate": "Play Private",
   "launchLocalServer": "Launch Local Server",
 
   "genshinFolderSet": "Set \"Genshin Impact Game\" folder",
@@ -13,10 +13,13 @@
   "noFavorites": "No favorites set",
 
   "settingsTitle": "Settings",
+  "scriptsSectionTitle": "Scripts",
   "killswitchOption": "Kill Switch",
   "killswitchSubtitle": "Only for those very paranoid about bans. Kills the game process *and your internet* if something happens to the proxy.",
-  "installProxyOption": "Install the proxy server via the install script",
-  "updateOption": "Auto updating is temporarily disabled. Check GitHub for the newest releease.",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Install the proxy server via the install script",
+  "updateOption": "Update",
+  "updateSubtitle": "Auto updating is temporarily disabled. Check GitHub for the newest releease.",
   "enableServerLauncherOption": "Enable Server Launcher",
   "enableServerLauncherSubtitle": "Enable to server launcher tile for launcher a local Grasscutter instance.",
 

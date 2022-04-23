@@ -1,5 +1,6 @@
 Neutralino.init();
 
+let localeObj;
 const filesystem = Neutralino.filesystem
 
 /**
@@ -16,14 +17,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const config = await getCfg()
   const ipArr = await getFavIps()
-
-  if (!config.genshinImpactFolder) {
-    handleGenshinFolderNotSet()
-  }
-
-  if (!config.serverFolder) {
-    handleServerNotSet()
-  }
 
   if (config.serverLaunchPanel) {
     displayServerLaunchSection()
@@ -75,6 +68,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
   });
+
+  // Ensure we do the translation at the very end, after everything else has loaded
+  await doTranslation()
+  
+  if (!config.genshinImpactFolder) {
+    handleGenshinFolderNotSet()
+  }
+
+  if (!config.serverFolder) {
+    handleServerNotSet()
+  }
 })
 
 /**
@@ -104,7 +108,8 @@ async function getCfg() {
     serverFolder: '',
     lastConnect: '',
     enableKillswitch: false,
-    serverLaunchPanel: false
+    serverLaunchPanel: false,
+    language: 'en'
   }
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
@@ -151,7 +156,7 @@ async function enableButtons() {
  */
 async function handleGenshinFolderNotSet() {
   // Set buttons to greyed out and disable
-  document.querySelector('#genshinPath').innerHTML = 'Not set'
+  document.querySelector('#genshinPath').innerHTML = localeObj.folderNotSet
 
   // Set official server background to default
   document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/private/default.png")`
@@ -170,7 +175,7 @@ async function handleGenshinFolderNotSet() {
 
 async function handleServerNotSet() {
   // Set buttons to greyed out and disable
-  document.querySelector('#serverPath').innerHTML = 'Not set'
+  document.querySelector('#serverPath').innerHTML = localeObj.folderNotSet
 
   // Set official server background to default
   // document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/private/default.png")`
@@ -339,7 +344,7 @@ async function handleFavoriteList() {
         document.createElement('li')
       )
 
-      listItem.innerHTML = 'No favorites set'
+      listItem.innerHTML = localeObj.noFavorites
     }
 
     for (const ip of ipArr) {
@@ -491,7 +496,7 @@ async function toggleServerLaunchSection() {
  * Set the game folder by opening a folder picker
  */
 async function setGenshinImpactFolder() {
-  const folder = await Neutralino.os.showFolderDialog('Select Genshin Impact Game folder')
+  const folder = await Neutralino.os.showFolderDialog(localeObj.genshinFolderDialog)
 
   // Set the folder in our configuration
   const config = await getCfg()
@@ -516,7 +521,7 @@ async function setGenshinImpactFolder() {
 }
 
 async function setGrassCutterFolder() {
-  const folder = await Neutralino.os.showOpenDialog('Select GrassCutter server jar', {
+  const folder = await Neutralino.os.showOpenDialog(localeObj.grasscutterFileDialog, {
     filters: [
       { name: 'Jar files', extensions: ['jar'] }
     ]
