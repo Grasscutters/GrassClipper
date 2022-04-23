@@ -1,0 +1,39 @@
+{
+  "fullLangName": "Chinese",
+  "appName": "割草机启动器",
+
+  "playOfficial": "启动官方服务器",
+  "playPrivate": "启动私人服务器",
+  "launchLocalServer": "启动本地服务器",
+
+  "genshinFolderSet": "设置 \"Genshin Impact Game\" 文件夹",
+  "grasscutterFileSet": "设置 \"GrassCutter\" .jar 文件",
+  "folderNotSet": "没有设置启动文件夹或文件",
+
+  "ipPlaceholder": "IP地址",
+  "noFavorites": "没有收藏",
+
+  "settingsTitle": "设置",
+  "scriptsSectionTitle": "进程",
+  "killswitchOption": "杀死服务进程",
+  "killswitchSubtitle": "如果IE代理发生了一些错误，启用此选项可以杀死服务进程和你的网络连接。",
+  "proxyOption": "代理",
+  "proxySubtitle": "通过安装脚本安装代理服务器。",
+  "updateOption": "更新",
+  "updateSubtitle": "自动更新暂时不可用。查看GitHub以获取最新的Release。",
+  "languageOption": "语言",
+  "languageSubtitle": "选择你最熟悉的语言！",
+  "enableServerLauncherOption": "启用本地服务器",
+  "enableServerLauncherSubtitle": "启动器内为你显示启动本地服务器选项。",
+
+  "introSen1": "看来这是你第一次使用割草机启动器！",
+  "introSen2": "首先，欢迎你使用割草机启动器，其次很高兴在这里见到你！ :)",
+  "introSen3": "是否要运行代理安装程序？",
+  "introSen4": "（需要连接到专用服务器）",
+
+  "proxyInstallBtn": "安装",
+  "proxyInstallDeny": "不用了，谢谢",
+
+  "genshinFolderDialog": "选择Genshin Impact Game文件夹",
+  "grasscutterFileDialog": "选择GrassCutter服务器jar文件"
+}
