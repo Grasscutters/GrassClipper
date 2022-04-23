@@ -1,6 +1,6 @@
 {
   "name": "GrassClipper",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "repository": "https://github.com/Grasscutters/GrassClipper.git",
   "author": "SpikeHD <spikegdofficial@gmail.com>",
   "license": "Apache-2.0",
@@ -8,7 +8,7 @@
     "dev": "neu run",
     "build": "npm run clean_dist && neu build && npm run move_files && npm run move_bgs && npm run rename_exe",
     "move_files": "cp -r ./proxy ./dist/GrassClipper && cp -r ./scripts ./dist/GrassClipper",
-    "move_bgs": "mkdir dist\\GrassClipper\\resources\\bg\\private && cp -r ./resources/bg/private ./dist/GrassClipper/resources/bg",
+    "move_bgs": "mkdir dist\\GrassClipper\\resources\\bg\\private && cp -r ./resources/bg/private ./dist/GrassClipper/resources/bg && cp -r ./resources/bg/server ./dist/GrassClipper/resources/bg",
     "rename_exe": "mv ./dist/GrassClipper/GrassClipper-win_x64.exe ./dist/GrassClipper/GrassClipper.exe",
     "clean_dist": "rm -rf ./dist"
   }

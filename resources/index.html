@@ -6,50 +6,49 @@
     <script src="js/windowDrag.js"></script>
     <script src="js/hoverEvt.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/translation.js"></script>
   </head>
   <body>
     <div id="firstTimeNotice" style="display: none">
       <span>
-        <span class="boldTitle">Looks like this is your first time opening GrassClipper!<br/></span>
-        First of all, welcome, happy to see you here! :)<br/><br/>
-        Would you like to run the proxy installer?<br/>
-        (required to connect to private servers)
       </span>
       <div id="firstTimeBtns">
-        <button class="playBtn" id="firstTimeBtn" onclick="runInstallScript()">Install</button>
-        <button class="altBtn" id="firstTimeBtn" onclick="closeFirstTimePopup()">No thanks</button>
+        <button class="playBtn" id="firstTimeInstallBtn" onclick="runInstallScript()">Install</button>
+        <button class="altBtn" id="firstTimeDenyBtn" onclick="closeFirstTimePopup()">No thanks</button>
       </div>
     </div>
     <div id="settingsPanel" style="display: none;">
-      <span id="fullSettingsTitle">Settings</span>
-      <div id="settingsClose">
-        <img src="icons/close.svg" onclick="closeSettings()" />
+      <div id="settingsTitleBar">
+        <span id="fullSettingsTitle">Settings</span>
+        <div id="settingsClose">
+          <img src="icons/close.svg" onclick="closeSettings()" />
+        </div>
       </div>
       <div id="settingsPanelInner">
-        <div class="settingTitle">
+        <div class="settingTitle", id="scriptsTitle">
           <span>Scripts</span>
         </div>
         <div class="settingsRow">
           <div class="settingSection">
-            <span class="settingLabel">Kill Switch</span>
+            <span class="settingLabel" id="killswitchTitle">Kill Switch</span>
             <input type="checkbox" id="killswitchOption" onchange="toggleKillSwitch()" />
           </div>
-          <span class="settingSubtitle">
+          <span class="settingSubtitle" id="killswitchSubtitle">
             Only for those very paranoid about bans. Kills the game process *and your internet* if something happens to the proxy.
           </span>
         </div>
         <div class="settingsRow">
           <div class="settingSection">
-            <span class="settingLabel">Install Proxy Server</span>
-            <button class="smolBtn" onclick="runInstallScript()">Install</button>
+            <span class="settingLabel" id="proxyTitle">Install Proxy Server</span>
+            <button class="smolBtn" onclick="runInstallScript()" id="proxyInstall">Install</button>
           </div>
-          <span class="settingSubtitle">
+          <span class="settingSubtitle" id="proxySubtitle">
             Install the proxy server via the install script.
           </span>
         </div>
         <div class="settingsRow">
           <div class="settingSection">
-            <span class="settingLabel">Update</span>
+            <span class="settingLabel" id="updateTitle">Update</span>
             <button class="smolBtn disabled" onclick="updateResources()" id="updateBtn" disabled>Update</button>
           </div>
           <span class="settingSubtitle" id="updateSubtitle">
@@ -58,11 +57,21 @@
         </div>
         <div class="settingsRow">
           <div class="settingSection">
-            <span class="settingLabel">Enable Server Launcher</span>
+            <span class="settingLabel", id="serverLaunchTitle">Enable Server Launcher</span>
             <input type="checkbox" id="serverLaunchOption" onchange="toggleServerLaunchSection()" />
           </div>
           <span class="settingSubtitle" id="serverSubtitle">
             Enable to server launcher tile for launcher a local Grasscutter instance.
+          </span>
+        </div>
+        <div class="settingsRow">
+          <div class="settingSection">
+            <span class="settingLabel", id="languageTitle">Language</span>
+            <select id="languageSelect" onchange="handleLanguageChange(this)">
+            </select>
+          </div>
+          <span class="settingSubtitle" id="languageSubtitle">
+            Select your language!
           </span>
         </div>
       </div>
@@ -105,11 +114,11 @@
     <div id="bottomBar">
       <div class="bottomSection">
         <div>
-          <button class="smolBtn" onclick="setGenshinImpactFolder()">Set "Genshin Impact Game" folder</button>
+          <button class="smolBtn" onclick="setGenshinImpactFolder()" id="genshinFolderSet">Set "Genshin Impact Game" folder</button>
           <span id="genshinPath" style="margin-top: 4px;"></span>
         </div>
         <div style="display: none;">
-          <button class="smolBtn" onclick="setGrassCutterFolder()">Set "GrassCutter" .jar file</button>
+          <button class="smolBtn" onclick="setGrassCutterFolder()" id="grasscutterFileSet">Set "GrassCutter" .jar file</button>
           <span id="serverPath" style="margin-top: 4px;"></span>
         </div>
       </div>

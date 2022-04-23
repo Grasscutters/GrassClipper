@@ -51,7 +51,7 @@ body {
 
 #settingsPanel {
   width: 35%;
-  height: 60%;
+  height: 70%;
 }
 
 #fullSettingsTitle {
@@ -102,9 +102,15 @@ body {
   height: 30px;
 }
 
+#settingsTitleBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 #settingsClose {
   display: inline-block;
-  margin-left: 70%;
   transition: filter 0.1s ease-in-out;
 }
 
