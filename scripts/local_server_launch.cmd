@@ -11,4 +11,7 @@ set GRASSCUTTER_JAR=%GRASSCUTTER_JAR:"=%
 
 echo Starting local Grasscutter server...
 
+:: Change dir to server directory
+
+
 start /b java -jar %GRASSCUTTER_JAR%

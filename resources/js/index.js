@@ -499,6 +499,10 @@ async function getLanguages() {
   const languageFiles = (await filesystem.readDirectory(`${NL_CWD}/languages`)).filter(file => file.entry.endsWith('.json'))
   const config = await getCfg()
 
+  // Clear language options
+  const languageSelect = document.querySelector('#languageSelect')
+  languageSelect.innerHTML = ''
+
   // Load all languages as options
   for (const file of languageFiles) {
     const fullLanguageName = JSON.parse(await filesystem.readFile(`${NL_CWD}/languages/${file.entry}`)).fullLangName
