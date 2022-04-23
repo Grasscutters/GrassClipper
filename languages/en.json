@@ -24,7 +24,7 @@
   "languageOption": "Language",
   "languageSubtitle": "Select your language!",
   "enableServerLauncherOption": "Enable Server Launcher",
-  "enableServerLauncherSubtitle": "Enable to server launcher tile for launcher a local Grasscutter instance.",
+  "enableServerLauncherSubtitle": "Enable to server launcher tile for launching a local Grasscutter instance.",
 
   "introSen1": "Looks like this is your first time opening GrassClipper!",
   "introSen2": "First of all, welcome, happy to see you here! :)",
