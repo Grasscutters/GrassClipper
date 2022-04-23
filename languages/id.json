@@ -1,0 +1,39 @@
+{
+    "fullLangName": "Bahasa Indonesia",
+    "appName": "GrassClipper",
+  
+    "playOfficial": "Mainkan Official",
+    "playPrivate": "Mainkan Private",
+    "launchLocalServer": "Luncurkan Local Server",
+  
+    "genshinFolderSet": "Atur folder \"Genshin Impact Game\"",
+    "grasscutterFileSet": "Atur file \"GrassCutter\" .jar",
+    "folderNotSet": "Belum diatur",
+  
+    "ipPlaceholder": "Alamat IP",
+    "noFavorites": "Tidak ada favorite yang diatur",
+  
+    "settingsTitle": "Pengaturan",
+    "scriptsSectionTitle": "Scripts",
+    "killswitchOption": "Matikan Switch",
+    "killswitchSubtitle": "Untuk kamu yang paranoid terhadap ban. Matikan proses game *dan internetmu* apabila sesuatu terjadi pada proxy nya.",
+    "proxyOption": "Proxy",
+    "proxySubtitle": "Install proxy server melalui install script",
+    "updateOption": "Update",
+    "updateSubtitle": "Update otomatis dinonaktifkan untuk sementara. Cek GitHub untuk rilis terbaru.",
+    "languageOption": "Bahasa",
+    "languageSubtitle": "Pilih bahasamu!",
+    "enableServerLauncherOption": "Nyalakan Server Launcher",
+    "enableServerLauncherSubtitle": "Nyalakan tile server launcher untuk meluncurkan instance Grasscutter secara lokal.",
+  
+    "introSen1": "Sepertinya ini pertama kalinya kamu menggunakan GrassClipper!",
+    "introSen2": "Pertama-tama, selamat datang, senang bertemu denganmu! :)",
+    "introSen3": "Apa kamu ingin menjalankan installer proxy?",
+    "introSen4": "(diperlukan untuk terhubung dengan private servers)",
+  
+    "proxyInstallBtn": "Install",
+    "proxyInstallDeny": "Tidak terima kasih",
+  
+    "genshinFolderDialog": "Pilih folder Genshin Impact Game",
+    "grasscutterFileDialog": "Pilih file jar server GrassCutter"
+  }
