@@ -15,7 +15,7 @@ async function doTranslation() {
   const localization = await filesystem.readFile(`${NL_CWD}/languages/${config.language}.json`)
   localeObj = JSON.parse(localization)
 
-  const set = (id, localeString) => document.getElementById(id).innerHTML = localeString
+  const set = (id, localeString) => document.getElementById(id).innerHTML = localeString || 'UNKNOWN'
 
   // Begin filling in values
   set('titleSection', localeObj.appName)

@@ -410,6 +410,9 @@ async function openSettings() {
   killSwitch.checked = config.enableKillswitch
   serverLaunch.checked = config.serverLaunchPanel
 
+  // Load languages
+  getLanguages()
+
   // Check for updates
   //checkForUpdatesAndShow()
 }
@@ -490,6 +493,35 @@ async function toggleServerLaunchSection() {
   // Save setting
   config.serverLaunchPanel = !config.serverLaunchPanel
   Neutralino.storage.setData('config', JSON.stringify(config))
+}
+
+async function getLanguages() {
+  const languageFiles = (await filesystem.readDirectory(`${NL_CWD}/languages`)).filter(file => file.entry.endsWith('.json'))
+
+
+  // Load all languages as options
+  for (const file of languageFiles) {
+    const fullLanguageName = JSON.parse(await filesystem.readFile(`${NL_CWD}/languages/${file.entry}`)).fullLangName
+    const lang = file.entry.split('.json')[0]
+
+    const option = document.createElement('option')
+    option.value = lang
+    option.innerHTML = fullLanguageName
+
+    document.querySelector('#languageSelect').appendChild(option)
+  }
+}
+
+async function handleLanguageChange(elm) {
+  const list = elm
+  const config = await getCfg()
+
+  // Set language in config
+  config.language = list.value
+  Neutralino.storage.setData('config', JSON.stringify(config))
+
+  // Force refresh of application, no need for restart!
+  window.location.reload()
 }
 
 /**
