@@ -21,6 +21,8 @@
   "proxySubtitle": "Install the proxy server via the install script",
   "updateOption": "Update",
   "updateSubtitle": "Auto updating is temporarily disabled. Check GitHub for the newest releease.",
+  "languageOption": "Language",
+  "languageSubtitle": "Select your language!",
   "enableServerLauncherOption": "Enable Server Launcher",
   "enableServerLauncherSubtitle": "Enable to server launcher tile for launcher a local Grasscutter instance.",
 

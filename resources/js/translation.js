@@ -43,6 +43,8 @@ async function doTranslation() {
   set('updateBtn', localeObj.updateOption)
   set('updateTitle', localeObj.updateOption)
   set('updateSubtitle', localeObj.updateSubtitle)
+  set('languageTitle', localeObj.languageOption)
+  set('languageSubtitle', localeObj.languageSubtitle)
   set('serverLaunchTitle', localeObj.enableServerLauncherOption)
   set('serverSubtitle', localeObj.enableServerLauncherSubtitle)
   
