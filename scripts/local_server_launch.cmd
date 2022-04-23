@@ -3,6 +3,16 @@
 set GRASSCUTTER_JAR=%1
 set GRASSCUTTER_JAR=%GRASSCUTTER_JAR:"=%
 
+:: Get folder the jar is in
+set "X=%GRASSCUTTER_JAR%"
+:l
+if "%X:~-1%"=="\" goto al
+set "X=%X:~0,-1%"
+goto l
+:al
+set "X=%X:~0,-1%"
+set "GRASSCUTTER_ROOT=%X%"
+
 :: Ensure admin
 >nul 2>&1 reg query "HKU\S-1-5-19" || (
 	set params = %*:"="""%
@@ -12,6 +22,6 @@ set GRASSCUTTER_JAR=%GRASSCUTTER_JAR:"=%
 echo Starting local Grasscutter server...
 
 :: Change dir to server directory
-
+cd /d "%GRASSCUTTER_ROOT%"
 
 start /b java -jar %GRASSCUTTER_JAR%
