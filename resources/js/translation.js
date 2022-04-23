@@ -36,7 +36,7 @@ async function doTranslation() {
   set('grasscutterFileSet', localeObj.grasscutterFileSet)
 
   // Private options
-  set('ip', localeObj.ipPlaceholder)
+  document.querySelector('#ip').placeholder = localeObj.ipPlaceholder
 
   // Settings
   set('fullSettingsTitle', localeObj.settingsTitle)
