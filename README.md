@@ -34,6 +34,7 @@ Grasscutter launcher for easily switching between Official and Private servers
 # TODO
 
 * Interface
+  * [ ] Integrated banner creator
   * [x] UI
   * [x] Official and Private options
   * [x] Server IP input
