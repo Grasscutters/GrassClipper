@@ -497,7 +497,7 @@ async function toggleServerLaunchSection() {
 
 async function getLanguages() {
   const languageFiles = (await filesystem.readDirectory(`${NL_CWD}/languages`)).filter(file => file.entry.endsWith('.json'))
-
+  const config = await getCfg()
 
   // Load all languages as options
   for (const file of languageFiles) {
@@ -507,9 +507,15 @@ async function getLanguages() {
     const option = document.createElement('option')
     option.value = lang
     option.innerHTML = fullLanguageName
+    
+    // Set language selected to config language
+    if (lang === config.language) {
+      option.selected = true
+    }
 
     document.querySelector('#languageSelect').appendChild(option)
   }
+
 }
 
 async function handleLanguageChange(elm) {
