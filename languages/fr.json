@@ -24,16 +24,16 @@
   "languageOption": "Langages",
   "languageSubtitle": "Sélectionnez votre langue!",
   "enableServerLauncherOption": "Activer le lanceur de serveur",
-  "enableServerLauncherSubtitle": "Autoriser le lanceur à executer une instance locale de GrassCutter",
+  "enableServerLauncherSubtitle": "Autoriser le lanceur à executer une instance locale de Grasscutter",
 
   "introSen1": "On dirait que c’est la première fois que vous ouvrez GrassClipper!",
   "introSen2": "Bienvenue! Nous sommes heureux de vous voir parmis nous :)",
-  "introSen3": "Voulez-vous lancer l’installateur du proxy ?",
+  "introSen3": "Voulez-vous lancer l’installateur du proxy?",
   "introSen4": "(nécessaire pour se connecter à des serveurs privés)",
 
   "proxyInstallBtn": "Installer",
   "proxyInstallDeny": "Non merci",
 
-  "genshinFolderDialog": Sélectionnez le dossier contenant Genshin Impact",
-  "grasscutterFileDialog": "Selectionnez le fichier jar du serveur de GrassCutter"
+  "genshinFolderDialog": "Sélectionnez le dossier contenant Genshin Impact",
+  "grasscutterFileDialog": "Selectionnez le fichier jar du serveur de Grasscutter"
 }
