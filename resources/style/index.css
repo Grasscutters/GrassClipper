@@ -50,7 +50,7 @@ body {
 }
 
 #settingsPanel {
-  width: 30%;
+  width: 35%;
   height: 60%;
 }
 
@@ -65,7 +65,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 20%;
+  padding: 10px 10%;
 }
 
 .settingsRow {
@@ -104,7 +104,7 @@ body {
 
 #settingsClose {
   display: inline-block;
-  margin-left: 65%;
+  margin-left: 70%;
   transition: filter 0.1s ease-in-out;
 }
 
@@ -281,17 +281,29 @@ body {
 
 .bottomSection {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
+  width: 100%;
   background: #141414;
+  justify-content: space-evenly;
 }
 
-#genshinPath {
+.bottomSection div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #141414;
+  margin: 4px;
+  height: 10%;
+}
+
+#genshinPath, #serverPath {
   color: white;
   font-size: 14px;
 }
 
-#halvesContainer {
+#panelContainer {
   width: 100%;
   height: 100%;
   position: relative;
@@ -299,7 +311,7 @@ body {
   display: flex;
 }
 
-#firstHalf, #secondHalf {
+#firstPanel, #secondPanel, #thirdPanel {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -309,19 +321,22 @@ body {
   transition: width 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 
-#firstHalf:hover, #secondHalf:hover {
+#firstPanel:hover, #secondPanel:hover, #thirdPanel:hover {
   width: calc(100% + 150px);
 }
 
-#firstHalf {
+#firstPanel, #secondPanel {
   border-right: 6px solid #141414;
+}
+
+#firstPanel {
   background-position: -340px;
 }
 
 /* Move the first official button to the position on the png */
-#firstHalf button {
-  position: relative;
-  transform: translate(140px, 500px);
+#firstPanel button, #secondPanel button, #thirdPanel button {
+  display: block;
+  /* transform: translate(140px, 500px); */
   width: 300px;
   height: 60px;
 }
@@ -330,13 +345,7 @@ body {
   display: block;
 }
 
-#secondHalf button {
-  display: block;
-  width: 300px;
-  height: 60px;
-}
-
-#secondHalf input {
+#secondPanel input {
   margin-bottom: 4px;
   height: 20px;
   background: white;
@@ -348,7 +357,7 @@ body {
   transition: border-bottom 0.1s ease-in-out;
 }
 
-#secondHalf input:focus {
+#secondPanel input:focus {
   outline: none;
   border-bottom: 2px solid #ffc61e;
 }
@@ -356,9 +365,14 @@ body {
 /* Move the second private button the near-bottom */
 #secondControlContainer {
   position: relative;
-  transform: translate(115px, 456px);
+  /* transform: translate(115px, 456px); */
   width: 300px;
   height: 60px;
+  margin-top: calc(68vh - 40px) !important;
+}
+
+#secondControlContainer, #firstPanel button, #thirdPanel button {
+  margin-top: 68vh;
 }
 
 #serverInput input, #serverInput img{

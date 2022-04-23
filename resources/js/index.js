@@ -9,6 +9,7 @@ const filesystem = Neutralino.filesystem
 document.addEventListener('DOMContentLoaded', async () => {
   setBackgroundImage();
   displayGenshinFolder();
+  displayServerFolder();
 
   // Set title version
   document.querySelector('#version').innerHTML = NL_APPVERSION
@@ -18,6 +19,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (!config.genshinImpactFolder) {
     handleGenshinFolderNotSet()
+  }
+
+  if (!config.serverFolder) {
+    handleServerNotSet()
+  }
+
+  if (config.serverLaunchPanel) {
+    displayServerLaunchSection()
   }
 
   // Set last connect
@@ -92,8 +101,10 @@ async function getFavIps() {
 async function getCfg() {
   const defaultConf = {
     genshinImpactFolder: '',
+    serverFolder: '',
     lastConnect: '',
-    enableKillswitch: false
+    enableKillswitch: false,
+    serverLaunchPanel: false
   }
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
@@ -126,6 +137,16 @@ async function enableButtons() {
 }
 
 /**
+ * Enable server launch button
+ */
+ async function enableServerButton() {
+  const serverBtn = document.querySelector('#serverLaunch')
+
+  serverBtn.classList.remove('disabled')
+  serverBtn.disabled = false
+}
+
+/**
  * Disable buttons when the game folder is not set
  */
 async function handleGenshinFolderNotSet() {
@@ -133,7 +154,7 @@ async function handleGenshinFolderNotSet() {
   document.querySelector('#genshinPath').innerHTML = 'Not set'
 
   // Set official server background to default
-  document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/private/default.png")`
+  document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/private/default.png")`
 
   const offBtn = document.querySelector('#playOfficial')
   const privBtn = document.querySelector('#playPrivate')
@@ -145,6 +166,19 @@ async function handleGenshinFolderNotSet() {
   privBtn.disabled = true
 
   // TODO show a dialog of sorts
+}
+
+async function handleServerNotSet() {
+  // Set buttons to greyed out and disable
+  document.querySelector('#serverPath').innerHTML = 'Not set'
+
+  // Set official server background to default
+  // document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/private/default.png")`
+
+  const privBtn = document.querySelector('#serverLaunch')
+
+  privBtn.classList.add('disabled')
+  privBtn.disabled = true
 }
 
 async function proxyIsInstalled() {
@@ -173,6 +207,16 @@ async function displayGenshinFolder() {
 }
 
 /**
+ * Show the server folder under the select button
+ */
+ async function displayServerFolder() {
+  const elm = document.querySelector('#serverPath')
+  const config = await getCfg()
+
+  elm.innerHTML = config.serverFolder
+}
+
+/**
  * Set the background images of both the private and public sections
  */
 async function setBackgroundImage() {
@@ -180,12 +224,18 @@ async function setBackgroundImage() {
 
   const privImages = (await filesystem.readDirectory(NL_CWD + '/resources/bg/private')).filter(file => file.type === 'FILE' && !file.entry.includes('default'))
   const privImage = privImages[Math.floor(Math.random() * privImages.length)].entry
+
+  const servImages = (await filesystem.readDirectory(NL_CWD + '/resources/bg/server')).filter(file => file.type === 'FILE' && !file.entry.includes('default'))
+  const servImage = servImages[Math.floor(Math.random() * servImages.length)].entry
   
   // Set default image, it will change if the bg folder exists
-  document.querySelector('#firstHalf').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
+  document.querySelector('#firstPanel').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
 
   // Set the private background image
-  document.querySelector('#secondHalf').style.backgroundImage = `url("../bg/private/${privImage}")`
+  document.querySelector('#secondPanel').style.backgroundImage = `url("../bg/private/${privImage}")`
+  
+  // Set the server background image
+  document.querySelector('#thirdPanel').style.backgroundImage = `url("../bg/server/${servImage}")`
 
   return
 
@@ -234,7 +284,7 @@ async function setBackgroundImage() {
         const image = localImg[Math.floor(Math.random() * localImg.length)].entry
   
         // Set background image
-        document.querySelector('#firstHalf').style.backgroundImage = `url("../bg/official/${image}")`
+        document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/official/${image}")`
       }
     }
   }
@@ -350,8 +400,10 @@ async function openSettings() {
 
   // Fill setting options with what is currently set in config
   const killSwitch = document.querySelector('#killswitchOption')
+  const serverLaunch = document.querySelector('#serverLaunchOption')
 
   killSwitch.checked = config.enableKillswitch
+  serverLaunch.checked = config.serverLaunchPanel
 
   // Check for updates
   //checkForUpdatesAndShow()
@@ -359,11 +411,12 @@ async function openSettings() {
 
 async function closeSettings() {
   const settings = document.querySelector('#settingsPanel')
+  const config = await getCfg()
 
   settings.style.display = 'none'
 
   // In case we installed the proxy server
-  if (await proxyIsInstalled()) {
+  if (await proxyIsInstalled() && config.genshinImpactFolder) {
     const playPriv = document.querySelector('#playPrivate')
     
     playPriv.classList.remove('disabled')
@@ -411,6 +464,29 @@ async function checkForUpdatesAndShow() {
   }
 }
 
+async function displayServerLaunchSection() {
+  const serverPanel = document.querySelector('#thirdPanel')
+  const bottomBtnSection = document.querySelector('#serverPath').parentElement
+
+  if (serverPanel.style.display === 'none') {
+    serverPanel.style.removeProperty('display')
+    bottomBtnSection.style.removeProperty('display')
+  } else {
+    serverPanel.style.display = 'none'
+    bottomBtnSection.style.display = 'none'
+  }
+}
+
+async function toggleServerLaunchSection() {
+  const config = await getCfg()
+
+  displayServerLaunchSection()
+
+  // Save setting
+  config.serverLaunchPanel = !config.serverLaunchPanel
+  Neutralino.storage.setData('config', JSON.stringify(config))
+}
+
 /**
  * Set the game folder by opening a folder picker
  */
@@ -437,6 +513,23 @@ async function setGenshinImpactFolder() {
   setBackgroundImage()
   displayGenshinFolder()
   enableButtons()
+}
+
+async function setGrassCutterFolder() {
+  const folder = await Neutralino.os.showOpenDialog('Select GrassCutter server jar', {
+    filters: [
+      { name: 'Jar files', extensions: ['jar'] }
+    ]
+  })
+
+  // Set the folder in our configuration
+  const config = await getCfg()
+
+  config.serverFolder = folder
+  Neutralino.storage.setData('config', JSON.stringify(config))
+
+  displayServerFolder()
+  enableServerButton()
 }
 
 /**
@@ -480,6 +573,12 @@ async function launchPrivate() {
 
   // Pass IP and game folder to the private server launcher
   Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/${await getGenshinExecName()}" "${NL_CWD}" ${config.enableKillswitch}`).catch(e => console.log(e))
+}
+
+async function launchLocalServer() {
+  const config = await getCfg()
+
+  Neutralino.os.execCommand(`${NL_CWD}/scripts/local_server_launch.cmd "${config.serverFolder}"`).catch(e => console.log(e))
 }
 
 /**

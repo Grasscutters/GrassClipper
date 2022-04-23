@@ -56,6 +56,15 @@
             Auto updating is temporarily disabled. Check GitHub for the newest release.
           </span>
         </div>
+        <div class="settingsRow">
+          <div class="settingSection">
+            <span class="settingLabel">Enable Server Launcher</span>
+            <input type="checkbox" id="serverLaunchOption" onchange="toggleServerLaunchSection()" />
+          </div>
+          <span class="settingSubtitle" id="serverSubtitle">
+            Enable to server launcher tile for launcher a local Grasscutter instance.
+          </span>
+        </div>
       </div>
     </div>
     <div id="controlBar">
@@ -73,11 +82,11 @@
         <img src="icons/close.svg" />
       </div>
     </div>
-    <div id="halvesContainer">
-      <div id="firstHalf">
+    <div id="panelContainer">
+      <div id="firstPanel">
         <button class="playBtn" id="playOfficial" onclick="launchOfficial()">Play Official</button>
       </div>
-      <div id="secondHalf">
+      <div id="secondPanel">
         <div id="ipList" style="display: none;"></div>
         <div id="secondControlContainer">
           <div id="serverInput">
@@ -88,12 +97,21 @@
           <button class="playBtn" id="playPrivate" onclick="launchPrivate()">Play Private</button>
         </div>
       </div>
+      <div id="thirdPanel" style="display: none;">
+        <button class="playBtn" id="serverLaunch" onclick="launchLocalServer()">Launch Local Server</button>
+      </div>
     </div>
     
     <div id="bottomBar">
       <div class="bottomSection">
-        <button class="smolBtn" onclick="setGenshinImpactFolder()">Set "Genshin Impact Game" folder</button>
-        <span id="genshinPath" style="margin-top: 4px;"></span>
+        <div>
+          <button class="smolBtn" onclick="setGenshinImpactFolder()">Set "Genshin Impact Game" folder</button>
+          <span id="genshinPath" style="margin-top: 4px;"></span>
+        </div>
+        <div style="display: none;">
+          <button class="smolBtn" onclick="setGrassCutterFolder()">Set "GrassCutter" .jar file</button>
+          <span id="serverPath" style="margin-top: 4px;"></span>
+        </div>
       </div>
     </div>
   </body>

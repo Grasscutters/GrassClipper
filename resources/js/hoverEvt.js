@@ -1,21 +1,36 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  const firstHalf = document.querySelector('#firstHalf')
-  const secondHalf = document.querySelector('#secondHalf')
+  const firstPanel = document.querySelector('#firstPanel')
+  const secondPanel = document.querySelector('#secondPanel')
+  const thirdPanel = document.querySelector('#thirdPanel')
 
   // Listen to hovers
-  firstHalf.addEventListener('mouseover', () => {
-    secondHalf.classList.add('darken')
+  firstPanel.addEventListener('mouseover', () => {
+    secondPanel.classList.add('darken')
+    thirdPanel.classList.add('darken')
   })
 
-  firstHalf.addEventListener('mouseout', () => {
-    secondHalf.classList.remove('darken')
+  firstPanel.addEventListener('mouseout', () => {
+    secondPanel.classList.remove('darken')
+    thirdPanel.classList.remove('darken')
   })
 
-  secondHalf.addEventListener('mouseover', () => {
-    firstHalf.classList.add('darken')
+  secondPanel.addEventListener('mouseover', () => {
+    firstPanel.classList.add('darken')
+    thirdPanel.classList.add('darken')
   })
 
-  secondHalf.addEventListener('mouseout', () => {
-    firstHalf.classList.remove('darken')
+  secondPanel.addEventListener('mouseout', () => {
+    firstPanel.classList.remove('darken')
+    thirdPanel.classList.remove('darken')
+  })
+
+  thirdPanel.addEventListener('mouseover', () => {
+    firstPanel.classList.add('darken')
+    secondPanel.classList.add('darken')
+  })
+
+  thirdPanel.addEventListener('mouseout', () => {
+    firstPanel.classList.remove('darken')
+    secondPanel.classList.remove('darken')
   })
 })
