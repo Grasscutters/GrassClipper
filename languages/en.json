@@ -29,7 +29,7 @@
   "introSen1": "Looks like this is your first time opening GrassClipper!",
   "introSen2": "First of all, welcome, happy to see you here! :)",
   "introSen3": "Would you like to run the proxy installer?",
-  "introSen4": "(required to connect to private servers)",
+  "introSen4": "(required to connect to servers)",
 
   "proxyInstallBtn": "Install",
   "proxyInstallDeny": "No thanks",
