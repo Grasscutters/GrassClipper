@@ -4,127 +4,6 @@ let localeObj;
 const filesystem = Neutralino.filesystem
 
 /**
- * Every autofill, such as backgrounds and the game folder,
- * should be done here to ensure DOM contents are loaded.
- */
-document.addEventListener('DOMContentLoaded', async () => {
-  setBackgroundImage();
-  displayGenshinFolder();
-  displayServerFolder();
-
-  // Set title version
-  document.querySelector('#version').innerHTML = NL_APPVERSION
-
-  const config = await getCfg()
-  const ipArr = await getFavIps()
-
-  if (config.serverLaunchPanel) {
-    displayServerLaunchSection()
-  }
-
-  // Set last connect
-  document.querySelector('#ip').value = config.lastConnect
-
-  if (ipArr.includes(config.lastConnect)) {
-    document.querySelector('#star').src = 'icons/star_filled.svg'
-  }
-  
-  // Disable private game launch if proxy IP or proxy server is not found
-  const playPriv = document.querySelector('#playPrivate') 
-
-  if (!(await proxyIsInstalled())) {
-    playPriv.classList.add('disabled')
-    playPriv.disabled = true
-  }
-
-  // Exit favorites list and settings panel when clicking outside of it
-  window.addEventListener("click", function(e) {
-    const favList = document.querySelector('#ipList')
-    const settingsPanel = document.querySelector('#settingsPanel')
-
-    // This will close the favorites list no matter what is clicked
-    if (favList.style.display !== 'none') {
-      favList.style.display = 'none'
-      favList.style.transform = ''
-    }
-
-    // This will close the settings panel no matter what is clicked
-    let settingCheckElm = e.target
-
-    while(settingCheckElm.tagName !== 'BODY') {
-      if (settingCheckElm.id === 'settingsPanel'
-          || settingCheckElm.id === 'settingsBtn') {
-        return
-      }
-
-      settingCheckElm = settingCheckElm.parentElement
-    }
-
-    // We travelled through the parents, so if we are at the body, we clicked outside of the settings panel
-    if (settingCheckElm.tagName === 'BODY') {
-      // This will close the settings panel only when something outside of it is clicked
-      if (settingsPanel.style.display !== 'none') {
-        settingsPanel.style.display = 'none'
-      }
-    }
-  });
-
-  // Ensure we do the translation at the very end, after everything else has loaded
-  await doTranslation()
-  
-  if (!config.genshinImpactFolder) {
-    handleGenshinFolderNotSet()
-  }
-
-  if (!config.serverFolder) {
-    handleServerNotSet()
-  }
-})
-
-/**
- * Get the list of favorite IPs
- * 
- * @returns {Promise<string[]>}
- */
-async function getFavIps() {
-  const ipStr = await Neutralino.storage.getData('favorites').catch(e => {
-    // The data isn't set, so this is our first time opening
-    Neutralino.storage.setData('favorites', JSON.stringify([]))
-  })
-
-  const ipArr = ipStr ? JSON.parse(ipStr) : []
-
-  return ipArr
-}
-
-/**
- * Get configuration
- * 
- * @returns {Promise<string>}
- */
-async function getCfg() {
-  const defaultConf = {
-    genshinImpactFolder: '',
-    serverFolder: '',
-    lastConnect: '',
-    enableKillswitch: false,
-    serverLaunchPanel: false,
-    language: 'en'
-  }
-  const cfgStr = await Neutralino.storage.getData('config').catch(e => {
-    // The data isn't set, so this is our first time opening
-    Neutralino.storage.setData('config', JSON.stringify(defaultConf))
-
-    // Show the first time notice if there is no config
-    document.querySelector('#firstTimeNotice').style.display = 'block'
-  })
-
-  const config = cfgStr ? JSON.parse(cfgStr) : defaultConf
-
-  return config
-}
-
-/**
  * Enable play buttons
  */
 async function enableButtons() {
@@ -184,21 +63,6 @@ async function handleServerNotSet() {
 
   privBtn.classList.add('disabled')
   privBtn.disabled = true
-}
-
-async function proxyIsInstalled() {
-  // Check if the proxy server is installed
-  const curDirList = await filesystem.readDirectory(NL_CWD)
-
-  if (curDirList.find(f => f.entry === 'ext')) {
-    const extFiles = await filesystem.readDirectory(NL_CWD + '/ext')
-
-    if (extFiles.find(f => f.entry === 'mitmdump.exe')) {
-      return true
-    }
-  }
-
-  return false
 }
 
 /**
@@ -366,35 +230,6 @@ async function handleFavoriteList() {
   }
 }
 
-/**
- * Add the current value of the IP input to the favorites list
- * OR
- * Remove the current value of the IP input from the favorites list 
- */
-async function setFavorite() {
-  const ip = document.querySelector('#ip').value
-  const ipArr = await getFavIps()
-
-  // Set star icon
-  const star = document.querySelector('#star')
-
-  if (star.src.includes('filled') && ip) {
-    star.src = 'icons/star_empty.svg'
-
-    // remove from list
-    ipArr.splice(ipArr.indexOf(ip), 1)
-  } else {
-    star.src = 'icons/star_filled.svg'
-
-    // add to list
-    if (ip && !ipArr.includes(ip)) {
-      ipArr.push(ip)
-    }
-  }
-
-  Neutralino.storage.setData('favorites', JSON.stringify(ipArr))
-}
-
 async function openSettings() {
   const settings = document.querySelector('#settingsPanel')
   const config = await getCfg()
@@ -430,15 +265,6 @@ async function closeSettings() {
     playPriv.classList.remove('disabled')
     playPriv.disabled = false
   }
-}
-
-async function toggleKillSwitch() {
-  const killSwitch = document.querySelector('#killswitchOption')
-  const config = await getCfg()
-
-  config.enableKillswitch = killSwitch.checked
-
-  Neutralino.storage.setData('config', JSON.stringify(config))
 }
 
 async function closeFirstTimePopup() {
@@ -483,55 +309,6 @@ async function displayServerLaunchSection() {
     serverPanel.style.display = 'none'
     bottomBtnSection.style.display = 'none'
   }
-}
-
-async function toggleServerLaunchSection() {
-  const config = await getCfg()
-
-  displayServerLaunchSection()
-
-  // Save setting
-  config.serverLaunchPanel = !config.serverLaunchPanel
-  Neutralino.storage.setData('config', JSON.stringify(config))
-}
-
-async function getLanguages() {
-  const languageFiles = (await filesystem.readDirectory(`${NL_CWD}/languages`)).filter(file => file.entry.endsWith('.json'))
-  const config = await getCfg()
-
-  // Clear language options
-  const languageSelect = document.querySelector('#languageSelect')
-  languageSelect.innerHTML = ''
-
-  // Load all languages as options
-  for (const file of languageFiles) {
-    const fullLanguageName = JSON.parse(await filesystem.readFile(`${NL_CWD}/languages/${file.entry}`)).fullLangName
-    const lang = file.entry.split('.json')[0]
-
-    const option = document.createElement('option')
-    option.value = lang
-    option.innerHTML = fullLanguageName
-    
-    // Set language selected to config language
-    if (lang === config.language) {
-      option.selected = true
-    }
-
-    document.querySelector('#languageSelect').appendChild(option)
-  }
-
-}
-
-async function handleLanguageChange(elm) {
-  const list = elm
-  const config = await getCfg()
-
-  // Set language in config
-  config.language = list.value
-  Neutralino.storage.setData('config', JSON.stringify(config))
-
-  // Force refresh of application, no need for restart!
-  window.location.reload()
 }
 
 /**
@@ -580,22 +357,6 @@ async function setGrassCutterFolder() {
 }
 
 /**
- * Get the name of the game executable
- * 
- * @returns {Promise<String>}
- */
-async function getGenshinExecName() {
-  // Scan genshin dir
-  const config = await getCfg()
-  const genshinDir = await filesystem.readDirectory(config.genshinImpactFolder)
-
-  // Find the executable
-  const genshinExec = genshinDir.find(file => file.entry.endsWith('.exe'))
-
-  return genshinExec.entry
-}
-
-/**
  * Launch the game with no modifications nor proxy
  */
 async function launchOfficial() {
@@ -626,20 +387,4 @@ async function launchLocalServer() {
   const config = await getCfg()
 
   Neutralino.os.execCommand(`${NL_CWD}/scripts/local_server_launch.cmd "${config.serverFolder}"`).catch(e => console.log(e))
-}
-
-/**
- * Minimize the window
- */
-function minimizeWin() {
-  console.log('min')
-  Neutralino.window.minimize()
-}
-
-/**
- * Close the window
- */
-function closeWin() {
-  console.log('close')
-  Neutralino.app.exit()
 }
