@@ -9,6 +9,7 @@ const filesystem = Neutralino.filesystem
 document.addEventListener('DOMContentLoaded', async () => {
   setBackgroundImage();
   displayGenshinFolder();
+  displayServerFolder();
 
   // Set title version
   document.querySelector('#version').innerHTML = NL_APPVERSION
@@ -18,6 +19,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (!config.genshinImpactFolder) {
     handleGenshinFolderNotSet()
+  }
+
+  if (!config.serverFolder) {
+    handleServerNotSet()
   }
 
   // Set last connect
@@ -92,6 +97,7 @@ async function getFavIps() {
 async function getCfg() {
   const defaultConf = {
     genshinImpactFolder: '',
+    serverFolder: '',
     lastConnect: '',
     enableKillswitch: false,
     serverLaunchPanel: false
@@ -127,6 +133,16 @@ async function enableButtons() {
 }
 
 /**
+ * Enable server launch button
+ */
+ async function enableServerButton() {
+  const serverBtn = document.querySelector('#serverLaunch')
+
+  serverBtn.classList.remove('disabled')
+  serverBtn.disabled = false
+}
+
+/**
  * Disable buttons when the game folder is not set
  */
 async function handleGenshinFolderNotSet() {
@@ -146,6 +162,19 @@ async function handleGenshinFolderNotSet() {
   privBtn.disabled = true
 
   // TODO show a dialog of sorts
+}
+
+async function handleServerNotSet() {
+  // Set buttons to greyed out and disable
+  document.querySelector('#serverPath').innerHTML = 'Not set'
+
+  // Set official server background to default
+  // document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/private/default.png")`
+
+  const privBtn = document.querySelector('#serverLaunch')
+
+  privBtn.classList.add('disabled')
+  privBtn.disabled = true
 }
 
 async function proxyIsInstalled() {
@@ -171,6 +200,16 @@ async function displayGenshinFolder() {
   const config = await getCfg()
 
   elm.innerHTML = config.genshinImpactFolder
+}
+
+/**
+ * Show the server folder under the select button
+ */
+ async function displayServerFolder() {
+  const elm = document.querySelector('#serverPath')
+  const config = await getCfg()
+
+  elm.innerHTML = config.serverFolder
 }
 
 /**
@@ -366,11 +405,12 @@ async function openSettings() {
 
 async function closeSettings() {
   const settings = document.querySelector('#settingsPanel')
+  const config = await getCfg()
 
   settings.style.display = 'none'
 
   // In case we installed the proxy server
-  if (await proxyIsInstalled()) {
+  if (await proxyIsInstalled() && config.genshinImpactFolder) {
     const playPriv = document.querySelector('#playPrivate')
     
     playPriv.classList.remove('disabled')
@@ -459,6 +499,19 @@ async function setGenshinImpactFolder() {
   setBackgroundImage()
   displayGenshinFolder()
   enableButtons()
+}
+
+async function setGrassCutterFolder() {
+  const folder = await Neutralino.os.showFolderDialog('Select GrassCutter folder')
+
+  // Set the folder in our configuration
+  const config = await getCfg()
+
+  config.serverFolder = folder
+  Neutralino.storage.setData('config', JSON.stringify(config))
+
+  displayServerFolder()
+  enableServerButton()
 }
 
 /**
