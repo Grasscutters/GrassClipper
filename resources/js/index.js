@@ -405,8 +405,6 @@ async function openSettings() {
   killSwitch.checked = config.enableKillswitch
   serverLaunch.checked = config.serverLaunchPanel
 
-  console.log(config)
-
   // Check for updates
   //checkForUpdatesAndShow()
 }

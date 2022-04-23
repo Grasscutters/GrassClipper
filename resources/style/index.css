@@ -368,11 +368,11 @@ body {
   /* transform: translate(115px, 456px); */
   width: 300px;
   height: 60px;
-  margin-top: calc(65vh - 40px) !important;
+  margin-top: calc(68vh - 40px) !important;
 }
 
 #secondControlContainer, #firstPanel button, #thirdPanel button {
-  margin-top: 65vh;
+  margin-top: 68vh;
 }
 
 #serverInput input, #serverInput img{
