@@ -9,6 +9,10 @@ Grasscutter launcher for easily switching between Official and Private servers
 * [Setup (for development)](#setup-for-development)
 * [TODO](#todo)
 * [Common Problems](#having-problems)
+  * [White Screen Fix](#white-screen-fix)
+  * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
+  * [No internet](#i-have-no-internet-after-closing-everything-restarting-my-pc)
+  * []
 * [Screenshots](#screenshots)
 
 # Setup (for Users)
@@ -48,17 +52,17 @@ Grasscutter launcher for easily switching between Official and Private servers
 
 Below are some scenarios you may encounter and their solutions.
 
-### My Discord is not letting my send messages or load images/My Youtube is acting strange!
+### White Screen Fix
+
+Encountering a white screen? [Ensure WebView2 is installed](https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/#download)
+
+### My Discord is not letting me send messages or load images/My Youtube is acting strange!
 
 Discord/YouTube (plus surely some others) does not seem to be a fan of the proxy server. You may need to disable it by either closing mitmdump or by disabling your proxy in the Windows proxy settings.
 
 ### I have no internet after closing everything/restarting my PC!
 
 The launcher most likely did not close correctly, and was unable to clean your proxy settings back to what they were. Disable your proxy in the Windows proxy settings.
-
-### The game will not launch/background launcher images don't load!
-
-Ensure you have selected to correct path to Genshin Impact. This is ***not*** your `Genshin Impact` folder, but instead the `Genshin Impact Game` folder found within the main folder (or just in general, if you do not use the launcher).
 
 # Screenshots
 
