@@ -468,11 +468,14 @@ async function checkForUpdatesAndShow() {
 
 async function displayServerLaunchSection() {
   const serverPanel = document.querySelector('#thirdPanel')
+  const bottomBtnSection = document.querySelector('#serverPath').parentElement
 
   if (serverPanel.style.display === 'none') {
     serverPanel.style.removeProperty('display')
+    bottomBtnSection.style.removeProperty('display')
   } else {
     serverPanel.style.display = 'none'
+    bottomBtnSection.style.display = 'none'
   }
 }
 
