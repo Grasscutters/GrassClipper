@@ -1,0 +1,40 @@
+{
+    "fullLangName": "Vietnamese",
+    "appName": "GrassClipper",
+  
+    "playOfficial": "Máy chủ chính thức",
+    "playPrivate": "Máy chủ riêng tư",
+    "launchLocalServer": "Khởi động Grasscutter",
+  
+    "genshinFolderSet": "Chỉnh địa điểm thư mục \"Genshin Impact Game\"",
+    "grasscutterFileSet": "Chỉnh địa điểm file \"GrassCutter\"",
+    "folderNotSet": "Chưa chỉnh file",
+  
+    "ipPlaceholder": "Địa chỉ IP",
+    "noFavorites": "Không có máy chủ yêu thích",
+  
+    "settingsTitle": "Cài đặt",
+    "scriptsSectionTitle": "Scripts", 
+    "killswitchOption": "Công tắc đóng",
+    "killswitchSubtitle": "Dành cho những ai sợ bị ban. Tắt game *và mạng* nếu proxy có vấn đề.",
+    "proxyOption": "Proxy",
+    "proxySubtitle": "Tải proxy",
+    "updateOption": "Cập nhật",
+    "updateSubtitle": "Tạm thời chưa dùng được. Kiểm tra Github để có bản cập nhật mới",
+    "languageOption": "Ngôn ngữ",
+    "languageSubtitle": "Chọn ngôn ngữ",
+
+    "enableServerLauncherOption": "Grasscutter",
+    "enableServerLauncherSubtitle": "Thêm lựa chọn bật grasscutter",
+  
+    "introSen1": "Hình như đây là lần đầu tiên bạn dùng ứng dụng này!",
+    "introSen2": "Trước hết, chào bạn, cảm ơn bạn đã sử dụng! :)",
+    "introSen3": "Bạn có muốn tải proxy không?",
+    "introSen4": "(dùng để vào máy chủ riêng)",
+  
+    "proxyInstallBtn": "Có",
+    "proxyInstallDeny": "Không",
+  
+    "genshinFolderDialog": "Chọn thư mục có chứa game",
+    "grasscutterFileDialog": "Chọn file Grasscutter"
+  }
