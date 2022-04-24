@@ -1,0 +1,39 @@
+{
+  "fullLangName": "Traditional Chinese",
+  "appName": "GrassClipper啟動器",
+
+  "playOfficial": "啟動官方伺服器",
+  "playPrivate": "啟動私人伺服器",
+  "launchLocalServer": "啟動本地伺服器",
+
+  "gameFolderSet": "設定 \"Genshin Impact game\" 資料夾",
+  "grasscutterFileSet": "設定 \"Grasscutter\" .jar 檔案",
+  "folderNotSet": "尚未設定Genshin Impact game資料夾",
+
+  "ipPlaceholder": "IP地址",
+  "noFavorites": "没有收藏",
+
+  "settingsTitle": "設定",
+  "scriptsSectionTitle": "進程",
+  "killswitchOption": "終止服務進程",
+  "killswitchSubtitle": "這是給對於封號非常敏感的人們，啟用此選項將會在你Proxy中發生任何錯誤時會終止你的遊戲（還有你的網路。）",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "通過安裝腳本來安裝Proxy伺服器。",
+  "updateOption": "更新",
+  "updateSubtitle": "自動更新暫時不可用。查看GitHub以獲取最新的Release。",
+  "languageOption": "語言",
+  "languageSubtitle": "選擇你最熟悉的語言！",
+  "enableServerLauncherOption": "啟用本地伺服器",
+  "enableServerLauncherSubtitle": "啟動器內將會為你顯示啟動本地伺服器選項。",
+
+  "introSen1": "看來這是你第一次使用GrassClipper啟動器！",
+  "introSen2": "首先，歡迎你使用GrassClipper啟動器，其次很高興在這裡見到你！ :)",
+  "introSen3": "是否要運行Proxy安裝程序？",
+  "introSen4": "（需要連接到私人伺服器）",
+
+  "proxyInstallBtn": "安装",
+  "proxyInstallDeny": "不用了，謝謝。",
+
+  "gameFolderDialog": "選擇Genshin Impact game資料夾",
+  "grasscutterFileDialog": "選擇Grasscutter伺服器jar檔案"
+}
