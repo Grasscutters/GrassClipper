@@ -339,7 +339,7 @@ async function setGenshinImpactFolder() {
   enableButtons()
 }
 
-async function setGrassCutterFolder() {
+async function setGrasscutterFolder() {
   const folder = await Neutralino.os.showOpenDialog(localeObj.grasscutterFileDialog, {
     filters: [
       { name: 'Jar files', extensions: ['jar'] }

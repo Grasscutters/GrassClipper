@@ -3,11 +3,11 @@
     "appName": "GrassClipper",
   
     "playOfficial": "Mainkan Official",
-    "playPrivate": "Mainkan Private",
+    "playPrivate": "Mainkan Grasscutter",
     "launchLocalServer": "Luncurkan Local Server",
   
     "genshinFolderSet": "Atur folder \"Genshin Impact Game\"",
-    "grasscutterFileSet": "Atur file \"GrassCutter\" .jar",
+    "grasscutterFileSet": "Atur file \"Grasscutter\" .jar",
     "folderNotSet": "Belum diatur",
   
     "ipPlaceholder": "Alamat IP",
@@ -35,5 +35,5 @@
     "proxyInstallDeny": "Tidak terima kasih",
   
     "genshinFolderDialog": "Pilih folder Genshin Impact Game",
-    "grasscutterFileDialog": "Pilih file jar server GrassCutter"
+    "grasscutterFileDialog": "Pilih file jar server Grasscutter"
   }

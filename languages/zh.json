@@ -3,12 +3,12 @@
   "appName": "GrassClipper启动器",
 
   "playOfficial": "游玩官方服务器",
-  "playPrivate": "游玩私人服务器",
+  "playPrivate": "在 Grasscutter 上播放",
   "launchLocalServer": "启动本地服务器",
 
   "genshinFolderSet": "选择 \"原神\" 文件夹",
-  "grasscutterFileSet": "选择 \"GrassCutter\" .jar 文件",
-  "folderNotSet": "没有设置原神文件夹或GrassCutter文件",
+  "grasscutterFileSet": "选择 \"Grasscutter\" .jar 文件",
+  "folderNotSet": "没有设置原神文件夹或Grasscutter文件",
 
   "ipPlaceholder": "IP地址",
   "noFavorites": "没有收藏",
@@ -35,5 +35,5 @@
   "proxyInstallDeny": "不用了，谢谢",
 
   "genshinFolderDialog": "选择原神文件夹",
-  "grasscutterFileDialog": "选择GrassCutter服务器jar文件"
+  "grasscutterFileDialog": "选择Grasscutter服务器jar文件"
 }

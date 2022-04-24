@@ -3,11 +3,11 @@
     "appName": "GrassClipper",
   
     "playOfficial": "Máy chủ chính thức",
-    "playPrivate": "Máy chủ riêng tư",
+    "playPrivate": "Grasscutter",
     "launchLocalServer": "Khởi động Grasscutter",
   
     "genshinFolderSet": "Chỉnh địa điểm thư mục \"Genshin Impact Game\"",
-    "grasscutterFileSet": "Chỉnh địa điểm file \"GrassCutter\"",
+    "grasscutterFileSet": "Chỉnh địa điểm file \"Grasscutter\"",
     "folderNotSet": "Chưa chỉnh file",
   
     "ipPlaceholder": "Địa chỉ IP",

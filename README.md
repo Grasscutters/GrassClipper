@@ -40,7 +40,7 @@ Grasscutter launcher for easily switching between Official and Private servers
   * [x] Server IP input
   * [x] Fun fancy CSS styling n stuff (CoD: MW 2019-style vertical menu for choosing between official and private servers? [See this](https://charlieintel.com/wp-content/uploads/2020/11/MW-new-menu.png))
   * [ ] Custom images for private server sections (anyone is welcome to submit a pull request to add some!)
-  * [ ] Optional username/password creation for servers before entering (not implemented in GrassCutter yet)
+  * [ ] Optional username/password creation for servers before entering (not implemented in Grasscutter yet)
   * [x] Kill switch script (optional)
   * [x] Automatically run `install.cmd` when opening for the first time
   * [ ] Fix Windows scaling issues?

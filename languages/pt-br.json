@@ -3,11 +3,11 @@
     "appName": "GrassClipper",
   
     "playOfficial": "Jogar (Oficial)",
-    "playPrivate": "Jogar (Privado)",
+    "playPrivate": "Jogar (Grasscutter)",
     "launchLocalServer": "Abrir Servidor Local",
   
     "genshinFolderSet": "Definir a pasta: \"Genshin Impact Game\" ",
-    "grasscutterFileSet": "Definir o arquivo .jar de \"GrassCutter\" ",
+    "grasscutterFileSet": "Definir o arquivo .jar de \"Grasscutter\" ",
     "folderNotSet": "Não Definida",
   
     "ipPlaceholder": "Endereço Ip",
@@ -24,7 +24,7 @@
     "languageOption": "Idioma",
     "languageSubtitle": "Selecione seu idioma!",
     "enableServerLauncherOption": "Permitir ao launcher ligar o servidor",
-    "enableServerLauncherSubtitle": "Permitir ao launcher iniciar uma instancia local do GrassCutter",
+    "enableServerLauncherSubtitle": "Permitir ao launcher iniciar uma instancia local do Grasscutter",
   
     "introSen1": "Parece que essa é a sua primeira vez usando o GrassClipper!",
     "introSen2": "Primeiramente, bem-vindo, estou feliz de te ver aqui! :)",
@@ -35,5 +35,5 @@
     "proxyInstallDeny": "Não obrigado",
   
     "genshinFolderDialog": "Selecione a pasta Genshin Impact Game",
-    "grasscutterFileDialog": "Selecione o arquivo jar do GrassCutter"
+    "grasscutterFileDialog": "Selecione o arquivo jar do Grasscutter"
 }
