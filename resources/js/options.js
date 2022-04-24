@@ -77,7 +77,10 @@ async function handleLanguageChange(elm) {
  */
  async function setFavorite() {
   const ip = document.querySelector('#ip').value
+  const port = document.querySelector('#port').value
   const ipArr = await getFavIps()
+
+  const addr = `${ip}:${port}`
 
   // Set star icon
   const star = document.querySelector('#star')
@@ -86,13 +89,13 @@ async function handleLanguageChange(elm) {
     star.src = 'icons/star_empty.svg'
 
     // remove from list
-    ipArr.splice(ipArr.indexOf(ip), 1)
+    ipArr.splice(ipArr.indexOf(addr), 1)
   } else {
     star.src = 'icons/star_filled.svg'
 
     // add to list
-    if (ip && !ipArr.includes(ip)) {
-      ipArr.push(ip)
+    if (ip && !ipArr.includes(addr)) {
+      ipArr.push(addr)
     }
   }
 

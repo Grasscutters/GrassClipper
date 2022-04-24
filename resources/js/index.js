@@ -164,9 +164,12 @@ async function setBackgroundImage() {
  */
 async function handleFavoriteInput() {
   const ip = document.querySelector('#ip').value
+  const port = document.querySelector('#port').value
   const ipArr = await getFavIps()
 
-  if (!ip || !ipArr.includes(ip)) {
+  const addr = `${ip}:${port}`
+
+  if (!ip || !ipArr.includes(addr)) {
     document.querySelector('#star').src = 'icons/star_empty.svg'
   } else {
     document.querySelector('#star').src = 'icons/star_filled.svg'
@@ -180,13 +183,18 @@ async function handleFavoriteInput() {
  */
 async function setIp(ip) {
   const ipInput = document.querySelector('#ip')
+  const portInput = document.querySelector('#port')
+
+  const parseIp = ip.split(':')[0]
+  const parsePort = ip.split(':')[1]
 
   // Set star
   if (ip) {
     document.querySelector('#star').src = 'icons/star_filled.svg'
   }
 
-  ipInput.value = ip
+  ipInput.value = parseIp
+  portInput.value = parsePort
 }
 
 /**
