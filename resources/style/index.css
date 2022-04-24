@@ -351,6 +351,10 @@ body {
   display: block;
 }
 
+#port {
+  width: 12%;
+}
+
 #secondPanel input {
   margin-bottom: 4px;
   height: 20px;

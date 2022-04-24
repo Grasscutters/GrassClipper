@@ -87,6 +87,6 @@ if "%PROXY_IP%" EQU "localhost" (
   :: Reconnect to the WiFi
   netsh wlan connect name="%WIFI%"
 
-	:: taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Killswitch"
+	taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Killswitch"
 
   exit

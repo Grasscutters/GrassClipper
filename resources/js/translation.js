@@ -13,6 +13,7 @@ async function doTranslation() {
   }
 
   const localization = await filesystem.readFile(`${NL_CWD}/languages/${config.language}.json`)
+  const engLocale = await filesystem.readFile(`${NL_CWD}/languages/en.json`)
   localeObj = JSON.parse(localization)
 
   const set = (id, localeString) => document.getElementById(id).innerHTML = localeString || 'UNKNOWN'
@@ -37,6 +38,7 @@ async function doTranslation() {
 
   // Private options
   document.querySelector('#ip').placeholder = localeObj.ipPlaceholder
+  document.querySelector('#port').placeholder = localeObj.portPlaceholder
 
   // Settings
   set('fullSettingsTitle', localeObj.settingsTitle)

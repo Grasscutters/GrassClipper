@@ -11,6 +11,7 @@
   "folderNotSet": "Not set",
 
   "ipPlaceholder": "IP Address",
+  "portPlaceholder": "Port (optional)",
   "noFavorites": "No favorites set",
 
   "settingsTitle": "Settings",
