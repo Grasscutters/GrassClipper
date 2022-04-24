@@ -275,6 +275,14 @@ async function closeFirstTimePopup() {
 async function runInstallScript() {
   Neutralino.os.execCommand(`${NL_CWD}/scripts/install.cmd "${NL_CWD}"`)
 
+  // Create an interval that will check for the proxy server installation finish
+  const interval = setInterval(async () => {
+    if (await proxyIsInstalled()) {
+      clearInterval(interval)
+      enableButtons()
+    }
+  }, 1000)
+
   closeFirstTimePopup()
 }
 
