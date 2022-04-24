@@ -72,12 +72,14 @@ The launcher most likely did not close correctly, and was unable to clean your p
 Thank you to everyone who has provided translations! <3
 
 * ZH - nuoxianCN & Scirese
+* ZH-TW - Kimi
 * PT-BR - na.na
 * VIE - labalityowo
 * ID - Iqrar99
 * FR - linsorak & memetrollsXD
 * ES - memetrollsXD
 * ND - memetrollsXD
+* RU - fitiskin
 
 # Screenshots
 
