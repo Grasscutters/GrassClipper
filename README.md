@@ -74,6 +74,8 @@ Thank you to everyone who has provided translations! <3
 * VIE - labalityowo
 * ID - Iqrar99
 * FR - linsorak & memetrollsXD
+* ES - memetrollsXD
+* ND - memetrollsXD
 
 # Screenshots
 
