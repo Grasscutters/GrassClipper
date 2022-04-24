@@ -1,4 +1,4 @@
-:: @echo off
+@echo off
 
 :: Ensure admin
 >nul 2>&1 reg query "HKU\S-1-5-19" || (
