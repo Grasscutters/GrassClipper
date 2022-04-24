@@ -6,7 +6,7 @@
 
 ##
 #
-#   Genshin Impact script for mitmproxy
+#   Anime game script for mitmproxy
 #
 #   https://github.com/MlgmXyysd/
 #
@@ -24,7 +24,7 @@ import string
 from mitmproxy import ctx
 from mitmproxy import http
 
-class MlgmXyysd_Genshin_Impact_Proxy:
+class MlgmXyysd_Anime_Game_Proxy:
 
     def load(self, loader):
         loader.add_option(
@@ -77,5 +77,5 @@ class MlgmXyysd_Genshin_Impact_Proxy:
             flow.request.host = REMOTE_HOST
 
 addons = [
-	MlgmXyysd_Genshin_Impact_Proxy()
+	MlgmXyysd_Anime_Game_Proxy()
 ]

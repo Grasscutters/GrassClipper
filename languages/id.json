@@ -6,7 +6,7 @@
     "playPrivate": "Mainkan Grasscutter",
     "launchLocalServer": "Luncurkan Local Server",
   
-    "genshinFolderSet": "Atur folder \"Genshin Impact Game\"",
+    "gameFolderSet": "Atur folder game",
     "grasscutterFileSet": "Atur file \"Grasscutter\" .jar",
     "folderNotSet": "Belum diatur",
   
@@ -34,6 +34,6 @@
     "proxyInstallBtn": "Install",
     "proxyInstallDeny": "Tidak terima kasih",
   
-    "genshinFolderDialog": "Pilih folder Genshin Impact Game",
+    "gameFolderDialog": "Pilih folder game",
     "grasscutterFileDialog": "Pilih file jar server Grasscutter"
   }

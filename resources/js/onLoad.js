@@ -5,7 +5,7 @@
  */
  document.addEventListener('DOMContentLoaded', async () => {
   setBackgroundImage();
-  displayGenshinFolder();
+  displayGameFolder();
   displayServerFolder();
 
   // Set title version
@@ -68,8 +68,8 @@
   // Ensure we do the translation at the very end, after everything else has loaded
   await doTranslation()
   
-  if (!config.genshinImpactFolder) {
-    handleGenshinFolderNotSet()
+  if (!config.gamefolder) {
+    handleGameNotSet()
   }
 
   if (!config.serverFolder) {

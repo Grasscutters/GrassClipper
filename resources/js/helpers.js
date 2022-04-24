@@ -5,7 +5,7 @@
  */
  async function getCfg() {
   const defaultConf = {
-    genshinImpactFolder: '',
+    gamefolder: '',
     serverFolder: '',
     lastConnect: '',
     enableKillswitch: false,
@@ -61,15 +61,15 @@ async function proxyIsInstalled() {
  * 
  * @returns {Promise<String>}
  */
- async function getGenshinExecName() {
-  // Scan genshin dir
+ async function getGameExecName() {
+  // Scan game dir
   const config = await getCfg()
-  const genshinDir = await filesystem.readDirectory(config.genshinImpactFolder)
+  const gameDir = await filesystem.readDirectory(config.gamefolder)
 
   // Find the executable
-  const genshinExec = genshinDir.find(file => file.entry.endsWith('.exe'))
+  const gameExec = gameDir.find(file => file.entry.endsWith('.exe'))
 
-  return genshinExec.entry
+  return gameExec.entry
 }
 
 /**

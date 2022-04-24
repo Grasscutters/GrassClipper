@@ -6,7 +6,7 @@
     "playPrivate": "Grasscutter",
     "launchLocalServer": "Khởi động Grasscutter",
   
-    "genshinFolderSet": "Chỉnh địa điểm thư mục \"Genshin Impact Game\"",
+    "gameFolderSet": "Chỉnh địa điểm thư mục trò chơi",
     "grasscutterFileSet": "Chỉnh địa điểm file \"Grasscutter\"",
     "folderNotSet": "Chưa chỉnh file",
   
@@ -35,6 +35,6 @@
     "proxyInstallBtn": "Có",
     "proxyInstallDeny": "Không",
   
-    "genshinFolderDialog": "Chọn thư mục có chứa game",
+    "gameFolderDialog": "Chọn thư mục có chứa trò chơi",
     "grasscutterFileDialog": "Chọn file Grasscutter"
   }

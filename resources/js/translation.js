@@ -32,7 +32,7 @@ async function doTranslation() {
   set('serverLaunch', localeObj.launchLocalServer)
 
   // File select buttons
-  set('genshinFolderSet', localeObj.genshinFolderSet)
+  set('gameFolderSet', localeObj.gameFolderSet)
   set('grasscutterFileSet', localeObj.grasscutterFileSet)
 
   // Private options

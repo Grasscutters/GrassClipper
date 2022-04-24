@@ -33,9 +33,9 @@ async function enableButtons() {
 /**
  * Disable buttons when the game folder is not set
  */
-async function handleGenshinFolderNotSet() {
+async function handleGameNotSet() {
   // Set buttons to greyed out and disable
-  document.querySelector('#genshinPath').innerHTML = localeObj.folderNotSet
+  document.querySelector('#gamePath').innerHTML = localeObj.folderNotSet
 
   // Set official server background to default
   document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/private/default.png")`
@@ -68,11 +68,11 @@ async function handleServerNotSet() {
 /**
  * Show the game folder under the select button
  */
-async function displayGenshinFolder() {
-  const elm = document.querySelector('#genshinPath')
+async function displayGameFolder() {
+  const elm = document.querySelector('#gamePath')
   const config = await getCfg()
 
-  elm.innerHTML = config.genshinImpactFolder
+  elm.innerHTML = config.gamefolder
 }
 
 /**
@@ -126,17 +126,17 @@ async function setBackgroundImage() {
     await filesystem.createDirectory(NL_CWD + '/resources/bg/official')
   }
 
-  if (config.genshinImpactFolder) {
+  if (config.gamefolder) {
     // See if bg folder exists in parent dir
-    const parentDir = await filesystem.readDirectory(config.genshinImpactFolder + '/..')
+    const parentDir = await filesystem.readDirectory(config.gamefolder + '/..')
 
     if (parentDir.find(dir => dir.entry === 'bg')) {
 
-      const officialImages = (await filesystem.readDirectory(config.genshinImpactFolder + '/../bg')).filter(file => file.type === 'FILE')
+      const officialImages = (await filesystem.readDirectory(config.gamefolder + '/../bg')).filter(file => file.type === 'FILE')
 
       if (officialImages.length > 0) {
         for (const bg of officialImages) {
-          const path = config.genshinImpactFolder.replace('\\', '/') + '/../bg/' + bg.entry
+          const path = config.gamefolder.replace('\\', '/') + '/../bg/' + bg.entry
   
           // See if the file exists already
           const currentBgs = (await filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
@@ -259,7 +259,7 @@ async function closeSettings() {
   settings.style.display = 'none'
 
   // In case we installed the proxy server
-  if (await proxyIsInstalled() && config.genshinImpactFolder) {
+  if (await proxyIsInstalled() && config.gamefolder) {
     const playPriv = document.querySelector('#playPrivate')
     
     playPriv.classList.remove('disabled')
@@ -314,8 +314,8 @@ async function displayServerLaunchSection() {
 /**
  * Set the game folder by opening a folder picker
  */
-async function setGenshinImpactFolder() {
-  const folder = await Neutralino.os.showFolderDialog(localeObj.genshinFolderDialog)
+async function setGameFolder() {
+  const folder = await Neutralino.os.showFolderDialog(localeObj.gameFolderDialog)
 
   // Set the folder in our configuration
   const config = await getCfg()
@@ -325,17 +325,17 @@ async function setGenshinImpactFolder() {
   const gameFolder = folderList.filter(file => file.entry.includes('Genshin Impact Game'))
 
   if (gameFolder.length > 0) {
-    config.genshinImpactFolder = folder + '\\Genshin Impact Game'
+    config.gamefolder = folder + '\\Genshin Impact Game'
     Neutralino.storage.setData('config', JSON.stringify(config))
   } else {
-    config.genshinImpactFolder = folder
+    config.gamefolder = folder
   }
 
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   // Refresh background and path
   setBackgroundImage()
-  displayGenshinFolder()
+  displayGameFolder()
   enableButtons()
 }
 
@@ -362,7 +362,7 @@ async function setGrasscutterFolder() {
 async function launchOfficial() {
   const config = await getCfg()
 
-  Neutralino.os.execCommand(config.genshinImpactFolder + '/' + await getGenshinExecName())
+  Neutralino.os.execCommand(config.gamefolder + '/' + await getGameExecName())
 }
 
 /**
@@ -380,7 +380,7 @@ async function launchPrivate() {
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   // Pass IP and game folder to the private server launcher
-  Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.genshinImpactFolder}/${await getGenshinExecName()}" "${NL_CWD}" ${config.enableKillswitch}`).catch(e => console.log(e))
+  Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} "${config.gamefolder}/${await getGameExecName()}" "${NL_CWD}" ${config.enableKillswitch}`).catch(e => console.log(e))
 }
 
 async function launchLocalServer() {

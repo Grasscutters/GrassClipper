@@ -6,7 +6,7 @@
   "playPrivate": "在 Grasscutter 上播放",
   "launchLocalServer": "启动本地服务器",
 
-  "genshinFolderSet": "选择 \"原神\" 文件夹",
+  "gameFolderSet": "选择 \"原神\" 文件夹",
   "grasscutterFileSet": "选择 \"Grasscutter\" .jar 文件",
   "folderNotSet": "没有设置原神文件夹或Grasscutter文件",
 
@@ -34,6 +34,6 @@
   "proxyInstallBtn": "安装",
   "proxyInstallDeny": "不用了，谢谢",
 
-  "genshinFolderDialog": "选择原神文件夹",
+  "gameFolderDialog": "选择原神文件夹",
   "grasscutterFileDialog": "选择Grasscutter服务器jar文件"
 }

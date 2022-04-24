@@ -6,7 +6,7 @@
   "playPrivate": "Jouer sur Grasscutter",
   "launchLocalServer": "Lancer le serveur en local",
 
-  "genshinFolderSet": "Définir le dossier \"Genshin Impact Game\"",
+  "gameFolderSet": "Définir le dossier game",
   "grasscutterFileSet": "Définir le fichier .jar \"Grasscutter\"",
   "folderNotSet": "Pas encore défini",
 
@@ -34,6 +34,6 @@
   "proxyInstallBtn": "Installer",
   "proxyInstallDeny": "Non merci",
 
-  "genshinFolderDialog": "Sélectionnez le dossier contenant Genshin Impact",
+  "gameFolderDialog": "Sélectionnez le dossier contenant le game",
   "grasscutterFileDialog": "Selectionnez le fichier jar du serveur de Grasscutter"
 }
