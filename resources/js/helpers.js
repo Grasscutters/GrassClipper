@@ -10,7 +10,8 @@
     lastConnect: '',
     enableKillswitch: false,
     serverLaunchPanel: false,
-    language: 'en'
+    language: 'en',
+    useHttps: true,
   }
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening

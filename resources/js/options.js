@@ -69,6 +69,17 @@ async function handleLanguageChange(elm) {
   window.location.reload()
 }
 
+/**
+ * Toggle the use of HTTPS
+ */
+ async function toggleKillSwitch() {
+  const httpsCheckbox = document.querySelector('#httpsOption')
+  const config = await getCfg()
+
+  config.useHttps = httpsCheckbox.checked
+
+  Neutralino.storage.setData('config', JSON.stringify(config))
+}
 
 /**
  * Add the current value of the IP input to the favorites list

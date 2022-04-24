@@ -249,9 +249,11 @@ async function openSettings() {
   // Fill setting options with what is currently set in config
   const killSwitch = document.querySelector('#killswitchOption')
   const serverLaunch = document.querySelector('#serverLaunchOption')
+  const httpsCheckbox = document.querySelector('#httpsOption')
 
   killSwitch.checked = config.enableKillswitch
   serverLaunch.checked = config.serverLaunchPanel
+  httpsCheckbox.checked = config.useHttps
 
   // Load languages
   getLanguages()

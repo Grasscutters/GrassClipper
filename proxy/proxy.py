@@ -41,6 +41,13 @@ class MlgmXyysd_Anime_Game_Proxy:
             help = "Port to replace",
         )
 
+        loader.add_option(
+            name = "use_https",
+            typespec = bool,
+            default = True,
+            help = "Use HTTPS",
+        )
+
     def request(self, flow: http.HTTPFlow) -> None:
         # This can also be replaced with another IP address.
         REMOTE_HOST = ctx.options.ip
@@ -82,6 +89,10 @@ class MlgmXyysd_Anime_Game_Proxy:
         ]
         
         if flow.request.host in LIST_DOMAINS:
+            if ctx.options.use_https:
+                flow.request.scheme = "https"
+            else:
+                flow.request.scheme = "http"
             flow.request.host = REMOTE_HOST
             flow.request.port = REMOTE_PORT
 
