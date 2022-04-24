@@ -14,9 +14,10 @@ async function doTranslation() {
 
   const localization = await filesystem.readFile(`${NL_CWD}/languages/${config.language}.json`)
   const engLocale = await filesystem.readFile(`${NL_CWD}/languages/en.json`)
+  engLocaleObj = JSON.parse(engLocale)
   localeObj = JSON.parse(localization)
 
-  const set = (id, localeString) => document.getElementById(id).innerHTML = localeString || 'UNKNOWN'
+  const set = (id, localeString) => document.getElementById(id).innerHTML = localeObj[localeString] || engLocaleObj[localeString]
 
   // Begin filling in values
   set('titleSection', localeObj.appName)
@@ -28,33 +29,35 @@ async function doTranslation() {
   document.querySelector('#titleSection').appendChild(verSpan)
 
   // Play buttons
-  set('playOfficial', localeObj.playOfficial)
-  set('playPrivate', localeObj.playPrivate)
-  set('serverLaunch', localeObj.launchLocalServer)
+  set('playOfficial', 'playOfficial')
+  set('playPrivate', 'playPrivate')
+  set('serverLaunch', 'launchLocalServer')
 
   // File select buttons
-  set('gameFolderSet', localeObj.gameFolderSet)
-  set('grasscutterFileSet', localeObj.grasscutterFileSet)
+  set('gameFolderSet', 'gameFolderSet')
+  set('grasscutterFileSet', 'grasscutterFileSet')
 
   // Private options
   document.querySelector('#ip').placeholder = localeObj.ipPlaceholder
   document.querySelector('#port').placeholder = localeObj.portPlaceholder
 
   // Settings
-  set('fullSettingsTitle', localeObj.settingsTitle)
-  set('scriptsTitle', localeObj.scriptsSectionTitle)
-  set('killswitchTitle', localeObj.killswitchOption)
-  set('killswitchSubtitle', localeObj.killswitchSubtitle)
-  set('proxyTitle', localeObj.proxyOption)
-  set('proxyInstall', localeObj.proxyInstallBtn)
-  set('proxySubtitle', localeObj.proxySubtitle)
-  set('updateBtn', localeObj.updateOption)
-  set('updateTitle', localeObj.updateOption)
-  set('updateSubtitle', localeObj.updateSubtitle)
-  set('languageTitle', localeObj.languageOption)
-  set('languageSubtitle', localeObj.languageSubtitle)
-  set('serverLaunchTitle', localeObj.enableServerLauncherOption)
-  set('serverSubtitle', localeObj.enableServerLauncherSubtitle)
+  set('fullSettingsTitle', 'settingsTitle')
+  set('scriptsTitle', 'scriptsSectionTitle')
+  set('killswitchTitle', 'killswitchOption')
+  set('killswitchSubtitle', 'killswitchSubtitle')
+  set('proxyTitle', 'proxyOption')
+  set('proxyInstall', 'proxyInstallBtn')
+  set('proxySubtitle', 'proxySubtitle')
+  set('updateBtn', 'updateOption')
+  set('updateTitle', 'updateOption')
+  set('updateSubtitle', 'updateSubtitle')
+  set('languageTitle', 'languageOption')
+  set('languageSubtitle', 'languageSubtitle')
+  set('serverLaunchTitle', 'enableServerLauncherOption')
+  set('serverSubtitle', 'enableServerLauncherSubtitle')
+  set('httpsOption', 'httpsOption')
+  set('httpsSubtitle', 'httpsSubtitle')
   
   // Intro popup
   const popup = document.getElementById('firstTimeNotice')
@@ -70,6 +73,6 @@ async function doTranslation() {
   introSpan.innerHTML += localeObj.introSen3 + '<br>'
   introSpan.innerHTML += localeObj.introSen4 + '<br>'
 
-  set('firstTimeInstallBtn', localeObj.proxyInstallBtn)
-  set('firstTimeDenyBtn', localeObj.proxyInstallDeny)
+  set('firstTimeInstallBtn', 'proxyInstallBtn')
+  set('firstTimeDenyBtn', 'proxyInstallDeny')
 }
