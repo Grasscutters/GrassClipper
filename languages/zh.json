@@ -1,39 +1,39 @@
 {
-  "fullLangName": "Simplified Chinese (中国人)",
+  "fullLangName": "Chinese",
   "appName": "GrassClipper启动器",
 
-  "playOfficial": "游玩官方服务器",
-  "playPrivate": "在 Grasscutter 上播放",
+  "playOfficial": "启动官方服务器",
+  "playPrivate": "启动私人服务器",
   "launchLocalServer": "启动本地服务器",
 
-  "gameFolderSet": "选择 \"原神\" 文件夹",
+  "gameFolderSet": "选择 \"Genshin Impact Game\" 文件夹",
   "grasscutterFileSet": "选择 \"Grasscutter\" .jar 文件",
-  "folderNotSet": "没有设置原神文件夹或Grasscutter文件",
+  "folderNotSet": "没有选择Genshin Impact Game文件夹或Grasscutter.jar文件",
 
-  "ipPlaceholder": "IP地址",
-  "noFavorites": "没有收藏",
+  "ipPlaceholder": "服务器IP地址",
+  "noFavorites": "没有收藏任何IP地址",
 
   "settingsTitle": "设置",
-  "scriptsSectionTitle": "进程",
+  "scriptsSectionTitle": "程序设置",
   "killswitchOption": "杀死服务进程",
-  "killswitchSubtitle": "仅为那些害怕被封号的人准备。此选项可以结束游戏进程(还可以让你断网，如果修改了代理设置的话)。",
-  "proxyOption": "代理",
-  "proxySubtitle": "通过安装脚本安装代理服务器。",
-  "updateOption": "更新",
+  "killswitchSubtitle": "为那些害怕被封号的人准备。启用此选项可以结束游戏进程(还可以让你断网，如果修改了代理设置的话)。",
+  "proxyOption": "安装代理服务器",
+  "proxySubtitle": "通过批处理文件 (install.cmd) 以安装代理服务器。",
+  "updateOption": "更新启动器",
   "updateSubtitle": "自动更新暂时不可用。查看GitHub以获取最新的Release。",
-  "languageOption": "语言",
-  "languageSubtitle": "选择你最熟悉的语言！",
+  "languageOption": "设置启动器语言",
+  "languageSubtitle": "选择你熟悉的语言以应用GrassClipper启动器！",
   "enableServerLauncherOption": "启用本地服务器",
-  "enableServerLauncherSubtitle": "启动器内为你显示启动本地服务器选项。",
+  "enableServerLauncherSubtitle": "在启动器内显示启动本地服务器选项。",
 
   "introSen1": "看来这是你第一次使用GrassClipper启动器！",
-  "introSen2": "首先，欢迎你使用GrassClipper启动器，其次很高兴在这里见到你！ :)",
-  "introSen3": "是否要运行代理安装程序？",
-  "introSen4": "（需要连接到私人服务器）",
+  "introSen2": "首先，欢迎你使用GrassClipper启动器，其次很高兴见到你！ :)",
+  "introSen3": "是否要运行安装脚本来安装代理服务器？",
+  "introSen4": "（此选项仅提供给需要连接到私人服务器的用户）",
 
   "proxyInstallBtn": "安装",
   "proxyInstallDeny": "不用了，谢谢",
 
-  "gameFolderDialog": "选择原神文件夹",
-  "grasscutterFileDialog": "选择Grasscutter服务器jar文件"
+  "gameFolderDialog": "选择Genshin Impact Game文件夹",
+  "grasscutterFileDialog": "选择Grasscutter.jar文件"
 }
