@@ -399,7 +399,7 @@ async function launchPrivate() {
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   // Pass IP and game folder to the private server launcher
-  Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} ${port} "${config.gamefolder}/${await getGameExecName()}" "${NL_CWD}" ${config.enableKillswitch}`).catch(e => console.log(e))
+  Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} ${port} ${config.useHttps} "${config.gamefolder}/${await getGameExecName()}" "${NL_CWD}" ${config.enableKillswitch}`).catch(e => console.log(e))
 }
 
 async function launchLocalServer() {

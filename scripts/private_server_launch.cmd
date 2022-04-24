@@ -3,7 +3,7 @@
 :: Ensure admin
 >nul 2>&1 reg query "HKU\S-1-5-19" || (
 	set params = %*:"="""%
-	cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %1 %2 "%3" ""%cd%"" %5", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
+	cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %1 %2 %3 "%4" ""%cd%"" %6", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
 )
 
 :: Use to force task kill
@@ -13,11 +13,12 @@ echo Starting Proxy Server
 
 set IP=%1
 set PORT=%2
-set GAME_PATH=%3
+set USE_HTTPS=%3
+set GAME_PATH=%4
 set GAME_PATH=%GAME_PATH:"=%
-set ORIGIN=%4
+set ORIGIN=%5
 set ORIGIN=%ORIGIN:"=%
-set ENABLE_KILLSWITCH=%5
+set ENABLE_KILLSWITCH=%6
 
 set PROXY=true
 @rem Store original proxy settings
@@ -29,7 +30,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v Pr
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer /d "127.0.0.1:8080" /f >nul 2>nul
 
 :: Start proxy server
-start "Proxy Server" %ORIGIN%/ext/mitmdump.exe -s "%ORIGIN%/proxy/proxy.py" --ssl-insecure --set ip=%IP% --set port=%PORT%
+start "Proxy Server" %ORIGIN%/ext/mitmdump.exe -s "%ORIGIN%/proxy/proxy.py" --ssl-insecure --set ip=%IP% --set port=%PORT% --set use_https=%USE_HTTPS%
 
 echo Opening %GAME_PATH%
 

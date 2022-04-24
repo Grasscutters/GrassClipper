@@ -52,6 +52,8 @@ class MlgmXyysd_Anime_Game_Proxy:
         # This can also be replaced with another IP address.
         REMOTE_HOST = ctx.options.ip
         REMOTE_PORT = ctx.options.port
+
+        print(ctx.options.use_https)
         
         LIST_DOMAINS = [
             "api-os-takumi.mihoyo.com",

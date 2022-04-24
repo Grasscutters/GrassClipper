@@ -72,7 +72,7 @@ async function handleLanguageChange(elm) {
 /**
  * Toggle the use of HTTPS
  */
- async function toggleKillSwitch() {
+ async function toggleHttps() {
   const httpsCheckbox = document.querySelector('#httpsOption')
   const config = await getCfg()
 
