@@ -1,7 +1,8 @@
 #!/bin/bash
 
 origin=$1
-cert_dir="~/.mitmproxy/"
+user_name=$(whoami)
+cert_dir="/root/.mitmproxy"
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
@@ -42,10 +43,10 @@ rm -rf temp
 # Run the proxy server for a couple seconds to generate the certificate
 echo "Starting proxy server to generate certificate..."
 
-# Start mitmdump
-ext/mitmdump
+# Start mitmdump as we need to grab the cert from the roots home
+sudo ext/mitmdump &
 
-mitm_pid=$(ps -ef | grep mitmdump | grep -v grep | awk '{print $2}')
+mitm_pid=$!
 
 sleep 5
 
@@ -58,12 +59,12 @@ echo "Saving certs..."
 if [ $machine = "Linux" ]; then
   # Create dir for extra certs if it doesn't exist already
   mkdir -p /usr/local/share/ca-certificates/extra
-
+  
+  # Convert with openssl
+  sudo openssl x509 -in "$cert_dir/mitmproxy-ca-cert.pem" -inform PEM -out "$cert_dir/mitmproxy-ca-cert.crt"
+  
   # Copy cert to this dir
-  cp $cert_dir/mitmproxy-ca-cert.pem /usr/local/share/ca-certificates/extra/mitmproxy-ca-cert.pem
-
-  # Convert with openSSL
-  openssl x509 -in mitmproxy-ca-cert.pem -inform PEM -out mitmproxy-ca-cert.crt
+  sudo cp "$cert_dir/mitmproxy-ca-cert.crt" "/usr/local/share/ca-certificates/extra/mitmproxy-ca-cert.crt"
 
   # Update certs
   sudo update-ca-certificates
