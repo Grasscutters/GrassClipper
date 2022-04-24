@@ -1,4 +1,4 @@
-@echo off
+:: @echo off
 
 :: Ensure admin
 >nul 2>&1 reg query "HKU\S-1-5-19" || (
@@ -32,7 +32,7 @@ start "Proxy Server" %ORIGIN%/ext/mitmdump.exe -s "%ORIGIN%/proxy/proxy.py" --ss
 
 echo Opening %GAME_PATH%
 
-:: Allow the proxy server to create the certificates
+:: Allow the proxy server to open fully
 ping 127.0.0.1 -n 5 > nul
 
 for %%A in ("%GAME_PATH%") do (
@@ -52,21 +52,26 @@ if "%ENABLE_KILLSWITCH%" EQU "true" (
 
 :: On exit clean proxy stuff
 :EXIT
-if "%PROXY%" == "" (
+echo Exiting...
+
+if "%PROXY%" EQU "" (
 	echo Proxy not started, no need to clean up.
-) else (
-	:: Clean proxy settings
-	echo Cleaning up proxy settings
-	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d "%ORIG_PROXY_ENABLE%" /f >nul 2>nul
-	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer /d "%ORIG_PROXY_SERVER%" /f >nul 2>nul
 
-	:: Kill proxy server
-	taskkill /f /im mitmdump.exe
-
-	echo Done! See you next time!
-
-	timeout /t 2 /nobreak >nul
-	taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Launcher Script"
-
-	exit /b
+	exit /b	
 )
+
+:: Clean proxy settings
+echo Cleaning up proxy settings...
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable /t REG_DWORD /d "%ORIG_PROXY_ENABLE%" /f >nul 2>nul
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer /d "%ORIG_PROXY_SERVER%" /f >nul 2>nul
+
+:: Kill proxy server
+taskkill /f /im mitmdump.exe
+
+echo Done! See you next time!
+
+timeout /t 2 /nobreak >nul
+	
+:: taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Launcher Script"
+
+exit /b
