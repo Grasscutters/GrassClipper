@@ -45,9 +45,21 @@
       ]
     },
     "chrome": {
-      "width": 1000,
-      "height": 800,
-      "args": "--user-agent=\"Neutralinojs chrome mode\""
+      "title": "GrassClipper",
+      "width": 1280,
+      "height": 720,
+      "minWidth": 400,
+      "minHeight": 200,
+      "fullScreen": false,
+      "alwaysOnTop": false,
+      "icon": "/resources/icons/appIcon.png",
+      "enableInspector": true,
+      "borderless": true,
+      "maximize": false,
+      "hidden": false,
+      "resizable": false,
+      "exitProcessOnClose": true,
+      "args": "--user-agent=\"Neutralinojs chrome mode\" --disable-web-security"
     }
   },
   "cli": {
