@@ -45,7 +45,6 @@ Grasscutter launcher for easily switching between Official and Private servers
   * [ ] Custom images for private server sections (anyone is welcome to submit a pull request to add some!)
   * [ ] Optional username/password creation for servers before entering (not implemented in Grasscutter yet)
   * [ ] Platform detection and bash scripts
-  * [ ] Fix Windows scaling issues? (partially done)
   * [ ] Integrated banner creator
 * Proxy service
   * [x] Local proxy server
