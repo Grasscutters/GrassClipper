@@ -20,7 +20,7 @@ async function doTranslation() {
   const set = (id, localeString) => document.getElementById(id).innerHTML = localeObj[localeString] || engLocaleObj[localeString]
 
   // Begin filling in values
-  set('titleSection', localeObj.appName)
+  set('titleSection', 'appName')
 
   const verSpan = document.createElement('span')
   verSpan.id = 'version'

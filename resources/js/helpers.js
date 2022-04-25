@@ -87,4 +87,6 @@ async function proxyIsInstalled() {
 function closeWin() {
   console.log('close')
   Neutralino.app.exit()
+
+  window.close()
 }

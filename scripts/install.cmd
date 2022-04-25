@@ -45,7 +45,6 @@ echo Adding ceritifcate...
 	echo Certificate install failed, ensure the script is running as Administrator and that the path "%USERPROFILE%\.mitmproxy" exists, 
 )
 
-
 echo Done! You can now open GrassClipper.exe!
 
 pause
