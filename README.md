@@ -56,22 +56,31 @@ Grasscutter launcher for easily switching between Official and Private servers
 
 Below are some scenarios you may encounter and their solutions.
 
-### White Screen Fix
+## White Screen Fix
 
 Encountering a white screen? [Ensure WebView2 is installed](https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/#download)
 
 You may also want to run this command as administrator:
 `CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2txyewy"`
 
-### Infinite CMD Windows
+If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do so:
+* Create a shortcut to `GrassClipper.exe`
+* Right click the shortcut, click `properties`
+* In the `Target` box, at the very end, add ` --mode=chrome` or ` --mode=browser`
+  * `chrome` only works if you have Chrome installed, and will create a Chrome window
+  * `brower` will, you guessed it, open GrassClipper in your default browser
+* Click `Ok`
+* Run GrassClipper using this shortcut from now on!
+
+## Infinite CMD Windows
 
 If you are getting infinite CMD windows for any of the scripts (such as the proxy installation, or private server start), ensure you have UAC (user access control) set to any option that requires asking. Ensure your user account can open things as Admin.
 
-### My Discord is not letting me send messages or load images/My Youtube is acting strange!
+## My Discord is not letting me send messages or load images/My Youtube is acting strange!
 
 Discord/YouTube (plus surely some others) does not seem to be a fan of the proxy server. You may need to disable it by either closing mitmdump or by disabling your proxy in the Windows proxy settings.
 
-### I have no internet after closing everything/restarting my PC!
+## I have no internet after closing everything/restarting my PC!
 
 The launcher most likely did not close correctly, and was unable to clean your proxy settings back to what they were. Disable your proxy in the Windows proxy settings.
 
