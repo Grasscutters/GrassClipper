@@ -59,6 +59,9 @@ Below are some scenarios you may encounter and their solutions.
 
 Encountering a white screen? [Ensure WebView2 is installed](https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/#download)
 
+You may also want to run this command as administrator:
+`CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2txyewy"`
+
 ### My Discord is not letting me send messages or load images/My Youtube is acting strange!
 
 Discord/YouTube (plus surely some others) does not seem to be a fan of the proxy server. You may need to disable it by either closing mitmdump or by disabling your proxy in the Windows proxy settings.
