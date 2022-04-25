@@ -10,6 +10,7 @@ Grasscutter launcher for easily switching between Official and Private servers
 * [TODO](#todo)
 * [Common Problems](#having-problems)
   * [White Screen Fix](#white-screen-fix)
+  * [Infinite CMD Windows](#infinite-cmd-windows)
   * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
   * [No internet](#i-have-no-internet-after-closing-everything-restarting-my-pc)
 * [Languages and Translation Credits](#available-languages-and-translation-credits)
@@ -61,6 +62,10 @@ Encountering a white screen? [Ensure WebView2 is installed](https://developer.mi
 
 You may also want to run this command as administrator:
 `CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2txyewy"`
+
+### Infinite CMD Windows
+
+If you are getting infinite CMD windows for any of the scripts (such as the proxy installation, or private server start), ensure you have UAC (user access control) set to any option that requires asking. Ensure your user account can open things as Admin.
 
 ### My Discord is not letting me send messages or load images/My Youtube is acting strange!
 
