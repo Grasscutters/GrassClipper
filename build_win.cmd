@@ -8,7 +8,7 @@ rd /s /q .\dist
 call neu build
 
 :: Copy scripts and langs
-xcopy .\languages\ .\dist\GrassClipper\langauges\ /y /s
+xcopy .\languages\ .\dist\GrassClipper\languages\ /y /s
 xcopy .\proxy\ .\dist\GrassClipper\proxy\ /y /s
 xcopy .\scripts\ .\dist\GrassClipper\scripts\ /y /s
 
