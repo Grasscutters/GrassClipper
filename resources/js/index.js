@@ -230,11 +230,11 @@ async function handleFavoriteList() {
 
     const transform = window.getComputedStyle(document.querySelector('#ipList')).transform
     const xy = [ transform.split(',')[4], transform.split(',')[5] ]
-    let newY = parseInt(xy[1].replace(')', '')) - (27 * ipArr.length)
+    let newY = (27 * ipArr.length) * window.devicePixelRatio
 
-    if (ipArr.length === 0) newY -= 27
+    if (ipArr.length === 0 || ipArr.length === 1) newY = 0
 
-    ipList.style.transform = `translate(${xy[0]}px, ${newY}px)`
+    ipList.style.transform = `translate(${xy[0]}px, calc(56vh - ${newY}px)`
   }
 }
 

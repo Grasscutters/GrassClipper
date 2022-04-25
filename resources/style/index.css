@@ -52,6 +52,7 @@ body {
 #settingsPanel {
   width: 35%;
   height: 80%;
+  overflow: hidden;
 }
 
 #fullSettingsTitle {
@@ -336,7 +337,7 @@ body {
 }
 
 #firstPanel {
-  background-position: -250px;
+  background-position: -200px;
 }
 
 /* Move the first official button to the position on the png */
