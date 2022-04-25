@@ -1,5 +1,5 @@
 {
-  "fullLangName": "Chinese",
+  "fullLangName": "Simplified Chinese",
   "appName": "GrassClipper启动器",
 
   "playOfficial": "启动官方服务器",
@@ -11,6 +11,7 @@
   "folderNotSet": "没有选择Genshin Impact Game文件夹或Grasscutter.jar文件",
 
   "ipPlaceholder": "服务器IP地址",
+  "portPlaceholder": "端口(可选)",
   "noFavorites": "没有收藏任何IP地址",
 
   "settingsTitle": "设置",
@@ -25,6 +26,8 @@
   "languageSubtitle": "选择你熟悉的语言以应用GrassClipper启动器！",
   "enableServerLauncherOption": "启用本地服务器",
   "enableServerLauncherSubtitle": "在启动器内显示启动本地服务器选项。",
+  "httpsOption": "使用 HTTPS",
+  "httpsSubtitle": "在使用http(s)协议之间选择，此选项适用于私人服务器。",
 
   "introSen1": "看来这是你第一次使用GrassClipper启动器！",
   "introSen2": "首先，欢迎你使用GrassClipper启动器，其次很高兴见到你！ :)",
