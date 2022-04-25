@@ -56,7 +56,7 @@ async function doTranslation() {
   set('languageSubtitle', 'languageSubtitle')
   set('serverLaunchTitle', 'enableServerLauncherOption')
   set('serverSubtitle', 'enableServerLauncherSubtitle')
-  set('httpsOption', 'httpsOption')
+  set('httpsTitle', 'httpsOption')
   set('httpsSubtitle', 'httpsSubtitle')
   
   // Intro popup
