@@ -14,13 +14,36 @@ body {
   flex-direction: column
 }
 
+#bannerEditor span,
 #base span {
   display: block;
 }
 
+
+#bannerEditor select,
 #base select {
   display: block;
   width: 60%;
   height: 30px;
   margin: 10px auto;
+}
+
+#bannerEditor {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 0 50%;
+  justify-content: space-around;
+}
+
+#bannerEditor div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  flex: 1 0 50%;
+}
+
+#bannerConfig {
+  height: 100%;
 }

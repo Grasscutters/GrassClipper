@@ -10,9 +10,41 @@
   <body>
     <div id="base">
       <span>Select a banner to use as a base:</span>
-      <select id="bannerDefaultSelect">
+      <select id="bannerDefaultSelect" onchange="handleBaseBannerChange()">
         
       </select>
+    </div>
+    <div id="bannerEditor">
+      <div id="mainChar">
+        <span>Select the main character</span>
+        <select id="mainCharSelect"></select>
+      </div>
+      <div id="secondaryChars">
+        <span id="secondaryCharSelects">Select secondary characters</span>
+        <select id="secondaryCharList"></select>
+      </div>
+      <div id="bannerConfig">
+        <div>
+          <span>Banner Type</span>
+          <select>
+
+          </select>
+        </div>
+        <div>
+          <span>Banner Cost Item</span>
+          <select>
+
+          </select>
+        </div>
+        <div>
+          <span>Banner Start</span>
+          <input type="date" id="bannerStartDate" />
+        </div>
+        <div>
+          <span>Banner End</span>
+          <input type="date" id="bannerEndDate" />
+        </div>
+      </div>
     </div>
   </body>
 </html>

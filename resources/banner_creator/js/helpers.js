@@ -1,11 +1,12 @@
 Neutralino.init()
 
 const filesystem = Neutralino.filesystem
+let bannerObj
 
 async function getBannerData() {
   const bannerData = await filesystem.readFile('resources/banner_creator/data/banners.txt')
   const lines = bannerData.split('\n')
-  let bannerObj = {}
+  bannerObj = {}
 
   for (const line of lines) {
     const values = line.split(' ')
@@ -17,6 +18,4 @@ async function getBannerData() {
       fourStars: values.slice(3)
     }
   }
-
-  console.log(bannerObj)
 }

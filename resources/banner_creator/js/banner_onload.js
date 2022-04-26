@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  fillDefaultBanners()
+  await fillDefaultBanners()
 
   console.log('loaded')
 })
