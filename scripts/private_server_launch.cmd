@@ -38,7 +38,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v Pr
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer /d "127.0.0.1:8080" /f >nul 2>nul
 
 :: Start proxy server
-start "Proxy Server" %ORIGIN%/ext/mitmdump.exe -s "%ORIGIN%/proxy/proxy.py" --ssl-insecure --set ip=%IP% --set port=%PORT% --set use_https=%USE_HTTPS%
+start "Proxy Server" "%ORIGIN%/ext/mitmdump.exe" -s "%ORIGIN%/proxy/proxy.py" --ssl-insecure --set ip=%IP% --set port=%PORT% --set use_https=%USE_HTTPS%
 
 echo Opening %GAME_PATH%
 
