@@ -2,6 +2,9 @@ Neutralino.init();
 
 let localeObj;
 const filesystem = Neutralino.filesystem
+const createCmdWindow = async (command) => {
+  Neutralino.os.execCommand(`cmd.exe /c start ${command}`, { background: true })
+}
 
 /**
  * Enable play buttons
@@ -283,7 +286,7 @@ async function closeFirstTimePopup() {
 }
 
 async function runInstallScript() {
-  Neutralino.os.execCommand(`${NL_CWD}/scripts/install.cmd "${NL_CWD}" true`)
+  createCmdWindow(`${NL_CWD}/scripts/install.cmd "${NL_CWD}" true`)
 
   // Create an interval that will check for the proxy server installation finish
   const interval = setInterval(async () => {
@@ -380,7 +383,7 @@ async function setGrasscutterFolder() {
 async function launchOfficial() {
   const config = await getCfg()
 
-  Neutralino.os.execCommand(config.gamefolder + '/' + await getGameExecName())
+  createCmdWindow(config.gamefolder + '/' + await getGameExecName())
 }
 
 /**
@@ -399,11 +402,11 @@ async function launchPrivate() {
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   // Pass IP and game folder to the private server launcher
-  Neutralino.os.execCommand(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} ${port} ${config.useHttps} "${config.gamefolder}/${await getGameExecName()}" "${NL_CWD}" ${config.enableKillswitch} true`).catch(e => console.log(e))
+  createCmdWindow(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} ${port} ${config.useHttps} "${config.gamefolder}/${await getGameExecName()}" "${NL_CWD}" ${config.enableKillswitch} true`).catch(e => console.log(e))
 }
 
 async function launchLocalServer() {
   const config = await getCfg()
 
-  Neutralino.os.execCommand(`${NL_CWD}/scripts/local_server_launch.cmd "${config.serverFolder}"`).catch(e => console.log(e))
+  createCmdWindow(`${NL_CWD}/scripts/local_server_launch.cmd "${config.serverFolder}"`).catch(e => console.log(e))
 }

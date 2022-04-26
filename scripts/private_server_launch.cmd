@@ -6,12 +6,6 @@
 @REM 	cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %1 %2 %3 "%4" ""%cd%"" %6", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
 @REM )
 
-set OPEN_CONCUR=%7
-
-if "%OPEN_CONCUR%" EQU "true" (
-	cd /d "%~dp0" && ( if exist "%temp%\start.vbs" del "%temp%\start.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set SHELL = CreateObject^("Shell.Application"^) : SHELL.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %1 %2 %3 "%4" ""%cd%"" %6", "", "", 1 >> "%temp%\start.vbs" && "%temp%\start.vbs" && exit /B )
-)
-
 :: Use to force task kill
 title PS Launcher Script
 
@@ -86,7 +80,7 @@ taskkill /f /im mitmdump.exe
 
 echo Done, see you next time
 
-timeout /t 2 /nobreak >nul
+timeout.exe /t 2 /nobreak >nul
 	
 taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Launcher Script" || taskkill /f /fi "WINDOWTITLE eq PS Launcher Script"
 

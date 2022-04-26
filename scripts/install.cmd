@@ -2,11 +2,6 @@
 
 set ORIGIN=%1
 set ORIGIN=%ORIGIN:"=%
-set OPEN_CONCUR=%2
-
-if "%OPEN_CONCUR%" EQU "true" (
-	cd /d "%~dp0" && ( if exist "%temp%\start.vbs" del "%temp%\start.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set SHELL = CreateObject^("Shell.Application"^) : SHELL.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 "%1" false", "", "", 1 >> "%temp%\start.vbs" && "%temp%\start.vbs" && exit /B )
-)
 
 echo Downloading proxy server...
 
