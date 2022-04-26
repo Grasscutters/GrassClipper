@@ -82,7 +82,9 @@ echo Done, see you next time
 
 :: Just in case the user has corutils installed, use this hacky timeout instead of the timeout command
 ping 127.0.0.1 -n 2 > nul
-	
-taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Launcher Script" || taskkill /f /fi "WINDOWTITLE eq PS Launcher Script"
+
+:: Attempt to kill either
+taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Launcher Script"
+taskkill /f /fi "WINDOWTITLE eq PS Launcher Script"
 
 exit /b
