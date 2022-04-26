@@ -73,6 +73,15 @@ async function proxyIsInstalled() {
   return gameExec.entry
 }
 
+async function launchBannerCreator() {
+  Neutralino.window.create('/banner_creator/banner_creator.html', {
+    title: 'Banner Creator',
+    borderless: false,
+    width: 600,
+    height: 800
+  })
+}
+
 /**
  * Minimize the window
  */
