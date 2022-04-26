@@ -62,7 +62,7 @@ if "%PROXY_IP%" EQU "localhost" (
     goto killgame
   )
 
-  timeout /t 2 /NOBREAK >nul
+  ping 127.0.0.1 -n 2 > nul
 
   goto loop
 
