@@ -3,14 +3,15 @@
     "appName": "GrassClipper",
   
     "playOfficial": "Máy chủ chính thức",
-    "playPrivate": "Grasscutter",
+    "playPrivate": "Máy chủ thứ 3",
     "launchLocalServer": "Khởi động Grasscutter",
   
-    "gameExeSet": "Chỉnh địa điểm thư mục trò chơi",
-    "grasscutterFileSet": "Chỉnh địa điểm file \"Grasscutter\"",
-    "folderNotSet": "Chưa chỉnh file",
+    "gameExeSet": "Chọn file game",
+    "grasscutterFileSet": "Chọn file \"Grasscutter\"",
+    "folderNotSet": "Chưa chọn file",
   
-    "ipPlaceholder": "Địa chỉ IP",
+    "ipPlaceholder": "Địa chỉ",
+    "portPlaceholder": "Port",
     "noFavorites": "Không có máy chủ yêu thích",
   
     "settingsTitle": "Cài đặt",
@@ -20,19 +21,21 @@
     "proxyOption": "Proxy",
     "proxySubtitle": "Tải proxy",
     "updateOption": "Cập nhật",
-    "updateSubtitle": "Tạm thời chưa dùng được. Kiểm tra Github để có bản cập nhật mới",
+    "updateSubtitle": "Tạm thời chưa dùng được. Kiểm tra Github để biết thêm chi tiết",
     "languageOption": "Ngôn ngữ",
     "languageSubtitle": "Chọn ngôn ngữ",
-
     "enableServerLauncherOption": "Grasscutter",
-    "enableServerLauncherSubtitle": "Thêm lựa chọn bật grasscutter",
+    "enableServerLauncherSubtitle": "Thêm lựa chọn bật máy chủ grasscutter",
+    "httpsOption": "Dùng HTTPS",
+    "httpsSubtitle": "",
   
     "introSen1": "Hình như đây là lần đầu tiên bạn dùng ứng dụng này!",
     "introSen2": "Trước hết, chào bạn, cảm ơn bạn đã sử dụng! :)",
     "introSen3": "Bạn có muốn tải proxy không?",
     "introSen4": "(dùng để vào máy chủ riêng)",
   
-    "proxyInstallBtn": "Có",
+    "updateBtn": "Cập nhật",
+    "proxyInstallBtn": "Tải",
     "proxyInstallDeny": "Không",
   
     "gameFolderDialog": "Chọn thư mục có chứa trò chơi",
