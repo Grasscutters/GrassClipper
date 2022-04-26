@@ -3,6 +3,24 @@ html { user-select: none; }
 body {
   overflow: hidden;
   height: 95vh;
-  margin: 0;
+  margin: 5%;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+#base span {
+  display: block;
+}
+
+#base select {
+  display: block;
+  width: 60%;
+  height: 30px;
+  margin: 10px auto;
 }
