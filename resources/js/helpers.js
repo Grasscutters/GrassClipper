@@ -61,14 +61,14 @@ async function openGameFolder() {
   const config = await getCfg()
   const folder = config.gameexe.match(/.*\\/g, '')[0]
 
-  createCmdWindow(`explorer.exe "${folder}"`)
+  openInExplorer(folder)
 }
 
 async function openGrasscutterFolder() {
   const config = await getCfg()
   const folder = config.serverFolder.match(/.*\\/g, '')[0]
 
-  createCmdWindow(`explorer.exe "${folder}"`)
+  openInExplorer(folder)
 }
 
 /**

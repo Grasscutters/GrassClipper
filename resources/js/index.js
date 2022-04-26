@@ -6,6 +6,10 @@ const createCmdWindow = async (command) => {
   Neutralino.os.execCommand(`cmd.exe /c start "" ${command}`, { background: true })
 }
 
+const openInExplorer = async (path) => {
+  createCmdWindow(`explorer.exe "${path}"`)
+}
+
 /**
  * Enable play buttons
  */
