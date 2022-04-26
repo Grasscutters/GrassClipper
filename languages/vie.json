@@ -6,8 +6,8 @@
     "playPrivate": "Máy chủ thứ 3",
     "launchLocalServer": "Khởi động Grasscutter",
   
-    "gameExeSet": "Chọn file game",
-    "grasscutterFileSet": "Chọn file \"Grasscutter\"",
+    "gameExeSet": "Chọn file \"GenshinImpact.exe\"",
+    "grasscutterFileSet": "Chọn file \"Grasscutter.jar\"",
     "folderNotSet": "Chưa chọn file",
   
     "ipPlaceholder": "Địa chỉ",
@@ -19,15 +19,15 @@
     "killswitchOption": "Công tắc đóng",
     "killswitchSubtitle": "Dành cho những ai sợ bị ban. Tắt game *và mạng* nếu proxy có vấn đề.",
     "proxyOption": "Proxy",
-    "proxySubtitle": "Tải proxy",
+    "proxySubtitle": "Dùng để kết nối vào máy chủ thứ 3",
     "updateOption": "Cập nhật",
     "updateSubtitle": "Tạm thời chưa dùng được. Kiểm tra Github để biết thêm chi tiết",
     "languageOption": "Ngôn ngữ",
-    "languageSubtitle": "Chọn ngôn ngữ",
+    "languageSubtitle": " ",
     "enableServerLauncherOption": "Grasscutter",
     "enableServerLauncherSubtitle": "Thêm lựa chọn bật máy chủ grasscutter",
     "httpsOption": "Dùng HTTPS",
-    "httpsSubtitle": "",
+    "httpsSubtitle": " ",
   
     "introSen1": "Hình như đây là lần đầu tiên bạn dùng ứng dụng này!",
     "introSen2": "Trước hết, chào bạn, cảm ơn bạn đã sử dụng! :)",
@@ -38,6 +38,6 @@
     "proxyInstallBtn": "Tải",
     "proxyInstallDeny": "Không",
   
-    "gameFolderDialog": "Chọn thư mục có chứa trò chơi",
-    "grasscutterFileDialog": "Chọn file Grasscutter"
+    "gameFolderDialog": "Chọn GenshinImpact.exe",
+    "grasscutterFileDialog": "Chọn Grasscutter.jar"
   }
