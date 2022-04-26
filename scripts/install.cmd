@@ -2,11 +2,10 @@
 
 set ORIGIN=%1
 set ORIGIN=%ORIGIN:"=%
+set OPEN_CONCUR=%2
 
-:: Ensure admin
->nul 2>&1 reg query "HKU\S-1-5-19" || (
-	set params = %*:"="""%
-	cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 "%1" ", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
+if "%OPEN_CONCUR%" EQU "true" (
+	cd /d "%~dp0" && ( if exist "%temp%\start.vbs" del "%temp%\start.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set SHELL = CreateObject^("Shell.Application"^) : SHELL.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 "%1" false", "", "", 1 >> "%temp%\start.vbs" && "%temp%\start.vbs" && exit /B )
 )
 
 echo Downloading proxy server...
@@ -42,7 +41,8 @@ echo Adding ceritifcate...
 
 :: Ensure we are elevated for certs
 >nul 2>&1 certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer || (
-	echo Certificate install failed, ensure the script is running as Administrator and that the path "%USERPROFILE%\.mitmproxy" exists, 
+	echo Certificate install failed, ensure the script is running as Administrator and that the path "%USERPROFILE%\.mitmproxy" exists,
+	echo You can also manually run this command: certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer 
 )
 
 echo Done! You can now open GrassClipper.exe!
