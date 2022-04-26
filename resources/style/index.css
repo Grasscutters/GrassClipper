@@ -277,6 +277,18 @@ body {
   background: linear-gradient(#ffc61e, #ffd326);
 }
 
+.openFolderIcon {
+  display: inline;
+  height: 20px;
+  filter: invert(97%) sepia(85%) saturate(12%) hue-rotate(184deg) brightness(103%) contrast(103%);
+  padding: 10px;
+}
+
+.openFolderIcon:hover {
+  cursor: pointer;
+  filter: invert(99%) sepia(0%) saturate(1092%) hue-rotate(172deg) brightness(80%) contrast(103%);
+}
+
 #bottomBar {
   display: flex;
   justify-content: center;
@@ -303,6 +315,12 @@ body {
   background: #141414;
   margin: 4px;
   height: 10%;
+}
+
+.bottomSection div div {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 
 #gamePath, #serverPath {
