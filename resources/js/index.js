@@ -390,7 +390,7 @@ async function launchOfficial() {
  * Launch the game with a proxy
  */
 async function launchPrivate() {
-  const ip = document.getElementById('ip').value || 'localhost'
+  const ip = document.getElementById('ip').value || '127.0.0.1'
   const port = document.getElementById('port').value || '443'
 
   const config = await getCfg()
