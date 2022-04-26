@@ -26,6 +26,14 @@ set ORIGIN=%5
 set ORIGIN=%ORIGIN:"=%
 set ENABLE_KILLSWITCH=%6
 
+if "%ENABLE_KILLSWITCH%" EQU "true" (
+	:: Restart in elevated if need be
+	>nul 2>&1 reg query "HKU\S-1-5-19" || (
+		set params = %*:"="""%
+		cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %1 %2 %3 "%4" ""%cd%/../"" %6", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" &&  taskkill /f /fi "WINDOWTITLE eq PS Launcher Script" && exit /b )
+	)
+)
+
 set PROXY=true
 @rem Store original proxy settings
 for /f "tokens=2*" %%a in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable 2^>nul') do set "ORIG_PROXY_ENABLE=%%b"
@@ -52,7 +60,7 @@ echo Killswitch: %ENABLE_KILLSWITCH%
 if "%ENABLE_KILLSWITCH%" EQU "true" (
 	echo Killswitch is enabled!
 	:: Start killswitch
-	start /b %ORIGIN%\scripts\killswitch.cmd "%GAME_EXE%" %IP%"
+	start /b %ORIGIN%\scripts\killswitch.cmd "%GAME_EXE%" %IP%
 )
 
 :: Launch game
@@ -80,6 +88,6 @@ echo Done, see you next time
 
 timeout /t 2 /nobreak >nul
 	
-taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Launcher Script"
+taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Launcher Script" || taskkill /f /fi "WINDOWTITLE eq PS Launcher Script"
 
 exit /b
