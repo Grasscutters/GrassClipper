@@ -34,6 +34,7 @@
   "introSen3": "Would you like to run the proxy installer?",
   "introSen4": "(required to connect to servers)",
 
+  "updateBtn": "Update",
   "proxyInstallBtn": "Install",
   "proxyInstallDeny": "No thanks",
 
