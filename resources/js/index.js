@@ -366,7 +366,7 @@ async function setGrasscutterFolder() {
   // Set the folder in our configuration
   const config = await getCfg()
 
-  config.serverFolder = folder
+  config.serverFolder = folder[0]
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   displayServerFolder()
