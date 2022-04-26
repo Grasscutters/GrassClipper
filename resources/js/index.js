@@ -75,7 +75,7 @@ async function displayGameFolder() {
   const elm = document.querySelector('#gamePath')
   const config = await getCfg()
 
-  elm.innerHTML = config.gamefolder
+  elm.innerHTML = config.gameexe
 }
 
 /**
@@ -129,17 +129,17 @@ async function setBackgroundImage() {
     await filesystem.createDirectory(NL_CWD + '/resources/bg/official')
   }
 
-  if (config.gamefolder) {
+  if (config.gameexe) {
     // See if bg folder exists in parent dir
-    const parentDir = await filesystem.readDirectory(config.gamefolder + '/..')
+    const parentDir = await filesystem.readDirectory(config.gameexe + '/..')
 
     if (parentDir.find(dir => dir.entry === 'bg')) {
 
-      const officialImages = (await filesystem.readDirectory(config.gamefolder + '/../bg')).filter(file => file.type === 'FILE')
+      const officialImages = (await filesystem.readDirectory(config.gameexe + '/../bg')).filter(file => file.type === 'FILE')
 
       if (officialImages.length > 0) {
         for (const bg of officialImages) {
-          const path = config.gamefolder.replace('\\', '/') + '/../bg/' + bg.entry
+          const path = config.gameexe.replace('\\', '/') + '/../bg/' + bg.entry
   
           // See if the file exists already
           const currentBgs = (await filesystem.readDirectory(NL_CWD + '/resources/bg/official/')).filter(file => file.type === 'FILE')
@@ -272,7 +272,7 @@ async function closeSettings() {
   settings.style.display = 'none'
 
   // In case we installed the proxy server
-  if (await proxyIsInstalled() && config.gamefolder) {
+  if (await proxyIsInstalled() && config.gameexe) {
     const playPriv = document.querySelector('#playPrivate')
     
     playPriv.classList.remove('disabled')
@@ -335,22 +335,18 @@ async function displayServerLaunchSection() {
 /**
  * Set the game folder by opening a folder picker
  */
-async function setGameFolder() {
-  const folder = await Neutralino.os.showFolderDialog(localeObj.gameFolderDialog)
+async function setGameExe() {
+  const gameExe = await Neutralino.os.showOpenDialog(localeObj.gameFolderDialog, {
+    filters: [
+      { name: 'Executable files', extensions: ['exe'] }
+    ]
+  })
 
   // Set the folder in our configuration
   const config = await getCfg()
 
-  // See if the actual game folder is inside this one
-  const folderList = await filesystem.readDirectory(folder)
-  const gameFolder = folderList.filter(file => file.entry.includes('Genshin Impact Game'))
-
-  if (gameFolder.length > 0) {
-    config.gamefolder = folder + '\\Genshin Impact Game'
-    Neutralino.storage.setData('config', JSON.stringify(config))
-  } else {
-    config.gamefolder = folder
-  }
+  // It's an array of selections, so only get the first one
+  config.gameexe = gameExe[0]
 
   Neutralino.storage.setData('config', JSON.stringify(config))
 
@@ -383,7 +379,7 @@ async function setGrasscutterFolder() {
 async function launchOfficial() {
   const config = await getCfg()
 
-  createCmdWindow(config.gamefolder + '/' + await getGameExecName())
+  Neutralino.os.execCommand(`"${config.gameexe}"`)
 }
 
 /**
@@ -402,7 +398,7 @@ async function launchPrivate() {
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   // Pass IP and game folder to the private server launcher
-  createCmdWindow(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} ${port} ${config.useHttps} "${config.gamefolder}/${await getGameExecName()}" "${NL_CWD}" ${config.enableKillswitch} true`).catch(e => console.log(e))
+  createCmdWindow(`${NL_CWD}/scripts/private_server_launch.cmd ${ip} ${port} ${config.useHttps} "${config.gameexe}" "${NL_CWD}" ${config.enableKillswitch} true`).catch(e => console.log(e))
 }
 
 async function launchLocalServer() {

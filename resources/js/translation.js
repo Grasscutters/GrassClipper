@@ -34,7 +34,7 @@ async function doTranslation() {
   set('serverLaunch', 'launchLocalServer')
 
   // File select buttons
-  set('gameFolderSet', 'gameFolderSet')
+  set('gameExeSet', 'gameExeSet')
   set('grasscutterFileSet', 'grasscutterFileSet')
 
   // Private options

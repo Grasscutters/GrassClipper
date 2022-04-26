@@ -5,7 +5,7 @@
  */
  async function getCfg() {
   const defaultConf = {
-    gamefolder: '',
+    gameexe: '',
     serverFolder: '',
     lastConnect: '',
     enableKillswitch: false,
@@ -55,22 +55,6 @@ async function proxyIsInstalled() {
   }
 
   return false
-}
-
-/**
- * Get the name of the game executable
- * 
- * @returns {Promise<String>}
- */
- async function getGameExecName() {
-  // Scan game dir
-  const config = await getCfg()
-  const gameDir = await filesystem.readDirectory(config.gamefolder)
-
-  // Find the executable
-  const gameExec = gameDir.find(file => file.entry.endsWith('.exe'))
-
-  return gameExec.entry
 }
 
 /**

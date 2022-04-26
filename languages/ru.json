@@ -6,7 +6,7 @@
   "playPrivate": "Grasscutter",
   "launchLocalServer": "Локальный сервер",
 
-  "gameFolderSet": "Папка с игрой",
+  "gameExeSet": "Папка с игрой",
   "grasscutterFileSet": "Путь до файла \"Grasscutter\" (.jar)",
   "folderNotSet": "Папка не выбрана",
 

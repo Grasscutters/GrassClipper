@@ -6,7 +6,7 @@
   "playPrivate": "Jouer sur Grasscutter",
   "launchLocalServer": "Lancer le serveur en local",
 
-  "gameFolderSet": "Définir le dossier game",
+  "gameExeSet": "Définir le dossier game",
   "grasscutterFileSet": "Définir le fichier .jar \"Grasscutter\"",
   "folderNotSet": "Pas encore défini",
 

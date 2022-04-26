@@ -6,7 +6,7 @@
   "playPrivate": "啟動私人伺服器",
   "launchLocalServer": "啟動本地伺服器",
 
-  "gameFolderSet": "設定 \"Genshin Impact game\" 資料夾",
+  "gameExeSet": "設定 \"Genshin Impact game\" 資料夾",
   "grasscutterFileSet": "設定 \"Grasscutter\" .jar 檔案",
   "folderNotSet": "尚未設定Genshin Impact game資料夾",
 

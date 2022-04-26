@@ -68,7 +68,7 @@
   // Ensure we do the translation at the very end, after everything else has loaded
   await doTranslation()
   
-  if (!config.gamefolder) {
+  if (!config.gameexe) {
     handleGameNotSet()
   }
 
