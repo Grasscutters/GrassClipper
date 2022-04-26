@@ -98,6 +98,7 @@ Thank you to everyone who has provided translations! <3
 * ES - memetrollsXD
 * ND - memetrollsXD
 * RU - fitiskin
+* TR - lilmayofuksu
 
 # Screenshots
 
