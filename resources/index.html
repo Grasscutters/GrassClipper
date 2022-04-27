@@ -12,6 +12,7 @@
     <script src="js/translation.js"></script>
   </head>
   <body>
+    <!-- First time setup -->
     <div id="firstTimeNotice" style="display: none">
       <span>
       </span>
@@ -20,6 +21,8 @@
         <button class="altBtn" id="firstTimeDenyBtn" onclick="closeFirstTimePopup()">No thanks</button>
       </div>
     </div>
+
+    <!-- Setting panel -->
     <div id="settingsPanel" style="display: none;">
       <div id="settingsTitleBar">
         <span id="fullSettingsTitle">Settings</span>
@@ -89,6 +92,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Top bar (title, version, setting btn, close btn, etc.) -->
     <div id="controlBar">
       <span id="titleSection">
         GrassClipper
@@ -105,12 +110,15 @@
       </div>
     </div>
     <div id="panelContainer">
+      <!-- Official play btn -->
       <div id="firstPanel">
         <button class="playBtn" id="playOfficial" onclick="launchOfficial()">Play Official</button>
       </div>
+      <!-- Grasscutter play btn -->
       <div id="secondPanel">
         <div id="ipList" style="display: none;"></div>
         <div id="secondControlContainer">
+          <!-- ip/server input -->
           <div id="serverInput">
             <input type="text" id="ip" placeholder="IP Address" oninput="handleFavoriteInput()"/>
             <input type="text" id="port" placeholder="Port" oninput="handleFavoriteInput()"/>
@@ -120,11 +128,13 @@
           <button class="playBtn" id="playPrivate" onclick="launchPrivate()">Play Private</button>
         </div>
       </div>
+      <!-- Grasscutter server launcher -->
       <div id="thirdPanel" style="display: none;">
         <button class="playBtn" id="serverLaunch" onclick="launchLocalServer()">Launch Local Server</button>
       </div>
     </div>
     
+    <!-- Bottom section (folder setting btns and such) -->
     <div id="bottomBar">
       <div class="bottomSection">
         <div>
