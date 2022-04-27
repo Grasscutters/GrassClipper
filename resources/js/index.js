@@ -302,6 +302,8 @@ async function closeLogin() {
   const login = document.querySelector('#loginPanel')
 
   login.style.display = 'none'
+  
+  setLoginSection()
 }
 
 async function closeFirstTimePopup() {
