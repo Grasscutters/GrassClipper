@@ -11,6 +11,7 @@
     <script src="js/onLoad.js"></script>
     <script src="js/options.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/authAlert.js"></script>
     <script src="js/translation.js"></script>
   </head>
   <body>
@@ -66,6 +67,12 @@
             Launch without Authentication
           </button>
         </div>
+
+        <!-- Alert element for any problems that arise -->
+        <div id="loginAlert" style="display: none">
+          <img src="icons/alert.svg" />
+          <span id="loginAlertText"></span>
+        </div>
       </div>
 
       <!-- Register section -->
@@ -97,6 +104,12 @@
         </div>
         <div id="registerPopupContentBodyBtns">
           <button class="playBtn" id="registerPopupContentBodyBtnRegister" onclick="register()">Register</button>
+        </div>
+
+        <!-- Alert element for any problems that arise -->
+        <div id="registerAlert" style="display: none">
+          <img src="icons/alert.svg" />
+            <span id="registerAlertText"></span>
         </div>
       </div>
     </div>

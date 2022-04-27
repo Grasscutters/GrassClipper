@@ -117,6 +117,36 @@ body {
   margin-right: 6px;
 }
 
+.error {
+  background: #e90000;
+}
+
+#registerAlert .warn,
+#loginAlert .warn {
+
+}
+
+#registerAlert,
+#loginAlert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#registerAlert img,
+#loginAlert img {
+  height: 20px;
+  margin: 10px;
+  filter: invert(100%) sepia(0%) saturate(179%) hue-rotate(253deg) brightness(105%) contrast(101%);
+}
+
+#registerAlert span,
+#loginAlert span {
+  margin: 10px;
+}
+
 #firstTimeNotice,
 #loginPanel,
 #settingsPanel {

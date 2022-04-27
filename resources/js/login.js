@@ -63,13 +63,12 @@ async function login() {
   }
   
   const { data } = await axios.post(url + '/grasscutter/login', reqBody)
-  const tkData = parseJwt(data.jwt)
 
   console.log(data)
 
   switch(data.message) {
     case 'INVALID_ACCOUNT':
-      // Username or password invalid
+      displayLoginAlert('Invalid username or password', 'error');
       break;
 
     case 'NO_PASSWORD':
@@ -86,6 +85,7 @@ async function login() {
 
     default:
       // Success! Copy the JWT token to their clipboard
+      const tkData = parseJwt(data.jwt)
       await Neutralino.clipboard.writeText(tkData.token)
       break;
   }
