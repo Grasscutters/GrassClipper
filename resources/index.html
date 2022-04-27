@@ -22,6 +22,43 @@
       </div>
     </div>
 
+    <!-- Login popup -->
+    <div id="loginPanel">
+      <div id="loginPopupTitle">
+        <span>
+          Login or Register
+        </span>
+        <div id="loginPopupCloseBtn" onclick="closeLoginPopup()">
+          <img src="icons/close.svg" />
+        </div>
+      </div>
+      <div id="loginPopupContentBody">
+        <div id="loginPopupContentBodyText">
+          <span>
+            Please enter a username and password to login or register.
+          </span>
+        </div>
+        <div id="loginPopupContentBodyInputs">
+          <div id="loginPopupContentBodyInputsUsername">
+            <span>
+              Username:
+            </span>
+            <input type="text" id="loginUsername" />
+          </div>
+          <div id="loginPopupContentBodyInputsPassword">
+            <span>
+              Password:
+            </span>
+            <input type="password" id="loginPassword" />
+          </div>
+        </div>
+        <div id="loginPopupContentBodyBtns">
+          <button class="playBtn" id="loginPopupContentBodyBtnLogin" onclick="login()">Login</button>
+          <button class="altBtn" id="loginPopupContentBodyBtnCancel" onclick="closeLoginPopup()">Register</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Setting panel -->
     <div id="settingsPanel" style="display: none;">
       <div id="settingsTitleBar">
