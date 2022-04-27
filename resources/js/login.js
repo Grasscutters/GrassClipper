@@ -17,7 +17,7 @@ async function setLoginSection() {
 /**
  * Toggle the register section
  */
-async function setRegisterSection() {
+async function setRegisterSection(fromLogin = false) {
   const title = document.getElementById('registerSectionTitle');
   const altTitle = document.getElementById('loginSectionTitle');
   const loginSection = document.getElementById('loginPopupContentBody');
@@ -28,6 +28,15 @@ async function setRegisterSection() {
 
   loginSection.style.display = 'none';
   registerSection.style.removeProperty('display');
+
+  if (fromLogin) {
+    // Take the values from the login section and put them in the register section
+    const loginUsername = document.getElementById('loginUsername').value;
+    const loginPassword = document.getElementById('loginPassword').value;
+
+    document.getElementById('registerUsername').value = loginUsername;
+    document.getElementById('registerPassword').value = loginPassword;
+  }
 }
 
 /**
