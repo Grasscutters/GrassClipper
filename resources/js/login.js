@@ -46,25 +46,72 @@ async function login() {
     username,
     password,
   }
+  
+  const { data } = await axios.post(url + '/grasscutter/login', reqBody)
 
-  // Send the request
-  const response = await fetch(url + '/grasscutter/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(reqBody),
-    mode: 'no-cors',
-  }).catch(e => {
-    console.log(e)
-  })
+  console.log(data)
 
-  console.log(response)
+  switch(data.message) {
+    case 'INVALID_ACCOUNT':
+      // Username or password invalid
+      break;
+
+    case 'NO_PASSWORD':
+      // No account password, create one with change password
+      break;
+
+    case 'UNKNOWN':
+      // Unknown error, contact server owner
+      break;
+
+    case 'AUTH_DISABLED':
+      // Authentication is disabled, we can just connect the user
+      break;
+
+    default:
+      // Success! Copy the JWT token to their clipboard
+      break;
+  }
 }
 
 /**
  * Attempt registration, do not launch game
  */
 async function register() {
+  const username = document.getElementById('registerUsername').value;
+  const password = document.getElementById('registerPassword').value;
+  const password_confirmation = document.getElementById('registerPasswordConfirm').value;
+  const ip = document.getElementById('ip').value;
+  const port = document.getElementById('port').value || '443';
+  const config = await getCfg();
+  const useHttps = config.useHttps;
+  const url = `${useHttps ? 'https' : 'http'}://${ip}:${port}`;
 
+  const reqBody = {
+    username,
+    password,
+    password_confirmation
+  }
+  
+  const { data } = await axios.post(url + '/grasscutter/register', reqBody)
+
+  console.log(data)
+
+  switch(data.message) {
+    case 'USERNAME_TAKEN':
+      // Username is taken
+      break;
+
+    case 'PASSWORD_MISMATCH':
+      // The password and password confirmation do not match
+      break;
+
+    case 'UNKNOWN':
+      // Unknown error, contact server owner
+      break;
+
+    case 'AUTH_DISABLED':
+      // Authentication is disabled, we can just connect the user
+      break;
+  }
 }
