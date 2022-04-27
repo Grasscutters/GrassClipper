@@ -9,6 +9,7 @@
     <script src="js/index.js"></script>
     <script src="js/onLoad.js"></script>
     <script src="js/options.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/translation.js"></script>
   </head>
   <body>
@@ -26,19 +27,22 @@
     <div id="loginPanel" style="display: none;">
       <div id="loginPopupTitle">
         <span>
-          Login or Register
+          <span id="loginSectionTitle" class="selectedTitle" onclick="setLoginSection()">Login</span>
+          <span id="registerSectionTitle" onclick="setRegisterSection()">Register</span>
         </span>
         <div id="loginPopupCloseBtn" onclick="closeLogin()">
           <img src="icons/close.svg" />
         </div>
       </div>
-      <div id="loginPopupContentBody">
+
+      <!-- Login section -->
+      <div id="loginPopupContentBody" class="authBody">
         <div id="loginPopupContentBodyText">
           <span id="loggingInTo">
-            Logging in to or registering for: <span id="loginPopupServer"></span>
+            Logging in to <span id="loginPopupServer"></span>
           </span>
         </div>
-        <div id="loginPopupContentBodyInputs">
+        <div id="loginPopupContentBodyInputs" class="authInputs">
           <div id="loginPopupContentBodyInputsUsername">
             <span>
               Username:
@@ -49,17 +53,49 @@
             <span>
               Password:
             </span>
-            <input type="password" id="loginPassword" onsubmit="launchServerWithAuth()" />
+            <input type="password" id="loginPassword" onsubmit="login()" />
           </div>
         </div>
         <div id="loginPopupContentBodyBtns">
           <button class="playBtn" id="loginPopupContentBodyBtnLogin" onclick="login()">Login</button>
-          <button class="altBtn" id="loginPopupContentBodyBtnCancel" onclick="closeLoginPopup()">Register</button>
+          <button class="altBtn" id="loginPopupContentBodyBtnRegister" onclick="register()">Register</button>
         </div>
         <div>
           <button class="altBtn" id="noLoginBtn" onclick="(() => { launchPrivate(); closeLogin()})()">
             Launch without Authentication
           </button>
+        </div>
+      </div>
+
+      <!-- Register section -->
+      <div id="registerPopupContentBody" style="display: none" class="authBody">
+        <div id="registerPopupContentBodyText">
+          <span id="registeringTo">
+            Registering for <span id="registerPopupServer"></span>
+          </span>
+        </div>
+        <div id="registerPopupContentBodyInputs" class="authInputs">
+          <div id="registerPopupContentBodyInputsUsername">
+            <span>
+              Username:
+            </span>
+            <input type="text" id="registerUsername" />
+          </div>
+          <div id="registerPopupContentBodyInputsPassword">
+            <span>
+              Password:
+            </span>
+            <input type="password" id="registerPassword" />
+          </div>
+          <div id="registerPopupContentBodyInputsPasswordConfirm">
+            <span>
+              Confirm Password:
+            </span>
+            <input type="password" id="registerPasswordConfirm" />
+          </div>
+        </div>
+        <div id="registerPopupContentBodyBtns">
+          <button class="playBtn" id="registerPopupContentBodyBtnRegister" onclick="register()">Register</button>
         </div>
       </div>
     </div>

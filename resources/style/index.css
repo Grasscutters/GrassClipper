@@ -33,6 +33,11 @@ body {
   margin-bottom: 6px;
 }
 
+#loginPanel {
+  height: 40%;
+  width: 32%;
+}
+
 #loginPanel img {
   height: 20px;
 }
@@ -44,18 +49,18 @@ body {
   font-weight: bold;
 }
 
-#loginPopupContentBody {
+.authBody {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-#loginPopupContentBody div {
+.authBody div {
   margin: 6px;
 }
 
-#loginPopupContentBody input {
+.authBody input {
   height: 20px;
   background: white;
   border: none;
@@ -65,13 +70,14 @@ body {
   transition: border-bottom 0.1s ease-in-out;
 }
 
-#loginPopupContentBody input:focus {
+.authBody input:focus {
   outline: none;
   border-bottom: 2px solid #ffc61e;
 }
 
 #loginPopupTitle img {
   height: 20px;
+  margin-bottom: 8px;
 }
 
 #loginPopupTitle img:hover {
@@ -79,8 +85,36 @@ body {
   cursor: pointer;
 }
 
+#registerPopupServer,
 #loginPopupServer {
   font-weight: bold;
+}
+
+#loginSectionTitle,
+#registerSectionTitle {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+#loginSectionTitle:hover,
+#registerSectionTitle:hover {
+  cursor: pointer;
+}
+
+.selectedTitle {
+  font-weight: bold !important;
+  border-bottom: 2px solid #ffc61e;
+}
+
+.authInputs div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authInputs div span {
+  margin-right: 6px;
 }
 
 #firstTimeNotice,

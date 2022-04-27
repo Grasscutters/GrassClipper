@@ -287,9 +287,11 @@ async function closeSettings() {
 async function openLogin() {
   const login = document.querySelector('#loginPanel')
   const ip = document.querySelector('#ip')
-  const ipDisplay = document.querySelector('#loginPopupServer')
+  const loginIpDisplay = document.querySelector('#loginPopupServer')
+  const registerIpDisplay = document.querySelector('#registerPopupServer')
 
-  ipDisplay.innerText = ip.value
+  loginIpDisplay.innerText = ip.value
+  registerIpDisplay.innerText = ip.value
 
   if (login.style.display === 'none') {
     login.style.removeProperty('display')
