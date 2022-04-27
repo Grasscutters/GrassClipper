@@ -1,3 +1,10 @@
+/**
+ * IF YOU ARE LOOKING AT THIS CODE RIGHT NOW: NO YOU ARE NOT.
+ * 
+ * THIS CODE IS BAD AND TERRIBLE AND EXPERIMENTAL AND IT WILL BE GOOD LATER.
+ * 
+ * THIS FUNCTION DOES NOT WORK.
+ */
 async function getGameRegistryKeys() {
   const command = await Neutralino.os.execCommand(`reg query "HKEY_CURRENT_USER\\Software\\miHoYo\\Genshin Impact"`)
   const desCommand = await Neutralino.os.execCommand(`powershell "get-netadapter | Select 'MacAddress'"`)
