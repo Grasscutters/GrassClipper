@@ -36,8 +36,14 @@ echo Adding ceritifcate...
 
 :: Ensure we are elevated for certs
 >nul 2>&1 certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer || (
-	echo Certificate install failed, ensure the script is running as Administrator and that the path "%USERPROFILE%\.mitmproxy" exists,
-	echo You can also manually run this command: certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer 
+	echo ================================================================================================================================================
+	echo !! Certificate install failed !!
+	echo
+	echo Ensure the script is running as Administrator and that the path "%USERPROFILE%\.mitmproxy" exists,
+	echo
+	echo You can also manually run this command:
+	echo 			certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer 
+	echo ================================================================================================================================================
 )
 
 echo Done! You can now open GrassClipper.exe!
