@@ -284,6 +284,24 @@ async function closeSettings() {
   }
 }
 
+async function openLogin() {
+  const login = document.querySelector('#loginPanel')
+  const ip = document.querySelector('#ip')
+  const ipDisplay = document.querySelector('#loginPopupServer')
+
+  ipDisplay.innerText = ip.value
+
+  if (login.style.display === 'none') {
+    login.style.removeProperty('display')
+  }
+}
+
+async function closeLogin() {
+  const login = document.querySelector('#loginPanel')
+
+  login.style.display = 'none'
+}
+
 async function closeFirstTimePopup() {
   const firstTimePopup = document.querySelector('#firstTimeNotice')
   firstTimePopup.style.display = 'none'

@@ -44,6 +44,45 @@ body {
   font-weight: bold;
 }
 
+#loginPopupContentBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#loginPopupContentBody div {
+  margin: 6px;
+}
+
+#loginPopupContentBody input {
+  height: 20px;
+  background: white;
+  border: none;
+  border-bottom: 2px solid #4d4d4d;
+
+  /* border bottom anim */
+  transition: border-bottom 0.1s ease-in-out;
+}
+
+#loginPopupContentBody input:focus {
+  outline: none;
+  border-bottom: 2px solid #ffc61e;
+}
+
+#loginPopupTitle img {
+  height: 20px;
+}
+
+#loginPopupTitle img:hover {
+  filter: invert(85%) sepia(31%) saturate(560%) hue-rotate(329deg) brightness(100%) contrast(92%);
+  cursor: pointer;
+}
+
+#loginPopupServer {
+  font-weight: bold;
+}
+
 #firstTimeNotice,
 #loginPanel,
 #settingsPanel {

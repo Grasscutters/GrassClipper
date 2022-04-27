@@ -23,19 +23,19 @@
     </div>
 
     <!-- Login popup -->
-    <div id="loginPanel">
+    <div id="loginPanel" style="display: none;">
       <div id="loginPopupTitle">
         <span>
           Login or Register
         </span>
-        <div id="loginPopupCloseBtn" onclick="closeLoginPopup()">
+        <div id="loginPopupCloseBtn" onclick="closeLogin()">
           <img src="icons/close.svg" />
         </div>
       </div>
       <div id="loginPopupContentBody">
         <div id="loginPopupContentBodyText">
-          <span>
-            Please enter a username and password to login or register.
+          <span id="loggingInTo">
+            Logging in to or registering for: <span id="loginPopupServer"></span>
           </span>
         </div>
         <div id="loginPopupContentBodyInputs">
@@ -49,12 +49,17 @@
             <span>
               Password:
             </span>
-            <input type="password" id="loginPassword" />
+            <input type="password" id="loginPassword" onsubmit="launchServerWithAuth()" />
           </div>
         </div>
         <div id="loginPopupContentBodyBtns">
           <button class="playBtn" id="loginPopupContentBodyBtnLogin" onclick="login()">Login</button>
           <button class="altBtn" id="loginPopupContentBodyBtnCancel" onclick="closeLoginPopup()">Register</button>
+        </div>
+        <div>
+          <button class="altBtn" id="noLoginBtn" onclick="(() => { launchPrivate(); closeLogin()})()">
+            Launch without Authentication
+          </button>
         </div>
       </div>
     </div>
@@ -162,7 +167,7 @@
             <img src="icons/star_empty.svg" id="star" onclick="setFavorite()" />
             <img src="icons/list.svg" id="star" onclick="handleFavoriteList()" />
           </div>
-          <button class="playBtn" id="playPrivate" onclick="launchPrivate()">Play Private</button>
+          <button class="playBtn" id="playPrivate" onclick="openLogin()">Play Private</button>
         </div>
       </div>
       <!-- Grasscutter server launcher -->
