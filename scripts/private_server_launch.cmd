@@ -20,6 +20,9 @@ set ORIGIN=%5
 set ORIGIN=%ORIGIN:"=%
 set ENABLE_KILLSWITCH=%6
 
+:: For registry
+set GAME_REG="HKEY_CURRENT_USER\Software\miHoYo\Genshin Impact"
+
 if "%ENABLE_KILLSWITCH%" EQU "true" (
 	:: Restart in elevated if need be
 	>nul 2>&1 reg query "HKU\S-1-5-19" || (
