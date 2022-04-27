@@ -286,12 +286,25 @@ async function closeSettings() {
 
 async function openLogin() {
   const login = document.querySelector('#loginPanel')
-  const ip = document.querySelector('#ip')
+  const ip = document.querySelector('#ip').value
+  const port = document.querySelector('#port').value
   const loginIpDisplay = document.querySelector('#loginPopupServer')
   const registerIpDisplay = document.querySelector('#registerPopupServer')
+  
+  const config = await getCfg()
+  const useHttps = config.useHttps
+  const url = `${useHttps ? 'https' : 'http'}://${ip}:${port}`;
 
-  loginIpDisplay.innerText = ip.value
-  registerIpDisplay.innerText = ip.value
+  // Check if we even need to authenticate
+  const { data } = await axios.get(url + '/grasscutter/auth_status')
+
+  if (data.message !== 'AUTH_ENABLED') {
+    launchPrivate()
+    return
+  }
+
+  loginIpDisplay.innerText = ip
+  registerIpDisplay.innerText = ip
 
   if (login.style.display === 'none') {
     login.style.removeProperty('display')

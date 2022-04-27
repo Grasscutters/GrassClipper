@@ -90,6 +90,7 @@ async function login() {
       await Neutralino.clipboard.writeText(tkData.token)
 
       displayLoginAlert('Login successful! Token copied to clipboard. Paste this token into the username field of the game to log in.', 'success', 8000);
+      launchPrivate()
       break;
   }
 }

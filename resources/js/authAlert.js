@@ -6,6 +6,11 @@ async function displayLoginAlert(message, type, cooldown = null) {
 
   elm.style.removeProperty('display');
 
+  // Remove classification classes
+  elm.classList.remove('error');
+  elm.classList.remove('success');
+  elm.classList.remove('warn');
+
   switch(type) {
     case 'error':
       elm.classList.add('error');
@@ -34,6 +39,11 @@ async function displayRegisterAlert(message, type, cooldown = null) {
   const text = document.getElementById('registerAlertText');
 
   elm.style.removeProperty('display');
+  
+  // Remove classification classes
+  elm.classList.remove('error');
+  elm.classList.remove('success');
+  elm.classList.remove('warn');
 
   switch(type) {
     case 'error':
