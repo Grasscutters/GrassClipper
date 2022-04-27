@@ -298,7 +298,7 @@ async function openLogin() {
   // Check if we even need to authenticate
   const { data } = await axios.get(url + '/grasscutter/auth_status')
 
-  if (data.message !== 'AUTH_ENABLED') {
+  if (data?.message !== 'AUTH_ENABLED') {
     launchPrivate()
     return
   }
