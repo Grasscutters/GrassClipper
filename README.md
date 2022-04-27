@@ -59,7 +59,7 @@ Below are some scenarios you may encounter and their solutions.
 
 ## White Screen Fix
 
-Encountering a white screen? [Ensure WebView2 is installed](https://developer.microsoft.com/zh-cn/microsoft-edge/webview2/#download)
+Encountering a white screen? [Ensure WebView2 is installed](https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download)
 
 You may also want to run this command as administrator:
 `CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2txyewy"`
@@ -98,6 +98,7 @@ Thank you to everyone who has provided translations! <3
 * ES - memetrollsXD
 * ND - memetrollsXD
 * RU - fitiskin
+* TR - lilmayofuksu
 
 # Screenshots
 
