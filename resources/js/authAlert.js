@@ -1,6 +1,6 @@
 let alertTimeout, alertCooldown = 3000
 
-async function displayLoginAlert(message, type) {
+async function displayLoginAlert(message, type, cooldown = null) {
   const elm = document.getElementById('loginAlert');
   const text = document.getElementById('loginAlertText');
 
@@ -11,6 +11,10 @@ async function displayLoginAlert(message, type) {
       elm.classList.add('error');
       break;
 
+    case 'success':
+      elm.classList.add('success');
+      break;
+
     case 'warn':
     default:
       elm.classList.add('warn');
@@ -19,14 +23,15 @@ async function displayLoginAlert(message, type) {
 
   text.innerText = message;
 
-  // Disappear after 5 seconds
+  // Disappear after cooldown
   alertTimeout = setTimeout(() => {
     elm.style.display = 'none';
-  }, alertCooldown)
+  }, cooldown || alertCooldown)
 }
 
-async function displayRegisterAlert(message, type) {
+async function displayRegisterAlert(message, type, cooldown = null) {
   const elm = document.getElementById('registerAlert');
+  const text = document.getElementById('registerAlertText');
 
   elm.style.removeProperty('display');
 
@@ -35,6 +40,10 @@ async function displayRegisterAlert(message, type) {
       elm.classList.add('error');
       break;
 
+    case 'success':
+      elm.classList.add('success');
+      break;
+
     case 'warn':
     default:
       elm.classList.add('warn');
@@ -43,8 +52,8 @@ async function displayRegisterAlert(message, type) {
 
   text.innerText = message;
 
-  // Disappear after 5 seconds
+  // Disappear after cooldown
   alertTimeout = setTimeout(() => {
     elm.style.display = 'none';
-  }, alertCooldown)
+  }, cooldown || alertCooldown)
 }

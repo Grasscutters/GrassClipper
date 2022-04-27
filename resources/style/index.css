@@ -34,7 +34,7 @@ body {
 }
 
 #loginPanel {
-  height: 40%;
+  height: 50%;
   width: 32%;
 }
 
@@ -121,9 +121,12 @@ body {
   background: #e90000;
 }
 
-#registerAlert .warn,
-#loginAlert .warn {
+.warn {
+  background: #ffc61e;
+}
 
+.success {
+  background: #00c200;
 }
 
 #registerAlert,
@@ -133,6 +136,7 @@ body {
   align-items: center;
   border-radius: 5px;
   color: #fff;
+  text-align: center;
 }
 
 #registerAlert img,

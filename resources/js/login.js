@@ -64,8 +64,6 @@ async function login() {
   
   const { data } = await axios.post(url + '/grasscutter/login', reqBody)
 
-  console.log(data)
-
   switch(data.message) {
     case 'INVALID_ACCOUNT':
       displayLoginAlert('Invalid username or password', 'error');
@@ -73,20 +71,25 @@ async function login() {
 
     case 'NO_PASSWORD':
       // No account password, create one with change password
+      displayLoginAlert('No password set, please change password', 'warn');
       break;
 
     case 'UNKNOWN':
       // Unknown error, contact server owner
+      displayLoginAlert('Unknown error, contact server owner', 'error');
       break;
 
     case 'AUTH_DISABLED':
       // Authentication is disabled, we can just connect the user
+      displayLoginAlert('Authentication is disabled, no need to log in!', 'warn');
       break;
 
     default:
       // Success! Copy the JWT token to their clipboard
       const tkData = parseJwt(data.jwt)
       await Neutralino.clipboard.writeText(tkData.token)
+
+      displayLoginAlert('Login successful! Token copied to clipboard. Paste this token into the username field of the game to log in.', 'success', 8000);
       break;
   }
 }
@@ -112,23 +115,34 @@ async function register() {
   
   const { data } = await axios.post(url + '/grasscutter/register', reqBody)
 
-  console.log(data)
-
   switch(data.message) {
     case 'USERNAME_TAKEN':
       // Username is taken
+      displayRegisterAlert('Username is taken', 'error');
       break;
 
     case 'PASSWORD_MISMATCH':
       // The password and password confirmation do not match
+      displayRegisterAlert('Password and password confirmation do not match', 'error');
       break;
 
     case 'UNKNOWN':
       // Unknown error, contact server owner
+      displayRegisterAlert('Unknown error, contact server owner', 'error');
       break;
 
     case 'AUTH_DISABLED':
       // Authentication is disabled, we can just connect the user
+      displayRegisterAlert('Authentication is disabled, no need to register!', 'warn');
+      break;
+
+    default:
+      // Success!! Bring them to the login screen and auto-input their username
+      const loginUsername = document.getElementById('loginUsername');
+      loginUsername.value = username;
+
+      setLoginSection();
+      displayLoginAlert('Registration successful!', 'success', 5000);
       break;
   }
 }
