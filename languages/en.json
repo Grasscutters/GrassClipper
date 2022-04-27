@@ -39,5 +39,27 @@
   "proxyInstallDeny": "No thanks",
 
   "gameFolderDialog": "Select game folder",
-  "grasscutterFileDialog": "Select Grasscutter server jar file"
+  "grasscutterFileDialog": "Select Grasscutter server jar file",
+
+  "loggingInTo": "Logging in to: ",
+  "registeringFor": "Registering for: ",
+  "authUsername": "Username: ",
+  "authPassword": "Password: ",
+  "authConfirmPassword": "Confirm Password: ",
+  "authLoginBtn": "Login",
+  "authRegisterBtn": "Register",
+  "authLoginTitle": "Login",
+  "authRegisterTitle": "Register",
+  "launchWithoutAuth": "Launch without Authentication",
+
+  "alertInvalid": "Invalid username or password",
+  "alertNoPass": "No password set, please change password",
+  "alertUnknown": "Unknown error, contact server owner",
+  "alertAuthNoLogin": "Authentication is disabled, no need to log in!",
+  "alertLoginSuccess": "Login successful! Token copied to clipboard. Paste this token into the username field of the game to log in.",
+
+  "alertUserTaken": "Username is taken",
+  "alertPassMismatch": "Password and password confirmation do not match",
+  "alertAuthNoRegister": "Authentication is disabled, no need to register!",
+  "alertRegisterSuccess": "Registration successful!"
 }

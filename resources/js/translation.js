@@ -17,7 +17,7 @@ async function doTranslation() {
   engLocaleObj = JSON.parse(engLocale)
   localeObj = JSON.parse(localization)
 
-  const set = (id, localeString) => document.getElementById(id).innerHTML = localeObj[localeString] || engLocaleObj[localeString]
+  const set = (id, localeString) => document.getElementById(id).innerText = localeObj[localeString] || engLocaleObj[localeString]
 
   // Begin filling in values
   set('titleSection', 'appName')
@@ -75,4 +75,18 @@ async function doTranslation() {
 
   set('firstTimeInstallBtn', 'proxyInstallBtn')
   set('firstTimeDenyBtn', 'proxyInstallDeny')
+
+  // Login section
+  set('loginSectionTitle', 'authLoginTitle')
+  set('registerSectionTitle', 'authRegisterTitle')
+  set('loggingInToIndicator', 'loggingInTo')
+  set('registeringToIndicator', 'registeringFor')
+  set('loginUsernameIndicator', 'authUsername')
+  set('loginPasswordIndicator', 'authPassword')
+  set('registerUsernameIndicator', 'authUsername')
+  set('registerPasswordIndicator', 'authPassword')
+  set('registerConfirmIndicator', 'authConfirmPassword')
+  set('loginPopupContentBodyBtnLogin', 'authLoginBtn')
+  set('loginPopupContentBodyBtnRegister', 'authRegisterBtn')
+  set('noLoginBtn', 'launchWithoutAuth')
 }

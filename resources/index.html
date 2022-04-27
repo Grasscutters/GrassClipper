@@ -44,18 +44,18 @@
       <div id="loginPopupContentBody" class="authBody">
         <div id="loginPopupContentBodyText">
           <span id="loggingInTo">
-            Logging in to <span id="loginPopupServer"></span>
+            <span id="loggingInToIndicator">Logging in to </span><span id="loginPopupServer"></span>
           </span>
         </div>
         <div id="loginPopupContentBodyInputs" class="authInputs">
           <div id="loginPopupContentBodyInputsUsername">
-            <span>
+            <span id="loginUsernameIndicator">
               Username:
             </span>
             <input type="text" id="loginUsername" />
           </div>
           <div id="loginPopupContentBodyInputsPassword">
-            <span>
+            <span id="loginPasswordIndicator">
               Password:
             </span>
             <input type="password" id="loginPassword" onsubmit="login()" />
@@ -82,24 +82,24 @@
       <div id="registerPopupContentBody" style="display: none" class="authBody">
         <div id="registerPopupContentBodyText">
           <span id="registeringTo">
-            Registering for <span id="registerPopupServer"></span>
+            <span id="registeringToIndicator">Registering for </span><span id="registerPopupServer"></span>
           </span>
         </div>
         <div id="registerPopupContentBodyInputs" class="authInputs">
           <div id="registerPopupContentBodyInputsUsername">
-            <span>
+            <span id="registerUsernameIndicator">
               Username:
             </span>
             <input type="text" id="registerUsername" />
           </div>
           <div id="registerPopupContentBodyInputsPassword">
-            <span>
+            <span id="registerPasswordIndicator">
               Password:
             </span>
             <input type="password" id="registerPassword" />
           </div>
           <div id="registerPopupContentBodyInputsPasswordConfirm">
-            <span>
+            <span id="registerConfirmIndicator">
               Confirm Password:
             </span>
             <input type="password" id="registerPasswordConfirm" />
