@@ -18,6 +18,7 @@
     "filesystem.*",
     "storage.*",
     "window.*",
+    "clipboard.*",
     "debug.log"
   ],
   "modes": {

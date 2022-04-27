@@ -39,6 +39,12 @@ async function setRegisterSection(fromLogin = false) {
   }
 }
 
+function parseJwt(token) {
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace('-', '+').replace('_', '/');
+  return JSON.parse(window.atob(base64));
+}
+
 /**
  * Attempt login and launch game
  */
@@ -57,6 +63,7 @@ async function login() {
   }
   
   const { data } = await axios.post(url + '/grasscutter/login', reqBody)
+  const tkData = parseJwt(data.jwt)
 
   console.log(data)
 
@@ -79,6 +86,7 @@ async function login() {
 
     default:
       // Success! Copy the JWT token to their clipboard
+      await Neutralino.clipboard.writeText(tkData.token)
       break;
   }
 }
