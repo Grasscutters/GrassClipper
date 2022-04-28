@@ -296,12 +296,18 @@ async function openLogin() {
   const url = `${useHttps ? 'https' : 'http'}://${ip}:${port}`;
 
   // Check if we even need to authenticate
-  const { data } = await axios.get(url + '/grasscutter/auth_status')
+  try {
+    const { data } = await axios.get(url + '/grasscutter/auth_status')
 
-  if (data?.message !== 'AUTH_ENABLED') {
+    if (data?.message !== 'AUTH_ENABLED') {
+      launchPrivate()
+      return
+    }
+  } catch(e) {
     launchPrivate()
     return
   }
+
 
   loginIpDisplay.innerText = ip
   registerIpDisplay.innerText = ip
