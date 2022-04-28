@@ -8,11 +8,11 @@
 
   "gameExeSet": "选择游戏的可执行文件",
   "grasscutterFileSet": "选择 \"Grasscutter\" .jar 文件",
-  "folderNotSet": "没有选择游戏可执行文件或Grasscutter.jar文件",
+  "folderNotSet": "没有选择游戏可执行文件或 Grasscutter.jar 文件",
 
-  "ipPlaceholder": "服务器IP地址",
+  "ipPlaceholder": "服务器 IP 地址",
   "portPlaceholder": "端口",
-  "noFavorites": "没有收藏任何IP地址",
+  "noFavorites": "没有收藏任何 IP 地址",
 
   "settingsTitle": "设置",
   "scriptsSectionTitle": "脚本",
