@@ -57,7 +57,7 @@
   "alertAuthNoLogin": "Hệ thống đăng nhập đã bị tắt, không cần đăng nhập",
   "alertLoginSuccess": "Đã đăng nhập và tự động sao chép token. Dán token vào phần tài khoản trong game để đăng nhập.",
 
-  "alertUserTaken": "Username is taken",
+  "alertUserTaken": "Tên tài khoản đã tồn tại",
   "alertPassMismatch": "Mật khẩu xác thực không đúng với mật khẩu ban đầu",
   "alertAuthNoRegister": "Hệ thống đăng nhập đã bị tắt, không cần đăng ký",
   "alertRegisterSuccess": "Đăng ký thành công!"
