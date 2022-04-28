@@ -1,43 +1,64 @@
 {
-    "fullLangName": "Tiếng Việt",
-    "appName": "GrassClipper",
-  
-    "playOfficial": "Máy chủ chính thức",
-    "playPrivate": "Máy chủ thứ 3",
-    "launchLocalServer": "Khởi động Grasscutter",
-  
-    "gameExeSet": "Chọn file \"GenshinImpact.exe\"",
-    "grasscutterFileSet": "Chọn file \"Grasscutter.jar\"",
-    "folderNotSet": "Chưa chọn file",
-  
-    "ipPlaceholder": "Địa chỉ",
-    "portPlaceholder": "Port",
-    "noFavorites": "Không có máy chủ yêu thích",
-  
-    "settingsTitle": "Cài đặt",
-    "scriptsSectionTitle": "Scripts", 
-    "killswitchOption": "Công tắc đóng",
-    "killswitchSubtitle": "Dành cho những ai sợ bị ban. Tắt game *và mạng* nếu proxy có vấn đề.",
-    "proxyOption": "Proxy",
-    "proxySubtitle": "Dùng để kết nối vào máy chủ thứ 3",
-    "updateOption": "Cập nhật",
-    "updateSubtitle": "Tạm thời chưa dùng được. Kiểm tra Github để biết thêm chi tiết",
-    "languageOption": "Ngôn ngữ",
-    "languageSubtitle": " ",
-    "enableServerLauncherOption": "Grasscutter",
-    "enableServerLauncherSubtitle": "Thêm lựa chọn bật máy chủ grasscutter",
-    "httpsOption": "Dùng HTTPS",
-    "httpsSubtitle": " ",
-  
-    "introSen1": "Hình như đây là lần đầu tiên bạn dùng ứng dụng này!",
-    "introSen2": "Trước hết, chào bạn, cảm ơn bạn đã sử dụng! :)",
-    "introSen3": "Bạn có muốn tải proxy không?",
-    "introSen4": "(dùng để vào máy chủ riêng)",
-  
-    "updateBtn": "Cập nhật",
-    "proxyInstallBtn": "Tải",
-    "proxyInstallDeny": "Không",
-  
-    "gameFolderDialog": "Chọn GenshinImpact.exe",
-    "grasscutterFileDialog": "Chọn Grasscutter.jar"
-  }
+  "fullLangName": "Tiếng Việt",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Máy chủ chính thức",
+  "playPrivate": "Máy chủ thứ 3",
+  "launchLocalServer": "Khởi động Grasscutter",
+
+  "gameExeSet": "Chọn file \"GenshinImpact.exe\"",
+  "grasscutterFileSet": "Chọn file \"Grasscutter.jar\"",
+  "folderNotSet": "Chưa chọn file",
+
+  "ipPlaceholder": "Địa chỉ",
+  "portPlaceholder": "Port",
+  "noFavorites": "Không có máy chủ yêu thích",
+
+  "settingsTitle": "Cài đặt",
+  "scriptsSectionTitle": "Scripts", 
+  "killswitchOption": "Công tắc đóng",
+  "killswitchSubtitle": "Dành cho những ai sợ bị ban. Tắt game *và mạng* nếu proxy có vấn đề.",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Dùng để kết nối vào máy chủ thứ 3",
+  "updateOption": "Cập nhật",
+  "updateSubtitle": "Tạm thời chưa dùng được. Kiểm tra Github để biết thêm chi tiết",
+  "languageOption": "Ngôn ngữ",
+  "languageSubtitle": " ",
+  "enableServerLauncherOption": "Grasscutter",
+  "enableServerLauncherSubtitle": "Thêm lựa chọn bật máy chủ grasscutter",
+  "httpsOption": "Dùng HTTPS",
+  "httpsSubtitle": " ",
+
+  "introSen1": "Hình như đây là lần đầu tiên bạn dùng ứng dụng này!",
+  "introSen2": "Trước hết, chào bạn, cảm ơn bạn đã sử dụng! :)",
+  "introSen3": "Bạn có muốn tải proxy không?",
+  "introSen4": "(dùng để vào máy chủ riêng)",
+
+  "updateBtn": "Cập nhật",
+  "proxyInstallBtn": "Tải",
+  "proxyInstallDeny": "Không",
+
+  "gameFolderDialog": "Chọn GenshinImpact.exe",
+  "grasscutterFileDialog": "Chọn Grasscutter.jar",
+  "loggingInTo": "Đang đăng nhập với tên: ",
+  "registeringFor": "Đăng ký tài khoản: ",
+  "authUsername": "Tài khoản: ",
+  "authPassword": "Mật khẩu: ",
+  "authConfirmPassword": "Xác nhận lại mật khẩu: ",
+  "authLoginBtn": "Đăng nhập",
+  "authRegisterBtn": "Đăng ký",
+  "authLoginTitle": "Đăng nhập",
+  "authRegisterTitle": "Đăng ký",
+  "launchWithoutAuth": "Sử dụng mà không cần đăng nhập",
+
+  "alertInvalid": "Tài khoản hoặc mật khẩu không đúng",
+  "alertNoPass": "Tài khoản này chưa có mật khẩu.",
+  "alertUnknown": "Lỗi không xác định, báo cáo với người host",
+  "alertAuthNoLogin": "Hệ thống đăng nhập đã bị tắt, không cần đăng nhập",
+  "alertLoginSuccess": "Đã đăng nhập và tự động sao chép token. Dán token vào phần tài khoản trong game để đăng nhập.",
+
+  "alertUserTaken": "Tên tài khoản đã tồn tại",
+  "alertPassMismatch": "Mật khẩu xác thực không đúng với mật khẩu ban đầu",
+  "alertAuthNoRegister": "Hệ thống đăng nhập đã bị tắt, không cần đăng ký",
+  "alertRegisterSuccess": "Đăng ký thành công!"
+}
