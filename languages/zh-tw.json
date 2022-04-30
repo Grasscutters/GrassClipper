@@ -55,7 +55,7 @@
   "alertNoPass": "未設定密碼，請先更改密碼",
   "alertUnknown": "未知錯誤，請聯系伺服器管理員",
   "alertAuthNoLogin": "未啟用認證，無需登錄！",
-  "alertLoginSuccess": "登錄成功！Token 已複製至剪切板。將 Token 貼上至用戶名處即可登錄。",
+  "alertLoginSuccess": "登錄成功！Token 已複製至剪貼簿。將 Token 複製到用戶名處即可登錄。",
 
   "alertUserTaken": "用戶名已被占用",
   "alertPassMismatch": "兩組密碼不一致",
