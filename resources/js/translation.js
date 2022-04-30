@@ -89,4 +89,7 @@ async function doTranslation() {
   set('loginPopupContentBodyBtnLogin', 'authLoginBtn')
   set('loginPopupContentBodyBtnRegister', 'authRegisterBtn')
   set('noLoginBtn', 'launchWithoutAuth')
+
+  // update notification
+  set('updateNotifText', 'updateNotifText')
 }

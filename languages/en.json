@@ -61,5 +61,7 @@
   "alertUserTaken": "Username is taken",
   "alertPassMismatch": "Password and password confirmation do not match",
   "alertAuthNoRegister": "Authentication is disabled, no need to register!",
-  "alertRegisterSuccess": "Registration successful!"
+  "alertRegisterSuccess": "Registration successful!",
+
+  "updateNotifText": "A new update is available! Newest version: "
 }

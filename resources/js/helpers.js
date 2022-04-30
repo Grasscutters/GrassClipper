@@ -66,12 +66,12 @@ async function checkForUpdates() {
   return latest
 }
 
-async function displayUpdate(version) {
+async function displayUpdate() {
   const latest = await checkForUpdates()
   const versionDisplay = document.querySelector('#newestVersion')
   const notif = document.querySelector('#downloadNotif')
 
-  //if (latest === `v${NL_APPVERSION}`) return
+  if (latest === `v${NL_APPVERSION}`) return
 
   versionDisplay.innerText = latest
 

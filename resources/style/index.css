@@ -551,13 +551,13 @@ a {
 
   padding: 1em;
   top: 80%;
-  left: 110%;
+  left: 120%;
   width: 20%;
   border-radius: 5px;
 
   text-align: center;
 
-  transition: left 0.4s ease-in-out;
+  transition: left 0.5s ease-in-out;
 }
 
 #downloadNotif:hover {
