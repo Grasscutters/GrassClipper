@@ -103,6 +103,32 @@ async function openGrasscutterFolder() {
   openInExplorer(folder)
 }
 
+async function getRegistryLoginDetails() {
+  const results = await Neutralino.os.execCommand('.\\tools\\mtools.exe show')
+  const out = results.stdErr
+
+  if (!out) return {}
+
+  const parsed = JSON.parse(out)
+
+  return parsed.data
+}
+
+async function clearRegistryLoginDetails() {
+  createCmdWindow(`.\\tools\\mtools.exe set -a "" -u "" -t "" -d ""`)
+}
+
+async function setRegistryLoginDetails(tokenOrAccount, loginUid) {
+  const accList = await getRegistryLoginDetails()
+  const cur = accList.find(a => a.is_login)
+
+  // Required fields: uid, token, account, deviceId
+
+  const { token, deviceId } = cur
+
+  createCmdWindow(`.\\tools\\mtools.exe set -a ${tokenOrAccount} -u ${loginUid} -t ${token} -d ${deviceId}`)
+}
+
 /**
  * Minimize the window
  */
