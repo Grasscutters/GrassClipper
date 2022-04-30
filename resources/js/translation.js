@@ -75,6 +75,7 @@ async function doTranslation() {
   introSpan.innerHTML += localeObj.introSen3 + '<br>'
   introSpan.innerHTML += localeObj.introSen4 + '<br>'
 
+  // First time popup
   set('firstTimeInstallBtn', 'proxyInstallBtn')
   set('firstTimeDenyBtn', 'proxyInstallDeny')
 

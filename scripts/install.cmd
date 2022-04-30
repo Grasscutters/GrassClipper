@@ -10,6 +10,7 @@ cd "%ORIGIN%"
 
 if not exist "%ORIGIN%/ext" mkdir "%ORIGIN%/ext"
 if not exist "%ORIGIN%/temp" mkdir "%ORIGIN%/temp
+if not exist "%ORIGIN%/tools" mkdir "%ORIGIN%/tools"
 
 :: Begin by retrieving mitmproxy 7.0.4
 powershell Invoke-WebRequest -Uri https://snapshots.mitmproxy.org/7.0.4/mitmproxy-7.0.4-windows.zip -OutFile "'%ORIGIN%/temp/mitmproxy-7.0.4-windows.zip'"
@@ -43,6 +44,10 @@ echo Adding ceritifcate...
 	echo 			certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer 
 	echo ============================================================================================================
 )
+
+echo Grabbing registry login tool...
+
+powershell Invoke-WebRequest -Uri https://github.com/SpikeHD/miHoYoTools/releases/download/v1.0.0/mtools.exe -OutFile "'%ORIGIN%/tools/mtools.exe'"
 
 echo Done! You can now open GrassClipper.exe!
 
