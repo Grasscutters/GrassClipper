@@ -29,7 +29,7 @@
   "httpsOption": "Use HTTPS",
   "httpsSubtitle": "Choose between using HTTPS or HTTP.",
   "registryOption": "Login via Windows Registry",
-  "registrySubtitle": "Instead of copying login tokens when authenticating, you can login via a modification to the registry. Clears the registry data on game close.",
+  "registrySubtitle": "Instead of copying login tokens when authenticating, you can login via a modification to the registry. Clears the registry data on game close. Registry tool courtesy of Asnxthaony.",
 
   "introSen1": "Looks like this is your first time opening GrassClipper!",
   "introSen2": "First of all, welcome, happy to see you here! :)",
