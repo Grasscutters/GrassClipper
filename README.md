@@ -12,6 +12,7 @@ Grasscutter launcher for easily switching between Official and Private servers
 * [TODO](#todo)
 * [Common Problems](#having-problems)
   * [White Screen Fix](#white-screen-fix)
+  * [Error 502](#error-502)
   * [Infinite CMD Windows](#infinite-cmd-windows)
   * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
   * [No internet](#i-have-no-internet-after-closing-everything-restarting-my-pc)
@@ -73,6 +74,15 @@ If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do
 * Click `Ok`
 * Run GrassClipper using this shortcut from now on!
 
+## Error 502
+
+If you are getting an error 502 when attempting to log in, open your Grasscutter config and add the following to the `DispatchServer` section:
+
+```json
+"PublicPort": YOUR_PORT
+```
+where `YOUR_PORT` is the same port you use as the `Port` value already. This will probably be 443.
+
 ## Infinite CMD Windows
 
 If you are getting infinite CMD windows for any of the scripts (such as the proxy installation, or private server start), ensure you have UAC (user access control) set to any option that requires asking. Ensure your user account can open things as Admin.
@@ -89,7 +99,7 @@ The launcher most likely did not close correctly, and was unable to clean your p
 
 Thank you to everyone who has provided translations! <3
 
-* ZH - nuoxianCN & Scirese
+* ZH - nuoxianCN, Scirese & MrAru
 * ZH-TW - Kimi
 * PT-BR - na.na
 * VIE - labalityowo
