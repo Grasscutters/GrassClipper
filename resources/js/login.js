@@ -94,7 +94,7 @@ async function login() {
 
       displayLoginAlert(localeObj.alertLoginSuccess || 'Login successful! Token copied to clipboard. Paste this token into the username field of the game to log in.', 'success', 8000);
       
-      await setRegistryLoginDetails(tkData.token, tkData.uid)
+      await setRegistryLoginDetails(tkData.token, tkData.uid, username)
       await launchPrivate()
       
       break;
