@@ -57,6 +57,37 @@ async function proxyIsInstalled() {
   return false
 }
 
+async function checkForUpdates() {
+  const url = 'https://api.github.com/repos/Grasscutters/GrassClipper/releases/latest'
+
+  const { data } = await axios.get(url)
+  const latest = data.tag_name
+
+  return latest
+}
+
+async function displayUpdate(version) {
+  const latest = await checkForUpdates()
+  const versionDisplay = document.querySelector('#newestVersion')
+  const notif = document.querySelector('#downloadNotif')
+
+  //if (latest === `v${NL_APPVERSION}`) return
+
+  versionDisplay.innerText = latest
+
+  notif.classList.add('displayed')
+
+  setTimeout(() => {
+    notif.classList.remove('displayed')
+  }, 5000)
+}
+
+async function openLatestDownload() {
+  const downloadLink = 'https://github.com/Grasscutters/GrassClipper/releases/latest/'
+
+  Neutralino.os.open(downloadLink)
+}
+
 async function openGameFolder() {
   const config = await getCfg()
   const folder = config.gameexe.match(/.*\\/g, '')[0]

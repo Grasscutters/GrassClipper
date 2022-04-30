@@ -7,6 +7,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+  color: #fff;
+}
+
 .darken {
   filter: brightness(0.6);
 }
@@ -535,4 +539,43 @@ body {
 
 #serverInput img:hover {
   cursor: pointer;
+}
+
+#downloadNotif {
+  z-index: 99;
+  position: absolute;
+
+  color: #fff;
+  background: #141414;
+  border: 1px solid #ccc;
+
+  padding: 1em;
+  top: 80%;
+  left: 110%;
+  width: 20%;
+  border-radius: 5px;
+
+  text-align: center;
+
+  transition: left 0.4s ease-in-out;
+}
+
+#downloadNotif:hover {
+  cursor: pointer;
+  border-color: #fff;
+}
+
+#downloadNotif img {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(16deg) brightness(103%) contrast(101%);
+}
+
+#downloadNotif.displayed {
+  left: 70%;
+}
+
+#newestVersion {
+  font-weight: bold;
 }
