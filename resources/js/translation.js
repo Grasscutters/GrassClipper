@@ -58,6 +58,8 @@ async function doTranslation() {
   set('serverSubtitle', 'enableServerLauncherSubtitle')
   set('httpsTitle', 'httpsOption')
   set('httpsSubtitle', 'httpsSubtitle')
+  set('registryLoginTitle', 'registryOption')
+  set('registrySubtitle', 'registrySubtitle')
   
   // Intro popup
   const popup = document.getElementById('firstTimeNotice')
