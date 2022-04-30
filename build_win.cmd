@@ -29,4 +29,4 @@ xcopy .\resources\bg\server\ .\dist\GrassClipper\resources\bg\server\ /y /s
 move .\dist\GrassClipper\GrassClipper-win_x64.exe .\dist\GrassClipper\GrassClipper.exe
 
 :: Re-use non-ssl secure version
-powershell Invoke-WebRequest -Uri %SSL_BINARY_URL% -OutFile "./bin/neutralino-win_x64.exe"
+powershell Invoke-WebRequest -Uri %NON_SSL_BINARY_URL% -OutFile "./bin/neutralino-win_x64.exe"
