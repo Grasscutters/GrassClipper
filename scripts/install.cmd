@@ -47,7 +47,7 @@ echo Adding ceritifcate...
 
 echo Grabbing registry login tool...
 
-powershell Invoke-WebRequest -Uri https://github.com/SpikeHD/miHoYoTools/releases/download/v1.0.0/mtools.exe -OutFile "'%ORIGIN%/tools/mtools.exe'"
+powershell Invoke-WebRequest -Uri https://github.com/SpikeHD/miHoYoTools/releases/download/v1.0.1/mtools.exe -OutFile "'%ORIGIN%/tools/mtools.exe'"
 
 echo Done! You can now open GrassClipper.exe!
 
