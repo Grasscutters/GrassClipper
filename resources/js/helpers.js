@@ -59,7 +59,7 @@ async function proxyIsInstalled() {
 
 async function openGameFolder() {
   const config = await getCfg()
-  const folder = config.gameexe.match(/.*\//g, '')[0]
+  const folder = config.gameexe.match(/.*\\/g, '')[0]
 
   openInExplorer(folder)
 }

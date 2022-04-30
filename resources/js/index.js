@@ -7,6 +7,7 @@ const createCmdWindow = async (command) => {
 }
 
 const openInExplorer = async (path) => {
+  console.log(`explorer.exe "${path}"`)
   createCmdWindow(`explorer.exe "${path}"`)
 }
 
@@ -391,7 +392,7 @@ async function setGameExe() {
   const config = await getCfg()
 
   // It's an array of selections, so only get the first one
-  config.gameexe = gameExe[0]
+  config.gameexe = gameExe[0].replace(/\//g, '\\')
 
   Neutralino.storage.setData('config', JSON.stringify(config))
 
