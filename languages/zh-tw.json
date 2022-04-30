@@ -39,4 +39,26 @@
 
   "gameFolderDialog": "選擇Genshin Impact game資料夾",
   "grasscutterFileDialog": "選擇Grasscutter.jar檔案"
+  
+  "loggingInTo": "登錄至：",
+  "registeringFor": "註冊至：",
+  "authUsername": "用戶名: ",
+  "authPassword": "密碼: ",
+  "authConfirmPassword": "再次確認密碼: ",
+  "authLoginBtn": "登錄",
+  "authRegisterBtn": "註冊",
+  "authLoginTitle": "登錄",
+  "authRegisterTitle": "註冊",
+  "launchWithoutAuth": "在未認證的情況下啟動",
+
+  "alertInvalid": "無效的用戶名或密碼",
+  "alertNoPass": "未設定密碼，請先更改密碼",
+  "alertUnknown": "未知錯誤，請聯系服務器管理員",
+  "alertAuthNoLogin": "未啟用認證，無需登錄！",
+  "alertLoginSuccess": "登錄成功！Token 已復製至剪切板。將 Token 粘貼至用戶名處即可登錄。",
+
+  "alertUserTaken": "用戶名已被占用",
+  "alertPassMismatch": "密碼與確認密碼不匹配",
+  "alertAuthNoRegister": "未啟用認證，無需註冊！",
+  "alertRegisterSuccess": "註冊成功！"
 }
