@@ -4,6 +4,7 @@
  * should be done here to ensure DOM contents are loaded.
  */
  document.addEventListener('DOMContentLoaded', async () => {
+   displayUpdate();
   setBackgroundImage();
   displayGameFolder();
   displayServerFolder();
