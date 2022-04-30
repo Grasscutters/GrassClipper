@@ -81,6 +81,15 @@ async function handleLanguageChange(elm) {
   Neutralino.storage.setData('config', JSON.stringify(config))
 }
 
+async function toggleRegistryLogin() {
+  const registryCheckbox = document.querySelector('#registryOption')
+  const config = await getCfg()
+
+  config.registryLogin = registryCheckbox.checked
+
+  Neutralino.storage.setData('config', JSON.stringify(config))
+}
+
 /**
  * Add the current value of the IP input to the favorites list
  * OR

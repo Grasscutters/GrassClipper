@@ -189,7 +189,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 10%;
+  padding: 0 10%;
 }
 
 .settingsRow {
@@ -206,7 +206,7 @@ a {
   display:inline-block;
   font-size: 1em;
   font-weight: normal;
-  margin: 10px 0px;
+  margin: 6px 0px;
 }
 
 .settingSubtitle {
