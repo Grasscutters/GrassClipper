@@ -120,13 +120,13 @@ async function clearRegistryLoginDetails() {
 
 async function setRegistryLoginDetails(tokenOrAccount, loginUid) {
   const accList = await getRegistryLoginDetails()
-  const cur = accList.find(a => a.is_login)
+  const cur = accList.find(a => a.is_login) || accList[0]
 
   // Required fields: uid, token, account, deviceId
 
   const { token, deviceId } = cur
 
-  createCmdWindow(`.\\tools\\mtools.exe set -a ${tokenOrAccount} -u ${loginUid} -t ${token} -d ${deviceId}`)
+  createCmdWindow(`.\\tools\\mtools.exe set -a "${tokenOrAccount}" -u "${loginUid}" -t "${token}" -d "${deviceId}"`)
 }
 
 /**
