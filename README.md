@@ -77,7 +77,9 @@ If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do
 
 ## Error 502
 
-If you are getting an error 502 when attempting to log in, open your Grasscutter config and add the following to the `DispatchServer` section:
+First, if you are running a local server, ensure the local server is running. Otherwise, ensure the server you are connecting to is actually running.
+
+If you are still getting an error 502 when attempting to log in to your own server, open your Grasscutter config and add the following to the `DispatchServer` section:
 
 ```json
 "PublicPort": YOUR_PORT
