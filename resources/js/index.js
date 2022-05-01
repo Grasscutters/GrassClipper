@@ -172,7 +172,7 @@ async function setBackgroundImage() {
  */
 async function handleFavoriteInput() {
   const ip = document.querySelector('#ip').value
-  const port = document.querySelector('#port').value
+  const port = document.querySelector('#port').value || '443'
   const ipArr = await getFavIps()
 
   const addr = `${ip}:${port}`

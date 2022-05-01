@@ -88,7 +88,7 @@ async function handleLanguageChange(elm) {
  */
  async function setFavorite() {
   const ip = document.querySelector('#ip').value
-  const port = document.querySelector('#port').value
+  const port = document.querySelector('#port').value || '443'
   const ipArr = await getFavIps()
 
   const addr = `${ip}:${port}`

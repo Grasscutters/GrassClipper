@@ -37,7 +37,7 @@ class MlgmXyysd_Anime_Game_Proxy:
         loader.add_option(
             name = "port",
             typespec = int,
-            default = 80,
+            default = 443,
             help = "Port to replace",
         )
 
