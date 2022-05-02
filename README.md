@@ -13,6 +13,7 @@ Grasscutter launcher for easily switching between Official and Private servers
 * [Common Problems](#having-problems)
   * [White Screen Fix](#white-screen-fix)
   * [Error 502](#error-502)
+  * [Error 4206](#error-4206)
   * [Infinite CMD Windows](#infinite-cmd-windows)
   * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
   * [No internet](#i-have-no-internet-after-closing-everything-restarting-my-pc)
@@ -77,12 +78,20 @@ If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do
 
 ## Error 502
 
-If you are getting an error 502 when attempting to log in, open your Grasscutter config and add the following to the `DispatchServer` section:
+1. If you are running a local server, ensure the local server is running. Otherwise, ensure the server you are connecting to is actually running.
+
+2. If you are able, [use the development branch of Grasscutter](https://github.com/Grasscutters/Grasscutter/tree/development). It is known to work better with GrassClipper.
+
+If you are still getting an error 502 when attempting to log in to your own server, open your Grasscutter config and add the following to the `DispatchServer` section:
 
 ```json
 "PublicPort": YOUR_PORT
 ```
 where `YOUR_PORT` is the same port you use as the `Port` value already. This will probably be 443.
+
+## Error 4206
+
+Ensure you have the correct `keystore.p12` file that comes with your branch (`stable` or `development`). Also ensure the password is set properly in Grasscutters `config.json` (blank for `stable`, "123456" for `development`).
 
 ## Infinite CMD Windows
 
@@ -101,7 +110,7 @@ The launcher most likely did not close correctly, and was unable to clean your p
 Thank you to everyone who has provided translations! <3
 
 * ZH - nuoxianCN, Scirese & MrAru
-* ZH-TW - Kimi
+* ZH-TW - Kimi & KormiMeiko
 * PT-BR - na.na
 * VIE - labalityowo
 * ID - Iqrar99

@@ -175,7 +175,7 @@ a {
 #settingsPanel {
   width: 35%;
   height: 80%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #fullSettingsTitle {
