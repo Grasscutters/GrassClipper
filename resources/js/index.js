@@ -248,9 +248,19 @@ async function handleFavoriteList() {
 
 async function openDownloads() {
   const downloads = document.querySelector('#downloadPanel')
+  const config = await getCfg()
 
   if (downloads.style.display === 'none') {
     downloads.style.removeProperty('display')
+  }
+
+  // Disable the resource download button if a serverFolder path is not set
+  if (!config.serverFolder) {
+    document.querySelector('#resourceInstall').disabled = true
+    document.querySelector('#resourceInstall').classList.add('disabled')
+  } else {
+    document.querySelector('#resourceInstall').disabled = false
+    document.querySelector('#resourceInstall').classList.remove('disabled')
   }
 }
 
