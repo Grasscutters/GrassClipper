@@ -3,6 +3,8 @@
 set ORIGIN=%1
 set ORIGIN=%ORIGIN:"=%
 
+title Grassclipper Installer
+
 echo Downloading proxy server...
 
 :: Make sure we are in the right directory
@@ -48,4 +50,4 @@ echo Done! You can now open GrassClipper.exe!
 
 pause
 
-exit /b
+taskkill /f /fi "WINDOWTITLE eq Grassclipper Installer"
