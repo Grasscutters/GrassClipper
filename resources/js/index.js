@@ -412,7 +412,7 @@ async function setGameExe() {
     ]
   })
 
-  if (!gameexe[0]) return;
+  if (!gameExe[0]) return;
 
   // Set the folder in our configuration
   const config = await getCfg()
