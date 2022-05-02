@@ -137,11 +137,11 @@
         </div>
         <div class="settingsRow">
           <div class="settingSection">
-            <span class="settingLabel" id="proxyTitle">Install Proxy Server</span>
+            <span class="settingLabel" id="proxyTitle">Run Installer</span>
             <button class="smolBtn" onclick="runInstallScript()" id="proxyInstall">Install</button>
           </div>
           <span class="settingSubtitle" id="proxySubtitle">
-            Install the proxy server via the install script.
+            Install the proxy server and mtools via the install script.
           </span>
         </div>
         <div class="settingsRow">
@@ -180,6 +180,16 @@
           </div>
           <span class="settingSubtitle" id="httpsSubtitle">
             Choose between using HTTPS or HTTP.
+          </span>
+        </div>
+        <div class="settingsRow">
+          <div class="settingSection">
+            <span class="settingLabel", id="registryLoginTitle">Login via Windows Registry</span>
+            <input type="checkbox" id="registryOption" onchange="toggleRegistryLogin()" />
+            </select>
+          </div>
+          <span class="settingSubtitle" id="registrySubtitle">
+            Instead of copying login tokens when authenticating, you can login via a modification to the registry. Clears the registry data on game close. Registry tool courtesy of Asnxthaony.
           </span>
         </div>
       </div>

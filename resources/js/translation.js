@@ -58,6 +58,8 @@ async function doTranslation() {
   set('serverSubtitle', 'enableServerLauncherSubtitle')
   set('httpsTitle', 'httpsOption')
   set('httpsSubtitle', 'httpsSubtitle')
+  set('registryLoginTitle', 'registryOption')
+  set('registrySubtitle', 'registrySubtitle')
   
   // Intro popup
   const popup = document.getElementById('firstTimeNotice')
@@ -73,6 +75,7 @@ async function doTranslation() {
   introSpan.innerHTML += localeObj.introSen3 + '<br>'
   introSpan.innerHTML += localeObj.introSen4 + '<br>'
 
+  // First time popup
   set('firstTimeInstallBtn', 'proxyInstallBtn')
   set('firstTimeDenyBtn', 'proxyInstallDeny')
 

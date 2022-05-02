@@ -4,6 +4,7 @@ bin/
 dist/
 ext/
 temp/
+tools/
 resources/js/neutralino.js
 resources/bg/official
 

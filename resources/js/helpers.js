@@ -12,6 +12,7 @@
     serverLaunchPanel: false,
     language: 'en',
     useHttps: true,
+    registryLogin: true
   }
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
@@ -100,6 +101,32 @@ async function openGrasscutterFolder() {
   const folder = config.serverFolder.match(/.*\\/g, '')[0]
 
   openInExplorer(folder)
+}
+
+async function getRegistryLoginDetails() {
+  const results = await Neutralino.os.execCommand('.\\tools\\mtools.exe show')
+  const out = results.stdErr
+
+  if (!out) return {}
+
+  const parsed = JSON.parse(out)
+
+  return parsed.data
+}
+
+async function clearRegistryLoginDetails() {
+  createCmdWindow(`.\\tools\\mtools.exe set -a "" -u "" -t "" -d "" -n ""`)
+}
+
+async function setRegistryLoginDetails(tokenOrAccount, loginUid, name) {
+  const accList = await getRegistryLoginDetails()
+  const cur = accList.find(a => a.is_login) || accList[0]
+
+  // Required fields: uid, token, account, deviceId
+
+  const { token, deviceId } = cur
+
+  createCmdWindow(`.\\tools\\mtools.exe set -a "${tokenOrAccount}" -u "${loginUid}" -t "${token}" -d "${deviceId}" -n "${name}"`)
 }
 
 /**
