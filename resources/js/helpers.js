@@ -12,6 +12,7 @@
     serverLaunchPanel: false,
     language: 'en',
     useHttps: true,
+    grasscutterBranch: '',
   }
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
