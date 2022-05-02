@@ -115,6 +115,28 @@
       </div>
     </div>
 
+    <div id="downloadPanel" style="display: none;">
+      <div id="downloadTitleBar">
+        <span id="downloadTitle">
+          <span id="downloadTitleText">Downloads</span>
+          <span id="downloadClose" onclick="closeDownloads()">
+            <img src="icons/close.svg" />
+          </span>
+        </span>
+      </div>
+      <div id="downloadPanelInner">
+        <div class="downloadRow">
+          <div class="downloadSection">
+            <span class="downloadLabel" id="installerTitle">Installer</span>
+            <button class="smolBtn" onclick="runInstallScript()" id="proxyInstall">Install</button>
+          </div>
+          <span class="downloadSubtitle" id="installerSubtitle">
+            Installs proxy and other tools. Required for Grasscutter servers.
+          </span>
+        </div>
+      </div>
+    </div>
+
     <!-- Setting panel -->
     <div id="settingsPanel" style="display: none;">
       <div id="settingsTitleBar">
@@ -195,6 +217,9 @@
       <div id="refreshBtn" onclick="window.location.reload()">
         <img src="icons/refresh.svg" />
       </div>
+      <div id="downloadBtn" onclick="openDownloads()">
+        <img src="icons/download.svg" />
+      </div>
       <div id="settingsBtn" onclick="openSettings()">
         <img src="icons/cog.svg" />
       </div>
@@ -205,6 +230,8 @@
         <img src="icons/close.svg" />
       </div>
     </div>
+
+    <!-- Main content -->
     <div id="panelContainer">
       <!-- Official play btn -->
       <div id="firstPanel">
