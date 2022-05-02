@@ -21,7 +21,10 @@ async function downloadGC(branch) {
   config.grasscutterBranch = branch
 
   // Set gc path for people with launcher enabled
-  config.serverFolder = `${NL_CWD}\\gc-${branch}\\`
+  config.serverFolder = `${NL_CWD}/gc-${branch}/grasscutter.jar`
 
   Neutralino.storage.setData('config', JSON.stringify(config))
+  
+  // Display folder after saving config
+  displayServerFolder()
 }

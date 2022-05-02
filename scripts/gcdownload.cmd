@@ -6,6 +6,8 @@ set BRANCH=%3
 set FOLDER_NAME=".\gc-%BRANCH%"
 set FOLDER_NAME=%FOLDER_NAME:"=%
 
+title GC Download Script
+
 if not exist "%FOLDER_NAME%" mkdir "%FOLDER_NAME%"
 if not exist ".\temp" mkdir ".\temp"
 
@@ -39,5 +41,5 @@ echo Done, latest Grasscutter %BRANCH% now downloaded in %FOLDER_NAME%
 
 pause
 
-exit /b
+taskkill /f /fi "WINDOWTITLE eq GC Download Script"
 
