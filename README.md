@@ -13,6 +13,7 @@ Grasscutter launcher for easily switching between Official and Private servers
 * [Common Problems](#having-problems)
   * [White Screen Fix](#white-screen-fix)
   * [Error 502](#error-502)
+  * [Error 4206](#error-4206)
   * [Infinite CMD Windows](#infinite-cmd-windows)
   * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
   * [No internet](#i-have-no-internet-after-closing-everything-restarting-my-pc)
@@ -87,6 +88,10 @@ If you are still getting an error 502 when attempting to log in to your own serv
 "PublicPort": YOUR_PORT
 ```
 where `YOUR_PORT` is the same port you use as the `Port` value already. This will probably be 443.
+
+## Error 4206
+
+Ensure you have the correct `keystore.p12` file that comes with your branch (`stable` or `development`). Also ensure the password is set properly in Grasscutters `config.json` (blank for `stable`, "123456" for `development`).
 
 ## Infinite CMD Windows
 
