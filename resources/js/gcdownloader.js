@@ -15,7 +15,7 @@ async function downloadGC(branch) {
   const artiUrl = `https://nightly.link/Grasscutters/Grasscutter/workflows/build/${branch}/Grasscutter.zip`
   
   // Run installer
-  createCmdWindow(`.\\scripts\\gcdownload.cmd ${artiUrl} ${keystoreUrl} ${branch}`)
+  createCmdWindow(`.\\scripts\\gc_download.cmd ${artiUrl} ${keystoreUrl} ${branch}`)
 
   // Set current installation in config
   config.grasscutterBranch = branch
