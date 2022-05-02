@@ -216,6 +216,10 @@ a {
   margin: 10px 0px;
 }
 
+.downloadLabel {
+  margin: 14px 0px;
+}
+
 .downloadSubtitle,
 .settingSubtitle {
   color: rgb(165, 165, 165);
