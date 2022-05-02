@@ -1,39 +1,67 @@
 {
-    "fullLangName": "Bahasa Indonesia",
-    "appName": "GrassClipper",
-  
-    "playOfficial": "Mainkan Official",
-    "playPrivate": "Mainkan Grasscutter",
-    "launchLocalServer": "Luncurkan Local Server",
-  
-    "gameExeSet": "Atur folder game",
-    "grasscutterFileSet": "Atur file \"Grasscutter\" .jar",
-    "folderNotSet": "Belum diatur",
-  
-    "ipPlaceholder": "Alamat IP",
-    "noFavorites": "Tidak ada favorite yang diatur",
-  
-    "settingsTitle": "Pengaturan",
-    "scriptsSectionTitle": "Scripts",
-    "killswitchOption": "Matikan Switch",
-    "killswitchSubtitle": "Untuk kamu yang paranoid terhadap ban. Matikan proses game *dan internetmu* apabila sesuatu terjadi pada proxy nya.",
-    "proxyOption": "Proxy",
-    "proxySubtitle": "Install proxy server melalui install script",
-    "updateOption": "Update",
-    "updateSubtitle": "Update otomatis dinonaktifkan untuk sementara. Cek GitHub untuk rilis terbaru.",
-    "languageOption": "Bahasa",
-    "languageSubtitle": "Pilih bahasamu!",
-    "enableServerLauncherOption": "Nyalakan Server Launcher",
-    "enableServerLauncherSubtitle": "Nyalakan tile server launcher untuk meluncurkan instance Grasscutter secara lokal.",
-  
-    "introSen1": "Sepertinya ini pertama kalinya kamu menggunakan GrassClipper!",
-    "introSen2": "Pertama-tama, selamat datang, senang bertemu denganmu! :)",
-    "introSen3": "Apa kamu ingin menjalankan installer proxy?",
-    "introSen4": "(diperlukan untuk terhubung dengan private servers)",
-  
-    "proxyInstallBtn": "Install",
-    "proxyInstallDeny": "Tidak terima kasih",
-  
-    "gameFolderDialog": "Pilih folder game",
-    "grasscutterFileDialog": "Pilih file jar server Grasscutter"
-  }
+  "fullLangName": "Bahasa Indonesia",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Mainkan Official",
+  "playPrivate": "Mainkan di Grasscutter",
+  "launchLocalServer": "Luncurkan Server Lokal",
+
+  "gameExeSet": "Atur eksekusi game",
+  "grasscutterFileSet": "Atur file \"Grasscutter\" .jar",
+  "folderNotSet": "Belum diatur",
+
+  "ipPlaceholder": "Alamat IP",
+  "portPlaceholder": "Port",
+  "noFavorites": "Tidak ada favorit yang diatur",
+
+  "settingsTitle": "Pengaturan",
+  "scriptsSectionTitle": "Skrip",
+  "killswitchOption": "Saklar Mati",
+  "killswitchSubtitle": "Hanya untuk yang paranoid terhadap ban. Mematikan proses game *dan internetmu* jika terjadi sesuatu pada proxy nya.",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Pasang server proxy melalui skrip pemasangan",
+  "updateOption": "Pembaruan",
+  "updateSubtitle": "Pembaruan otomatis dinonaktifkan untuk sementara. Cek GitHub untuk rilisan terbaru.",
+  "languageOption": "Bahasa",
+  "languageSubtitle": "Pilih bahasamu!",
+  "enableServerLauncherOption": "Aktifkan Peluncur Server",
+  "enableServerLauncherSubtitle": "Aktifkan ke tile peluncur server untuk meluncurkan instance Grasscutter secara lokal.",
+  "httpsOption": "Gunakan HTTPS",
+  "httpsSubtitle": "Pilih antara menggunakan HTTPS atau HTTP.",
+
+  "introSen1": "Sepertinya ini pertama kalinya kamu membuka GrassClipper!",
+  "introSen2": "Pertama-tama, selamat datang, senang bertemu denganmu disini! :)",
+  "introSen3": "Apakah kamu ingin menjalankan pemasangan proxy?",
+  "introSen4": "(diperlukan untuk menghubungkan ke server)",
+
+  "updateBtn": "Perbarui",
+  "proxyInstallBtn": "Pasang",
+  "proxyInstallDeny": "Tidak, terima kasih",
+
+  "gameFolderDialog": "Pilih folder game",
+  "grasscutterFileDialog": "Pilih file jar server Grasscutter",
+
+  "loggingInTo": "Masuk ke: ",
+  "registeringFor": "Mendaftar untuk: ",
+  "authUsername": "Nama Pengguna: ",
+  "authPassword": "Kata Sandi: ",
+  "authConfirmPassword": "Konfirmasi Kata Sandi: ",
+  "authLoginBtn": "Masuk",
+  "authRegisterBtn": "Daftar",
+  "authLoginTitle": "Masuk",
+  "authRegisterTitle": "Daftar",
+  "launchWithoutAuth": "Luncurkan Tanpa Autentikasi",
+
+  "alertInvalid": "Nama pengguna atau kata sandi tidak valid",
+  "alertNoPass": "Tidak ada kata sandi yang diatur, silahkan isi kata sandi",
+  "alertUnknown": "Kesalahan yang tidak diketahui, hubungi pemilik server",
+  "alertAuthNoLogin": "Autentikasi dinonaktifkan, tidak perlu masuk!",
+  "alertLoginSuccess": "Berhasil masuk! Token disalin ke papan klip. Tempelkan token ini ke dalam bidang nama pengguna di game untuk masuk.",
+
+  "alertUserTaken": "Nama pengguna sudah terpakai",
+  "alertPassMismatch": "Kata sandi dan konfirmasi kata sandi tidak cocok",
+  "alertAuthNoRegister": "Autentikasi dinonaktifkan, tidak perlu mendaftar!",
+  "alertRegisterSuccess": "Pendaftaran berhasil!",
+
+  "updateNotifText": "Pembaruan baru tersedia! Versi terbaru: "
+}
