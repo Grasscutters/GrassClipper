@@ -11,6 +11,10 @@ a {
   color: #fff;
 }
 
+img {
+  height: 20px;
+}
+
 .darken {
   filter: brightness(0.6);
 }
