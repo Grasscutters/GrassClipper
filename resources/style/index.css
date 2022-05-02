@@ -208,16 +208,16 @@ a {
   margin-bottom: 10px;
 }
 
+.downloadTitle {
+  margin: 6px;
+}
+
 .downloadLabel,
 .settingLabel {
   display:inline-block;
   font-size: 1em;
   font-weight: normal;
   margin: 10px 0px;
-}
-
-.downloadLabel {
-  margin: 14px 0px;
 }
 
 .downloadSubtitle,
