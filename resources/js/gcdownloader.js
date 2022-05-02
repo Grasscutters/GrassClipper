@@ -52,8 +52,6 @@ async function downloadGC(branch) {
     const folder = 'keys'
     await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
   }
-  
-  return;
 
   // Run installer
   createCmdWindow(`.\\scripts\\gc_download.cmd ${artiUrl} ${keystoreUrl} ${branch}`)
