@@ -97,5 +97,6 @@ async function downloadGC(branch) {
 
   // Display folder after saving config
   displayServerFolder()
+  enableServerButton()
   displayServerLaunchSection()
 }
