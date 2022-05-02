@@ -77,7 +77,9 @@ If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do
 
 ## Error 502
 
-First, if you are running a local server, ensure the local server is running. Otherwise, ensure the server you are connecting to is actually running.
+1. If you are running a local server, ensure the local server is running. Otherwise, ensure the server you are connecting to is actually running.
+
+2. If you are able, [use the development branch of Grasscutter](https://github.com/Grasscutters/Grasscutter/tree/development). It is known to work better with GrassClipper.
 
 If you are still getting an error 502 when attempting to log in to your own server, open your Grasscutter config and add the following to the `DispatchServer` section:
 
