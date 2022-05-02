@@ -2,6 +2,37 @@ async function clearGCInstallation() {
   Neutralino.os.execCommand(`del /s /q "./gc"`)
 }
 
+async function setDownloadButtonsToLoading() {
+  const stableBtn = document.querySelector('#stableInstall')
+  const devBtn = document.querySelector('#devInstall')
+
+  stableBtn.innerText = localeObj.gcScriptRunning || 'Running...'
+
+  devBtn.innerText = localeObj.gcScriptRunning || 'Running...'
+
+  // Set btns to disabled
+  stableBtn.disabled = true
+  stableBtn.classList.add('disabled')
+
+  devBtn.disabled = true
+  devBtn.classList.add('disabled')
+}
+
+async function resetDownloadButtons() {
+  const stableBtn = document.querySelector('#stableInstall')
+  const devBtn = document.querySelector('#devInstall')
+
+  stableBtn.innerText = localeObj.stableInstall || 'Download'
+  devBtn.innerText = localeObj.devInstall || 'Download'
+
+  // Set btns to enabled
+  stableBtn.disabled = false
+  stableBtn.classList.remove('disabled')
+
+  devBtn.disabled = false
+  devBtn.classList.remove('disabled')
+}
+
 async function downloadGC(branch) {
   const config = await getCfg()
 
@@ -14,7 +45,12 @@ async function downloadGC(branch) {
   // Set gc path for people with launcher enabled
   config.serverFolder = `${NL_CWD}/gc-${branch}/grasscutter.jar`
 
+  // Enable server launcher
+  config.serverLaunchPanel = true
+
   Neutralino.storage.setData('config', JSON.stringify(config))
+
+  setDownloadButtonsToLoading()
 
   // Keystore for branch (since they can differ)
   const keystoreUrl = `https://github.com/Grasscutters/Grasscutter/raw/${branch}/keystore.p12`
@@ -56,6 +92,10 @@ async function downloadGC(branch) {
   // Run installer
   createCmdWindow(`.\\scripts\\gc_download.cmd ${artiUrl} ${keystoreUrl} ${branch}`)
 
+  // Fix buttons
+  resetDownloadButtons()
+
   // Display folder after saving config
   displayServerFolder()
+  displayServerLaunchSection()
 }
