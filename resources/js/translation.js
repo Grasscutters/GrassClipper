@@ -90,6 +90,21 @@ async function doTranslation() {
   set('loginPopupContentBodyBtnRegister', 'authRegisterBtn')
   set('noLoginBtn', 'launchWithoutAuth')
 
+  // Downloads section
+  set('downloadTitle', 'downloadTitle')
+  set('grassclipperTitle', 'grassclipperTitle')
+  set('grasscutterTitle', 'grasscutterTitle')
+  set('installerTitle', 'installerTitle')
+  set('installerSubtitle', 'installerSubtitle')
+  set('downloadStable', 'downloadStable')
+  set('stableSubtitle', 'stableSubtitle')
+  set('downloadDev', 'downloadDev')
+  set('downloadSubtitle', 'downloadSubtitle')
+  set('downloadResources', 'downloadResources')
+  set('devSubtitle', 'devSubtitle')
+  set('stableInstall', 'stableInstall')
+  set('devInstall', 'devInstall')
+
   // update notification
   set('updateNotifText', 'updateNotifText')
 }

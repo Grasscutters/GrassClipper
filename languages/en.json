@@ -63,5 +63,21 @@
   "alertAuthNoRegister": "Authentication is disabled, no need to register!",
   "alertRegisterSuccess": "Registration successful!",
 
+  "downloadTitle": "Downloads",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "Installer",
+  "installerSubtitle": "Installs proxy and other tools. Required for Grasscutter servers.",
+  "downloadStable": "Download Grasscutter Stable Build",
+  "stableSubtitle": "Install Grasscutter stable branch. This build usually has less bugs, but also less features.",
+  "downloadDev": "Download Grasscutter Development Build",
+  "downloadSubtitle": "Install Grasscutter development branch. This build sometimes has bugs, and is frequently updated. Use at your own risk.",
+  "downloadResources": "Download Grasscutter Resources",
+  "devSubtitle": "Downloads Grasscutter resources into the currently set Grasscutter folder. This should be done unless you plan on getting resources externally.",
+
+  "gcScriptRunning": "Running...",
+  "stableInstall": "Download",
+  "devInstall": "Download",
+
   "updateNotifText": "A new update is available! Newest version: "
 }
