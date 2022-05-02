@@ -36,16 +36,21 @@ async function downloadGC(branch) {
 
   const serverFolderFixed = config.serverFolder.match(/.*\\|.*\//g, '')[0].replace(/\//g, '\\')
 
+  // Ensure data and key folders exist
+
+  await Neutralino.os.execCommand(`mkdir ${serverFolderFixed}\\data`)
+  await Neutralino.os.execCommand(`mkdir ${serverFolderFixed}\\keys`)
+
   // Download data files
   for (const o of dataList) {
     const folder = 'data'
-    Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
+    await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
   }
 
-  // Download each file
+  // Download key files
   for (const o of keyList) {
     const folder = 'keys'
-    Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
+    await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
   }
   
   return;
