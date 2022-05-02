@@ -56,7 +56,6 @@ async function downloadGC(branch) {
   // Run installer
   createCmdWindow(`.\\scripts\\gc_download.cmd ${artiUrl} ${keystoreUrl} ${branch}`)
 
-  
   // Display folder after saving config
   displayServerFolder()
 }

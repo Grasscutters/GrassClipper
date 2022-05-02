@@ -246,6 +246,20 @@ async function handleFavoriteList() {
   }
 }
 
+async function openDownloads() {
+  const downloads = document.querySelector('#downloadPanel')
+
+  if (downloads.style.display === 'none') {
+    downloads.style.removeProperty('display')
+  }
+}
+
+async function closeDownloads() {
+  const downloads = document.querySelector('#downloadPanel')
+
+  downloads.style.display = 'none'
+}
+
 async function openSettings() {
   const settings = document.querySelector('#settingsPanel')
   const config = await getCfg()
