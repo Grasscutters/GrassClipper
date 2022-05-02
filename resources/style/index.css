@@ -180,6 +180,7 @@ a {
   overflow: auto;
 }
 
+#downloadTitle,
 #fullSettingsTitle {
   font-size: 1.5em;
   font-weight: bold;
@@ -235,7 +236,7 @@ a {
   height: 30px;
 }
 
-#downloadTitleBar
+#downloadTitleBar,
 #settingsTitleBar {
   display: flex;
   flex-direction: row;
