@@ -20,5 +20,8 @@ async function downloadGC(branch) {
   // Set current installation in config
   config.grasscutterBranch = branch
 
+  // Set gc path for people with launcher enabled
+  config.serverFolder = `${NL_CWD}\\gc-${branch}\\`
+
   Neutralino.storage.setData('config', JSON.stringify(config))
 }
