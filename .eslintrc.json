@@ -9,13 +9,13 @@
         "ecmaVersion": 13
     },
     "rules": {
+        "no-undef": 0,
+        "no-unused-vars": 0,
+        "no-case-declarations": 0,
+
         "indent": [
             "error",
-            4
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
+            2
         ],
         "quotes": [
             "error",

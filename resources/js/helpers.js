@@ -4,27 +4,27 @@
  * @returns {Promise<string>}
  */
 async function getCfg() {
-    const defaultConf = {
-        gameexe: '',
-        serverFolder: '',
-        lastConnect: '',
-        enableKillswitch: false,
-        serverLaunchPanel: false,
-        language: 'en',
-        useHttps: true,
-        grasscutterBranch: '',
-    }
-    const cfgStr = await Neutralino.storage.getData('config').catch(e => {
+  const defaultConf = {
+    gameexe: '',
+    serverFolder: '',
+    lastConnect: '',
+    enableKillswitch: false,
+    serverLaunchPanel: false,
+    language: 'en',
+    useHttps: true,
+    grasscutterBranch: '',
+  }
+  const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
-        Neutralino.storage.setData('config', JSON.stringify(defaultConf))
+    Neutralino.storage.setData('config', JSON.stringify(defaultConf))
 
-        // Show the first time notice if there is no config
-        document.querySelector('#firstTimeNotice').style.display = 'block'
-    })
+    // Show the first time notice if there is no config
+    document.querySelector('#firstTimeNotice').style.display = 'block'
+  })
 
-    const config = cfgStr ? JSON.parse(cfgStr) : defaultConf
+  const config = cfgStr ? JSON.parse(cfgStr) : defaultConf
 
-    return config
+  return config
 }
 
 /**
@@ -33,90 +33,90 @@ async function getCfg() {
  * @returns {Promise<string[]>}
  */
 async function getFavIps() {
-    const ipStr = await Neutralino.storage.getData('favorites').catch(e => {
+  const ipStr = await Neutralino.storage.getData('favorites').catch(e => {
     // The data isn't set, so this is our first time opening
-        Neutralino.storage.setData('favorites', JSON.stringify([]))
-    })
+    Neutralino.storage.setData('favorites', JSON.stringify([]))
+  })
 
-    const ipArr = ipStr ? JSON.parse(ipStr) : []
+  const ipArr = ipStr ? JSON.parse(ipStr) : []
 
-    return ipArr
+  return ipArr
 }
 
 async function proxyIsInstalled() {
-    // Check if the proxy server is installed
-    const curDirList = await filesystem.readDirectory(NL_CWD)
+  // Check if the proxy server is installed
+  const curDirList = await filesystem.readDirectory(NL_CWD)
 
-    if (curDirList.find(f => f.entry === 'ext')) {
-        const extFiles = await filesystem.readDirectory(NL_CWD + '/ext')
+  if (curDirList.find(f => f.entry === 'ext')) {
+    const extFiles = await filesystem.readDirectory(NL_CWD + '/ext')
 
-        if (extFiles.find(f => f.entry === 'mitmdump.exe')) {
-            return true
-        }
+    if (extFiles.find(f => f.entry === 'mitmdump.exe')) {
+      return true
     }
+  }
 
-    return false
+  return false
 }
 
 async function checkForUpdates() {
-    const url = 'https://api.github.com/repos/Grasscutters/GrassClipper/releases/latest'
+  const url = 'https://api.github.com/repos/Grasscutters/GrassClipper/releases/latest'
 
-    const { data } = await axios.get(url)
-    const latest = data.tag_name
+  const { data } = await axios.get(url)
+  const latest = data.tag_name
 
-    return latest
+  return latest
 }
 
 async function displayUpdate() {
-    const latest = await checkForUpdates()
-    const versionDisplay = document.querySelector('#newestVersion')
-    const notif = document.querySelector('#downloadNotif')
+  const latest = await checkForUpdates()
+  const versionDisplay = document.querySelector('#newestVersion')
+  const notif = document.querySelector('#downloadNotif')
 
-    if (latest === `v${NL_APPVERSION}`) return
+  if (latest === `v${NL_APPVERSION}`) return
 
-    versionDisplay.innerText = latest
+  versionDisplay.innerText = latest
 
-    notif.classList.add('displayed')
+  notif.classList.add('displayed')
 
-    setTimeout(() => {
-        notif.classList.remove('displayed')
-    }, 5000)
+  setTimeout(() => {
+    notif.classList.remove('displayed')
+  }, 5000)
 }
 
 async function openLatestDownload() {
-    const downloadLink = 'https://github.com/Grasscutters/GrassClipper/releases/latest/'
+  const downloadLink = 'https://github.com/Grasscutters/GrassClipper/releases/latest/'
 
-    Neutralino.os.open(downloadLink)
+  Neutralino.os.open(downloadLink)
 }
 
 async function openGameFolder() {
-    const config = await getCfg()
-    const folder = config.gameexe.match(/.*\\/g, '')[0]
+  const config = await getCfg()
+  const folder = config.gameexe.match(/.*\\/g, '')[0]
 
-    openInExplorer(folder)
+  openInExplorer(folder)
 }
 
 async function openGrasscutterFolder() {
-    const config = await getCfg()
-    const folder = config.serverFolder.match(/.*\\|.*\//g, '')[0]
+  const config = await getCfg()
+  const folder = config.serverFolder.match(/.*\\|.*\//g, '')[0]
 
-    openInExplorer(folder)
+  openInExplorer(folder)
 }
 
 /**
  * Minimize the window
  */
 function minimizeWin() {
-    console.log('min')
-    Neutralino.window.minimize()
+  console.log('min')
+  Neutralino.window.minimize()
 }
 
 /**
  * Close the window
  */
 function closeWin() {
-    console.log('close')
-    Neutralino.app.exit()
+  console.log('close')
+  Neutralino.app.exit()
 
-    window.close()
+  window.close()
 }
