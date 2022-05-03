@@ -115,7 +115,7 @@ Thank you to everyone who has provided translations! <3
 * ZH-TW - Kimi & KormiMeiko
 * PT-BR - na.na
 * VIE - labalityowo
-* ID - Iqrar99
+* ID - Iqrar99 & nautilust
 * FR - linsorak & memetrollsXD
 * ES - memetrollsXD
 * ND - memetrollsXD
