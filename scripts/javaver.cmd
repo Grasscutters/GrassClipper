@@ -4,6 +4,24 @@ set BRANCH=%1
 
 echo Checking java version...
 
+where java >nul 2>nul
+if %errorlevel%==1 (
+    echo =======================================================================================
+  echo No version of Java was found!
+  
+  if %BRANCH% EQU stable (
+    echo To launch the stable branch server, you must install Java 8
+  )
+
+  if %BRANCH% EQU development (
+    echo To launch the development branch server, you must install Java 17
+  )
+
+  echo =======================================================================================
+
+  exit /b
+)
+
 :: https://stackoverflow.com/questions/5675459/how-to-get-java-version-from-batch-script
 for /f "tokens=3" %%g in ('java -version 2^>^&1 ^| findstr /i "version"') do (
     @echo Output: %%g
