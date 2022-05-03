@@ -38,7 +38,7 @@
   "proxyInstallDeny": "不用了，謝謝。",
 
   "gameFolderDialog": "選擇Genshin Impact game資料夾",
-  "grasscutterFileDialog": "選擇Grasscutter.jar檔案"
+  "grasscutterFileDialog": "選擇Grasscutter.jar檔案",
   
   "loggingInTo": "登錄至：",
   "registeringFor": "註冊至：",
@@ -60,7 +60,7 @@
   "alertUserTaken": "用戶名已被占用",
   "alertPassMismatch": "兩組密碼不一致",
   "alertAuthNoRegister": "未啟用認證，無需註冊！",
-  "alertRegisterSuccess": "註冊成功！"
+  "alertRegisterSuccess": "註冊成功！",
 
   "updateNotifText": "有新的GrassClipper更新可用！ 最新版本: "
 }
