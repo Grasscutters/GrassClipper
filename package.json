@@ -9,5 +9,8 @@
     "build-win": ".\\build_win.cmd",
     "build-linux": "./build.sh",
     "build": "echo !! Run build-win or build-linux to build for your platform !!\n"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0"
   }
 }
