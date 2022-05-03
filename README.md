@@ -67,6 +67,8 @@ Encountering a white screen? [Ensure WebView2 is installed](https://developer.mi
 You may also want to run this command as administrator:
 `CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2txyewy"`
 
+If you have Chinese characters in your file path, this may crash it too! I am working on a fix.
+
 If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do so:
 * Create a shortcut to `GrassClipper.exe`
 * Right click the shortcut, click `properties`
