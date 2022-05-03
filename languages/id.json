@@ -63,5 +63,21 @@
   "alertAuthNoRegister": "Autentikasi dinonaktifkan, tidak perlu mendaftar!",
   "alertRegisterSuccess": "Pendaftaran berhasil!",
 
+  "downloadTitle": "Unduhan",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "Pemasang",
+  "installerSubtitle": "Pasang proxy dan alat lainnya. Diperlukan untuk server Grasscutter.",
+  "downloadStable": "Unduh Versi Stabil Grasscutter",
+  "stableSubtitle": "Pasang versi stabil Grasscutter. Versi ini biasanya tidak punya banyak bug, tetapi juga fiturnya lebih sedikit.",
+  "downloadDev": "Unduh Versi Pengembangan Grasscutter",
+  "downloadSubtitle": "Pasang versi pengembangan Grasscutter. Versi ini biasanya mempunyai banyak bug dan sering diperbarui. Gunakan dengan resikomu sendiri.",
+  "downloadResources": "Unduh Sumber Daya Grasscutter",
+  "devSubtitle": "Unduh sumber daya Grasscutter ke dalam folder Grasscutter yang sudah diatur. Ini harus dilakukan kecuali kamu berencana untuk mendapatkan sumber daya secara eksternal.",
+
+  "gcScriptRunning": "Menjalankan...",
+  "stableInstall": "Unduh",
+  "devInstall": "Unduh",
+
   "updateNotifText": "Pembaruan baru tersedia! Versi terbaru: "
 }
