@@ -12,6 +12,7 @@
     serverLaunchPanel: false,
     language: 'en',
     useHttps: true,
+    grasscutterBranch: '',
   }
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
@@ -97,7 +98,7 @@ async function openGameFolder() {
 
 async function openGrasscutterFolder() {
   const config = await getCfg()
-  const folder = config.serverFolder.match(/.*\\/g, '')[0]
+  const folder = config.serverFolder.match(/.*\\|.*\//g, '')[0]
 
   openInExplorer(folder)
 }

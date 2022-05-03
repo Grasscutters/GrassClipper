@@ -246,6 +246,30 @@ async function handleFavoriteList() {
   }
 }
 
+async function openDownloads() {
+  const downloads = document.querySelector('#downloadPanel')
+  const config = await getCfg()
+
+  if (downloads.style.display === 'none') {
+    downloads.style.removeProperty('display')
+  }
+
+  // Disable the resource download button if a serverFolder path is not set
+  if (!config.serverFolder) {
+    document.querySelector('#resourceInstall').disabled = true
+    document.querySelector('#resourceInstall').classList.add('disabled')
+  } else {
+    document.querySelector('#resourceInstall').disabled = false
+    document.querySelector('#resourceInstall').classList.remove('disabled')
+  }
+}
+
+async function closeDownloads() {
+  const downloads = document.querySelector('#downloadPanel')
+
+  downloads.style.display = 'none'
+}
+
 async function openSettings() {
   const settings = document.querySelector('#settingsPanel')
   const config = await getCfg()
@@ -387,6 +411,8 @@ async function setGameExe() {
     ]
   })
 
+  if (!gameExe[0]) return;
+
   // Set the folder in our configuration
   const config = await getCfg()
 
@@ -407,6 +433,8 @@ async function setGrasscutterFolder() {
       { name: 'Jar files', extensions: ['jar'] }
     ]
   })
+
+  if (!folder[0]) return;
 
   // Set the folder in our configuration
   const config = await getCfg()

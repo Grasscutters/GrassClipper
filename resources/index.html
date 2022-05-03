@@ -8,6 +8,7 @@
     <script src="js/hoverEvt.js"></script>
     <script src="js/helpers.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/gcdownloader.js"></script>
     <script src="js/onLoad.js"></script>
     <script src="js/options.js"></script>
     <script src="js/login.js"></script>
@@ -114,6 +115,59 @@
       </div>
     </div>
 
+    <div id="downloadPanel" style="display: none;">
+      <div id="downloadTitleBar">
+        <span id="downloadTitle">Downloads</span>
+        <div id="downloadClose" onclick="closeDownloads()">
+          <img src="icons/close.svg" />
+        </div>
+      </div>
+      <div id="downloadPanelInner">
+        <div class="downloadTitle", id="grassclipperTitle">
+          GrassClipper
+        </div>
+        <div class="downloadRow">
+          <div class="downloadSection">
+            <span class="downloadLabel" id="installerTitle">Installer</span>
+            <button class="smolBtn" onclick="runInstallScript()" id="proxyInstall">Install</button>
+          </div>
+          <span class="downloadSubtitle" id="installerSubtitle">
+            Installs proxy and other tools. Required for Grasscutter servers.
+          </span>
+        </div>
+        <div class="downloadTitle", id="grasscutterTitle">
+          Grasscutter
+        </div>
+        <div class="downloadRow">
+          <div class="downloadSection">
+            <span class="downloadLabel" id="downloadStable">Download Grasscutter Stable Build</span>
+            <button class="smolBtn" onclick="downloadGC('stable')" id="stableInstall">Download</button>
+          </div>
+          <span class="downloadSubtitle" id="stableSubtitle">
+            Install Grasscutter stable branch. This build usually has less bugs, but also less features.
+          </span>
+        </div>
+        <div class="downloadRow">
+          <div class="downloadSection">
+            <span class="downloadLabel" id="downloadDev">Download Grasscutter Development Build</span>
+            <button class="smolBtn" onclick="downloadGC('development')" id="devInstall">Download</button>
+          </div>
+          <span class="downloadSubtitle" id="devSubtitle">
+            Install Grasscutter development branch. This build sometimes has bugs, and is frequently updated. Use at your own risk.
+          </span>
+        </div>
+        <div class="downloadRow">
+          <div class="downloadSection">
+            <span class="downloadLabel" id="downloadResources">Download Grasscutter Resources</span>
+            <button class="smolBtn" onclick="downloadGC('development')" id="resourceInstall">Download</button>
+          </div>
+          <span class="downloadSubtitle" id="devSubtitle">
+            Downloads Grasscutter resources into the currently set Grasscutter folder. This should be done unless you plan on getting resources externally.
+          </span>
+        </div>
+      </div>
+    </div>
+
     <!-- Setting panel -->
     <div id="settingsPanel" style="display: none;">
       <div id="settingsTitleBar">
@@ -194,6 +248,9 @@
       <div id="refreshBtn" onclick="window.location.reload()">
         <img src="icons/refresh.svg" />
       </div>
+      <div id="downloadBtn" onclick="openDownloads()">
+        <img src="icons/download.svg" />
+      </div>
       <div id="settingsBtn" onclick="openSettings()">
         <img src="icons/cog.svg" />
       </div>
@@ -204,6 +261,8 @@
         <img src="icons/close.svg" />
       </div>
     </div>
+
+    <!-- Main content -->
     <div id="panelContainer">
       <!-- Official play btn -->
       <div id="firstPanel">

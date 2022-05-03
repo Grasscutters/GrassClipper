@@ -11,6 +11,10 @@ a {
   color: #fff;
 }
 
+img {
+  height: 20px;
+}
+
 .darken {
   filter: brightness(0.6);
 }
@@ -157,6 +161,7 @@ a {
 
 #firstTimeNotice,
 #loginPanel,
+#downloadPanel,
 #settingsPanel {
   display: block;
   position: absolute;
@@ -172,18 +177,21 @@ a {
   font-family: system-ui;
 }
 
+#downloadPanel,
 #settingsPanel {
   width: 35%;
   height: 80%;
   overflow: auto;
 }
 
+#downloadTitle,
 #fullSettingsTitle {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
+#downloadPanelInner,
 #settingsPanelInner {
   display: flex;
   flex-direction: column;
@@ -192,16 +200,23 @@ a {
   padding: 10px 10%;
 }
 
+.downloadRow,
 .settingsRow {
   width: 100%;
 }
 
+.downloadTitle,
 .settingTitle {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
+.downloadTitle {
+  margin: 6px;
+}
+
+.downloadLabel,
 .settingLabel {
   display:inline-block;
   font-size: 1em;
@@ -209,12 +224,14 @@ a {
   margin: 10px 0px;
 }
 
+.downloadSubtitle,
 .settingSubtitle {
   color: rgb(165, 165, 165);
   font-size: 0.8em;
   font-weight: normal;
 }
 
+.downloadSection,
 .settingSection {
   display: flex;
   flex-direction: row;
@@ -222,10 +239,12 @@ a {
   justify-content: space-between;
 }
 
+.downloadSection .smolBtn,
 .settingSection .smolBtn {
   height: 30px;
 }
 
+#downloadTitleBar,
 #settingsTitleBar {
   display: flex;
   flex-direction: row;
@@ -233,15 +252,18 @@ a {
   justify-content: space-between;
 }
 
+#downloadClose,
 #settingsClose {
   display: inline-block;
   transition: filter 0.1s ease-in-out;
 }
 
+#downloadClose img,
 #settingsClose img {
   height: 20px;
 }
 
+#downloadClose:hover,
 #settingsClose:hover {
   filter: invert(85%) sepia(31%) saturate(560%) hue-rotate(329deg) brightness(100%) contrast(92%);
   cursor: pointer;
