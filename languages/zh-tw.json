@@ -71,9 +71,9 @@
   "downloadStable": "安裝 Stable 構建",
   "stableSubtitle": "安裝 Stable 分支. 此構建通常具有較少的錯誤，但功能也很少。",
   "downloadDev": "安裝 Development 構建",
-  "downloadSubtitle": "安裝 Development 分支. 此版本有時存在錯誤，並且經常更新。 使用此版本風險自負。",
+  "devSubtitle": "安裝 Development 分支. 此版本有時存在錯誤，並且經常更新。 使用此版本風險自負。",
   "downloadResources": "下載 resources 資料夾",
-  "devSubtitle": "將 resources 安裝在目前設置的 Grasscutter 資料夾中。 除非您計劃從外部獲取resources，否則應該這樣做。",
+  "resourceSubtitle": "將 resources 安裝在目前設置的 Grasscutter 資料夾中。 除非您計劃從外部獲取resources，否則應該這樣做。",
 
   "gcScriptRunning": "執行中...",
   "stableInstall": "安裝",
