@@ -101,7 +101,6 @@ async function doTranslation() {
   set('downloadDev', 'downloadDev')
   set('devSubtitle', 'downloadSubtitle')
   set('downloadResources', 'downloadResources')
-  set('devSubtitle', 'devSubtitle')
   set('stableInstall', 'stableInstall')
   set('devInstall', 'devInstall')
 

@@ -5,7 +5,7 @@ set SSL_BINARY_URL="https://github.com/SpikeHD/neutralinojs/releases/download/v4
 set NON_SSL_BINARY_URL="https://github.com/SpikeHD/neutralinojs/releases/download/v1337.0.0/neutralino-win_x64.exe"
 
 :: Clean dist folder
-del /s /q /f .\dist
+del /s /q /f .\dist>nul
 rd /s /q .\dist
 
 :: Get the SSL-secure version of the binary
