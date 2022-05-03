@@ -1,6 +1,6 @@
-Neutralino.init();
+Neutralino.init()
 
-let localeObj;
+let localeObj
 const filesystem = Neutralino.filesystem
 const createCmdWindow = async (command) => {
   Neutralino.os.execCommand(`cmd.exe /c start "" ${command}`, { background: true })
@@ -31,7 +31,7 @@ async function enableButtons() {
 /**
  * Enable server launch button
  */
- async function enableServerButton() {
+async function enableServerButton() {
   const serverBtn = document.querySelector('#serverLaunch')
 
   serverBtn.classList.remove('disabled')
@@ -46,7 +46,7 @@ async function handleGameNotSet() {
   document.querySelector('#gamePath').innerHTML = localeObj.folderNotSet
 
   // Set official server background to default
-  document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/private/default.png")`
+  document.querySelector('#firstPanel').style.backgroundImage = 'url("../bg/private/default.png")'
 
   const offBtn = document.querySelector('#playOfficial')
   const privBtn = document.querySelector('#playPrivate')
@@ -86,7 +86,7 @@ async function displayGameFolder() {
 /**
  * Show the server folder under the select button
  */
- async function displayServerFolder() {
+async function displayServerFolder() {
   const elm = document.querySelector('#serverPath')
   const config = await getCfg()
 
@@ -106,7 +106,7 @@ async function setBackgroundImage() {
   const servImage = servImages[Math.floor(Math.random() * servImages.length)].entry
   
   // Set default image, it will change if the bg folder exists
-  document.querySelector('#firstPanel').style.backgroundImage = `url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")`
+  document.querySelector('#firstPanel').style.backgroundImage = 'url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")'
 
   // Set the private background image
   document.querySelector('#secondPanel').style.backgroundImage = `url("../bg/private/${privImage}")`
@@ -246,6 +246,30 @@ async function handleFavoriteList() {
   }
 }
 
+async function openDownloads() {
+  const downloads = document.querySelector('#downloadPanel')
+  const config = await getCfg()
+
+  if (downloads.style.display === 'none') {
+    downloads.style.removeProperty('display')
+  }
+
+  // Disable the resource download button if a serverFolder path is not set
+  if (!config.serverFolder) {
+    document.querySelector('#resourceInstall').disabled = true
+    document.querySelector('#resourceInstall').classList.add('disabled')
+  } else {
+    document.querySelector('#resourceInstall').disabled = false
+    document.querySelector('#resourceInstall').classList.remove('disabled')
+  }
+}
+
+async function closeDownloads() {
+  const downloads = document.querySelector('#downloadPanel')
+
+  downloads.style.display = 'none'
+}
+
 async function openSettings() {
   const settings = document.querySelector('#settingsPanel')
   const config = await getCfg()
@@ -294,13 +318,13 @@ async function openLogin() {
   
   const config = await getCfg()
   const useHttps = config.useHttps
-  const url = `${useHttps ? 'https' : 'http'}://${ip}:${port}`;
+  const url = `${useHttps ? 'https' : 'http'}://${ip}:${port}`
 
   // Check if we even need to authenticate
   try {
-    const { data } = await axios.get(url + '/grasscutter/auth_status')
+    const { data } = await axios.get(url + '/authentication/type')
 
-    if (data?.message !== 'AUTH_ENABLED') {
+    if (!data.includes('GCAuthAuthenticationHandler')) {
       launchPrivate()
       return
     }
@@ -308,7 +332,6 @@ async function openLogin() {
     launchPrivate()
     return
   }
-
 
   loginIpDisplay.innerText = ip
   registerIpDisplay.innerText = ip
@@ -357,10 +380,10 @@ async function checkForUpdatesAndShow() {
 
   // Version mismatch? Update!
   if (manifest?.version !== NL_APPVERSION) {
-    subtitle.innerHTML = "New update available!"
+    subtitle.innerHTML = 'New update available!'
     updateBtn.classList.remove('disabled')
   } else {
-    subtitle.innerHTML = "You are on the latest version! :)"
+    subtitle.innerHTML = 'You are on the latest version! :)'
     updateBtn.classList.add('disabled')
   }
 }
@@ -388,6 +411,8 @@ async function setGameExe() {
     ]
   })
 
+  if (!gameExe[0]) return
+
   // Set the folder in our configuration
   const config = await getCfg()
 
@@ -408,6 +433,8 @@ async function setGrasscutterFolder() {
       { name: 'Jar files', extensions: ['jar'] }
     ]
   })
+
+  if (!folder[0]) return
 
   // Set the folder in our configuration
   const config = await getCfg()

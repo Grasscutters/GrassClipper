@@ -3,11 +3,11 @@
  * Every autofill, such as backgrounds and the game folder,
  * should be done here to ensure DOM contents are loaded.
  */
- document.addEventListener('DOMContentLoaded', async () => {
-   displayUpdate();
-  setBackgroundImage();
-  displayGameFolder();
-  displayServerFolder();
+document.addEventListener('DOMContentLoaded', async () => {
+  displayUpdate()
+  setBackgroundImage()
+  displayGameFolder()
+  displayServerFolder()
 
   // Set title version
   document.querySelector('#version').innerHTML = NL_APPVERSION
@@ -35,9 +35,10 @@
   }
 
   // Exit favorites list and settings panel when clicking outside of it
-  window.addEventListener("click", function(e) {
+  window.addEventListener('click', function(e) {
     const favList = document.querySelector('#ipList')
     const settingsPanel = document.querySelector('#settingsPanel')
+    const downloadPanel = document.querySelector('#downloadPanel')
 
     // This will close the favorites list no matter what is clicked
     if (favList.style.display !== 'none') {
@@ -46,25 +47,34 @@
     }
 
     // This will close the settings panel no matter what is clicked
-    let settingCheckElm = e.target
+    let checkElm = e.target
 
-    while(settingCheckElm.tagName !== 'BODY') {
-      if (settingCheckElm.id === 'settingsPanel'
-          || settingCheckElm.id === 'settingsBtn') {
+    while(checkElm.tagName !== 'BODY') {
+      if (checkElm.id === 'settingsPanel'
+          || checkElm.id === 'settingsBtn') {
         return
       }
 
-      settingCheckElm = settingCheckElm.parentElement
+      if (checkElm.id === 'downloadPanel' ||
+          checkElm.id === 'downloadBtn') {
+        return
+      }
+
+      checkElm = checkElm.parentElement
     }
 
     // We travelled through the parents, so if we are at the body, we clicked outside of the settings panel
-    if (settingCheckElm.tagName === 'BODY') {
+    if (checkElm.tagName === 'BODY') {
       // This will close the settings panel only when something outside of it is clicked
       if (settingsPanel.style.display !== 'none') {
         settingsPanel.style.display = 'none'
       }
+
+      if (downloadPanel.style.display !== 'none') {
+        downloadPanel.style.display = 'none'
+      }
     }
-  });
+  })
 
   // Ensure we do the translation at the very end, after everything else has loaded
   await doTranslation()

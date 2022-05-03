@@ -3,7 +3,7 @@
  * 
  * @returns {Promise<string>}
  */
- async function getCfg() {
+async function getCfg() {
   const defaultConf = {
     gameexe: '',
     serverFolder: '',
@@ -12,6 +12,7 @@
     serverLaunchPanel: false,
     language: 'en',
     useHttps: true,
+    grasscutterBranch: '',
   }
   const cfgStr = await Neutralino.storage.getData('config').catch(e => {
     // The data isn't set, so this is our first time opening
@@ -31,7 +32,7 @@
  * 
  * @returns {Promise<string[]>}
  */
- async function getFavIps() {
+async function getFavIps() {
   const ipStr = await Neutralino.storage.getData('favorites').catch(e => {
     // The data isn't set, so this is our first time opening
     Neutralino.storage.setData('favorites', JSON.stringify([]))
@@ -97,7 +98,7 @@ async function openGameFolder() {
 
 async function openGrasscutterFolder() {
   const config = await getCfg()
-  const folder = config.serverFolder.match(/.*\\/g, '')[0]
+  const folder = config.serverFolder.match(/.*\\|.*\//g, '')[0]
 
   openInExplorer(folder)
 }
@@ -105,7 +106,7 @@ async function openGrasscutterFolder() {
 /**
  * Minimize the window
  */
- function minimizeWin() {
+function minimizeWin() {
   console.log('min')
   Neutralino.window.minimize()
 }

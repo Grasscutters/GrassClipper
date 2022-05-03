@@ -1,6 +1,6 @@
 {
   "name": "grassclipper",
-  "version": "0.8.5",
+  "version": "0.9.0",
   "repository": "https://github.com/Grasscutters/GrassClipper.git",
   "author": "SpikeHD <spikegdofficial@gmail.com>",
   "license": "Apache-2.0",
@@ -9,5 +9,8 @@
     "build-win": ".\\build_win.cmd",
     "build-linux": "./build.sh",
     "build": "echo !! Run build-win or build-linux to build for your platform !!\n"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0"
   }
 }

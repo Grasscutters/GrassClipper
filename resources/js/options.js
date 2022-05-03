@@ -72,7 +72,7 @@ async function handleLanguageChange(elm) {
 /**
  * Toggle the use of HTTPS
  */
- async function toggleHttps() {
+async function toggleHttps() {
   const httpsCheckbox = document.querySelector('#httpsOption')
   const config = await getCfg()
 
@@ -86,7 +86,7 @@ async function handleLanguageChange(elm) {
  * OR
  * Remove the current value of the IP input from the favorites list 
  */
- async function setFavorite() {
+async function setFavorite() {
   const ip = document.querySelector('#ip').value
   const port = document.querySelector('#port').value || '443'
   const ipArr = await getFavIps()

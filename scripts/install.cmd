@@ -3,6 +3,8 @@
 set ORIGIN=%1
 set ORIGIN=%ORIGIN:"=%
 
+title Grassclipper Installer
+
 echo Downloading proxy server...
 
 :: Make sure we are in the right directory
@@ -35,12 +37,12 @@ taskkill /f /im mitmdump.exe
 echo Adding ceritifcate...
 
 :: Ensure we are elevated for certs
->nul 2>&1 certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer || (
+>nul 2>&1 certutil -addstore root "%USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer" || (
 	echo ============================================================================================================
 	echo !! Certificate install failed !!
 	echo.
 	echo Please manually run this command as Administrator:
-	echo 			certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer 
+	echo 			certutil -addstore root "%USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer"
 	echo ============================================================================================================
 )
 
@@ -48,4 +50,4 @@ echo Done! You can now open GrassClipper.exe!
 
 pause
 
-exit /b
+taskkill /f /fi "WINDOWTITLE eq Grassclipper Installer"

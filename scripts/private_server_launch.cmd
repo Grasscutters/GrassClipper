@@ -27,7 +27,7 @@ if "%ENABLE_KILLSWITCH%" EQU "true" (
 	:: Restart in elevated if need be
 	>nul 2>&1 reg query "HKU\S-1-5-19" || (
 		set params = %*:"="""%
-		cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %1 %2 %3 "%4" ""%cd%/../"" %6", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" &&  taskkill /f /fi "WINDOWTITLE eq PS Launcher Script" && exit /b )
+		cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %1 %2 %3 "%4" ""%cd%"" %6", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" &&  taskkill /f /fi "WINDOWTITLE eq PS Launcher Script" && exit /b )
 	)
 )
 
@@ -41,7 +41,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v Pr
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer /d "127.0.0.1:8080" /f >nul 2>nul
 
 :: Start proxy server
-start "Proxy Server" "%ORIGIN%/ext/mitmdump.exe" -s "%ORIGIN%/proxy/proxy.py" -k --allow-hosts ".*\.yuanshen\.com|.*\.mihoyo\.com|.*\.hoyoverse\.com" --ssl-insecure --set ip=%IP% --set port=%PORT% --set use_https=%USE_HTTPS%
+start "Proxy Server" "%ORIGIN%\ext\mitmdump.exe" -s "%ORIGIN%/proxy/proxy.py" -k --allow-hosts ".*\.yuanshen\.com|.*\.mihoyo\.com|.*\.hoyoverse\.com" --ssl-insecure --set ip=%IP% --set port=%PORT% --set use_https=%USE_HTTPS%
 
 echo Opening %GAME_PATH%
 
