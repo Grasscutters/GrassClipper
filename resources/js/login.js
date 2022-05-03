@@ -62,7 +62,7 @@ async function login() {
     password,
   }
   
-  const { data } = await axios.post(url + '/grasscutter/login', reqBody)
+  const { data } = await axios.post(url + '/authentication/login', reqBody)
 
   switch(data.message) {
     case 'INVALID_ACCOUNT':
@@ -117,7 +117,7 @@ async function register() {
     password_confirmation
   }
   
-  const { data } = await axios.post(url + '/grasscutter/register', reqBody)
+  const { data } = await axios.post(url + '/authentication/register', reqBody)
 
   switch(data.message) {
     case 'USERNAME_TAKEN':
