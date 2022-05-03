@@ -322,9 +322,9 @@ async function openLogin() {
 
   // Check if we even need to authenticate
   try {
-    const { data } = await axios.get(url + '/grasscutter/auth_status')
+    const { data } = await axios.get(url + '/authentication/type')
 
-    if (data?.message !== 'AUTH_ENABLED') {
+    if (!data.includes('GCAuthAuthenticationHandler')) {
       launchPrivate()
       return
     }
@@ -332,7 +332,6 @@ async function openLogin() {
     launchPrivate()
     return
   }
-
 
   loginIpDisplay.innerText = ip
   registerIpDisplay.innerText = ip
