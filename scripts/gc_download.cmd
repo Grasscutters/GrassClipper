@@ -34,6 +34,9 @@ echo Downloading keystore.p12...
 :: Download the keystore.p12 file
 powershell Invoke-WebRequest -Uri %ARTIFACT_URL% -OutFile "./%FOLDER_NAME%/keystore.p12"
 
+:: Check java version, this will automatically output some tuff
+call .\scripts\javaver.cmd %BRANCH%
+
 :: Allow resource downloading to be optional, since it takes a while
 set REPLY=y
 set /p "REPLY=Download server resources? (This can take a while) [y|n]:"

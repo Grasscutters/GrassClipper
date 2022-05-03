@@ -21,16 +21,30 @@ if %BRANCH% EQU stable (
   :: Ensure java 8
   if %MAJOR% EQU 1 (
     if %MINOR% LSS 8 (
-      echo Java version is less than 8, please download Java 8
+    echo =======================================================================================
+      echo !! Java version is less than 8 !!
+      echo Please download Java 8 to ensure %BRANCH% branch server launches correctly.
+    echo =======================================================================================
       exit /b
     )
+  )
+
+  if %MAJOR% NEQ 1 (
+    echo =======================================================================================
+    echo !! Java version is not 8 !!
+    echo Please download Java 8 to ensure %BRANCH% branch server launches correctly.
+    echo =======================================================================================
+    exit /b
   )
 )
 
 if %BRANCH% EQU development (
   :: Ensure java 17
   if %MAJOR% LSS 17 (
-    echo Java version is less than 17, please download Java 17
+    echo =======================================================================================
+    echo !! Java version is less than 17 !!
+    echo Please download Java 17 to ensure %BRANCH% branch server launches correctly.
+    echo =======================================================================================
     exit /b
   )
 )
