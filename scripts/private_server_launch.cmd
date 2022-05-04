@@ -9,6 +9,9 @@
 :: Use to force task kill
 title PS Launcher Script
 
+:: Use a character encoding that allows for use of Chinese characters. This should work but doesn't, but I'm keeping it in here just in case
+chcp 65001
+
 echo Starting Proxy Server
 
 set IP=%1

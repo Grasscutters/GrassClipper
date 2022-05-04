@@ -601,3 +601,30 @@ img {
 #newestVersion {
   font-weight: bold;
 }
+
+#alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  color: #704a1d;
+
+  position: absolute;
+  top: -10%;
+  left: 15%;
+  background: #ffd326;
+  border: 1px solid #704a1d;
+  border-radius: 6px;
+
+  height: 50px;
+  width: 70%;
+
+  z-index: 999;
+
+  transition: top 0.15s ease-in-out;
+}
+
+#alert.show {
+  top: 6%;
+}

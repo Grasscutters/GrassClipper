@@ -103,6 +103,19 @@ async function openGrasscutterFolder() {
   if (folder.length > 0) openInExplorer(folder[0])
 }
 
+// https://www.jimzhao.us/2015/09/javascript-detect-chinese-character.html
+function hasChineseChars(str) {
+  let re1 = new RegExp(/^[\u4E00-\uFA29]*$/) //Chinese character range
+  let re2 = new RegExp(/^[\uE7C7-\uE7F3]*$/) //non Chinese character range
+  str = str.replace(/\s/g, '')
+
+  if (!re1.test(str) || re2.test(str)) {
+    return false
+  }
+
+  return true
+} 
+
 /**
  * Minimize the window
  */

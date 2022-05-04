@@ -1,14 +1,14 @@
 let alertTimeout, alertCooldown = 3000
 
 async function displayLoginAlert(message, type, cooldown = null) {
-  displayAlert(message, type, cooldown, 'login')
+  displayAuthAlert(message, type, cooldown, 'login')
 }
 
 async function displayRegisterAlert(message, type, cooldown = null) {
-  displayAlert(message, type, cooldown, 'register')
+  displayAuthAlert(message, type, cooldown, 'register')
 }
 
-function displayAlert(message, type, cooldown, name) {
+function displayAuthAlert(message, type, cooldown, name) {
   const elm = document.getElementById(`${name}Alert`)
   const text = document.getElementById(`${name}AlertText`)
 
