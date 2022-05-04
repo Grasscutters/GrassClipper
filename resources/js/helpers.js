@@ -91,23 +91,22 @@ async function openLatestDownload() {
 
 async function openGameFolder() {
   const config = await getCfg()
-  const folder = config.gameexe.match(/.*\\/g, '')[0]
-
-  openInExplorer(folder)
+  const folder = config.gameexe.match(/.*\\|.*\//g, '')
+  
+  if (folder.length > 0) openInExplorer(folder[0])
 }
 
 async function openGrasscutterFolder() {
   const config = await getCfg()
-  const folder = config.serverFolder.match(/.*\\|.*\//g, '')[0]
+  const folder = config.serverFolder.match(/.*\\|.*\//g, '')
 
-  openInExplorer(folder)
+  if (folder.length > 0) openInExplorer(folder[0])
 }
 
 /**
  * Minimize the window
  */
 function minimizeWin() {
-  console.log('min')
   Neutralino.window.minimize()
 }
 
@@ -115,7 +114,6 @@ function minimizeWin() {
  * Close the window
  */
 function closeWin() {
-  console.log('close')
   Neutralino.app.exit()
 
   window.close()

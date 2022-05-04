@@ -7,7 +7,6 @@ const createCmdWindow = async (command) => {
 }
 
 const openInExplorer = async (path) => {
-  console.log(`explorer.exe "${path}"`)
   createCmdWindow(`explorer.exe "${path}"`)
 }
 
