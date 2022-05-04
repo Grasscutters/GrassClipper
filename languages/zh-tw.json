@@ -79,7 +79,7 @@
   "stableInstall": "安裝",
   "devInstall": "安装",
 
-  "updateNotifText": "有新的GrassClipper更新可用！ 最新版本: "
+  "updateNotifText": "有新的GrassClipper更新可用！ 最新版本: ",
 
   "chineseCharacterAlert": "此路徑含有中文字體，這可能會導致問題的發生。"
 }
