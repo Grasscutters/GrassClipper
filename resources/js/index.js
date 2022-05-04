@@ -411,6 +411,7 @@ async function setGameExe() {
   })
 
   if (!gameExe[0]) return
+  if (hasChineseChars(gameExe[0])) displayAlert(localeObj.chineseCharacterAlert)
 
   // Set the folder in our configuration
   const config = await getCfg()
@@ -434,6 +435,7 @@ async function setGrasscutterFolder() {
   })
 
   if (!folder[0]) return
+  if (hasChineseChars(folder[0])) displayAlert(localeObj.chineseCharacterAlert)
 
   // Set the folder in our configuration
   const config = await getCfg()
