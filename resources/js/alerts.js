@@ -1,4 +1,4 @@
-function displayAlert(message, clear = 5000) {
+function displayAlert(message, clear = 4000) {
   const alert = document.getElementById('alert')
   const alertText = document.getElementById('alertText')
 

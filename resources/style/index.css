@@ -613,7 +613,7 @@ img {
   position: absolute;
   top: -10%;
   left: 15%;
-  background: #ffd326;
+  background: linear-gradient(#ffc61e, #ffd326);
   border: 1px solid #704a1d;
   border-radius: 6px;
 
