@@ -123,6 +123,7 @@ Thank you to everyone who has provided translations! <3
 * ND - memetrollsXD
 * RU - fitiskin
 * TR - lilmayofuksu
+* JP - conochy
 
 # Screenshots
 
