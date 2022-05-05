@@ -124,6 +124,7 @@ Thank you to everyone who has provided translations! <3
 * RU - fitiskin
 * TR - lilmayofuksu
 * JP - conochy
+* HD - Arikatsu 
 
 # Screenshots
 
