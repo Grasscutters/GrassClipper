@@ -69,6 +69,8 @@ You may also want to run this command as administrator:
 
 If you have Chinese characters in your file path, this may crash it too! I am working on a fix.
 
+You can also try running in Windows 8 compatitbility mode.
+
 If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do so:
 * Create a shortcut to `GrassClipper.exe`
 * Right click the shortcut, click `properties`
