@@ -1,0 +1,85 @@
+{
+  "fullLangName": "日本語",
+  "appName": "GrassClipper",
+
+  "playOfficial": "起動 (Official)",
+  "playPrivate": "起動 (Grasscutter)",
+  "launchLocalServer": "ローカルサーバーを起動",
+
+  "gameExeSet": "GenshinImpact.exe の場所を指定",
+  "grasscutterFileSet": "grasscutter.jar の場所を指定",
+  "folderNotSet": "原神のフォルダーが指定されていません。",
+
+  "ipPlaceholder": "IP アドレス",
+  "portPlaceholder": "ポート",
+  "noFavorites": "お気に入りはまだ登録されていません",
+
+  "settingsTitle": "設定",
+  "scriptsSectionTitle": "スクリプト",
+  "killswitchOption": "強制終了",
+  "killswitchSubtitle": "緊急時のみ。プロキシにエラーが発生した場合に、ゲームを終了し、インターネットを遮断します。",
+  "proxyOption": "プロキシ",
+  "proxySubtitle": "プロキシサーバーをインストールします。",
+  "updateOption": "更新",
+  "updateSubtitle": "自動更新は現在無効化されています。GitHub で最新バージョンを確認してください。",
+  "languageOption": "言語",
+  "languageSubtitle": "言語を選択してください。",
+  "enableServerLauncherOption": "サーバーランチャーを有効化します",
+  "enableServerLauncherSubtitle": "Grasscutter を起動するための、ランチャータイルを有効化します。",
+  "httpsOption": "HTTPS を使用",
+  "httpsSubtitle": "HTTP と HTTPS のどちらを使用するか選択します。このオプションは、プライベートサーバーでプレイするときにのみ適用されます。",
+
+  "introSen1": "GrassClipper へようこそ！",
+  "introSen2": "GrassClipper をご利用いただきありがとうございます。",
+  "introSen3": "プロキシサーバーをインストールしますか？",
+  "introSen4": "(インターネットへの接続が必要)",
+
+  "updateBtn": "更新",
+  "proxyInstallBtn": "インストールする",
+  "proxyInstallDeny": "インストールしない",
+
+  "gameFolderDialog": "原神のゲームフォルダーを指定",
+  "grasscutterFileDialog": "grasscutter.jar の場所を指定",
+
+  "loggingInTo": "ログイン先: ",
+  "registeringFor": "登録先: ",
+  "authUsername": "ユーザー名: ",
+  "authPassword": "パスワード: ",
+  "authConfirmPassword": "パスワード(確認): ",
+  "authLoginBtn": "ログイン",
+  "authRegisterBtn": "登録",
+  "authLoginTitle": "ログイン",
+  "authRegisterTitle": "登録",
+  "launchWithoutAuth": "認証せず起動",
+
+  "alertInvalid": "ユーザー名またはパスワードが誤っています。",
+  "alertNoPass": "パスワードが設定されていません。パスワードを設定してください。",
+  "alertUnknown": "不明なエラーが発生しました。サーバーの管理者に連絡してください。",
+  "alertAuthNoLogin": "認証が無効になっています。ログインする必要はありません。",
+  "alertLoginSuccess": "ログインに成功しました。トークンをクリップボードにコピーしたので、ゲームのユーザー名欄に貼り付けてログインしてください。",
+
+  "alertUserTaken": "そのユーザー名はすでに使用されています。",
+  "alertPassMismatch": "パスワードが一致していません。",
+  "alertAuthNoRegister": "認証が無効になっています。ログインする必要はありません。",
+  "alertRegisterSuccess": "登録成功",
+
+  "downloadTitle": "ダウンロード",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "インストーラー",
+  "installerSubtitle": "Grasscutter に必要な、プロキシなどのツールをインストールします。",
+  "downloadStable": "Grasscutter の安定版をインストール",
+  "stableSubtitle": "Grasscutter の安定版をインストールします。バグは少ないですが、新機能も少ないです。",
+  "downloadDev": "Grasscutter の開発版をインストール",
+  "devSubtitle": "Grasscutter の開発版をインストールします。バグが多い恐れがあります。また、頻繁に更新されます。",
+  "downloadResources": "Grasscutter のリソースをダウンロード",
+  "resourceSubtitle": "Grasscutter のリソースをダウンロードします。ほかのところから入手しない場合は、これをダウンロードする必要があります。",
+
+  "gcScriptRunning": "実行中...",
+  "stableInstall": "ダウンロード",
+  "devInstall": "ダウンロード",
+
+  "updateNotifText": "新しいバージョンが利用できます。Version: ",
+
+  "chineseCharacterAlert": "ファイルパスに漢字やひらがななどの全角文字が含まれているため、正常に動作しない場合があります。"
+}
