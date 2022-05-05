@@ -1,0 +1,85 @@
+{
+  "fullLangName": "Hindi",
+  "appName": "ग्रासक्लिपर",
+
+  "playOfficial": "खेलो असली गेम",
+  "playPrivate": "खेलो ग्रासकटर पर",
+  "launchLocalServer": "शुरू करे लोकल सर्वर",
+
+  "gameExeSet": "गेम का निष्पादन करे",
+  "grasscutterFileSet": "लगाए \"ग्रासकटर \" .jar फ़ाइल",
+  "folderNotSet": "नहीं लगा है",
+
+  "ipPlaceholder": "आय पी एड्रेस",
+  "portPlaceholder": "पोर्ट",
+  "noFavorites": "कोई पसन्दीदार नहीं लगे",
+
+  "settingsTitle": "सेटिंग्स",
+  "scriptsSectionTitle": "स्क्रिप्ट्स",
+  "killswitchOption": "किल स्विच",
+  "killswitchSubtitle": "सिर्फ उनके लिए जो सोचते हैं की यह सब असली अकाउंट को बन कर देग। यह गेम और *इंटरनेट कनेक्शन* मर देता है अगर कुछ प्रॉक्सी को होता है। ",
+  "proxyOption": "प्रॉक्सी",
+  "proxySubtitle": "प्रॉक्सी सर्वर इनस्टॉल करे प्रॉक्सी स्क्रिप्ट्स से",
+  "updateOption": "अपडेट ",
+  "updateSubtitle": "अपने आप अपडेट होने का फीचर अभी बंद है। GitHub देखे नए रिलीज़ के लिए। ",
+  "languageOption": "भाषा ",
+  "languageSubtitle": "अपनी भाषा चुने!",
+  "enableServerLauncherOption": "सर्वर लांचर शुरू करे",
+  "enableServerLauncherSubtitle": "सक्षम करे सर्वर लांचर टाइल ताकि ये एक लोकल ग्रासकटर इंस्टैंस को शुरू कर सके। ",
+  "httpsOption": "HTTPS का उपयोग करे",
+  "httpsSubtitle": "चयन करे HTTPS या HTTP",
+
+  "introSen1": "लग रहा है यह तुम्हारा पहली बार खोलना हुआ है ग्रास्सक्लीप्पेर!",
+  "introSen2": "पहली बात, स्वागत है, अच्छा लगा आपको देख के यहाँ! :)",
+  "introSen3": "प्रॉक्सी इंस्टालर शुरू करे?",
+  "introSen4": "(ज़रुरत है इसकी सर्वर से कनेक्ट करने के लिए)",
+
+  "updateBtn": "अपडेट ",
+  "proxyInstallBtn": "इनस्टॉल ",
+  "proxyInstallDeny": "कोई ज़रुरत नहीं",
+
+  "gameFolderDialog": "गेम फोल्डर सेट करे",
+  "grasscutterFileDialog": "ग्रासकटर jar फाइल सेलेक्ट करे",
+
+  "loggingInTo": "लोग हो रहे हैं इसमें: ",
+  "registeringFor": "रजिस्टर करे इसके लिए: ",
+  "authUsername": "यूजरनाम: ",
+  "authPassword": "पासवर्ड: ",
+  "authConfirmPassword": "पासवर्ड पक्का करे: ",
+  "authLoginBtn": "लॉगिन",
+  "authRegisterBtn": "रजिस्टर",
+  "authLoginTitle": "लॉगिन",
+  "authRegisterTitle": "रजिस्टर",
+  "launchWithoutAuth": "शुरू करे बिना ऑथेंटिकेशन के",
+
+  "alertInvalid": "गलत यूजरनाम या पासवर्ड",
+  "alertNoPass": "कोई पासवर्ड नहीं लगा, कृपया पासवर्ड चेंज करे",
+  "alertUnknown": "अनजान एरर। सर्वर के मालिक से बात करे",
+  "alertAuthNoLogin": "ऑथेंटिकेशन बंद है, लॉगिन की कोई ज़रुरत नहीं!",
+  "alertLoginSuccess": "लॉगिन पूरा हुआ! टोकन क्लिपबोर्ड पर कॉपी हो गया है। यह टोकन पेस्ट करे यूजरनाम की जगह पर गेम के अंदर ताकि लॉगिन हो सके। ",
+
+  "alertUserTaken": "यूजरनाम ले लिया गया है",
+  "alertPassMismatch": "पासवर्ड और पासवर्ड कन्फर्मेशन मैच नहीं कर रहे",
+  "alertAuthNoRegister": "ऑथेंटिकेशन बंद है, रजिस्ट्रेशन की कोई ज़रुरत नहीं!",
+  "alertRegisterSuccess": "रजिस्ट्रेशन समाप्त हुआ!",
+
+  "downloadTitle": "डौन्लोडस",
+  "grassclipperTitle": "ग्रासक्लिपर",
+  "grasscutterTitle": "ग्रासकटर",
+  "installerTitle": "इंस्टालर",
+  "installerSubtitle": "ये प्रॉक्सी और कुछ और टूल्स इनस्टॉल करता है। ज़रुरत है इसकी ग्रासकटर सर्वर्स के लिए",
+  "downloadStable": "डाउनलोड ग्रासकटर स्टेबल बिल्ड",
+  "stableSubtitle": "इनस्टॉल ग्रासकटर स्टेबल ब्रांच। यह बिल्ड में काम फीचर्स है पर काम बग्स भी है।",
+  "downloadDev": "डाउनलोड ग्रासकटर डेवलपमेंट बिल्ड",
+  "devSubtitle": "इनस्टॉल ग्रासकटर डेवलपमेंट ब्रांच। इस बिल्ड में काफी बार बग्स होते हैं पर जल्दी जल्दी अपडेट होता है। अपने बूते पे इस्तेमाल करे।",
+  "downloadResources": "डाउनलोड ग्रसससटर रिसोर्सेज",
+  "resourceSubtitle": "आपभी सेट हुए ग्रासकटर फोल्डर में ग्रासकटर के रिसोर्सेज डाउनलोड करता है। यह हो जाना चाहिए अगर आपने कही और से रिसोर्सेज नहीं लिये।",
+
+  "gcScriptRunning": "चल रहा है...",
+  "stableInstall": "डाउनलोड",
+  "devInstall": "डाउनलोड",
+
+  "updateNotifText": "नया अपडेट आया है! नया वर्शन: ",
+
+  "chineseCharacterAlert": "इस फाइल पथ में चीनी चरक्टेर्स हैं, यह समस्या दे सकता है!"
+}
