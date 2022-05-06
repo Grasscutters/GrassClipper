@@ -135,6 +135,7 @@ Thank you to everyone who has provided translations! <3
 * TR - lilmayofuksu
 * JP - conochy
 * HD - Arikatsu 
+* PL - zakhil-dev
 
 # Screenshots
 
