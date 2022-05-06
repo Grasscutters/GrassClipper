@@ -9,12 +9,12 @@ if not exist ".\resources" mkdir ".\resources"
 echo Downloading resources, this can take a while...
 
 :: Grab the giant ass resource zip
-powershell Invoke-WebRequest -Uri https://github.com/Koko-boya/Grasscutter_Resources/archive/refs/heads/main.zip -OutFile "./temp/resources.zip"
+powershell Invoke-WebRequest -Uri https://github.com/Koko-boya/Grasscutter_Resources/archive/refs/heads/main.zip -OutFile ".\temp\resources.zip"
 
 echo Extracting...
 
 :: Extract resources to the folder
-powershell Expand-Archive -Path "./temp/resources.zip" -DestinationPath "%FOLDER_NAME%" -Force
+powershell Expand-Archive -Path ".\temp\resources.zip" -DestinationPath "%FOLDER_NAME%" -Force
 
 :: Delete old resources folder if there is one there
 del /s /q "%FOLDER_NAME%\resources">nul

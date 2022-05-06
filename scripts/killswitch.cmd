@@ -54,7 +54,6 @@ if "%PROXY_IP%" EQU "localhost" (
 
   :: Ensure proxy is enabled, space is there on purpose
   IF "%PROXY_ENABLED%" NEQ "0x1 " (
-    echo "Proxy server disabled in windows"
     goto killgame
   )
 
@@ -64,7 +63,6 @@ if "%PROXY_IP%" EQU "localhost" (
 
   :: There is a space after %PROXY_IP on purpose, Windows is weird
   if "%CUR_PROXY_IP%" NEQ "%PROXY_IP%:8080 " (
-    echo "Cur proxy: %CUR_PROXY_IP% | Proxy: %PROXY_IP%:8080"
     goto killgame
   )
 
