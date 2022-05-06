@@ -114,7 +114,40 @@ function hasChineseChars(str) {
   }
 
   return true
-} 
+}
+
+function openDialog(title, message, negBtn = false, affirmBtn = closeDialog) {
+  const dialog = document.getElementById('miscDialog')
+  const titleElm = document.getElementById('dialogTitle')
+  const contents = document.getElementById('dialogContent')
+  const noBtn = document.getElementById('dialogButtonNeg')
+  const yesBtn = document.getElementById('dialogButtonAffirm')
+
+  if (!noBtn) {
+    noBtn.style.display = 'none'
+  } else {
+    noBtn.style.removeProperty('display')
+    noBtn.onclick = () => closeDialog()
+  }
+
+  yesBtn.onclick = () => {
+    affirmBtn()
+    closeDialog()
+  }
+
+  // Set title and message
+  titleElm.innerText = title
+  contents.innerText = message
+
+  // Show the dialog
+  dialog.style.display = 'block'
+}
+
+function closeDialog() {
+  const dialog = document.getElementById('miscDialog')
+
+  dialog.style.display = 'none'
+}
 
 /**
  * Minimize the window

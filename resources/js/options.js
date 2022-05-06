@@ -21,6 +21,18 @@ async function toggleServerLaunchSection() {
   // Save setting
   config.serverLaunchPanel = !config.serverLaunchPanel
   Neutralino.storage.setData('config', JSON.stringify(config))
+
+  // Show a dialog for those who may want to open the downloads section
+  if (config.serverLaunchPanel && !config.serverFolder) {
+    closeSettings()
+
+    openDialog(
+      'You found the Grasscutter server launcher!' || localeObj.serverEnableDialogTitle,
+      'If you do not have an existing Grasscutter installation to set, would you like to download a build?' || localeObj.serverEnableDialogText,
+      true,
+      openDownloads
+    )
+  }
 }
 
 /**
