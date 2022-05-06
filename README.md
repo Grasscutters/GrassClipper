@@ -1,7 +1,7 @@
 # GrassClipper
 Experimental Grasscutter launcher for easily switching between Official and Private servers
 
-[Download Here!](https://github.com/Grasscutters/GrassClipper/releases/)
+[Download Here!](https://github.com/Grasscutters/GrassClipper/releases/) (Supports Windows 8+)
 
 *\*Note: some translations are outdated, so if random English text appears or an option seems misleading, this is why. If you notice an issue like this, feel free to make a pull request!*
 
