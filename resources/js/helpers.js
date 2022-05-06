@@ -123,12 +123,15 @@ function openDialog(title, message, negBtn = false, affirmBtn = closeDialog) {
   const noBtn = document.getElementById('dialogButtonNeg')
   const yesBtn = document.getElementById('dialogButtonAffirm')
 
-  if (!noBtn) {
+  if (!negBtn) {
     noBtn.style.display = 'none'
   } else {
     noBtn.style.removeProperty('display')
     noBtn.onclick = () => closeDialog()
   }
+
+  yesBtn.innerText = localeObj.dialogYes || 'OK'
+  noBtn.innerText = localeObj.dialogNo || 'NO'
 
   yesBtn.onclick = () => {
     affirmBtn()

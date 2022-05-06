@@ -27,8 +27,8 @@ async function toggleServerLaunchSection() {
     closeSettings()
 
     openDialog(
-      'You found the Grasscutter server launcher!' || localeObj.serverEnableDialogTitle,
-      'If you do not have an existing Grasscutter installation to set, would you like to download a build?' || localeObj.serverEnableDialogText,
+      localeObj.serverEnableDialogTitle || 'You found the Grasscutter server launcher!',
+      localeObj.serverEnableDialogText || 'If you do not have an existing Grasscutter installation to set, would you like to download a build?',
       true,
       openDownloads
     )

@@ -81,5 +81,11 @@
 
   "updateNotifText": "A new update is available! Newest version: ",
 
-  "chineseCharacterAlert": "The file path set contains Chinese characters, this may cause problems!"
+  "chineseCharacterAlert": "The file path set contains Chinese characters, this may cause problems!",
+
+  "dialogOk": "OK",
+  "dialogNo": "NO",
+  "serverEnableDialogTitle": "You found the Grasscutter server launcher!",
+  "serverEnableDialogText": "If you do not have an existing Grasscutter installation to set, would you like to download a build?"
+
 }
