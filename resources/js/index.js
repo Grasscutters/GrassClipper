@@ -1,5 +1,7 @@
 Neutralino.init()
 
+NL_CWD = NL_CWD.replace(/\//g, '\\')
+
 let localeObj
 const filesystem = Neutralino.filesystem
 const createCmdWindow = async (command) => {

@@ -60,7 +60,7 @@
   "alertUserTaken": "用户名已被占用",
   "alertPassMismatch": "密码与确认密码不匹配",
   "alertAuthNoRegister": "未启用认证，无需注册！",
-  "alertRegisterSuccess": "注册成功！"
+  "alertRegisterSuccess": "注册成功！",
   
    "downloadTitle": "下载",
   "grassclipperTitle": "GrassClipper",
