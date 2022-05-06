@@ -43,7 +43,7 @@ async function downloadGC(branch) {
   config.grasscutterBranch = branch
 
   // Set gc path for people with launcher enabled
-  config.serverFolder = `${NL_CWD}/gc-${branch}/grasscutter.jar`
+  config.serverFolder = `${NL_CWD}\\gc-${branch}\\grasscutter.jar`
 
   // Enable server launcher
   config.serverLaunchPanel = true
@@ -73,6 +73,9 @@ async function downloadGC(branch) {
   const serverFolderFixed = config.serverFolder.match(/.*\\|.*\//g, '')[0].replace(/\//g, '\\')
 
   // Ensure data and key folders exist
+
+  console.log(config.serverFolder)
+  console.log(serverFolderFixed)
 
   await Neutralino.os.execCommand(`mkdir ${serverFolderFixed}\\data`)
   await Neutralino.os.execCommand(`mkdir ${serverFolderFixed}\\keys`)
