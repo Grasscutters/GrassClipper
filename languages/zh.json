@@ -61,4 +61,24 @@
   "alertPassMismatch": "密码与确认密码不匹配",
   "alertAuthNoRegister": "未启用认证，无需注册！",
   "alertRegisterSuccess": "注册成功！"
+  
+   "downloadTitle": "下载",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "安装",
+  "installerSubtitle": "安装Grasscutter所需的代理和其他工具。",
+  "downloadStable": "下载Grasscutter稳定版",
+  "stableSubtitle": "安装稳定版的Grasscutter。此版本更加稳定，但是功能相对较少。",
+  "downloadDev": "下载Grasscutter开发版",
+  "devSubtitle": "安装开发版的Grasscutter. 这个版本更新更加频繁，但是有时会有些bug。使用风险自负.",
+  "downloadResources": "下载Grasscutter资源",
+  "resourceSubtitle": "将所需资源下载至当前设置的Grasscutter文件夹。 除非你自己放置了资源，否则你应该执行此操作.",
+
+  "gcScriptRunning": "运行中...",
+  "stableInstall": "下载",
+  "devInstall": "下载",
+
+  "updateNotifText": "有新版本可用！当前最新的版本是： ",
+
+  "chineseCharacterAlert": "当前文件路径含有中文字符，可能会导致一些问题。"
 }
