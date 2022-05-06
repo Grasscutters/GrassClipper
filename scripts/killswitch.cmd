@@ -22,6 +22,9 @@ if "%PROXY_IP%" EQU "localhost" (
 )
 
 :loop
+  :: Wait a couple seconds
+  ping 127.0.0.1 -n 2 > nul
+
   :: Check if the game is even running
   :: tasklist /fi "ImageName eq %GAME_EXE_NAME%" /fo csv 2>NUL | find /I "%GAME_EXE_NAME%.exe">NUL
   :: IF %ERRORLEVEL% NEQ 0 (
@@ -32,6 +35,7 @@ if "%PROXY_IP%" EQU "localhost" (
   :: https://stackoverflow.com/questions/162291/how-to-check-if-a-process-is-running-via-a-batch-script
   tasklist /fi "ImageName eq mitmdump.exe" /fo csv 2>NUL | find /I "mitmdump.exe">NUL
   if "%ERRORLEVEL%" NEQ "0" (
+    echo "mitmdump not running"
     goto killgame
   )
 
@@ -50,6 +54,7 @@ if "%PROXY_IP%" EQU "localhost" (
 
   :: Ensure proxy is enabled, space is there on purpose
   IF "%PROXY_ENABLED%" NEQ "0x1 " (
+    echo "Proxy server disabled in windows"
     goto killgame
   )
 
@@ -59,10 +64,9 @@ if "%PROXY_IP%" EQU "localhost" (
 
   :: There is a space after %PROXY_IP on purpose, Windows is weird
   if "%CUR_PROXY_IP%" NEQ "%PROXY_IP%:8080 " (
+    echo "Cur proxy: %CUR_PROXY_IP% | Proxy: %PROXY_IP%:8080"
     goto killgame
   )
-
-  ping 127.0.0.1 -n 2 > nul
 
   goto loop
 

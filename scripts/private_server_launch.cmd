@@ -60,7 +60,7 @@ echo Killswitch: %ENABLE_KILLSWITCH%
 if "%ENABLE_KILLSWITCH%" EQU "true" (
 	echo Killswitch is enabled!
 	:: Start killswitch
-	start /b %ORIGIN%\scripts\killswitch.cmd "%GAME_EXE%" %IP%
+	start /b %ORIGIN%\scripts\killswitch.cmd "%GAME_EXE%" 127.0.0.1
 )
 
 :: Launch game
