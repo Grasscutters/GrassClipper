@@ -93,14 +93,14 @@ async function openGameFolder() {
   const config = await getCfg()
   const folder = config.gameexe.match(/.*\\|.*\//g, '')
 
-  if (folder.length > 0) openInExplorer(folder[0])
+  if (folder.length > 0) openInExplorer(folder[0].replace(/\//g, '\\'))
 }
 
 async function openGrasscutterFolder() {
   const config = await getCfg()
   const folder = config.serverFolder.match(/.*\\|.*\//g, '')
 
-  if (folder.length > 0) openInExplorer(folder[0])
+  if (folder.length > 0) openInExplorer(folder[0].replace(/\//g, '\\'))
 }
 
 // https://www.jimzhao.us/2015/09/javascript-detect-chinese-character.html
