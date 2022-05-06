@@ -71,13 +71,20 @@
   "downloadStable": "Unduh Versi Stabil Grasscutter",
   "stableSubtitle": "Pasang versi stabil Grasscutter. Versi ini biasanya tidak punya banyak bug, tetapi juga fiturnya lebih sedikit.",
   "downloadDev": "Unduh Versi Pengembangan Grasscutter",
-  "downloadSubtitle": "Pasang versi pengembangan Grasscutter. Versi ini biasanya mempunyai banyak bug dan sering diperbarui. Gunakan dengan resikomu sendiri.",
+  "devSubtitle": "Pasang versi pengembangan Grasscutter. Versi ini biasanya mempunyai banyak bug dan sering diperbarui. Gunakan dengan resikomu sendiri.",
   "downloadResources": "Unduh Sumber Daya Grasscutter",
-  "devSubtitle": "Unduh sumber daya Grasscutter ke dalam folder Grasscutter yang sudah diatur. Ini harus dilakukan kecuali kamu berencana untuk mendapatkan sumber daya secara eksternal.",
+  "resourceSubtitle": "Unduh sumber daya Grasscutter ke dalam folder Grasscutter yang sudah diatur. Ini harus dilakukan kecuali kamu berencana untuk mendapatkan sumber daya secara eksternal.",
 
   "gcScriptRunning": "Menjalankan...",
   "stableInstall": "Unduh",
   "devInstall": "Unduh",
 
-  "updateNotifText": "Pembaruan baru tersedia! Versi terbaru: "
+  "updateNotifText": "Pembaruan baru tersedia! Versi terbaru: ",
+
+  "chineseCharacterAlert": "Jalur file yang diatur berisi karakter Cina, ini dapat menyebabkan masalah!",
+
+  "dialogOk": "OK",
+  "dialogNo": "TIDAK",
+  "serverEnableDialogTitle": "Kamu menemukan peluncur server Grasscutter!",
+  "serverEnableDialogText": "Jika kamu tidak memiliki pemasangan Grasscutter untuk diatur, apakah kamu mau mengunduh build nya?"
 }
