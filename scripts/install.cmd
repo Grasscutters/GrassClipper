@@ -51,3 +51,4 @@ echo Done! You can now open GrassClipper.exe!
 pause
 
 taskkill /f /fi "WINDOWTITLE eq Grassclipper Installer"
+taskkill /f /fi "WINDOWTITLE eq Administrator:  Grassclipper Installer"
