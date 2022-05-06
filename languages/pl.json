@@ -83,9 +83,9 @@
 
   "chineseCharacterAlert": "Ścieżka pliku zawierająca chińskie symbole może powodować błędy.",
 
-  "dialogOk": "OK",
-  "dialogNo": "NIE",
+  "dialogOk": "Tak",
+  "dialogNo": "Nie",
   "serverEnableDialogTitle": "Znalazłeś Launcher Serwera",
-  "serverEnableDialogText": "If you do not have an existing Grasscutter installation to set, would you like to download a build?"
+  "serverEnableDialogText": "Jeżeli nie posiadasz instalacji Grasscutter'a, możesz ją teraz pobrać. Uruchomić pobieranie?"
 
 }
