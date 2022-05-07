@@ -3,14 +3,15 @@
   "appName": "GrassClipper",
 
   "playOfficial": "Play Official",
-  "playPrivate": "Play Private",
+  "playPrivate": "Play on Grasscutter",
   "launchLocalServer": "Launch Local Server",
 
-  "genshinFolderSet": "Set \"Genshin Impact Game\" folder",
-  "grasscutterFileSet": "Set \"GrassCutter\" .jar file",
+  "gameExeSet": "Set game executable",
+  "grasscutterFileSet": "Set \"Grasscutter\" .jar file",
   "folderNotSet": "Not set",
 
-  "ipPlaceholder": "IP Address",
+  "ipPlaceholder": "Server Address...",
+  "portPlaceholder": "Port",
   "noFavorites": "No favorites set",
 
   "settingsTitle": "Settings",
@@ -20,20 +21,71 @@
   "proxyOption": "Proxy",
   "proxySubtitle": "Install the proxy server via the install script",
   "updateOption": "Update",
-  "updateSubtitle": "Auto updating is temporarily disabled. Check GitHub for the newest releease.",
+  "updateSubtitle": "Auto updating is temporarily disabled. Check GitHub for the newest release.",
   "languageOption": "Language",
   "languageSubtitle": "Select your language!",
   "enableServerLauncherOption": "Enable Server Launcher",
   "enableServerLauncherSubtitle": "Enable to server launcher tile for launching a local Grasscutter instance.",
+  "httpsOption": "Use HTTPS",
+  "httpsSubtitle": "Choose between using HTTPS or HTTP.",
 
   "introSen1": "Looks like this is your first time opening GrassClipper!",
   "introSen2": "First of all, welcome, happy to see you here! :)",
   "introSen3": "Would you like to run the proxy installer?",
-  "introSen4": "(required to connect to private servers)",
+  "introSen4": "(required to connect to servers)",
 
+  "updateBtn": "Update",
   "proxyInstallBtn": "Install",
   "proxyInstallDeny": "No thanks",
 
-  "genshinFolderDialog": "Select Genshin Impact Game folder",
-  "grasscutterFileDialog": "Select GrassCutter server jar file"
+  "gameFolderDialog": "Select game folder",
+  "grasscutterFileDialog": "Select Grasscutter server jar file",
+
+  "loggingInTo": "Logging in to: ",
+  "registeringFor": "Registering for: ",
+  "authUsername": "Username: ",
+  "authPassword": "Password: ",
+  "authConfirmPassword": "Confirm Password: ",
+  "authLoginBtn": "Login",
+  "authRegisterBtn": "Register",
+  "authLoginTitle": "Login",
+  "authRegisterTitle": "Register",
+  "launchWithoutAuth": "Launch without Authentication",
+
+  "alertInvalid": "Invalid username or password",
+  "alertNoPass": "No password set, please change password",
+  "alertUnknown": "Unknown error, contact server owner",
+  "alertAuthNoLogin": "Authentication is disabled, no need to log in!",
+  "alertLoginSuccess": "Login successful! Token copied to clipboard. Paste this token into the username field of the game to log in.",
+
+  "alertUserTaken": "Username is taken",
+  "alertPassMismatch": "Password and password confirmation do not match",
+  "alertAuthNoRegister": "Authentication is disabled, no need to register!",
+  "alertRegisterSuccess": "Registration successful!",
+
+  "downloadTitle": "Downloads",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "Installer",
+  "installerSubtitle": "Installs proxy and other tools. Required for Grasscutter servers.",
+  "downloadStable": "Download Grasscutter Stable Build",
+  "stableSubtitle": "Install Grasscutter stable branch. This build usually has less bugs, but also less features.",
+  "downloadDev": "Download Grasscutter Development Build",
+  "devSubtitle": "Install Grasscutter development branch. This build sometimes has bugs, and is frequently updated. Use at your own risk.",
+  "downloadResources": "Download Grasscutter Resources",
+  "resourceSubtitle": "Downloads Grasscutter resources into the currently set Grasscutter folder. This should be done unless you plan on getting resources externally.",
+
+  "gcScriptRunning": "Running...",
+  "stableInstall": "Download",
+  "devInstall": "Download",
+
+  "updateNotifText": "A new update is available! Newest version: ",
+
+  "chineseCharacterAlert": "The file path set contains Chinese characters, this may cause problems!",
+
+  "dialogOk": "OK",
+  "dialogNo": "NO",
+  "serverEnableDialogTitle": "You found the Grasscutter server launcher!",
+  "serverEnableDialogText": "If you do not have an existing Grasscutter installation to set, would you like to download a build?"
+
 }

@@ -1,0 +1,39 @@
+{
+  "fullLangName": "Español (México)",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Jugar en oficial",
+  "playPrivate": "Jugar en Grasscutter",
+  "launchLocalServer": "Iniciar servidor local",
+
+  "gameExeSet": "Establece el folder game",
+  "grasscutterFileSet": "Establece el archivo .jar de \"Grasscutter\"",
+  "folderNotSet": "No establecido",
+
+  "ipPlaceholder": "Dirección IP",
+  "noFavorites": "No hay favoritos",
+
+  "settingsTitle": "Ajustes",
+  "scriptsSectionTitle": "Scripts",
+  "killswitchOption": "Kill Switch",
+  "killswitchSubtitle": "Solo para aquellos muy paranoicos con bans. Cierra el proceso del juego *y tu Internet* si algo le sucede al proxy.",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Instale el servidor proxy a través del script de instalación",
+  "updateOption": "Update",
+  "updateSubtitle": "Las actualizaciónes automáticas están deshabilitadas temporalmente. Consulte GitHub para ver la versión más reciente.",
+  "languageOption": "Idioma",
+  "languageSubtitle": "Seleccióne su idioma!",
+  "enableServerLauncherOption": "Habilita el launcher del servidor",
+  "enableServerLauncherSubtitle": "Habilite el tile del launche del servidor para iniciar una instancia local de Grasscutter.",
+
+  "introSen1": "¡Parece que es la primera vez que abres GrassClipper!",
+  "introSen2": "En primer lugar, ¡bienvenido, feliz de verte por aquí! :)",
+  "introSen3": "Quieres ejecutar el instalador de proxy?",
+  "introSen4": "(necesario para conectarse a los servidores)",
+
+  "proxyInstallBtn": "Instalar",
+  "proxyInstallDeny": "No gracias",
+
+  "gameFolderDialog": "Selecciona la carpeta game",
+  "grasscutterFileDialog": "Selecciona el archivo .jar de Grasscutter"
+}

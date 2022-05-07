@@ -5,6 +5,9 @@ set GAME_EXE_NAME=%GAME_EXE_NAME:"=%
 set PROXY_IP=%2
 set PROXY_IP=%PROXY_IP:"=%
 
+:: For task killing
+title PS Killswitch
+
 :: Get current wifi SSID to reconnect
 for /f "delims=: tokens=2" %%n in ('netsh wlan show interface name="Wi-Fi" ^| findstr "Profile"') do set "WIFI=%%n"
 set WIFI=%WIFI: =%
@@ -19,16 +22,20 @@ if "%PROXY_IP%" EQU "localhost" (
 )
 
 :loop
+  :: Wait a couple seconds
+  ping 127.0.0.1 -n 2 > nul
+
   :: Check if the game is even running
-  @rem QPROCESS "%GAME_EXE_NAME%">NUL
-  @rem IF %ERRORLEVEL% NEQ 0 (
-  @rem   exit /b
-  @rem )
+  :: tasklist /fi "ImageName eq %GAME_EXE_NAME%" /fo csv 2>NUL | find /I "%GAME_EXE_NAME%.exe">NUL
+  :: IF %ERRORLEVEL% NEQ 0 (
+  ::   exit /b
+  :: )
 
   :: Check if the proxy server process is running
   :: https://stackoverflow.com/questions/162291/how-to-check-if-a-process-is-running-via-a-batch-script
   tasklist /fi "ImageName eq mitmdump.exe" /fo csv 2>NUL | find /I "mitmdump.exe">NUL
   if "%ERRORLEVEL%" NEQ "0" (
+    echo "mitmdump not running"
     goto killgame
   )
 
@@ -59,8 +66,6 @@ if "%PROXY_IP%" EQU "localhost" (
     goto killgame
   )
 
-  timeout /t 2 /NOBREAK >nul
-
   goto loop
 
 :killgame
@@ -83,5 +88,7 @@ if "%PROXY_IP%" EQU "localhost" (
 
   :: Reconnect to the WiFi
   netsh wlan connect name="%WIFI%"
+
+	taskkill /f /fi "WINDOWTITLE eq Administrator:  PS Killswitch"
 
   exit

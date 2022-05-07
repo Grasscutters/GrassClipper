@@ -1,0 +1,40 @@
+{
+  "fullLangName": "Русский",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Официальная игра",
+  "playPrivate": "Grasscutter",
+  "launchLocalServer": "Локальный сервер",
+
+  "gameExeSet": "Папка с игрой",
+  "grasscutterFileSet": "Путь до файла \"Grasscutter\" (.jar)",
+  "folderNotSet": "Папка не выбрана",
+
+  "ipPlaceholder": "IP-адрес",
+  "portPlaceholder": "Порт (опционально)",
+  "noFavorites": "В избранном пусто",
+
+  "settingsTitle": "Настройки",
+  "scriptsSectionTitle": "Скрипты",
+  "killswitchOption": "Аварийное прерывание",
+  "killswitchSubtitle": "Опция для тех, кто очень беспокоится по поводу банов. Снимает задачу с игрой *и разрывает ваше интернет-соединение*, когда возникают неполадки с прокси",
+  "proxyOption": "Прокси",
+  "proxySubtitle": "Запустить установочный скрипт для настройки прокси-сервера",
+  "updateOption": "Обновление",
+  "updateSubtitle": "Автоматическое обновление временно отключено. Вы можете проверить наличие обновлений на GitHub",
+  "languageOption": "Язык",
+  "languageSubtitle": "Выберите предпочитаемый язык приложения",
+  "enableServerLauncherOption": "Включить запуск сервера",
+  "enableServerLauncherSubtitle": "Использовать лаунчер для локального запуска Grasscutter",
+
+  "introSen1": "Кажется, вы впервые запустили GrassClipper!",
+  "introSen2": "Добро пожаловать, мы рады вас видеть! :)",
+  "introSen3": "Запустить установщик прокси?",
+  "introSen4": "(необходим для подключения к приватным серверам)",
+
+  "proxyInstallBtn": "Установить",
+  "proxyInstallDeny": "Нет, спасибо",
+
+  "gameFolderDialog": "Выбор папки с игрой",
+  "grasscutterFileDialog": "Выбор пути до файла Grasscutter (.jar)"
+}

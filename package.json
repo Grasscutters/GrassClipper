@@ -1,15 +1,16 @@
 {
-  "name": "GrassClipper",
-  "version": "0.6.0",
+  "name": "grassclipper",
+  "version": "0.9.4",
   "repository": "https://github.com/Grasscutters/GrassClipper.git",
   "author": "SpikeHD <spikegdofficial@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
     "dev": "neu run",
-    "build": "npm run clean_dist && neu build && npm run move_files && npm run move_bgs && npm run rename_exe",
-    "move_files": "cp -r ./languages ./dist/GrassClipper && cp -r ./proxy ./dist/GrassClipper && cp -r ./scripts ./dist/GrassClipper",
-    "move_bgs": "mkdir dist\\GrassClipper\\resources\\bg\\private && cp -r ./resources/bg/private ./dist/GrassClipper/resources/bg && cp -r ./resources/bg/server ./dist/GrassClipper/resources/bg",
-    "rename_exe": "mv ./dist/GrassClipper/GrassClipper-win_x64.exe ./dist/GrassClipper/GrassClipper.exe",
-    "clean_dist": "rm -rf ./dist"
+    "build-win": ".\\build_win.cmd",
+    "build-linux": "./build.sh",
+    "build": "echo !! Run build-win or build-linux to build for your platform !!\n"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0"
   }
 }

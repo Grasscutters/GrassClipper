@@ -1,0 +1,91 @@
+{
+  "fullLangName": "繁體中文",
+  "appName": "GrassClipper啟動器",
+
+  "playOfficial": "啟動官方伺服器",
+  "playPrivate": "啟動私人伺服器",
+  "launchLocalServer": "啟動本地伺服器",
+
+  "gameExeSet": "設定\"GenshinImpact\".exe執行檔",
+  "grasscutterFileSet": "設定 \"Grasscutter\".jar 檔案",
+  "folderNotSet": "尚未設定Genshin Impact game資料夾",
+
+  "ipPlaceholder": "IP地址",
+  "portPlaceholder": "端口",
+  "noFavorites": "没有收藏",
+
+  "settingsTitle": "設定",
+  "scriptsSectionTitle": "程式設定",
+  "killswitchOption": "終止服務進程",
+  "killswitchSubtitle": "這是給對於封號非常敏感的人們，啟用此選項將會在你Proxy中發生任何錯誤時會終止你的遊戲（還有你的網路。）",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "通過批次檔來安裝Proxy伺服器。",
+  "updateOption": "更新",
+  "updateSubtitle": "自動更新暫時無法使用。查看GitHub以獲取最新的Release。",
+  "languageOption": "語言",
+  "languageSubtitle": "選擇你最熟悉的語言！",
+  "enableServerLauncherOption": "啟用本地伺服器",
+  "enableServerLauncherSubtitle": "啟動器內將會為你顯示啟動本地伺服器選項。",
+  "httpsOption": "使用 HTTPS",
+  "httpsSubtitle": "選擇使用HTTP或HTTPS，此選項適用於私人伺服器。",
+
+  "introSen1": "看來這是你第一次使用GrassClipper啟動器！",
+  "introSen2": "首先，歡迎你使用GrassClipper啟動器，其次很高興在這裡見到你！ :)",
+  "introSen3": "是否要運行Proxy安裝程序？",
+  "introSen4": "（需要連接到私人伺服器）",
+
+  "updateBtn": "更新",
+  "proxyInstallBtn": "安裝",
+  "proxyInstallDeny": "不用了，謝謝。",
+
+  "gameFolderDialog": "選擇Genshin Impact game資料夾",
+  "grasscutterFileDialog": "選擇Grasscutter.jar檔案",
+  
+  "loggingInTo": "登錄至：",
+  "registeringFor": "註冊至：",
+  "authUsername": "用戶名: ",
+  "authPassword": "密碼: ",
+  "authConfirmPassword": "再次確認密碼: ",
+  "authLoginBtn": "登錄",
+  "authRegisterBtn": "註冊",
+  "authLoginTitle": "登錄",
+  "authRegisterTitle": "註冊",
+  "launchWithoutAuth": "在未認證的情況下啟動",
+
+  "alertInvalid": "用戶名或密碼不正確。",
+  "alertNoPass": "未設定密碼，請先更改密碼",
+  "alertUnknown": "未知錯誤，請聯系伺服器管理員",
+  "alertAuthNoLogin": "未啟用認證，無需登錄！",
+  "alertLoginSuccess": "登錄成功！Token 已複製至剪貼簿。將 Token 複製到用戶名處即可登錄。",
+
+  "alertUserTaken": "用戶名已被占用",
+  "alertPassMismatch": "兩組密碼不一致",
+  "alertAuthNoRegister": "未啟用認證，無需註冊！",
+  "alertRegisterSuccess": "註冊成功！",
+
+  "downloadTitle": "安裝清單",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "安裝程式",
+  "installerSubtitle": "安裝Proxy和其他工具。 Grasscutter伺服器連接時需要。",
+  "downloadStable": "安裝 Stable 構建",
+  "stableSubtitle": "安裝 Stable 分支. 此構建通常具有較少的錯誤，但功能也很少。",
+  "downloadDev": "安裝 Development 構建",
+  "devSubtitle": "安裝 Development 分支. 此版本有時存在錯誤，並且經常更新。 使用此版本風險自負。",
+  "downloadResources": "下載 resources 資料夾",
+  "resourceSubtitle": "將 resources 安裝在目前設置的 Grasscutter 資料夾中。 除非您計劃從外部獲取resources，否則應該這樣做。",
+
+  "gcScriptRunning": "執行中...",
+  "stableInstall": "安裝",
+  "devInstall": "安装",
+
+  "updateNotifText": "有新的GrassClipper更新可用！ 最新版本: ",
+
+  "chineseCharacterAlert": "此路徑含有中文字體，這可能會導致問題的發生。",
+
+  "dialogOk": "好的",
+  "dialogNo": "不要",
+  "serverEnableDialogTitle": "您找到了Grasscutter本地伺服器啟動器！",
+  "serverEnableDialogText": "如果你現在還沒有把Grasscutter安裝在電腦上面的話，要不要直接從網路上下載？"
+
+}

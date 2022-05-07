@@ -7,6 +7,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+  color: #fff;
+}
+
+img {
+  height: 20px;
+}
+
 .darken {
   filter: brightness(0.6);
 }
@@ -27,13 +35,135 @@ body {
   margin: 10px;
 }
 
+#miscDialog span,
 #firstTimeNotice span {
   display: block;
   text-align: center;
   margin-bottom: 6px;
 }
 
+#loginPanel {
+  height: 50%;
+  width: 32%;
+}
+
+#loginPanel img {
+  height: 20px;
+}
+
+#loginPopupTitle {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.authBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.authBody div {
+  margin: 6px;
+}
+
+.authBody input {
+  height: 20px;
+  background: white;
+  border: none;
+  border-bottom: 2px solid #4d4d4d;
+
+  /* border bottom anim */
+  transition: border-bottom 0.1s ease-in-out;
+}
+
+.authBody input:focus {
+  outline: none;
+  border-bottom: 2px solid #ffc61e;
+}
+
+#loginPopupTitle img {
+  height: 20px;
+  margin-bottom: 8px;
+}
+
+#loginPopupTitle img:hover {
+  filter: invert(85%) sepia(31%) saturate(560%) hue-rotate(329deg) brightness(100%) contrast(92%);
+  cursor: pointer;
+}
+
+#registerPopupServer,
+#loginPopupServer {
+  font-weight: bold;
+}
+
+#loginSectionTitle,
+#registerSectionTitle {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+#loginSectionTitle:hover,
+#registerSectionTitle:hover {
+  cursor: pointer;
+}
+
+.selectedTitle {
+  font-weight: bold !important;
+  border-bottom: 2px solid #ffc61e;
+}
+
+.authInputs div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authInputs div span {
+  margin-right: 6px;
+}
+
+.error {
+  background: #e90000;
+}
+
+.warn {
+  background: #ffc61e;
+}
+
+.success {
+  background: #00c200;
+}
+
+#registerAlert,
+#loginAlert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+#registerAlert img,
+#loginAlert img {
+  height: 20px;
+  margin: 10px;
+  filter: invert(100%) sepia(0%) saturate(179%) hue-rotate(253deg) brightness(105%) contrast(101%);
+}
+
+#registerAlert span,
+#loginAlert span {
+  margin: 10px;
+}
+
+#miscDialog,
 #firstTimeNotice,
+#loginPanel,
+#downloadPanel,
 #settingsPanel {
   display: block;
   position: absolute;
@@ -49,17 +179,21 @@ body {
   font-family: system-ui;
 }
 
+#downloadPanel,
 #settingsPanel {
   width: 35%;
-  height: 70%;
+  height: 80%;
+  overflow: auto;
 }
 
+#downloadTitle,
 #fullSettingsTitle {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
+#downloadPanelInner,
 #settingsPanelInner {
   display: flex;
   flex-direction: column;
@@ -68,16 +202,23 @@ body {
   padding: 10px 10%;
 }
 
+.downloadRow,
 .settingsRow {
   width: 100%;
 }
 
+.downloadTitle,
 .settingTitle {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
+.downloadTitle {
+  margin: 6px;
+}
+
+.downloadLabel,
 .settingLabel {
   display:inline-block;
   font-size: 1em;
@@ -85,12 +226,14 @@ body {
   margin: 10px 0px;
 }
 
+.downloadSubtitle,
 .settingSubtitle {
   color: rgb(165, 165, 165);
   font-size: 0.8em;
   font-weight: normal;
 }
 
+.downloadSection,
 .settingSection {
   display: flex;
   flex-direction: row;
@@ -98,10 +241,12 @@ body {
   justify-content: space-between;
 }
 
+.downloadSection .smolBtn,
 .settingSection .smolBtn {
   height: 30px;
 }
 
+#downloadTitleBar,
 #settingsTitleBar {
   display: flex;
   flex-direction: row;
@@ -109,15 +254,18 @@ body {
   justify-content: space-between;
 }
 
+#downloadClose,
 #settingsClose {
   display: inline-block;
   transition: filter 0.1s ease-in-out;
 }
 
+#downloadClose img,
 #settingsClose img {
   height: 20px;
 }
 
+#downloadClose:hover,
 #settingsClose:hover {
   filter: invert(85%) sepia(31%) saturate(560%) hue-rotate(329deg) brightness(100%) contrast(92%);
   cursor: pointer;
@@ -127,7 +275,7 @@ body {
   position: absolute;
   z-index: 99;
   padding: 10px;
-  transform: translate(150px, 420px);
+  transform: translate(3vw, 420px);
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -276,6 +424,18 @@ body {
   background: linear-gradient(#ffc61e, #ffd326);
 }
 
+.openFolderIcon {
+  display: inline;
+  height: 20px;
+  filter: invert(97%) sepia(85%) saturate(12%) hue-rotate(184deg) brightness(103%) contrast(103%);
+  padding: 10px;
+}
+
+.openFolderIcon:hover {
+  cursor: pointer;
+  filter: invert(99%) sepia(0%) saturate(1092%) hue-rotate(172deg) brightness(80%) contrast(103%);
+}
+
 #bottomBar {
   display: flex;
   justify-content: center;
@@ -304,7 +464,13 @@ body {
   height: 10%;
 }
 
-#genshinPath, #serverPath {
+.bottomSection div div {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+#gamePath, #serverPath {
   color: white;
   font-size: 14px;
 }
@@ -336,7 +502,7 @@ body {
 }
 
 #firstPanel {
-  background-position: -340px;
+  background-position: -200px;
 }
 
 /* Move the first official button to the position on the png */
@@ -349,6 +515,10 @@ body {
 
 #ip {
   display: block;
+}
+
+#port {
+  width: 12%;
 }
 
 #secondPanel input {
@@ -393,4 +563,82 @@ body {
 
 #serverInput img:hover {
   cursor: pointer;
+}
+
+#downloadNotif {
+  z-index: 99;
+  position: absolute;
+
+  color: #fff;
+  background: #141414;
+  border: 1px solid #ccc;
+
+  padding: 1em;
+  top: 80%;
+  left: 120%;
+  width: 20%;
+  border-radius: 5px;
+
+  text-align: center;
+
+  transition: left 0.5s ease-in-out;
+}
+
+#downloadNotif:hover {
+  cursor: pointer;
+  border-color: #fff;
+}
+
+#downloadNotif img {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(16deg) brightness(103%) contrast(101%);
+}
+
+#downloadNotif.displayed {
+  left: 70%;
+}
+
+#newestVersion {
+  font-weight: bold;
+}
+
+#alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  color: #704a1d;
+
+  position: absolute;
+  top: -100%;
+  left: 15%;
+  background: linear-gradient(#ffc61e, #ffd326);
+  border: 1px solid #704a1d;
+  border-radius: 6px;
+
+  height: 50px;
+  width: 70%;
+
+  z-index: 999;
+
+  transition: top 0.15s ease-in-out;
+}
+
+#alert.show {
+  top: 6%;
+}
+
+#dialogTitle {
+  font-weight: bold;
+}
+
+#dialogBtns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0.6em;
 }

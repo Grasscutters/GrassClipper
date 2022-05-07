@@ -1,0 +1,84 @@
+{
+  "fullLangName": "简体中文",
+  "appName": "GrassClipper 启动器",
+
+  "playOfficial": "启动官方服务器",
+  "playPrivate": "启动私人服务器",
+  "launchLocalServer": "启动本地服务器",
+
+  "gameExeSet": "选择游戏的可执行文件",
+  "grasscutterFileSet": "选择 \"Grasscutter\" .jar 文件",
+  "folderNotSet": "没有选择游戏可执行文件或 Grasscutter.jar 文件",
+
+  "ipPlaceholder": "服务器 IP 地址",
+  "portPlaceholder": "端口",
+  "noFavorites": "没有收藏任何 IP 地址",
+
+  "settingsTitle": "设置",
+  "scriptsSectionTitle": "脚本",
+  "killswitchOption": "杀死服务进程",
+  "killswitchSubtitle": "为那些害怕被封号的人准备。启用此选项可以结束游戏进程(还可以让你断网，如果修改了代理设置的话)。",
+  "proxyOption": "代理",
+  "proxySubtitle": "通过批处理文件 (install.cmd) 以安装代理服务器。",
+  "updateOption": "更新",
+  "updateSubtitle": "自动更新暂时不可用。查看 GitHub 以获取最新的版本。",
+  "languageOption": "语言",
+  "languageSubtitle": "选择你熟悉的语言以应用 GrassClipper 启动器！",
+  "enableServerLauncherOption": "启用本地服务器",
+  "enableServerLauncherSubtitle": "在启动器内显示启动本地服务器选项。",
+  "httpsOption": "使用 HTTPS",
+  "httpsSubtitle": "选择是否使用 HTTP(S)",
+
+  "introSen1": "看来这是你第一次使用 GrassClipper 启动器！",
+  "introSen2": "首先，欢迎你使用 GrassClipper 启动器，其次很高兴见到你！ :)",
+  "introSen3": "是否要运行安装脚本来安装代理服务器？",
+  "introSen4": "（此选项仅提供给需要连接到私人服务器的用户）",
+  "updateBtn": "更新",
+  "proxyInstallBtn": "安装",
+  "proxyInstallDeny": "不用了，谢谢",
+
+  "gameFolderDialog": "选择游戏文件夹",
+  "grasscutterFileDialog": "选择 Grasscutter.jar 文件",
+
+  "loggingInTo": "登录至：",
+  "registeringFor": "注册至：",
+  "authUsername": "用户名: ",
+  "authPassword": "密码: ",
+  "authConfirmPassword": "再次确认密码: ",
+  "authLoginBtn": "登录",
+  "authRegisterBtn": "注册",
+  "authLoginTitle": "登录",
+  "authRegisterTitle": "注册",
+  "launchWithoutAuth": "在未认证的情况下启动",
+
+  "alertInvalid": "无效的用户名或密码",
+  "alertNoPass": "未设置密码，请先更改密码",
+  "alertUnknown": "未知错误，请联系服务器管理员",
+  "alertAuthNoLogin": "未启用认证，无需登录！",
+  "alertLoginSuccess": "登录成功！Token 已复制至剪切板。将 Token 粘贴至用户名处即可登录。",
+
+  "alertUserTaken": "用户名已被占用",
+  "alertPassMismatch": "密码与确认密码不匹配",
+  "alertAuthNoRegister": "未启用认证，无需注册！",
+  "alertRegisterSuccess": "注册成功！",
+  
+   "downloadTitle": "下载",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "安装",
+  "installerSubtitle": "安装Grasscutter所需的代理和其他工具。",
+  "downloadStable": "下载Grasscutter稳定版",
+  "stableSubtitle": "安装稳定版的Grasscutter。此版本更加稳定，但是功能相对较少。",
+  "downloadDev": "下载Grasscutter开发版",
+  "devSubtitle": "安装开发版的Grasscutter. 这个版本更新更加频繁，但是有时会有些bug。使用风险自负.",
+  "downloadResources": "下载Grasscutter资源",
+  "resourceSubtitle": "将所需资源下载至当前设置的Grasscutter文件夹。 除非你自己放置了资源，否则你应该执行此操作.",
+
+  "gcScriptRunning": "运行中...",
+  "stableInstall": "下载",
+  "devInstall": "下载",
+
+  "updateNotifText": "有新版本可用！当前最新的版本是： ",
+
+  "chineseCharacterAlert": "当前文件路径含有中文字符，可能会导致一些问题。"
+}

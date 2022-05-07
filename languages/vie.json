@@ -1,0 +1,90 @@
+{
+  "fullLangName": "Tiếng Việt",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Máy chủ chính thức",
+  "playPrivate": "Máy chủ riêng",
+  "launchLocalServer": "Khởi động máy chủ cục bộ",
+
+  "gameExeSet": "Chọn tệp \"GenshinImpact.exe\"",
+  "grasscutterFileSet": "Chọn tệp \"Grasscutter.jar\"",
+  "folderNotSet": "Chưa chọn tệp",
+
+  "ipPlaceholder": "Địa chỉ máy chủ",
+  "portPlaceholder": "Cổng",
+  "noFavorites": "Không có máy chủ yêu thích",
+
+  "settingsTitle": "Cài đặt",
+  "scriptsSectionTitle": "Scripts", 
+  "killswitchOption": "Thoát khẩn cấp",
+  "killswitchSubtitle": "Để phòng tránh bị ban, thoát game *và ngắt internet* của bạn ngay lập tức nếu có vấn đề xảy ra.",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Dùng để kết nối vào máy chủ riêng",
+  "updateOption": "Cập nhật",
+  "updateSubtitle": "Tính năng tự động cập nhập tạm thời chưa khả dụng. Kiểm tra Github để biết thêm chi tiết",
+  "languageOption": "Ngôn ngữ",
+  "languageSubtitle": "Thay đổi ngôn ngữ",
+  "enableServerLauncherOption": "Grasscutter",
+  "enableServerLauncherSubtitle": "Thêm lựa chọn bật máy chủ grasscutter",
+  "httpsOption": "Dùng HTTPS",
+  "httpsSubtitle": "Thay đổi giao thức giữa HTTPS và HTTP",
+
+  "introSen1": "Hình như đây là lần đầu tiên bạn dùng ứng dụng này!",
+  "introSen2": "Trước tiên xin chào và cảm ơn bạn đã sử dụng! :)",
+  "introSen3": "Bạn có muốn cài đặt ngay proxy không?",
+  "introSen4": "(cần thiết để vào máy chủ riêng)",
+
+  "updateBtn": "Cập nhật",
+  "proxyInstallBtn": "Cài đặt",
+  "proxyInstallDeny": "Huỷ bỏ",
+
+  "gameFolderDialog": "Chọn tệp GenshinImpact.exe",
+  "grasscutterFileDialog": "Chọn tệp Grasscutter.jar",
+  "loggingInTo": "Đang đăng nhập với tên: ",
+  "registeringFor": "Đang đăng ký tài khoản: ",
+  "authUsername": "Tài khoản: ",
+  "authPassword": "Mật khẩu: ",
+  "authConfirmPassword": "Xác nhận lại mật khẩu: ",
+  "authLoginBtn": "Đăng nhập",
+  "authRegisterBtn": "Đăng ký",
+  "authLoginTitle": "Đăng nhập",
+  "authRegisterTitle": "Đăng ký",
+  "launchWithoutAuth": "Khởi chạy không cần hệ thống xác thực",
+
+  "alertInvalid": "Tài khoản hoặc mật khẩu không đúng",
+  "alertNoPass": "Chưa có mật khẩu. Vui lòng thiết lập mật khẩu",
+  "alertUnknown": "Lỗi không xác định, báo cáo với người quản lý máy chủ",
+  "alertAuthNoLogin": "Đã vô hiệu hoá hệ thống xác thực, không cần đăng nhập.",
+  "alertLoginSuccess": "Đăng nhập thành công! Token đã được sao chép vào bộ nhớ tạm. Dán token vào phần tài khoản trong game để đăng nhập.",
+
+  "alertUserTaken": "Tên tài khoản đã tồn tại",
+  "alertPassMismatch": "Mật khẩu xác thực không trùng khớp",
+  "alertAuthNoRegister": "Đã vô hiệu hoá hệ thống xác thực, không cần đăng ký.",
+  "alertRegisterSuccess": "Đăng ký thành công!",
+
+  "downloadTitle": "Tải về",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "Phần cài đặt",
+  "installerSubtitle": "Cài đặt proxy và những phần khác. Cần thiết cho những máy chủ Grasscutter.",
+  "downloadStable": "Tải về Grasscutter phiên bản Stable",
+  "stableSubtitle": "Cài đặt Grasscutter phiên bản Stable. Đây là phiên bản ổn định, tuy nhiên sẽ có ít tính năng.",
+  "downloadDev": "Tải về Grasscutter phiên bản Development",
+  "devSubtitle": "Cài đặt Grasscutter phiên bản Development. Đây là phiên bản mới hơn, thường xuyên cập nhập hơn nhưng có thể sẽ xuất hiện lõi trong quá trình sử dụng.",
+  "downloadResources": "Tài về tài nguyên cho Grasscutter",
+  "resourceSubtitle": "Tải về phần tài nguyên cần thiết cho Grasscutter. Sử dụng tính năng này để tài về phần tài nguyên tự động nếu bạn không muốn tải về thủ công.",
+
+  "gcScriptRunning": "Đang chạy...",
+  "stableInstall": "Tải về",
+  "devInstall": "Tải về",
+
+  "updateNotifText": "Phiên bản mới nhất đang khả dụng: ",
+
+  "chineseCharacterAlert": "Đường dẫn tới tệp tin chứa ký tự phức tạp, có thể gây lỗi!",
+
+  "dialogOk": "OK",
+  "dialogNo": "Không",
+  "serverEnableDialogTitle": "Đã tìm thấy trình khởi chạy Grasscutter!",
+  "serverEnableDialogText": "Không tìm thấy phần cài đặt Grasscutter hiện tại, bạn có muốn tải về?"
+
+}

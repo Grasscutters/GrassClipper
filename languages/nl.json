@@ -1,0 +1,39 @@
+{
+  "fullLangName": "Nederlands",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Normaal spelen",
+  "playPrivate": "Op Grasscutter spelen",
+  "launchLocalServer": "Lokale server starten",
+
+  "gameExeSet": "Selecteer de game folder",
+  "grasscutterFileSet": "Selecteer het \"Grasscutter\" .jar bestand",
+  "folderNotSet": "Niet geselecteerd",
+
+  "ipPlaceholder": "IP adres",
+  "noFavorites": "Geen favorieten",
+
+  "settingsTitle": "Instellingen",
+  "scriptsSectionTitle": "Scripts",
+  "killswitchOption": "Kill Switch",
+  "killswitchSubtitle": "Alleen voor de paranoïde gebruikers. Als iets met de proxy gebeurt, sluit dit jouw spel *en je internet* af.",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Installeer de proxy server via de installeer script",
+  "updateOption": "Update",
+  "updateSubtitle": "Automatisch updaten is tijdelijk uitgeschakeld. Ga naar de GitHub voor de nieuwste release.",
+  "languageOption": "Taal",
+  "languageSubtitle": "Selecteer je taal!",
+  "enableServerLauncherOption": "Server Launcher inschakelen",
+  "enableServerLauncherSubtitle": "Schakel dit in om de server launcher tile te gebruiken om een lokale Grasscutter server te starten.",
+
+  "introSen1": "Het lijkt erop dat het de eerste keer is dat je Grasscutter gebruikt!",
+  "introSen2": "Ten eerste, welkom, goed om jou hier te zien! :)",
+  "introSen3": "Wil je de proxy installer uitvoeren?",
+  "introSen4": "(vereist om te verbinden naar servers)",
+
+  "proxyInstallBtn": "Installeren",
+  "proxyInstallDeny": "Nee dank je",
+
+  "gameFolderDialog": "Selecteer de game folder",
+  "grasscutterFileDialog": "Selecteer het Grasscutter server jar bestand"
+}

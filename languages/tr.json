@@ -1,0 +1,43 @@
+{
+  "fullLangName": "Türkçe",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Resmi sunucuda oyna",
+  "playPrivate": "Grasscutter sunucusunda oyna",
+  "launchLocalServer": "Yerel sunucuyu başlat",
+
+  "gameExeSet": "Oyun çalıştırıcısını seç",
+  "grasscutterFileSet": "\"Grasscutter\" .jar dosyasını seç",
+  "folderNotSet": "Seçilmedi",
+
+  "ipPlaceholder": "IP Adresi",
+  "portPlaceholder": "Port",
+  "noFavorites": "Favori sunucunuz yok.",
+
+  "settingsTitle": "Ayarlar",
+  "scriptsSectionTitle": "Scriptler",
+  "killswitchOption": "Kill Switch",
+  "killswitchSubtitle": "Sadece banlanmaktan paranoyak olanlar için. Proxy'ye bir şey olduğunda oyunu kapatıp *internet bağlantınızı* keser.",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Proxy sunucusunu bir script ile kur.",
+  "updateOption": "Güncelle",
+  "updateSubtitle": "Otomatik güncellemeler geçici olarak devre dışıdır. Yeni sürümler için GitHub'ı kontrol edin.",
+  "languageOption": "Dil",
+  "languageSubtitle": "Dilinizi seçin!",
+  "enableServerLauncherOption": "Sunucu başlatıcısını etkinleştir",
+  "enableServerLauncherSubtitle": "Yerel Grasscutter sunucusunu başlatmak için kutucuğunu etkinleştirin.",  
+  "httpsOption": "HTTPS kullan",
+  "httpsSubtitle": "HTTPS veya HTTP arasında geçiş yap.",
+
+  "introSen1": "Görünüşe göre GrassClipper'ı ilk kez açıyorsunuz!",
+  "introSen2": "İlk olarak, hoşgeldiniz. Sizi burada görmek bizi mutlu ediyor! :)",
+  "introSen3": "Proxy kurucusunu çalıştırmak ister misiniz?",
+  "introSen4": "(sunuculara bağlanmak için gerekli)",  
+
+  "updateBtn": "Güncelle",
+  "proxyInstallBtn": "Kur",
+  "proxyInstallDeny": "Hayır, teşekkürler.",
+
+  "gameFolderDialog": "Oyun klasörünü seç",
+  "grasscutterFileDialog": "Grasscutter.jar dosyasını seç"
+}

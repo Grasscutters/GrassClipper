@@ -1,0 +1,91 @@
+{
+  "fullLangName": "Polski",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Serwer oficjalny",
+  "playPrivate": "Serwer prywatny",
+  "launchLocalServer": "Uruchom serwer prywatny",
+
+  "gameExeSet": "Ustaw plik gry",
+  "grasscutterFileSet": "Ustaw plik \"Grasscutter\" .jar ",
+  "folderNotSet": "Nie ustawiono",
+
+  "ipPlaceholder": "Adres serwera",
+  "portPlaceholder": "Port",
+  "noFavorites": "Nie dodano żadnych ulubionych",
+
+  "settingsTitle": "Ustawienia",
+  "scriptsSectionTitle": "Skrypty",
+  "killswitchOption": "Kill Switch",
+  "killswitchSubtitle": "Tylko dla tych, którzy boją się o dostanie bana. Wyłącza gre *oraz twój internet* jeżeli coś stanie się z proxy.",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Zainstaluj serwer proxy poprzez skrypt instalacyjny",
+  "updateOption": "Aktualizacja",
+  "updateSubtitle": "Auto-aktualizacje są niedostępne. Sprawdź GitHub'a projektu po nowe wersje.",
+  "languageOption": "Język",
+  "languageSubtitle": "Wybierz swój język!",
+  "enableServerLauncherOption": "Włącz Launcher Serwera",
+  "enableServerLauncherSubtitle": "Enable to server launcher tile for launching a local Grasscutter instance.",
+  "httpsOption": "Używaj HTTPS",
+  "httpsSubtitle": "Wybierz pomiędzy używaniem HTTPS, a HTTP.",
+
+  "introSen1": "Wygląda na to, że po raz pierwszy uruchomiłeś GrassClipper'a!",
+  "introSen2": "Po pierwsze, miło Cię tu widzieć! :)",
+  "introSen3": "Czy chcesz uruchomić instalator proxy?",
+  "introSen4": "(proxy wymagane jest do łączenia się z serwerem prywatnym)",
+
+  "updateBtn": "Aktualizuj",
+  "proxyInstallBtn": "Instaluj",
+  "proxyInstallDeny": "Nie, dziękuję",
+
+  "gameFolderDialog": "Ustaw folder gry",
+  "grasscutterFileDialog": "Wybierz plik serwera Grasscutter",
+
+  "loggingInTo": "Logowanie do: ",
+  "registeringFor": "Rejestracja do: ",
+  "authUsername": "Nazwa użytkownika: ",
+  "authPassword": "Hasło: ",
+  "authConfirmPassword": "Potwierdź hasło: ",
+  "authLoginBtn": "Zaloguj",
+  "authRegisterBtn": "Zarejestruj",
+  "authLoginTitle": "Logowanie",
+  "authRegisterTitle": "Rejestracja",
+  "launchWithoutAuth": "Uruchom bez autentykacji",
+
+  "alertInvalid": "Błędna nazwa użytkownika lub hasło",
+  "alertNoPass": "Nie ustawiono hasła, proszę ustawić hasło",
+  "alertUnknown": "Nieznany błąd, skontaktuj się z właścicielem serwera",
+  "alertAuthNoLogin": "Autentykacja jest wyłączona, nie ma potrzeby logowania się!",
+  "alertLoginSuccess": "Pomyślnie zalogowano! Twój Token został skopiowany do schowka. Wklej go w polu nazwy użytkownika w grze aby się zalogować.",
+
+  "alertUserTaken": "Ta nazwa jest już zajęta",
+  "alertPassMismatch": "Hasła nie zgadzają się",
+  "alertAuthNoRegister": "Autentykacja jest wyłączona, nie ma potrzeby rejestrowania się!",
+  "alertRegisterSuccess": "Pomyślnie zarejestrowano!",
+
+  "downloadTitle": "Pobieranie",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "Instalator",
+  "installerSubtitle": "Instaluje proxy oraz inne niezbędne narzędzia do grania na serwerach Grasscutter'a.",
+  "downloadStable": "Pobierz stabilną wersję Grasscutter'a",
+  "stableSubtitle": "Zainstaluj stabilną wersję Grasscutter'a. Ma ona mało błędów, ale też mniej funkcji.",
+  "downloadDev": "Pobierz wersję developerską Grasscutter'a",
+  "devSubtitle": "Zainstaluj wersję developerską Grasscutter'a. Może posiadać sporo błędów, ma najnowsze funkcje, używaj na własne ryzyko.",
+  "downloadResources": "Pobierz Zasoby Grasscutter'a",
+  "resourceSubtitle": "Pobiera zasoby Grasscuterra do aktualnie wybranego folderu. Nie powinno się tego uruchamiać gdy zasoby chcesz pobierać z zewnątrz.",
+
+  "gcScriptRunning": "Pracuje...",
+  "stableInstall": "Pobierz wersje stabilną",
+  "devInstall": "Pobierz wersje deweloperską",
+
+  "updateNotifText": "Nowa wersja jest dostępna! Najnowsza wersja: ",
+
+  "chineseCharacterAlert": "Ścieżka pliku zawierająca chińskie symbole może powodować błędy.",
+
+  "dialogOk": "Tak",
+  "dialogNo": "Nie",
+  "serverEnableDialogTitle": "Znalazłeś Launcher Serwera",
+  "serverEnableDialogText": "Jeżeli nie posiadasz instalacji Grasscutter'a, możesz ją teraz pobrać. Uruchomić pobieranie?"
+
+}

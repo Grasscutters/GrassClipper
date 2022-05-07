@@ -2,13 +2,37 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style/index.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/neutralino.js"></script>
     <script src="js/windowDrag.js"></script>
     <script src="js/hoverEvt.js"></script>
+    <script src="js/helpers.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/gcdownloader.js"></script>
+    <script src="js/onLoad.js"></script>
+    <script src="js/alerts.js"></script>
+    <script src="js/options.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/authAlert.js"></script>
     <script src="js/translation.js"></script>
   </head>
   <body>
+    <!-- Alert Box -->
+    <div id="alert">
+      <span id="alertText">This is a test alert</span>
+    </div>
+
+    <!-- Misc dialog -->
+    <div id="miscDialog" style="display: none">
+      <span id="dialogTitle">Dialog!</span>
+      <span id="dialogContent">This is dialog content!</span>
+      <div id="dialogBtns">
+        <button class="altBtn" id="dialogButtonAffirm">OK</button>
+        <button class="altBtn" id="dialogButtonNeg">NO</button>
+      </div>
+    </div>
+
+    <!-- First time setup -->
     <div id="firstTimeNotice" style="display: none">
       <span>
       </span>
@@ -17,6 +41,150 @@
         <button class="altBtn" id="firstTimeDenyBtn" onclick="closeFirstTimePopup()">No thanks</button>
       </div>
     </div>
+
+    <!-- Login popup -->
+    <div id="loginPanel" style="display: none;">
+      <div id="loginPopupTitle">
+        <span>
+          <span id="loginSectionTitle" class="selectedTitle" onclick="setLoginSection()">Login</span>
+          <span id="registerSectionTitle" onclick="setRegisterSection()">Register</span>
+        </span>
+        <div id="loginPopupCloseBtn" onclick="closeLogin()">
+          <img src="icons/close.svg" />
+        </div>
+      </div>
+
+      <!-- Login section -->
+      <div id="loginPopupContentBody" class="authBody">
+        <div id="loginPopupContentBodyText">
+          <span id="loggingInTo">
+            <span id="loggingInToIndicator">Logging in to </span><span id="loginPopupServer"></span>
+          </span>
+        </div>
+        <div id="loginPopupContentBodyInputs" class="authInputs">
+          <div id="loginPopupContentBodyInputsUsername">
+            <span id="loginUsernameIndicator">
+              Username:
+            </span>
+            <input type="text" id="loginUsername" />
+          </div>
+          <div id="loginPopupContentBodyInputsPassword">
+            <span id="loginPasswordIndicator">
+              Password:
+            </span>
+            <input type="password" id="loginPassword" onsubmit="login()" />
+          </div>
+        </div>
+        <div id="loginPopupContentBodyBtns">
+          <button class="playBtn" id="loginPopupContentBodyBtnLogin" onclick="login()">Login</button>
+          <button class="altBtn" id="loginPopupContentBodyBtnRegister" onclick="setRegisterSection(true)">Register</button>
+        </div>
+        <div>
+          <button class="altBtn" id="noLoginBtn" onclick="(() => { launchPrivate(); closeLogin()})()">
+            Launch without Authentication
+          </button>
+        </div>
+
+        <!-- Alert element for any problems that arise -->
+        <div id="loginAlert" style="display: none">
+          <img src="icons/alert.svg" />
+          <span id="loginAlertText"></span>
+        </div>
+      </div>
+
+      <!-- Register section -->
+      <div id="registerPopupContentBody" style="display: none" class="authBody">
+        <div id="registerPopupContentBodyText">
+          <span id="registeringTo">
+            <span id="registeringToIndicator">Registering for </span><span id="registerPopupServer"></span>
+          </span>
+        </div>
+        <div id="registerPopupContentBodyInputs" class="authInputs">
+          <div id="registerPopupContentBodyInputsUsername">
+            <span id="registerUsernameIndicator">
+              Username:
+            </span>
+            <input type="text" id="registerUsername" />
+          </div>
+          <div id="registerPopupContentBodyInputsPassword">
+            <span id="registerPasswordIndicator">
+              Password:
+            </span>
+            <input type="password" id="registerPassword" />
+          </div>
+          <div id="registerPopupContentBodyInputsPasswordConfirm">
+            <span id="registerConfirmIndicator">
+              Confirm Password:
+            </span>
+            <input type="password" id="registerPasswordConfirm" />
+          </div>
+        </div>
+        <div id="registerPopupContentBodyBtns">
+          <button class="playBtn" id="registerPopupContentBodyBtnRegister" onclick="register()">Register</button>
+        </div>
+
+        <!-- Alert element for any problems that arise -->
+        <div id="registerAlert" style="display: none">
+          <img src="icons/alert.svg" />
+            <span id="registerAlertText"></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="downloadPanel" style="display: none;">
+      <div id="downloadTitleBar">
+        <span id="downloadTitle">Downloads</span>
+        <div id="downloadClose" onclick="closeDownloads()">
+          <img src="icons/close.svg" />
+        </div>
+      </div>
+      <div id="downloadPanelInner">
+        <div class="downloadTitle", id="grassclipperTitle">
+          GrassClipper
+        </div>
+        <div class="downloadRow">
+          <div class="downloadSection">
+            <span class="downloadLabel" id="installerTitle">Installer</span>
+            <button class="smolBtn" onclick="runInstallScript()" id="proxyInstall">Install</button>
+          </div>
+          <span class="downloadSubtitle" id="installerSubtitle">
+            Installs proxy and other tools. Required for Grasscutter servers.
+          </span>
+        </div>
+        <div class="downloadTitle", id="grasscutterTitle">
+          Grasscutter
+        </div>
+        <div class="downloadRow">
+          <div class="downloadSection">
+            <span class="downloadLabel" id="downloadStable">Download Grasscutter Stable Build</span>
+            <button class="smolBtn" onclick="downloadGC('stable')" id="stableInstall">Download</button>
+          </div>
+          <span class="downloadSubtitle" id="stableSubtitle">
+            Install Grasscutter stable branch. This build usually has less bugs, but also less features.
+          </span>
+        </div>
+        <div class="downloadRow">
+          <div class="downloadSection">
+            <span class="downloadLabel" id="downloadDev">Download Grasscutter Development Build</span>
+            <button class="smolBtn" onclick="downloadGC('development')" id="devInstall">Download</button>
+          </div>
+          <span class="downloadSubtitle" id="devSubtitle">
+            Install Grasscutter development branch. This build sometimes has bugs, and is frequently updated. Use at your own risk.
+          </span>
+        </div>
+        <div class="downloadRow">
+          <div class="downloadSection">
+            <span class="downloadLabel" id="downloadResources">Download Grasscutter Resources</span>
+            <button class="smolBtn" onclick="downloadGC('development')" id="resourceInstall">Download</button>
+          </div>
+          <span class="downloadSubtitle" id="resourceSubtitle">
+            Downloads Grasscutter resources into the currently set Grasscutter folder. This should be done unless you plan on getting resources externally.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Setting panel -->
     <div id="settingsPanel" style="display: none;">
       <div id="settingsTitleBar">
         <span id="fullSettingsTitle">Settings</span>
@@ -74,13 +242,31 @@
             Select your language!
           </span>
         </div>
+        <div class="settingsRow">
+          <div class="settingSection">
+            <span class="settingLabel", id="httpsTitle">Use HTTPS</span>
+            <input type="checkbox" id="httpsOption" onchange="toggleHttps()" />
+            </select>
+          </div>
+          <span class="settingSubtitle" id="httpsSubtitle">
+            Choose between using HTTPS or HTTP.
+          </span>
+        </div>
       </div>
     </div>
+
+    <!-- Top bar (title, version, setting btn, close btn, etc.) -->
     <div id="controlBar">
       <span id="titleSection">
         GrassClipper
-        <span id="version">0.4.5</span>
+        <span id="version">0.0.0</span>
       </span>
+      <div id="refreshBtn" onclick="window.location.reload()">
+        <img src="icons/refresh.svg" />
+      </div>
+      <div id="downloadBtn" onclick="openDownloads()">
+        <img src="icons/download.svg" />
+      </div>
       <div id="settingsBtn" onclick="openSettings()">
         <img src="icons/cog.svg" />
       </div>
@@ -91,37 +277,59 @@
         <img src="icons/close.svg" />
       </div>
     </div>
+
+    <!-- Main content -->
     <div id="panelContainer">
+      <!-- Official play btn -->
       <div id="firstPanel">
         <button class="playBtn" id="playOfficial" onclick="launchOfficial()">Play Official</button>
       </div>
+      <!-- Grasscutter play btn -->
       <div id="secondPanel">
         <div id="ipList" style="display: none;"></div>
         <div id="secondControlContainer">
+          <!-- ip/server input -->
           <div id="serverInput">
             <input type="text" id="ip" placeholder="IP Address" oninput="handleFavoriteInput()"/>
+            <input type="text" id="port" placeholder="Port" oninput="handleFavoriteInput()"/>
             <img src="icons/star_empty.svg" id="star" onclick="setFavorite()" />
             <img src="icons/list.svg" id="star" onclick="handleFavoriteList()" />
           </div>
-          <button class="playBtn" id="playPrivate" onclick="launchPrivate()">Play Private</button>
+          <button class="playBtn" id="playPrivate" onclick="openLogin()">Play Private</button>
         </div>
       </div>
+      <!-- Grasscutter server launcher -->
       <div id="thirdPanel" style="display: none;">
         <button class="playBtn" id="serverLaunch" onclick="launchLocalServer()">Launch Local Server</button>
       </div>
     </div>
     
+    <!-- Bottom section (folder setting btns and such) -->
     <div id="bottomBar">
       <div class="bottomSection">
         <div>
-          <button class="smolBtn" onclick="setGenshinImpactFolder()" id="genshinFolderSet">Set "Genshin Impact Game" folder</button>
-          <span id="genshinPath" style="margin-top: 4px;"></span>
+          <div>
+            <button class="smolBtn" onclick="setGameExe()" id="gameExeSet">Set game folder</button>
+            <img src="icons/folder.svg" class="openFolderIcon" onclick="openGameFolder()"/>
+          </div>
+          <span id="gamePath" style="margin-top: 4px;"></span>
         </div>
         <div style="display: none;">
-          <button class="smolBtn" onclick="setGrassCutterFolder()" id="grasscutterFileSet">Set "GrassCutter" .jar file</button>
+          <div>
+            <button class="smolBtn" onclick="setGrasscutterFolder()" id="grasscutterFileSet">Set "Grasscutter" .jar file</button>
+            <img src="icons/folder.svg" class="openFolderIcon" onclick="openGrasscutterFolder()"/>
+          </div>
           <span id="serverPath" style="margin-top: 4px;"></span>
         </div>
       </div>
+    </div>
+
+    <!-- Download notification -->
+    <div id="downloadNotif" onclick="openLatestDownload()">
+      <img src="icons/alert.svg" />
+      <span id="updateNotifText">
+        A new update is available! Newest version: 
+      </span><span id="newestVersion"></span>
     </div>
   </body>
 </html>
