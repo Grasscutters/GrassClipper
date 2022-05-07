@@ -1,4 +1,6 @@
 # GrassClipper
+EN | [PL](README_PL.md) | [ID](README_id.md)
+
 Experimental Grasscutter launcher for easily switching between Official and Private servers
 
 [Download Here!](https://github.com/Grasscutters/GrassClipper/releases/) (Supports Windows 8+)
@@ -134,7 +136,7 @@ Thank you to everyone who has provided translations! <3
 * RU - fitiskin
 * TR - lilmayofuksu
 * JP - conochy
-* HD - Arikatsu 
+* HD - Arikatsu
 * PL - zakhil-dev
 
 # Screenshots
