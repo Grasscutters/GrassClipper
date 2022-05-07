@@ -35,5 +35,53 @@
     "proxyInstallDeny": "Não obrigado",
   
     "gameFolderDialog": "Selecione a game pasta",
-    "grasscutterFileDialog": "Selecione o arquivo jar do Grasscutter"
+    "grasscutterFileDialog": "Selecione o arquivo jar do Grasscutter",
+
+    "loggingInTo": "Logando como: ",
+    "registeringFor": "Registrando como: ",
+    "authUsername": "Usuário: ",
+    "authPassword": "Senha: ",
+    "authConfirmPassword": "Confirme a senha: ",
+    "authLoginBtn": "Login",
+    "authRegisterBtn": "Registrar",
+    "authLoginTitle": "Login",
+    "authRegisterTitle": "Registrar",
+    "launchWithoutAuth": "Iniciar sem autenticação",
+
+    "alertInvalid": "Usuário ou senha invalidos",
+    "alertNoPass": "Nenhuma senha cadastrada, por favor troque a senha",
+    "alertUnknown": "Erro desconhecido, contate o dono do servidor",
+    "alertAuthNoLogin": "Autenticação desabilitada, não ha necessidade de logar!",
+    "alertLoginSuccess": "Sucesso no login! Token copiado. Cole esse token no lugar do usuário no jogo para logar.",
+
+    "alertUserTaken": "Usuário em uso",
+    "alertPassMismatch": "Senha e confirmação não estão iguais",
+    "alertAuthNoRegister": "Autenticação desabilitada, não há necessidade de registrar!",
+    "alertRegisterSuccess": "Registrado com sucesso!",
+
+    "downloadTitle": "Downloads",
+    "grassclipperTitle": "GrassClipper",
+    "grasscutterTitle": "Grasscutter",
+    "installerTitle": "Instalador",
+    "installerSubtitle": "Instala o proxy e outras ferramentas. Necessário para servidores Grasscutter",
+    "downloadStable": "Baixar a build Grasscutter Stable",
+    "stableSubtitle": "Instalar Grasscutter stable. Essa build geralmente tem menos bugs, mas menos recursos",
+    "downloadDev": "Baixar a build Grasscutter Development",
+    "devSubtitle": "Instalar Grasscutter Development. Essa build geralmente tem bugs e é frequentemente atualizada. Use por sua conta e risco.",
+    "downloadResources": "Baixar Grasscutter Resources",
+    "resourceSubtitle": "Baixar Grasscutter Resources na pasta atual setada do Grasscutter. Isso deve ser feito a não ser que você planeje colocar os resources externamente.",
+
+    "gcScriptRunning": "Rodando...",
+    "stableInstall": "Baixar",
+    "devInstall": "Baixar",
+
+    "updateNotifText": "Uma nova atualização esta disponivel! Nova versão: ",
+
+    "chineseCharacterAlert": "O caminho setado contem caracteres chineses, isso pode causar problemas!",
+
+    "dialogOk": "OK",
+    "dialogNo": "Não",
+    "serverEnableDialogTitle": "Você achou o launcher do server do Grasscutter!",
+    "serverEnableDialogText": "Caso você ainda não tenha uma instalação do grasscutter para setar, quer baixar uma build?"
+
 }
