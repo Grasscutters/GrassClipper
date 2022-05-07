@@ -17,7 +17,7 @@
   "settingsTitle": "Ustawienia",
   "scriptsSectionTitle": "Skrypty",
   "killswitchOption": "Kill Switch",
-  "killswitchSubtitle": "Only for those very paranoid about bans. Kills the game process *and your internet* if something happens to the proxy.",
+  "killswitchSubtitle": "Tylko dla tych, którzy boją się o dostanie bana. Wyłącza gre *oraz twój internet* jeżeli coś stanie się z proxy.",
   "proxyOption": "Proxy",
   "proxySubtitle": "Zainstaluj serwer proxy poprzez skrypt instalacyjny",
   "updateOption": "Aktualizacja",
