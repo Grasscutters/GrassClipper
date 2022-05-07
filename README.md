@@ -1,7 +1,7 @@
 # GrassClipper
 Experimental Grasscutter launcher for easily switching between Official and Private servers
 
-[Download Here!](https://github.com/Grasscutters/GrassClipper/releases/)
+[Download Here!](https://github.com/Grasscutters/GrassClipper/releases/) (Supports Windows 8+)
 
 *\*Note: some translations are outdated, so if random English text appears or an option seems misleading, this is why. If you notice an issue like this, feel free to make a pull request!*
 
@@ -11,6 +11,7 @@ Experimental Grasscutter launcher for easily switching between Official and Priv
 * [Setup (for development)](#setup-for-development)
 * [TODO](#todo)
 * [Common Problems](#having-problems)
+  * [Proxy Installation not Opening/Failing](#manual-proxy-installation)
   * [White Screen Fix](#white-screen-fix)
   * [Error 502](#error-502)
   * [Error 4206](#error-4206)
@@ -59,6 +60,15 @@ Experimental Grasscutter launcher for easily switching between Official and Priv
 # Having problems?
 
 Below are some scenarios you may encounter and their solutions.
+
+# Manual Proxy Installation
+
+If you having trouble installing the proxy server, you can also install it manually. To do so:
+1. Create a folder if it does not exist named `ext` in the GrassClipper folder.
+2. Download and extract the contents of [this file](https://snapshots.mitmproxy.org/7.0.4/mitmproxy-7.0.4-windows.zip) into the `ext` folder
+3. Double click `mitmdump.exe` and allow it to run for a few seconds to generate the certificate
+4. Run this command as Administrator: `certutil -addstore root "%USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer"`
+5. Use GrassClipper like normal!
 
 ## White Screen Fix
 
@@ -125,6 +135,7 @@ Thank you to everyone who has provided translations! <3
 * TR - lilmayofuksu
 * JP - conochy
 * HD - Arikatsu 
+* PL - zakhil-dev
 
 # Screenshots
 
