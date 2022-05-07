@@ -26,4 +26,4 @@ echo Starting local Grasscutter server...
 :: Change dir to server directory
 cd /d "%GRASSCUTTER_ROOT%"
 
-call java -jar %GRASSCUTTER_JAR%
+call java -jar "%GRASSCUTTER_JAR%"
