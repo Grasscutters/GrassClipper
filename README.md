@@ -126,7 +126,7 @@ Thank you to everyone who has provided translations! <3
 * ZH - nuoxianCN, Scirese & MrAru
 * ZH-TW - Kimi & KormiMeiko
 * PT-BR - na.na
-* VIE - labalityowo
+* VIE - labalityowo & lunaticwhat
 * ID - Iqrar99 & nautilust
 * FR - linsorak & memetrollsXD
 * ES - memetrollsXD
