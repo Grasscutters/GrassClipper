@@ -135,7 +135,10 @@ async function downloadGC(branch) {
 
 async function downloadResources() {
   const config = await getCfg()
-  const serverFolderFixed = config.serverFolder.match(/.*\\|.*\//g, '')[0].replace(/\//g, '\\')
+  let serverFolderFixed = config.serverFolder.match(/.*\\|.*\//g, '')[0].replace(/\//g, '\\')
+
+  // Remove trailing slash, it's important here
+  serverFolderFixed = serverFolderFixed.endsWith('\\') ? serverFolderFixed.slice(0, -1) : serverFolderFixed
 
   debug.log('Server folder fixed: ' + serverFolderFixed)
 
