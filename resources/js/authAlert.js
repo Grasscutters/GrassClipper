@@ -2,10 +2,12 @@ let alertTimeout, alertCooldown = 3000
 
 async function displayLoginAlert(message, type, cooldown = null) {
   displayAuthAlert(message, type, cooldown, 'login')
+  debug.log('Login alert: ' + message)
 }
 
 async function displayRegisterAlert(message, type, cooldown = null) {
   displayAuthAlert(message, type, cooldown, 'register')
+  debug.log('Register alert: ' + message)
 }
 
 function displayAuthAlert(message, type, cooldown, name) {
@@ -41,5 +43,7 @@ function displayAuthAlert(message, type, cooldown, name) {
   // Disappear after cooldown
   alertTimeout = setTimeout(() => {
     elm.style.display = 'none'
+
+    debug.log('Hiding auth alert')
   }, cooldown || alertCooldown)
 }

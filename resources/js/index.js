@@ -3,10 +3,12 @@ NL_CWD = NL_CWD.replace(/\//g, '\\')
 let localeObj
 const filesystem = Neutralino.filesystem
 const createCmdWindow = async (command) => {
+  debug.log('Running command in new window: ' + command)
   Neutralino.os.execCommand(`cmd.exe /c start "" ${command}`, { background: true })
 }
 
 const openInExplorer = async (path) => {
+  debug.log('Opening path in explorer: ' + path)
   createCmdWindow(`explorer.exe "${path}"`)
 }
 
@@ -16,6 +18,8 @@ const openInExplorer = async (path) => {
 async function enableButtons() {
   const offBtn = document.querySelector('#playOfficial')
   const privBtn = document.querySelector('#playPrivate')
+
+  debug.log('Enabling buttons')
 
   offBtn.classList.remove('disabled')
   offBtn.disabled = false
@@ -33,6 +37,8 @@ async function enableButtons() {
 async function enableServerButton() {
   const serverBtn = document.querySelector('#serverLaunch')
 
+  debug.log('Enabling server button')
+
   serverBtn.classList.remove('disabled')
   serverBtn.disabled = false
 }
@@ -43,6 +49,8 @@ async function enableServerButton() {
 async function handleGameNotSet() {
   // Set buttons to greyed out and disable
   document.querySelector('#gamePath').innerHTML = localeObj.folderNotSet || 'Not set'
+
+  debug.log('Handling game not set')
 
   // Set official server background to default
   document.querySelector('#firstPanel').style.backgroundImage = 'url("../bg/private/default.png")'
@@ -63,6 +71,8 @@ async function handleServerNotSet() {
   // Set buttons to greyed out and disable
   document.querySelector('#serverPath').innerHTML = localeObj.folderNotSet || 'Not set'
 
+  debug.log('Handling server not set')
+
   // Set official server background to default
   // document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/private/default.png")`
 
@@ -79,6 +89,8 @@ async function displayGameFolder() {
   const elm = document.querySelector('#gamePath')
   const config = await getCfg()
 
+  debug.log('Displaying game exe')
+
   elm.innerHTML = config.gameexe
 }
 
@@ -88,6 +100,8 @@ async function displayGameFolder() {
 async function displayServerFolder() {
   const elm = document.querySelector('#serverPath')
   const config = await getCfg()
+
+  debug.log('Displaying server folder')
 
   elm.innerHTML = config.serverFolder
 }
@@ -107,9 +121,13 @@ async function setBackgroundImage() {
   // Set default image, it will change if the bg folder exists
   document.querySelector('#firstPanel').style.backgroundImage = 'url("https://webstatic.hoyoverse.com/upload/event/2020/11/04/7fd661b5184e1734f91f628b6f89a31f_7367318474207189623.png")'
 
+  debug.log('Setting second panel to: ' + privImage)
+
   // Set the private background image
   document.querySelector('#secondPanel').style.backgroundImage = `url("../bg/private/${privImage}")`
   
+  debug.log('Setting third panel to: ' + servImage)
+
   // Set the server background image
   document.querySelector('#thirdPanel').style.backgroundImage = `url("../bg/server/${servImage}")`
 
@@ -176,6 +194,8 @@ async function handleFavoriteInput() {
 
   const addr = `${ip}:${port}`
 
+  debug.log('Checking if IP is a favorite: ' + addr)
+
   if (!ip || !ipArr.includes(addr)) {
     document.querySelector('#star').src = 'icons/star_empty.svg'
   } else {
@@ -195,6 +215,8 @@ async function setIp(ip) {
   const parseIp = ip.split(':')[0]
   const parsePort = ip.split(':')[1]
 
+  debug.log('Setting IP input elm to: ' + parseIp + ' and port to: ' + parsePort)
+
   // Set star
   if (ip) {
     document.querySelector('#star').src = 'icons/star_filled.svg'
@@ -212,6 +234,8 @@ async function handleFavoriteList() {
   const ipList = document.querySelector('#ipList')
 
   if (ipList.style.display === 'none') {
+    debug.log('IP list was closed, opening it')
+
     ipList.innerHTML = ''
 
     const list = ipList.appendChild(
@@ -219,6 +243,7 @@ async function handleFavoriteList() {
     )
 
     if (ipArr.length < 1) {
+      console.log('No favorites found')
       const listItem = list.appendChild(
         document.createElement('li')
       )
@@ -239,6 +264,8 @@ async function handleFavoriteList() {
     const xy = [ transform.split(',')[4], transform.split(',')[5] ]
     let newY = (27 * ipArr.length) * window.devicePixelRatio
 
+    debug.log('IP list height: 56vh - ' + newY)
+
     if (ipArr.length === 0 || ipArr.length === 1) newY = 0
 
     ipList.style.transform = `translate(${xy[0]}px, calc(56vh - ${newY}px)`
@@ -249,15 +276,19 @@ async function openDownloads() {
   const downloads = document.querySelector('#downloadPanel')
   const config = await getCfg()
 
+  debug.log('Opening downloads panel')
+
   if (downloads.style.display === 'none') {
     downloads.style.removeProperty('display')
   }
 
   // Disable the resource download button if a serverFolder path is not set
   if (!config.serverFolder) {
+    debug.log('Server folder not set, disabling resource download button')
     document.querySelector('#resourceInstall').disabled = true
     document.querySelector('#resourceInstall').classList.add('disabled')
   } else {
+    debug.log('Server folder is set, enabling resource download button')
     document.querySelector('#resourceInstall').disabled = false
     document.querySelector('#resourceInstall').classList.remove('disabled')
   }
@@ -266,12 +297,16 @@ async function openDownloads() {
 async function closeDownloads() {
   const downloads = document.querySelector('#downloadPanel')
 
+  debug.log('Closing downloads panel')
+
   downloads.style.display = 'none'
 }
 
 async function openSettings() {
   const settings = document.querySelector('#settingsPanel')
   const config = await getCfg()
+
+  debug.log('Opening settings panel')
 
   if (settings.style.display === 'none') {
     settings.style.removeProperty('display')
@@ -286,6 +321,10 @@ async function openSettings() {
   serverLaunch.checked = config.serverLaunchPanel
   httpsCheckbox.checked = config.useHttps
 
+  debug.log('Set killswitch to: ' + config.enableKillswitch)
+  debug.log('Set server launch to: ' + config.serverLaunchPanel)
+  debug.log('Set https to: ' + config.useHttps)
+
   // Load languages
   getLanguages()
 
@@ -297,10 +336,14 @@ async function closeSettings() {
   const settings = document.querySelector('#settingsPanel')
   const config = await getCfg()
 
+  debug.log('Closing settings panel')
+
   settings.style.display = 'none'
 
   // In case we installed the proxy server
   if (await proxyIsInstalled() && config.gameexe) {
+    debug.log('Proxy has been installed and EXE is set, enabling playPrivate')
+
     const playPriv = document.querySelector('#playPrivate')
     
     playPriv.classList.remove('disabled')
@@ -319,18 +362,27 @@ async function openLogin() {
   const useHttps = config.useHttps
   const url = `${useHttps ? 'https' : 'http'}://${ip}:${port}`
 
+  debug.log('Opening login panel')
+  debug.log('Url: ' + url)
+
   // Check if we even need to authenticate
   try {
     const { data } = await axios.get(url + '/authentication/type')
 
+    debug.log('Request successful')
+
     if (!data.includes('GCAuthAuthenticationHandler')) {
+      debug.log('No authentication required')
       launchPrivate()
       return
     }
   } catch(e) {
+    debug.warn('Request failed')
     launchPrivate()
     return
   }
+
+  debug.log('Login panel opening')
 
   loginIpDisplay.innerText = ip
   registerIpDisplay.innerText = ip
@@ -343,6 +395,8 @@ async function openLogin() {
 async function closeLogin() {
   const login = document.querySelector('#loginPanel')
 
+  debug.log('Closing login panel')
+
   login.style.display = 'none'
   
   setLoginSection()
@@ -350,16 +404,22 @@ async function closeLogin() {
 
 async function closeFirstTimePopup() {
   const firstTimePopup = document.querySelector('#firstTimeNotice')
+
+  debug.log('Closing first time popup')
+
   firstTimePopup.style.display = 'none'
 }
 
 async function runInstallScript() {
+  debug.log('Running install script')
   createCmdWindow(`.\\scripts\\install.cmd "${NL_CWD}" true`)
 
   // Create an interval that will check for the proxy server installation finish
   const interval = setInterval(async () => {
+    debug.log('Checking if proxy server is installed')
     if (await proxyIsInstalled()) {
       clearInterval(interval)
+      debug.log('Proxy server installed')
       enableButtons()
     }
   }, 1000)
@@ -379,9 +439,11 @@ async function checkForUpdatesAndShow() {
 
   // Version mismatch? Update!
   if (manifest?.version !== NL_APPVERSION) {
+    debug.log('New update available')
     subtitle.innerHTML = 'New update available!'
     updateBtn.classList.remove('disabled')
   } else {
+    debug.log('New update not available')
     subtitle.innerHTML = 'You are on the latest version! :)'
     updateBtn.classList.add('disabled')
   }
@@ -391,10 +453,14 @@ async function displayServerLaunchSection() {
   const serverPanel = document.querySelector('#thirdPanel')
   const bottomBtnSection = document.querySelector('#serverPath').parentElement
 
+  debug.log('Displaying server launch section')
+
   if (serverPanel.style.display === 'none') {
+    debug.log('Showing server launch section')
     serverPanel.style.removeProperty('display')
     bottomBtnSection.style.removeProperty('display')
   } else {
+    debug.log('Hiding server launch section')
     serverPanel.style.display = 'none'
     bottomBtnSection.style.display = 'none'
   }
@@ -410,14 +476,18 @@ async function setGameExe() {
     ]
   })
 
+  debug.log('Game exe selected: ' + gameExe[0])
+
   if (!gameExe[0]) return
-  if (hasForeignChars(gameExe[0])) displayAlert(localeObj.foreignCharacterAlert || 'The file path set contains Chinese characters, this may cause problems!')
+  if (hasForeignChars(gameExe[0])) displayAlert(localeObj.foreignCharacterAlert || 'The file path set contains foreign characters, this may cause problems!')
 
   // Set the folder in our configuration
   const config = await getCfg()
 
   // It's an array of selections, so only get the first one
   config.gameexe = gameExe[0].replace(/\//g, '\\')
+
+  debug.log('Setting game exe to: ' + config.gameexe)
 
   Neutralino.storage.setData('config', JSON.stringify(config))
 
@@ -434,15 +504,18 @@ async function setGrasscutterFolder() {
     ]
   })
 
-  if (!folder[0]) return
+  debug.log('Grasscutter folder selected: ' + folder[0])
 
-  console.log(hasForeignChars(folder[0]))
+  if (!folder[0]) return
   if (hasForeignChars(folder[0])) displayAlert(localeObj.foreignCharacterAlert || 'The file path set contains foreign characters, this may cause problems!')
 
   // Set the folder in our configuration
   const config = await getCfg()
 
   config.serverFolder = folder[0]
+
+  debug.log('Setting grasscutter folder to: ' + config.serverFolder)
+
   Neutralino.storage.setData('config', JSON.stringify(config))
 
   displayServerFolder()
@@ -454,6 +527,8 @@ async function setGrasscutterFolder() {
  */
 async function launchOfficial() {
   const config = await getCfg()
+
+  debug.log('Launching game')
 
   Neutralino.os.execCommand(`"${config.gameexe}"`)
 }
@@ -467,7 +542,7 @@ async function launchPrivate() {
 
   const config = await getCfg()
 
-  console.log('connecting to ' + ip + ':' + port)
+  debug.log('Connecting to ' + ip + ':' + port)
 
   // Set the last connect
   config.lastConnect = ip
@@ -478,11 +553,13 @@ async function launchPrivate() {
     `.\\scripts\\private_server_launch.cmd ${ip} ${port} ${config.useHttps} "${config.gameexe}" "${NL_CWD}" ${config.enableKillswitch} true`, {
       background: true
     }
-  ).catch(e => console.log(e))
+  ).catch(e => debug.error(e))
 }
 
 async function launchLocalServer() {
   const config = await getCfg()
+
+  debug.log('Launching local server')
 
   createCmdWindow(`.\\scripts\\local_server_launch.cmd "${config.serverFolder}"`).catch(e => console.log(e))
 }

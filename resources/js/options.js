@@ -7,6 +7,8 @@ async function toggleKillSwitch() {
 
   config.enableKillswitch = killSwitch.checked
 
+  debug.log('Killswitch is now ', config.enableKillswitch)
+
   Neutralino.storage.setData('config', JSON.stringify(config))
 }
 
@@ -18,6 +20,8 @@ async function toggleServerLaunchSection() {
 
   displayServerLaunchSection()
 
+  debug.log('Toggling server panel')
+
   // Save setting
   config.serverLaunchPanel = !config.serverLaunchPanel
   Neutralino.storage.setData('config', JSON.stringify(config))
@@ -25,6 +29,8 @@ async function toggleServerLaunchSection() {
   // Show a dialog for those who may want to open the downloads section
   if (config.serverLaunchPanel && !config.serverFolder) {
     closeSettings()
+
+    debug.log('First time server launcher')
 
     openDialog(
       localeObj.serverEnableDialogTitle || 'You found the Grasscutter server launcher!',
@@ -42,6 +48,8 @@ async function getLanguages() {
   const languageFiles = (await filesystem.readDirectory(`${NL_CWD}/languages`)).filter(file => file.entry.endsWith('.json'))
   const config = await getCfg()
 
+  debug.log('Grabbing languages')
+
   // Clear language options
   const languageSelect = document.querySelector('#languageSelect')
   languageSelect.innerHTML = ''
@@ -51,12 +59,15 @@ async function getLanguages() {
     const fullLanguageName = JSON.parse(await filesystem.readFile(`${NL_CWD}/languages/${file.entry}`)).fullLangName
     const lang = file.entry.split('.json')[0]
 
+    debug.log('Loading language: ', lang)
+
     const option = document.createElement('option')
     option.value = lang
     option.innerHTML = fullLanguageName
     
     // Set language selected to config language
     if (lang === config.language) {
+      debug.log('Selected language: ', lang)
       option.selected = true
     }
 
@@ -77,6 +88,8 @@ async function handleLanguageChange(elm) {
   config.language = list.value
   Neutralino.storage.setData('config', JSON.stringify(config))
 
+  debug.log('Language changed to: ', list.value)
+
   // Force refresh of application, no need for restart!
   window.location.reload()
 }
@@ -89,6 +102,22 @@ async function toggleHttps() {
   const config = await getCfg()
 
   config.useHttps = httpsCheckbox.checked
+
+  debug.log('HTTPS set to: ', config.useHttps)
+
+  Neutralino.storage.setData('config', JSON.stringify(config))
+}
+
+/**
+ * Toggle debugging
+ */
+async function toggleDebugging() {
+  const debugCheckbox = document.querySelector('#debugOption')
+  const config = await getCfg()
+
+  config.debug = debugCheckbox.checked
+
+  debug.log('Debugging set to: ', config.debug)
 
   Neutralino.storage.setData('config', JSON.stringify(config))
 }
@@ -105,11 +134,15 @@ async function setFavorite() {
 
   const addr = `${ip}:${port}`
 
+  debug.log('Handling  favorite: ', addr)
+
   // Set star icon
   const star = document.querySelector('#star')
 
   if (star.src.includes('filled') && ip) {
     star.src = 'icons/star_empty.svg'
+
+    debug.log('Removing from list: ', addr)
 
     // remove from list
     ipArr.splice(ipArr.indexOf(addr), 1)
@@ -118,6 +151,7 @@ async function setFavorite() {
 
     // add to list
     if (ip && !ipArr.includes(addr)) {
+      debug.log('Adding to list: ', addr)
       ipArr.push(addr)
     }
   }

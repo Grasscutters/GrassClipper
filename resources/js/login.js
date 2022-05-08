@@ -7,6 +7,8 @@ async function setLoginSection() {
   const loginSection = document.getElementById('loginPopupContentBody')
   const registerSection = document.getElementById('registerPopupContentBody')
 
+  debug.log('Setting to login section')
+
   title.classList.add('selectedTitle')
   altTitle.classList.remove('selectedTitle')
 
@@ -23,6 +25,8 @@ async function setRegisterSection(fromLogin = false) {
   const loginSection = document.getElementById('loginPopupContentBody')
   const registerSection = document.getElementById('registerPopupContentBody')
 
+  debug.log('Setting to register section')
+
   title.classList.add('selectedTitle')
   altTitle.classList.remove('selectedTitle')
 
@@ -30,6 +34,8 @@ async function setRegisterSection(fromLogin = false) {
   registerSection.style.removeProperty('display')
 
   if (fromLogin) {
+    debug.log('Just registered, setting to login page')
+
     // Take the values from the login section and put them in the register section
     const loginUsername = document.getElementById('loginUsername').value
     const loginPassword = document.getElementById('loginPassword').value
@@ -42,6 +48,9 @@ async function setRegisterSection(fromLogin = false) {
 function parseJwt(token) {
   const base64Url = token.split('.')[1]
   const base64 = base64Url.replace('-', '+').replace('_', '/')
+
+  debug.log('Parsed JWT: ' + base64)
+
   return JSON.parse(window.atob(base64))
 }
 
@@ -57,12 +66,14 @@ async function login() {
   const useHttps = config.useHttps
   const url = `${useHttps ? 'https' : 'http'}://${ip}:${port}`
 
+  debug.log('Attempting login to ' + url)
+
   const reqBody = {
     username,
     password,
   }
   
-  const { data } = await axios.post(url + '/authentication/login', reqBody)
+  const { data } = await axios.post(url + '/authentication/login', reqBody).catch(e => debug.error('Login request failed: ' + e))
 
   switch(data.message) {
   case 'INVALID_ACCOUNT':
@@ -92,6 +103,8 @@ async function login() {
     const tkData = parseJwt(data.jwt)
     await Neutralino.clipboard.writeText(tkData.token)
 
+    debug.log('Login success')
+
     displayLoginAlert(localeObj.alertLoginSuccess || 'Login successful! Token copied to clipboard. Paste this token into the username field of the game to log in.', 'success', 8000)
     launchPrivate()
     break
@@ -111,13 +124,15 @@ async function register() {
   const useHttps = config.useHttps
   const url = `${useHttps ? 'https' : 'http'}://${ip}:${port}`
 
+  debug.log('Attempting registration to ' + url)
+
   const reqBody = {
     username,
     password,
     password_confirmation
   }
   
-  const { data } = await axios.post(url + '/authentication/register', reqBody)
+  const { data } = await axios.post(url + '/authentication/register', reqBody).catch(e => debug.error('Registration request failed: ' + e))
 
   switch(data.message) {
   case 'USERNAME_TAKEN':
@@ -146,6 +161,8 @@ async function register() {
     // Success!! Bring them to the login screen and auto-input their username
     const loginUsername = document.getElementById('loginUsername')
     loginUsername.value = username
+
+    debug.log('Registered with username ' + username)
 
     setLoginSection()
     displayLoginAlert(localeObj.alertRegisterSuccess || 'Registration successful!', 'success', 5000)
