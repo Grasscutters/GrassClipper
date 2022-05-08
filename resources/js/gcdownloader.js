@@ -1,7 +1,3 @@
-async function clearGCInstallation() {
-  Neutralino.os.execCommand('del /s /q "./gc"')
-}
-
 async function setDownloadButtonsToLoading() {
   const stableBtn = document.querySelector('#stableInstall')
   const devBtn = document.querySelector('#devInstall')
@@ -33,35 +29,8 @@ async function resetDownloadButtons() {
   devBtn.classList.remove('disabled')
 }
 
-async function downloadGC(branch) {
+async function downloadDataFiles(branch) {
   const config = await getCfg()
-
-  // If we are pulling from a new branch, delete the old installation
-  if (config.grasscutterBranch !== branch) await clearGCInstallation()
-
-  // Set current installation in config
-  config.grasscutterBranch = branch
-
-  // Set gc path for people with launcher enabled
-  config.serverFolder = `${NL_CWD}\\gc-${branch}\\grasscutter.jar`
-
-  // Enable server launcher
-  config.serverLaunchPanel = true
-
-  Neutralino.storage.setData('config', JSON.stringify(config))
-
-  setDownloadButtonsToLoading()
-
-  // Keystore for branch (since they can differ)
-  const keystoreUrl = `https://github.com/Grasscutters/Grasscutter/raw/${branch}/keystore.p12`
-
-  // External service that allows un-authed artifact downloading
-  let artiUrl = `https://nightly.link/Grasscutters/Grasscutter/workflows/build/${branch}/Grasscutter.zip`
-  
-  await axios.get(artiUrl).catch(e => {
-    // Fallback link if artifacts are not being uploaded
-    artiUrl = 'https://nightly.link/Grasscutters/Grasscutter/actions/runs/2284467925/Grasscutter.zip'
-  })
 
   // For data files
   const dataFiles = await axios.get(`https://api.github.com/repos/Grasscutters/Grasscutter/contents/data?ref=${branch}`)
@@ -78,24 +47,57 @@ async function downloadGC(branch) {
   const serverFolderFixed = config.serverFolder.match(/.*\\|.*\//g, '')[0].replace(/\//g, '\\')
 
   // Ensure data and key folders exist
-
   console.log(config.serverFolder)
   console.log(serverFolderFixed)
-
+ 
   await Neutralino.os.execCommand(`mkdir ${serverFolderFixed}\\data`)
   await Neutralino.os.execCommand(`mkdir ${serverFolderFixed}\\keys`)
-
+  
   // Download data files
   for (const o of dataList) {
     const folder = 'data'
-    await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
+    const e = await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
+    console.log(e)
   }
-
+  
   // Download key files
   for (const o of keyList) {
     const folder = 'keys'
-    await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
-  }
+    const e = await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
+    console.log(e)
+  }  
+}
+
+async function downloadGC(branch) {
+  const config = await getCfg()
+
+  // Set current installation in config
+  config.grasscutterBranch = branch
+
+  // Set gc path for people with launcher enabled
+  config.serverFolder = `${NL_CWD}\\gc-${branch}\\grasscutter.jar`
+
+  // Enable server launcher
+  config.serverLaunchPanel = true
+
+  Neutralino.storage.setData('config', JSON.stringify(config))
+
+  setDownloadButtonsToLoading()
+
+  // Download data files
+  downloadDataFiles(branch)
+
+  // External service that allows un-authed artifact downloading
+  let artiUrl = `https://nightly.link/Grasscutters/Grasscutter/workflows/build/${branch}/Grasscutter.zip`
+  
+  await axios.get(artiUrl).catch(e => {
+    // Fallback link if artifacts are not being uploaded
+    artiUrl = 'https://nightly.link/Grasscutters/Grasscutter/actions/runs/2284467925/Grasscutter.zip'
+  })
+  // Keystore for branch (since they can differ)
+  const keystoreUrl = `https://github.com/Grasscutters/Grasscutter/raw/${branch}/keystore.p12`
+
+  
 
   // Run installer
   createCmdWindow(`.\\scripts\\gc_download.cmd ${artiUrl} ${keystoreUrl} ${branch}`)
