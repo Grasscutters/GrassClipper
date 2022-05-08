@@ -3,7 +3,6 @@ async function setDownloadButtonsToLoading() {
   const devBtn = document.querySelector('#devInstall')
 
   stableBtn.innerText = localeObj.gcScriptRunning || 'Running...'
-
   devBtn.innerText = localeObj.gcScriptRunning || 'Running...'
 
   // Set btns to disabled
@@ -31,6 +30,10 @@ async function resetDownloadButtons() {
 
 async function downloadDataFiles(branch) {
   const config = await getCfg()
+
+  if (!branch) branch = config.grasscutterBranch || 'development'
+  
+  setDownloadButtonsToLoading()
 
   // For data files
   const dataFiles = await axios.get(`https://api.github.com/repos/Grasscutters/Grasscutter/contents/data?ref=${branch}`)
@@ -65,7 +68,10 @@ async function downloadDataFiles(branch) {
     const folder = 'keys'
     const e = await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
     console.log(e)
-  }  
+  }
+  
+  // Fix buttons
+  resetDownloadButtons()
 }
 
 async function downloadGC(branch) {
@@ -82,8 +88,6 @@ async function downloadGC(branch) {
 
   Neutralino.storage.setData('config', JSON.stringify(config))
 
-  setDownloadButtonsToLoading()
-
   // Download data files
   downloadDataFiles(branch)
 
@@ -97,13 +101,8 @@ async function downloadGC(branch) {
   // Keystore for branch (since they can differ)
   const keystoreUrl = `https://github.com/Grasscutters/Grasscutter/raw/${branch}/keystore.p12`
 
-  
-
   // Run installer
   createCmdWindow(`.\\scripts\\gc_download.cmd ${artiUrl} ${keystoreUrl} ${branch}`)
-
-  // Fix buttons
-  resetDownloadButtons()
 
   // Display folder after saving config
   displayServerFolder()
