@@ -103,3 +103,11 @@ async function downloadGC(branch) {
   enableServerButton()
   displayServerLaunchSection()
 }
+
+async function downloadResources() {
+  const config = await getCfg()
+  const serverFolderFixed = config.serverFolder.match(/.*\\|.*\//g, '')[0].replace(/\//g, '\\')
+
+  // Dont bother with data or keys, just want straight resources
+  createCmdWindow(`.\\scripts\\resources_download.cmd "${serverFolderFixed}"`)
+}

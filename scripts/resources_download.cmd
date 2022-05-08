@@ -4,7 +4,7 @@ set FOLDER_NAME=%1
 set FOLDER_NAME=%FOLDER_NAME:"=%
 
 if not exist ".\temp" mkdir ".\temp"
-if not exist ".\resources" mkdir ".\resources"
+if not exist "%FOLDER_NAME%\resources" mkdir "%FOLDER_NAME%\resources"
 
 echo Downloading resources, this can take a while...
 
