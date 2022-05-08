@@ -29,7 +29,7 @@ for /f "delims=. tokens=1-3" %%v in ("%JAVAVER%") do (
 )
 
 :: Ensure java 17
-if %MAJOR% NEQ "17" (
+if "%MAJOR%" NEQ "17" (
   echo =======================================================================================
   echo !! Java version is not 17 !!
   echo Please download Java 17 or later to ensure %BRANCH% branch server launches correctly.
