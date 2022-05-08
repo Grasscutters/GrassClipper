@@ -19,7 +19,7 @@ powershell Expand-Archive -Path ".\temp\resources.zip" -DestinationPath "%FOLDER
 :: Delete old resources folder if there is one there
 del /s /q "%FOLDER_NAME%\resources">nul
 
-echo Moving resources to folder...
+echo Moving resources to folder (this also takes a bit)...
 
 robocopy "%FOLDER_NAME%\Grasscutter_Resources-main\Resources" "%FOLDER_NAME%\resources" /E /MOVE>nul
 
