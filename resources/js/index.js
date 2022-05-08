@@ -528,7 +528,7 @@ async function setGrasscutterFolder() {
 async function launchOfficial() {
   const config = await getCfg()
 
-  debug.log('Launching game')
+  debug.log('Launching game at ' + config.gameexe)
 
   Neutralino.os.execCommand(`"${config.gameexe}"`)
 }

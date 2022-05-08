@@ -129,7 +129,7 @@ async function openGrasscutterFolder() {
 
 // https://www.jimzhao.us/2015/09/javascript-detect-chinese-character.html
 function hasForeignChars(str) {
-  let re1 = /^[\x00-\x7F]+$/g
+  let re1 = /^[A-Za-z\d,.?;:\\/'"!$%() ]*/g
   str = str.replace(/\s/g, '')
 
   debug.log('Checking for foreign chars in path: ', str)
