@@ -73,14 +73,14 @@ async function downloadDataFiles(branch) {
   for (const o of dataList) {
     const folder = 'data'
     const e = await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
-    debug.log(e.stdIn)
+    debug.log(e)
   }
   
   // Download key files
   for (const o of keyList) {
     const folder = 'keys'
     const e = await Neutralino.os.execCommand(`powershell Invoke-WebRequest -Uri ${o.url} -OutFile "${serverFolderFixed}\\${folder}\\${o.filename}"`)
-    debug.log(e.stdIn)
+    debug.log(e)
   }
   
   // Fix buttons
