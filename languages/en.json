@@ -28,6 +28,7 @@
   "enableServerLauncherSubtitle": "Enable to server launcher tile for launching a local Grasscutter instance.",
   "httpsOption": "Use HTTPS",
   "httpsSubtitle": "Choose between using HTTPS or HTTP.",
+  "debugOption": "Debugging",
 
   "introSen1": "Looks like this is your first time opening GrassClipper!",
   "introSen2": "First of all, welcome, happy to see you here! :)",
@@ -74,6 +75,8 @@
   "devSubtitle": "Install Grasscutter development branch. This build sometimes has bugs, and is frequently updated. Use at your own risk.",
   "downloadResources": "Download Grasscutter Resources",
   "resourceSubtitle": "Downloads Grasscutter resources into the currently set Grasscutter folder. This should be done unless you plan on getting resources externally.",
+  "downloadData": "Download Grasscutter Data",
+  "dataSubtitle": "Downloads Grasscutter data files, such as keys, spawns, and other vital files.",
 
   "gcScriptRunning": "Running...",
   "stableInstall": "Download",

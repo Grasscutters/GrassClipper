@@ -185,10 +185,10 @@
         <div class="downloadRow">
           <div class="downloadSection">
             <span class="downloadLabel" id="downloadData">Download Data Files</span>
-            <button class="smolBtn" onclick="downloadDataFiles()" id="resourceInstall">Download</button>
+            <button class="smolBtn" onclick="downloadDataFiles()" id="dataInstall">Download</button>
           </div>
-          <span class="downloadSubtitle" id="resourceSubtitle">
-            Downloads Grasscutter resources into the currently set Grasscutter folder. This should be done unless you plan on getting resources externally.
+          <span class="downloadSubtitle" id="dataSubtitle">
+            Downloads Grasscutter data files, such as keys, spawns, and other vital files.
           </span>
         </div>
       </div>
@@ -261,6 +261,13 @@
           <span class="settingSubtitle" id="httpsSubtitle">
             Choose between using HTTPS or HTTP.
           </span>
+        </div>
+        <div class="settingsRow">
+          <div class="settingSection">
+            <span class="settingLabel", id="debugTitle">Debugging</span>
+            <input type="checkbox" id="debugOption" onchange="toggleDebugging()" />
+            </select>
+          </div>
         </div>
       </div>
     </div>

@@ -58,6 +58,7 @@ async function doTranslation() {
   set('serverSubtitle', 'enableServerLauncherSubtitle')
   set('httpsTitle', 'httpsOption')
   set('httpsSubtitle', 'httpsSubtitle')
+  set('debugTitle', 'debugOption')
   
   // Intro popup
   const popup = document.getElementById('firstTimeNotice')
@@ -100,6 +101,8 @@ async function doTranslation() {
   set('stableSubtitle', 'stableSubtitle')
   set('downloadDev', 'downloadDev')
   set('devSubtitle', 'devSubtitle')
+  set('dataSubtitle', 'dataSubtitle')
+  set('downloadData', 'downloadData')
   set('downloadResources', 'downloadResources')
   set('resourceSubtitle', 'resourceSubtitle')
   set('stableInstall', 'stableInstall')
