@@ -38,7 +38,7 @@
   "proxyInstallBtn": "Install",
   "proxyInstallDeny": "No thanks",
 
-  "gameFolderDialog": "Select game folder",
+  "gameFolderDialog": "Select game exe",
   "grasscutterFileDialog": "Select Grasscutter server jar file",
 
   "loggingInTo": "Logging in to: ",

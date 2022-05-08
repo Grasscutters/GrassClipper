@@ -38,8 +38,8 @@ async function doTranslation() {
   set('grasscutterFileSet', 'grasscutterFileSet')
 
   // Private options
-  document.querySelector('#ip').placeholder = localeObj.ipPlaceholder
-  document.querySelector('#port').placeholder = localeObj.portPlaceholder
+  document.querySelector('#ip').placeholder = localeObj.ipPlaceholder || 'IP Address'
+  document.querySelector('#port').placeholder = localeObj.portPlaceholder || 'Port'
 
   // Settings
   set('fullSettingsTitle', 'settingsTitle')

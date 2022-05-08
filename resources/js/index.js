@@ -428,7 +428,7 @@ async function setGameExe() {
 }
 
 async function setGrasscutterFolder() {
-  const folder = await Neutralino.os.showOpenDialog(localeObj.grasscutterFileDialog, {
+  const folder = await Neutralino.os.showOpenDialog(localeObj.grasscutterFileDialog || 'Select Grasscutter server jar file', {
     filters: [
       { name: 'Jar files', extensions: ['jar'] }
     ]
@@ -437,7 +437,7 @@ async function setGrasscutterFolder() {
   if (!folder[0]) return
 
   console.log(hasForeignChars(folder[0]))
-  if (hasForeignChars(folder[0])) displayAlert(localeObj.foreignCharacterAlert)
+  if (hasForeignChars(folder[0])) displayAlert(localeObj.foreignCharacterAlert || 'The file path set contains foreign characters, this may cause problems!')
 
   // Set the folder in our configuration
   const config = await getCfg()
