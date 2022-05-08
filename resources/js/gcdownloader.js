@@ -56,7 +56,12 @@ async function downloadGC(branch) {
   const keystoreUrl = `https://github.com/Grasscutters/Grasscutter/raw/${branch}/keystore.p12`
 
   // External service that allows un-authed artifact downloading
-  const artiUrl = `https://nightly.link/Grasscutters/Grasscutter/workflows/build/${branch}/Grasscutter.zip`
+  let artiUrl = `https://nightly.link/Grasscutters/Grasscutter/workflows/build/${branch}/Grasscutter.zip`
+  
+  await axios.get(artiUrl).catch(e => {
+    // Fallback link if artifacts are not being uploaded
+    artiUrl = 'https://nightly.link/Grasscutters/Grasscutter/actions/runs/2284467925/Grasscutter.zip'
+  })
 
   // For data files
   const dataFiles = await axios.get(`https://api.github.com/repos/Grasscutters/Grasscutter/contents/data?ref=${branch}`)

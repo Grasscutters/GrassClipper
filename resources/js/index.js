@@ -1,5 +1,3 @@
-Neutralino.init()
-
 NL_CWD = NL_CWD.replace(/\//g, '\\')
 
 let localeObj
