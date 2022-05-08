@@ -104,16 +104,11 @@ async function openGrasscutterFolder() {
 }
 
 // https://www.jimzhao.us/2015/09/javascript-detect-chinese-character.html
-function hasChineseChars(str) {
-  let re1 = new RegExp(/[\u4E00-\uFA29]/) //Chinese character range
-  let re2 = new RegExp(/[\uE7C7-\uE7F3]/) //non Chinese character range
+function hasForeignChars(str) {
+  let re1 = /^[\x00-\x7F]+$/g
   str = str.replace(/\s/g, '')
 
-  if (!re1.test(str) || re2.test(str)) {
-    return false
-  }
-
-  return true
+  return !re1.test(str)
 }
 
 function openDialog(title, message, negBtn = false, affirmBtn = closeDialog) {

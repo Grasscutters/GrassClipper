@@ -81,7 +81,7 @@
 
   "updateNotifText": "A new update is available! Newest version: ",
 
-  "chineseCharacterAlert": "The file path set contains Chinese characters, this may cause problems!",
+  "foreignCharacterAlert": "The file path set contains foreign characters, this may cause problems!",
 
   "dialogOk": "OK",
   "dialogNo": "NO",

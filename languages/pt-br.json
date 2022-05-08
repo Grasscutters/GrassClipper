@@ -77,7 +77,7 @@
 
     "updateNotifText": "Uma nova atualização esta disponivel! Nova versão: ",
 
-    "chineseCharacterAlert": "O caminho setado contem caracteres chineses, isso pode causar problemas!",
+    "foreignCharacterAlert": "O caminho setado contem caracteres chineses, isso pode causar problemas!",
 
     "dialogOk": "OK",
     "dialogNo": "Não",

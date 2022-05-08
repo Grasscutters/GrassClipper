@@ -80,7 +80,7 @@
 
   "updateNotifText": "Phiên bản mới nhất đang khả dụng: ",
 
-  "chineseCharacterAlert": "Đường dẫn tới tệp tin chứa ký tự phức tạp, có thể gây lỗi!",
+  "foreignCharacterAlert": "Đường dẫn tới tệp tin chứa ký tự phức tạp, có thể gây lỗi!",
 
   "dialogOk": "OK",
   "dialogNo": "Không",

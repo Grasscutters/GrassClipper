@@ -42,7 +42,7 @@ async function enableServerButton() {
  */
 async function handleGameNotSet() {
   // Set buttons to greyed out and disable
-  document.querySelector('#gamePath').innerHTML = localeObj.folderNotSet
+  document.querySelector('#gamePath').innerHTML = localeObj.folderNotSet || 'Not set'
 
   // Set official server background to default
   document.querySelector('#firstPanel').style.backgroundImage = 'url("../bg/private/default.png")'
@@ -61,7 +61,7 @@ async function handleGameNotSet() {
 
 async function handleServerNotSet() {
   // Set buttons to greyed out and disable
-  document.querySelector('#serverPath').innerHTML = localeObj.folderNotSet
+  document.querySelector('#serverPath').innerHTML = localeObj.folderNotSet || 'Not set'
 
   // Set official server background to default
   // document.querySelector('#firstPanel').style.backgroundImage = `url("../bg/private/default.png")`
@@ -223,7 +223,7 @@ async function handleFavoriteList() {
         document.createElement('li')
       )
 
-      listItem.innerHTML = localeObj.noFavorites
+      listItem.innerHTML = localeObj.noFavorites || 'No favorites set'
     }
 
     for (const ip of ipArr) {
@@ -404,14 +404,14 @@ async function displayServerLaunchSection() {
  * Set the game folder by opening a folder picker
  */
 async function setGameExe() {
-  const gameExe = await Neutralino.os.showOpenDialog(localeObj.gameFolderDialog, {
+  const gameExe = await Neutralino.os.showOpenDialog(localeObj.gameFolderDialog || 'Select game folder', {
     filters: [
       { name: 'Executable files', extensions: ['exe'] }
     ]
   })
 
   if (!gameExe[0]) return
-  if (hasChineseChars(gameExe[0])) displayAlert(localeObj.chineseCharacterAlert)
+  if (hasForeignChars(gameExe[0])) displayAlert(localeObj.foreignCharacterAlert || 'The file path set contains Chinese characters, this may cause problems!')
 
   // Set the folder in our configuration
   const config = await getCfg()
@@ -435,7 +435,9 @@ async function setGrasscutterFolder() {
   })
 
   if (!folder[0]) return
-  if (hasChineseChars(folder[0])) displayAlert(localeObj.chineseCharacterAlert)
+
+  console.log(hasForeignChars(folder[0]))
+  if (hasForeignChars(folder[0])) displayAlert(localeObj.foreignCharacterAlert)
 
   // Set the folder in our configuration
   const config = await getCfg()

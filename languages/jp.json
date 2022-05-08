@@ -81,5 +81,5 @@
 
   "updateNotifText": "新しいバージョンが利用できます。Version: ",
 
-  "chineseCharacterAlert": "ファイルパスに漢字やひらがななどの全角文字が含まれているため、正常に動作しない場合があります。"
+  "foreignCharacterAlert": "ファイルパスに漢字やひらがななどの全角文字が含まれているため、正常に動作しない場合があります。"
 }

@@ -80,5 +80,5 @@
 
   "updateNotifText": "有新版本可用！当前最新的版本是： ",
 
-  "chineseCharacterAlert": "当前文件路径含有中文字符，可能会导致一些问题。"
+  "foreignCharacterAlert": "当前文件路径含有中文字符，可能会导致一些问题。"
 }

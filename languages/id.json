@@ -81,7 +81,7 @@
 
   "updateNotifText": "Pembaruan baru tersedia! Versi terbaru: ",
 
-  "chineseCharacterAlert": "Jalur file yang diatur berisi karakter Cina, ini dapat menyebabkan masalah!",
+  "foreignCharacterAlert": "Jalur file yang diatur berisi karakter Cina, ini dapat menyebabkan masalah!",
 
   "dialogOk": "OK",
   "dialogNo": "TIDAK",

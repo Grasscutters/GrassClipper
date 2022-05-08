@@ -81,7 +81,7 @@
 
   "updateNotifText": "Nowa wersja jest dostępna! Najnowsza wersja: ",
 
-  "chineseCharacterAlert": "Ścieżka pliku zawierająca chińskie symbole może powodować błędy.",
+  "foreignCharacterAlert": "Ścieżka pliku zawierająca chińskie symbole może powodować błędy.",
 
   "dialogOk": "Tak",
   "dialogNo": "Nie",
