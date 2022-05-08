@@ -1,4 +1,6 @@
 # GrassClipper
+[EN](README.md) | PL | [ID](README_id.md)
+
 Experymentalny launcher Grasscutter'a stworzony dla łatwego przełączania się pomiędzy serwerami oficjalnymi, a prywatnymi
 
 [Pobierz tutaj!](https://github.com/Grasscutters/GrassClipper/releases/) (Wspiera Windows'a 8+)
@@ -63,7 +65,7 @@ Poniżej znajdują się najczęściej pojawiające się problemy oraz ich rozwi
 
 ## Ręczna instalacja proxy
 
-Jeżeli napotkałeś problemy z automatyczną instalacją proxy, możesz zainstalować je ręcznie. <br> 
+Jeżeli napotkałeś problemy z automatyczną instalacją proxy, możesz zainstalować je ręcznie. <br>
 W tym celu:
 1. Jeżeli nie istnieje stwórz folder `ext` w folderze GrassClipper'a.
 2. Pobierz i wypakuj zawartość [tego pliku](https://snapshots.mitmproxy.org/7.0.4/mitmproxy-7.0.4-windows.zip) do folderu `ext`
@@ -136,7 +138,7 @@ Dziękujemy dla wszystkich, którzy pomagają w tłumaczeniu! <3
 * RU - fitiskin
 * TR - lilmayofuksu
 * JP - conochy
-* HD - Arikatsu 
+* HD - Arikatsu
 * PL - zakhil-dev
 
 # Zrzuty ekranu
