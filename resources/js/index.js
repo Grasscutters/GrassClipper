@@ -284,13 +284,21 @@ async function openDownloads() {
 
   // Disable the resource download button if a serverFolder path is not set
   if (!config.serverFolder) {
-    debug.log('Server folder not set, disabling resource download button')
+    debug.log('Server folder not set, disabling resource download button and data download button')
     document.querySelector('#resourceInstall').disabled = true
     document.querySelector('#resourceInstall').classList.add('disabled')
+
+    // Disable data installer
+    document.querySelector('#dataInstall').disabled = true
+    document.querySelector('#dataInstall').classList.add('disabled')
   } else {
-    debug.log('Server folder is set, enabling resource download button')
+    debug.log('Server folder is set, enabling resource download button and data download button')
     document.querySelector('#resourceInstall').disabled = false
     document.querySelector('#resourceInstall').classList.remove('disabled')
+
+    // Enable data installer
+    document.querySelector('#dataInstall').disabled = false
+    document.querySelector('#dataInstall').classList.remove('disabled')
   }
 }
 

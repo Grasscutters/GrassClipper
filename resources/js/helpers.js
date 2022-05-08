@@ -111,20 +111,20 @@ async function openLatestDownload() {
 
 async function openGameFolder() {
   const config = await getCfg()
-  const folder = config.gameexe.match(/.*\\|.*\//g, '')
+  const folder = config.gameexe?.match(/.*\\|.*\//g, '')
   
   debug.log('Opening game folder: ', folder)
 
-  if (folder.length > 0) openInExplorer(folder[0].replace(/\//g, '\\'))
+  if (folder?.length > 0) openInExplorer(folder[0].replace(/\//g, '\\'))
 }
 
 async function openGrasscutterFolder() {
   const config = await getCfg()
-  const folder = config.serverFolder.match(/.*\\|.*\//g, '')
+  const folder = config.serverFolder?.match(/.*\\|.*\//g, '')
 
   debug.log('Opening grasscutter folder: ', folder)
 
-  if (folder.length > 0) openInExplorer(folder[0].replace(/\//g, '\\'))
+  if (folder?.length > 0) openInExplorer(folder[0].replace(/\//g, '\\'))
 }
 
 // https://www.jimzhao.us/2015/09/javascript-detect-chinese-character.html
