@@ -140,6 +140,7 @@ Thank you to everyone who has provided translations! <3
 * JP - conochy
 * HD - Arikatsu
 * PL - zakhil-dev
+* TH - ongsalt
 
 # Screenshots
 
