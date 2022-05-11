@@ -1,0 +1,95 @@
+{
+    "fullLangName": "ภาษาไทย",
+    "appName": "GrassClipper",
+  
+    "playOfficial": "เริ่มเกม (Official)",
+    "playPrivate": "เริ่มเกม (Grasscutter)",
+    "launchLocalServer": "เริ่ม Local Server",
+  
+    "gameExeSet": "เลือกไฟล์เกม",
+    "grasscutterFileSet": "เลือกไฟล์ \"Grasscutter\" .jar ",
+    "folderNotSet": "ยังไม่ได้ตั้ง",
+  
+    "ipPlaceholder": "ที่อยู่เซิร์ฟเวอร์...",
+    "portPlaceholder": "พอร์ต",
+    "noFavorites": "ยังไม่ได้ตั้ง",
+  
+    "settingsTitle": "การตั้งค่า",
+    "scriptsSectionTitle": "สคริปต์",
+    "killswitchOption": "Kill Switch",
+    "killswitchSubtitle": "เอาไว้สำหรับพวกที่กลัวโดนแบนมากๆ เมื่อพร็อกซี่มีปัญหาจะบังคับปิดเกมและตัดอินเตอร์เน็ตทันที",
+    "proxyOption": "พร็อกซี่",
+    "proxySubtitle": "ติดตั้งพร็อกซี่ด้วยสคริปต์ติดตั้ง",
+    "updateOption": "อัพเดท",
+    "updateSubtitle": "การอัพเดทอัตโนมัติไม่พร้อมใช้งานในขณะนี้ ไปที่ Github สำหรับเวอร์ชั่นใหม่",
+    "languageOption": "ภาษา",
+    "languageSubtitle": "เลือกภาษาของคุณ",
+    "enableServerLauncherOption": "เพิ่มปุ่มเริ่มเซิร์ฟเวอร์",
+    "enableServerLauncherSubtitle": "เพิ่มปุ่มเริ่มเซิร์ฟเวอร์ไปยังหน้าแลนเชอร์ใช้สำหรับเริ่มการทำงานของเซิร์ฟเวอร์ Grasscutter ที่ติดตั้งไว้",
+    "httpsOption": "ใช้ HTTPS",
+    "httpsSubtitle": "เลือกระหว่าง HTTPS กับ HTTP.",
+    "debugOption": "การดีบัก",
+  
+    "introSen1": "ดูเหมือนว่านี่เป็นครั้งแรกที่คุณเปิด GrassClipper!",
+    "introSen2": "อย่างแรกเลย ยินดีต้อนรับ เรายินดีที่ได้พบคุณที่นีี่! :)",
+    "introSen3": "คุณต้องการที่จะรันตัวติดตั้งพร็อกซี่หรือไม่ ",
+    "introSen4": "(จำเป็นต้องเชื่อมต่อไปยังเซิร์ฟเวอร์)",
+  
+    "updateBtn": "อัพเดท",
+    "proxyInstallBtn": "ติดตั้ง",
+    "proxyInstallDeny": "ไม่ ขอบคุณ",
+  
+    "gameFolderDialog": "เลือกไฟล์ .exe เกม",
+    "grasscutterFileDialog": "เลือกไฟล์ .jar Grasscutter ",
+  
+    "loggingInTo": "เข้าสู่ระบบไปยัง: ",
+    "registeringFor": "ลงทะเบียนำหรับ: ",
+    "authUsername": "ชื่อผู้ใช้: ",
+    "authPassword": "รหัสผ่าน: ",
+    "authConfirmPassword": "ยืนยันรหัสผ่าน: ",
+    "authLoginBtn": "เข้าสู่ระบบ",
+    "authRegisterBtn": "ลงทะเบียน",
+    "authLoginTitle": "เข้าสู่ระบบ",
+    "authRegisterTitle": "ลงทะเบียน",
+    "launchWithoutAuth": "เริ่มเกมโดยไม่ต้องยืนยันตัวตน",
+  
+    "alertInvalid": "ชื่อผู้ใช้หรือรหัสผ่านผิดพลาด",
+    "alertNoPass": "ไม้ได้ตั้งรหัสผ่าน กรุณาตั้ง",
+    "alertUnknown": "เกิดข้อผิดพลาดไม่ทราบสาเหตุ โปรดติดต่อผู้ดูแล",
+    "alertAuthNoLogin": "การยืนยันตัวตนถูกปิดใช้งาน ไม่จำเป็นต้องเข้าสู่ระบบ",
+    "alertLoginSuccess": "เข้าสู่ระบบสำเร็จ โทเคนถูกคัดลอกไปยังคลิปบอร์ด นำโทเคนนี้ไปกรอกใส่ช่องชื่อผู้ใช้เพื่อเข้าสู่ระบบ",
+  
+    "alertUserTaken": "ชื่อผู้ใช้นี้ถูกใช้งานแล้ว",
+    "alertPassMismatch": "รหัสผ่านกับยืนยันรหัสผ่านไม่ตรงกัน",
+    "alertAuthNoRegister": "การยืนยันตัวตนถูกปิดใช้งาน ไม่จำเป็นต้องลงทะเบียน",
+    "alertRegisterSuccess": "ลงทะเบียนสำเร็จ!",
+  
+    "downloadTitle": "ดาวน์โหลด",
+    "grassclipperTitle": "GrassClipper",
+    "grasscutterTitle": "Grasscutter",
+    "installerTitle": "ตัวติดตั้ง",
+    "installerSubtitle": "ติดตั้งพร็อกซี่และเครื่องมืออื่นๆที่จำเป็นสำหรับเซิร์ฟเวอร์ Grasscutter",
+    "downloadStable": "ดาวน์โหลด Grasscutter รุ่นเสถียร",
+    "stableSubtitle": "ดาวน์โหลด Grasscutter จากแบรนช์เสถียร โดยปกติแล้วรุ่นนี้จะมีบั๊กน้อยกว่าฟีเจอร์ก็น้อยกว่าเช่นกัน",
+    "downloadDev": "ดาวน์โหลด Grasscutter รุ่นนักพัฒนา",
+    "devSubtitle": "ดาวน์โหลด Grasscutter จากแบรนช์นักพัฒนา รุ่นนี้มีการอัพเดทบ่อย บางครั้งอาจมีบั๊ก ใช้เป็นความเสี่ยงของคุณ",
+    "downloadResources": "ดาวน์โหลดไฟล์ทรัพยากร Grasscutter ",
+    "resourceSubtitle": "ดาวน์โหลดไฟล์ทรัพยากรของ Grasscutter ไปยังโฟลเดอร์ของ Grasscutter ที่ตั้งไว้ คุณควรดำเนินการนี้เว้นแต่ว่าตุณวางแผนจะใช้ไฟล์จากภายนอก",
+    "downloadData": "ดาวน์โหลดไฟล์ข้อมูล Grasscutter",
+    "dataSubtitle": "ดาวน์โหลดไฟล์ข้อมูลของ Grasscutter อย่างเช่น keys, spawns หรือไฟล์สำคัญอย่างอื่น",
+  
+    "gcScriptRunning": "กำลังรัน...",
+    "stableInstall": "ดาวน์โหลด",
+    "devInstall": "ดาวน์โหลด",
+  
+    "updateNotifText": "มีการอัพเดทพร้อมใช้งาน เวอร์ชั่นล่าสุด: ",
+  
+    "foreignCharacterAlert": "เส้นทางของไฟล์มีภาษาอื่นนอกจากภาษาอังกฤษอยู่ นี่อาจก่อให้เกิดปัญหาได้",
+  
+    "dialogOk": "ตกลง",
+    "dialogNo": "ไม่",
+    "serverEnableDialogTitle": "คุณพบแลนเชอร์ของเซิร์ฟเวอร์ Grasscutter",
+    "serverEnableDialogText": "หากคุณยังไม่ได้ติดตั้งเซิร์ฟเวอร์ Grasscutter คุณต้องการจะดาวน์โหลดหรือไม่"
+  
+  }
+  
