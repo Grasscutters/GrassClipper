@@ -141,6 +141,7 @@ Thank you to everyone who has provided translations! <3
 * HD - Arikatsu
 * PL - zakhil-dev
 * TH - ongsalt
+* KO - tsukiroku
 
 # Screenshots
 
