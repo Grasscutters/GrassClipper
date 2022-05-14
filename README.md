@@ -94,6 +94,8 @@ If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do
 
 ## Error 502
 
+***You may be using the wrong port, ensure your port in GrassClipper is either 443 or nothing (not 0, but literally nothing)***
+
 1. If you are running a local server, ensure the local server is running. Otherwise, ensure the server you are connecting to is actually running.
 
 2. If you are able, [use the development branch of Grasscutter](https://github.com/Grasscutters/Grasscutter/tree/development). It is known to work better with GrassClipper.
@@ -138,6 +140,8 @@ Thank you to everyone who has provided translations! <3
 * JP - conochy
 * HD - Arikatsu
 * PL - zakhil-dev
+* TH - ongsalt
+* KO - tsukiroku
 
 # Screenshots
 

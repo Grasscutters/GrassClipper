@@ -85,7 +85,8 @@ class MlgmXyysd_Anime_Game_Proxy:
             "uspider.yuanshen.com",
             "sdk-static.mihoyo.com",
             "abtest-api-data-sg.hoyoverse.com",
-            "log-upload-os.hoyoverse.com"
+            "log-upload-os.hoyoverse.com",
+            "webapi-os.account.hoyoverse.com"
         ]
         
         if flow.request.host in LIST_DOMAINS:
