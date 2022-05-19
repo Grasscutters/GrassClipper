@@ -506,7 +506,7 @@ async function setGameExe() {
 }
 
 async function setGrasscutterFolder() {
-  const folder = await Neutralino.os.showOpenDialog(localeObj.grasscutterFileDialog || 'Select Grasscutter server jar file', {
+  const folder = await Neutralino.os.showOpenDialog(localeObj?.grasscutterFileDialog || 'Select Grasscutter server jar file', {
     filters: [
       { name: 'Jar files', extensions: ['jar'] }
     ]
