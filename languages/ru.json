@@ -26,15 +26,69 @@
   "languageSubtitle": "Выберите предпочитаемый язык приложения",
   "enableServerLauncherOption": "Включить запуск сервера",
   "enableServerLauncherSubtitle": "Использовать лаунчер для локального запуска Grasscutter",
+  "httpsOption": "Использовать HTTPS",
+  "httpsSubtitle": "Хотите ли вы использовать HTTPS вместо HTTP?",
+  "debugOption": "Режим отладки",
 
   "introSen1": "Кажется, вы впервые запустили GrassClipper!",
   "introSen2": "Добро пожаловать, мы рады вас видеть! :)",
   "introSen3": "Запустить установщик прокси?",
   "introSen4": "(необходим для подключения к приватным серверам)",
 
+  "updateBtn": "Обновить",
   "proxyInstallBtn": "Установить",
   "proxyInstallDeny": "Нет, спасибо",
 
   "gameFolderDialog": "Выбор папки с игрой",
-  "grasscutterFileDialog": "Выбор пути до файла Grasscutter (.jar)"
+  "grasscutterFileDialog": "Выбор пути до файла Grasscutter (.jar)",
+  
+  "loggingInTo": "Вход в: ",
+  "registeringFor": "Регистрация в: ",
+  "authUsername": "Имя пользователя: ",
+  "authPassword": "Пароль: ",
+  "authConfirmPassword": "Подтверждение пароля: ",
+  "authLoginBtn": "Войти",
+  "authRegisterBtn": "Зарегистрироваться",
+  "authLoginTitle": "Вход",
+  "authRegisterTitle": "Регистрация",
+  "launchWithoutAuth": "Запустить без авторизации",
+
+  "alertInvalid": "Неправильное имя пользователя или пароль",
+  "alertNoPass": "Пароль не задан. Пожалуйста, измените пароль",
+  "alertUnknown": "Неизвестная ошибка, свяжитесь с владельцем сервера",
+  "alertAuthNoLogin": "Авторизация отключена, нет необходимости входа!",
+  "alertLoginSuccess": "Вход успешен! Токен был скопирован в буфер обмена, вставьте его в поле \"имя пользователя\" игры для входа.",
+
+  "alertUserTaken": "Имя пользователя уже занято",
+  "alertPassMismatch": "Поля \"пароль\" и \"подтверждение пароля\" не совпадают",
+  "alertAuthNoRegister": "Авторизация отключена, нет необходимости регистрации!",
+  "alertRegisterSuccess": "Регистрация успешна!",
+
+  "downloadTitle": "Загрузки",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "Установщик",
+  "installerSubtitle": "Устанавливает прокси и другие утилиты. Необходимо для серверов Grasscutter.",
+  "downloadStable": "Скачать стабильную сборку Grasscutter",
+  "stableSubtitle": "Устанавливает стабильную (stable) сборку Grasscutter. Данная сборка обычно имеет меньше багов, но также и меньше функций.",
+  "downloadDev": "Скачать тестовую сборку Grasscutter",
+  "devSubtitle": "Устанавливает тестовую (development) сборку Grasscutter. В данной сборке иногда имеются баги, и она часто обновляется. Использовать на свой страх и риск.",
+  "downloadResources": "Скачать ресурсы Grasscutter",
+  "resourceSubtitle": "Скачивает ресурсы Grasscutter в заданную папку Grasscutter. Эта операция обязательна, если только вы не собираетесь скачивать ресурсы самостоятельно.",
+  "downloadData": "Скачать данные Grasscutter",
+  "dataSubtitle": "Скачивает файлы данных Grasscutter, такие как ключи, спавны и прочие важные файлы.",
+
+  "gcScriptRunning": "Запущено...",
+  "stableInstall": "Скачать",
+  "devInstall": "Скачать",
+
+  "updateNotifText": "Доступно новое обновление! Новейшая версия: ",
+
+  "foreignCharacterAlert": "Путь до файла содержит иностранные символы, это может привести к проблемам!",
+
+  "dialogOk": "OK",
+  "dialogNo": "Нет",
+  "serverEnableDialogTitle": "Вы обнаружили лаунчер сервера Grasscutter!",
+  "serverEnableDialogText": "Если вы еще не указали путь до установленного Grasscutter, желаете ли вы скачать сборку?"
+
 }
