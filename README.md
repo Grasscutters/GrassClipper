@@ -21,8 +21,8 @@ Experimental Grasscutter launcher for easily switching between Official and Priv
   * [Error 502](#error-502)
   * [Error 4206](#error-4206)
   * [Infinite CMD Windows](#infinite-cmd-windows)
-  * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
-  * [No internet](#i-have-no-internet-after-closing-everything-restarting-my-pc)
+  * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-imagesmy-youtube-is-acting-strange)
+  * [No internet](#i-have-no-internet-after-closing-everythingrestarting-my-pc)
 * [Languages and Translation Credits](#available-languages-and-translation-credits)
 * [Screenshots](#screenshots)
 
