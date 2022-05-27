@@ -1,5 +1,5 @@
 # GrassClipper
-[EN](README.md) | PL | [ID](README_id.md)
+[EN](README.md) | PL | [ID](README_id.md) | [RU](README_ru.md)
 
 Experymentalny launcher Grasscutter'a stworzony dla łatwego przełączania się pomiędzy serwerami oficjalnymi, a prywatnymi
 
