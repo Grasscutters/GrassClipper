@@ -89,6 +89,6 @@
   "dialogOk": "OK",
   "dialogNo": "Нет",
   "serverEnableDialogTitle": "Вы обнаружили лаунчер сервера Grasscutter!",
-  "serverEnableDialogText": "Если вы еще не указали путь до установленного Grasscutter, желаете ли вы скачать сборку?"
+  "serverEnableDialogText": "В случае, если у вас еще не установлен Grasscutter, не желаете ли вы скачать сборку?"
 
 }
