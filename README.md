@@ -1,10 +1,12 @@
 # Please for the love of god do not install GrassClipper into a path in OneDrive
 
-# ! NOTICE !
+# ! NOTICE
+
 A new launcher is in the works that I am a large contributor to. Unfortunately this means I cannot maintain GrassClipper much - if at all - since I am busy on the new one. This is good news, however, because this new launcher is already much more stable and contains many additional features. If you are having too much trouble with GrassClipper, I recommend you wait until the new launcher.
 
 # GrassClipper
-EN | [PL](README_PL.md) | [ID](README_id.md)
+
+EN | [PL](README_PL.md) | [ID](README_id.md) | [ZH](README_zh.md)
 
 Experimental Grasscutter launcher for easily switching between Official and Private servers
 
@@ -71,6 +73,7 @@ Below are some scenarios you may encounter and their solutions.
 # Manual Proxy Installation
 
 If you having trouble installing the proxy server, you can also install it manually. To do so:
+
 1. Create a folder if it does not exist named `ext` in the GrassClipper folder.
 2. Download and extract the contents of [this file](https://snapshots.mitmproxy.org/7.0.4/mitmproxy-7.0.4-windows.zip) into the `ext` folder
 3. Double click `mitmdump.exe` and allow it to run for a few seconds to generate the certificate
@@ -89,9 +92,10 @@ If you have Chinese characters in your file path, this may crash it too! I am wo
 You can also try running in Windows 8 compatitbility mode.
 
 If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do so:
+
 * Create a shortcut to `GrassClipper.exe`
 * Right click the shortcut, click `properties`
-* In the `Target` box, at the very end, add ` --mode=chrome` or ` --mode=browser`
+* In the `Target` box, at the very end, add `--mode=chrome` or `--mode=browser`
   * `chrome` only works if you have Chrome installed, and will create a Chrome window
   * `brower` will, you guessed it, open GrassClipper in your default browser
 * Click `Ok`
@@ -110,6 +114,7 @@ If you are still getting an error 502 when attempting to log in to your own serv
 ```json
 "PublicPort": YOUR_PORT
 ```
+
 where `YOUR_PORT` is the same port you use as the `Port` value already. This will probably be 443.
 
 ## Error 4206
@@ -120,11 +125,11 @@ Ensure you have the correct `keystore.p12` file that comes with your branch (`st
 
 If you are getting infinite CMD windows for any of the scripts (such as the proxy installation, or private server start), ensure you have UAC (user access control) set to any option that requires asking. Ensure your user account can open things as Admin.
 
-## My Discord is not letting me send messages or load images/My Youtube is acting strange!
+## My Discord is not letting me send messages or load images/My Youtube is acting strange
 
 Discord/YouTube (plus surely some others) does not seem to be a fan of the proxy server. You may need to disable it by either closing mitmdump or by disabling your proxy in the Windows proxy settings.
 
-## I have no internet after closing everything/restarting my PC!
+## I have no internet after closing everything/restarting my PC
 
 The launcher most likely did not close correctly, and was unable to clean your proxy settings back to what they were. Disable your proxy in the Windows proxy settings.
 
@@ -157,5 +162,3 @@ Thank you to everyone who has provided translations! <3
 ![image](https://user-images.githubusercontent.com/25207995/164393118-de844e75-f9a2-491a-aea6-f2d563abecc7.png)
 ![image](https://user-images.githubusercontent.com/25207995/164882735-77aa535c-0e93-4b32-af7c-f8b59888257a.png)
 ![image](https://user-images.githubusercontent.com/25207995/164882716-c9f16cd0-c0b6-4c0a-ae9e-4c95da9ef7f5.png)
-
-

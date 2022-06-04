@@ -21,7 +21,7 @@
 * [TODO](#todo)
 * [常见问题](#有一些问题-)
   * [代理安装未打开/失败](#手动安装代理)
-  * [白屏修复](#white-screen-fix)
+  * [白屏修复](#白屏修复)
   * [502错误](#error-502)
   * [4206错误](#error-4206)
   * [无限CMD窗口](#infinite-cmd-windows)
@@ -80,26 +80,26 @@
 4. 以管理员权限运行该命令: `certutil -addstore root "%USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer"`
 5. 像往常一样使用GrassClipper！
 
-## White Screen Fix
+## 白屏修复
 
-Encountering a white screen? [Ensure WebView2 is installed](https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download)
+遇到白屏？ [确保WebView2已经安装](https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download)
 
-You may also want to run this command as administrator:
+您可能还要以管理员身份运行以下命令：
 `CheckNetIsolation.exe LoopbackExempt -a -n="Microsoft.Win32WebViewHost_cw5n1h2txyewy"`
 
-If you have Chinese characters in your file path, this may crash it too! I am working on a fix.
+如果您的文件路径中有中文字符，这也可能会使它崩溃！我正在努力修复它
 
-You can also try running in Windows 8 compatitbility mode.
+你还可以尝试在 Windows 8 兼容性模式下运行
 
-If all else fails, you can run GrassClipper in `chrome` or `browser` mode. To do so:
+如果所有其他方法都失败了，您可以在`Chrome`或`browser`模式下运行GrassClipper。为此，请执行以下操作：
 
-* Create a shortcut to `GrassClipper.exe`
-* Right click the shortcut, click `properties`
-* In the `Target` box, at the very end, add `--mode=chrome` or `--mode=browser`
-  * `chrome` only works if you have Chrome installed, and will create a Chrome window
-  * `brower` will, you guessed it, open GrassClipper in your default browser
-* Click `Ok`
-* Run GrassClipper using this shortcut from now on!
+* 创建快捷方式到 `GrassClipper.exe`
+* 右键单击快捷方式，单击 `性能`
+* 在`目标`框中，在最后面添加`--mode=chrome`或`--mode=browser`
+  * `chrome` 仅在您安装了Chrome时才有效，并且会创建一个Chrome窗口
+  * `browser` 将……，你猜对了，在你的默认浏览器中打开GrassClipper
+* 点击“确定”
+* 从现在开始使用此快捷方式运行GrassClipper！
 
 ## Error 502
 

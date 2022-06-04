@@ -1,5 +1,6 @@
 # GrassClipper
-[EN](README.md) | [PL](README_PL.md) | ID
+
+[EN](README.md) | [PL](README_PL.md) | ID | [ZH](README_zh.md)
 
 Peluncur eksperimental Grasscutter untuk memudahkan penggantian antara server resmi (Official) dan server pribadi
 
@@ -66,6 +67,7 @@ Dibawah ini mungkin beberapa skenario yang kamu hadapi dan beserta solusinya.
 # Pemasangan Manual Proxy
 
 Jika kamu punya masalah saat memasang server proxy, kamu juga dapat memasangnya secara manual. Cara memasangnya:
+
 1. Buat sebuah folder yang bernama `ext` di folder GrassClipper jika folder tersebut tidak ada.
 2. Unduh dan ekstrak isi konten dari [file ini](https://snapshots.mitmproxy.org/7.0.4/mitmproxy-7.0.4-windows.zip) ke dalam folder `ext`
 3. Klik dua kali `mitmdump.exe` dan izinkan untuk menjalankan beberapa detik agar bisa membuat sertifikat
@@ -84,9 +86,10 @@ Jika kamu mempunyai karakter Cina di jalur file mu, mungkin ini dapat menyebabka
 Kamu mungkin bisa juga menjalankan ini di mode kompatibilitas Windows 8.
 
 Jika semuanya gagal, kamu bisa menjalankan GrassClipper di mode `chrome` atau `browser`. Cara melakukannya:
+
 * Buat sebuah shortcut ke `GrassClipper.exe`
 * Klik kanan shortcut tersebut, lalu klik `Properties`
-* Di dalam kotak `Target`, pada bagian akhirnya, tambahkan ` --mode=chrome` atau ` --mode=browser`
+* Di dalam kotak `Target`, pada bagian akhirnya, tambahkan `--mode=chrome` atau `--mode=browser`
   * `chrome` hanya bisa bekerja jika kamu punya Chrome yang terpasang dan akan membuat jendela Chrome
   * Untuk `browser` seperti yang kamu tebak, akan membuka GrassClipper di default browser mu
 * Klik `Ok`
@@ -103,6 +106,7 @@ Jika kamu masih mendapatkan kesalahan 502 ketika mencoba masuk ke servermu sendi
 ```json
 "PublicPort": PORT_MU
 ```
+
 dimana `PORT_MU` itu sama dengan port yang kamu gunakan sebagai nilai `Port`. Biasanya diisi dengan nilai 443.
 
 ## Kesalahan 4206
@@ -117,7 +121,7 @@ Jika kamu mendapatkan jendela CMD yang terbuka secara terus-menerus dari beberap
 
 Discord/YouTube (dan beberapa aplikasi lainnya) sepertinya tidak menyukai server proxy mu. Kamu mungkin perlu menonaktifkannya dengan menutup mitmdump atau dengan menonaktifkan proxy mu di pengaturan Windows proxy.
 
-## Komputerku Tidak Ada Akses Internet Setelah Menutup Peluncur atau Restart!
+## Komputerku Tidak Ada Akses Internet Setelah Menutup Peluncur atau Restart
 
 Sepertinya peluncur tidak menutup dengan benar dan tidak bisa membersihkan pengaturan proxy seperti semula. Nonaktifkan proxy mu di pengaturan Windows proxy.
 
@@ -148,5 +152,3 @@ Terima kasih kepada semua orang yang telah menyediakan terjemahan! <3
 ![image](https://user-images.githubusercontent.com/25207995/164393118-de844e75-f9a2-491a-aea6-f2d563abecc7.png)
 ![image](https://user-images.githubusercontent.com/25207995/164882735-77aa535c-0e93-4b32-af7c-f8b59888257a.png)
 ![image](https://user-images.githubusercontent.com/25207995/164882716-c9f16cd0-c0b6-4c0a-ae9e-4c95da9ef7f5.png)
-
-

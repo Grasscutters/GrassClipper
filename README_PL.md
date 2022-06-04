@@ -1,5 +1,6 @@
 # GrassClipper
-[EN](README.md) | PL | [ID](README_id.md)
+
+[EN](README.md) | PL | [ID](README_id.md) | [ZH](README_zh.md)
 
 Experymentalny launcher Grasscutter'a stworzony dla łatwego przełączania się pomiędzy serwerami oficjalnymi, a prywatnymi
 
@@ -67,6 +68,7 @@ Poniżej znajdują się najczęściej pojawiające się problemy oraz ich rozwi
 
 Jeżeli napotkałeś problemy z automatyczną instalacją proxy, możesz zainstalować je ręcznie. <br>
 W tym celu:
+
 1. Jeżeli nie istnieje stwórz folder `ext` w folderze GrassClipper'a.
 2. Pobierz i wypakuj zawartość [tego pliku](https://snapshots.mitmproxy.org/7.0.4/mitmproxy-7.0.4-windows.zip) do folderu `ext`
 3. Uruchom `mitmdump.exe` i poczekaj kilka chwil, żeby wygenerował certyfikat.
@@ -85,9 +87,10 @@ Jeżeli w twojej ścieżce do pliku występują chińskie symbole, to mogą one 
 Możesz spróbować uruchomić aplikacje w trybie zgodności z Windows'em 8
 
 Jeżeli nic z tego nie pomoże, możesz uruchomić GrassClipper'a w trybie `chrome` lub `browser`. W tym celu:
+
 * Stwórz skrót do `GrassClipper.exe`
 * Kliknij na niego prawym przyciskiem, wybierz `Właściwości`
-* W polu `Element docelowy`, na samym końcu, dodaj ` --mode=chrome` lub ` --mode=browser`
+* W polu `Element docelowy`, na samym końcu, dodaj `--mode=chrome` lub `--mode=browser`
   * `chrome` działa tylko wtedy gdy masz zainstalowanego Chrome'a, otworzy okienko Chrome'a
   * `brower` otworzy GrassClippera w twojej domyślnej przeglądarce
 * Kliknij `Ok`
@@ -119,7 +122,7 @@ Jeżeli jakikolwiek skrypt uruchamia nieskończoność okien CMD (np. instalator
 
 Discord/Youtube (i na pewno pare innych) nie przepadają za serwerem proxy. Musisz go wyłączyć zamykając mitmdump, albo wyłączając proxy w ustawieniach Windowsa.
 
-## Nie mam dostępu do internetu po zamknięciu wszystkiego/restarcie komputera!
+## Nie mam dostępu do internetu po zamknięciu wszystkiego/restarcie komputera
 
 Launcher najprawdopodobniej nie został poprawnie zamknięty, przez co nie był w stanie przywrócić oryginalnych ustawień proxy. Wyłącz proxy w ustawieniach Windows'a.
 
