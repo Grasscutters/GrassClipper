@@ -1,0 +1,94 @@
+{
+  "fullLangName": "Italiano",
+  "appName": "GrassClipper",
+
+  "playOfficial": "Gioca sull'ufficiale",
+  "playPrivate": "Gioca su Grasscutter",
+  "launchLocalServer": "Avvia Server Locale",
+
+  "gameExeSet": "Imposta eseguibile del gioco",
+  "grasscutterFileSet": "Imposta file .jar di \"Grasscutter\"",
+  "folderNotSet": "Non impostato",
+
+  "ipPlaceholder": "Indirizzo Server...",
+  "portPlaceholder": "Porta",
+  "noFavorites": "Nessun preferito impostato",
+
+  "settingsTitle": "Impostazioni",
+  "scriptsSectionTitle": "Script",
+  "killswitchOption": "Kill Switch",
+  "killswitchSubtitle": "Solo per chi è molto paranoico riguardo i ban. Spegne il processo del gioco *e la tua connessione a internet* se succede qualcosa al proxxy.",
+  "proxyOption": "Proxy",
+  "proxySubtitle": "Installa il server proxy con lo script d'installazione",
+  "updateOption": "Aggiorna",
+  "updateSubtitle": "L'aggiornamento automatico è temporaneamente disabilitato. Controlla su GitHub per l'ultima versione.",
+  "languageOption": "Lingua",
+  "languageSubtitle": "Scegli la lingua!",
+  "enableServerLauncherOption": "Attiva Launcher Server",
+  "enableServerLauncherSubtitle": "Attiva il pulsante del launcher del server per avviare un'istanza di Grasscutter locale.",
+  "httpsOption": "Usa HTTPS",
+  "httpsSubtitle": "Scegli se usare HTTPS o HTTP.",
+  "debugOption": "Debugging",
+
+  "introSen1": "Sembra che questa sia la prima volta che apri GrassClipper!",
+  "introSen2": "Prima di tutto, benvenuto, felice di vederti qui! :)",
+  "introSen3": "Vorresti avviare l'installer del proxy?",
+  "introSen4": "(richiesto per connettersi ai server)",
+
+  "updateBtn": "Aggiorna",
+  "proxyInstallBtn": "Installa",
+  "proxyInstallDeny": "No, grazie",
+
+  "gameFolderDialog": "Seleziona exe del gioco",
+  "grasscutterFileDialog": "Seleziona file jar del server Grasscutter",
+
+  "loggingInTo": "Accedendo a: ",
+  "registeringFor": "Registrando a: ",
+  "authUsername": "Username: ",
+  "authPassword": "Password: ",
+  "authConfirmPassword": "Conferma Password: ",
+  "authLoginBtn": "Accedi",
+  "authRegisterBtn": "Registra",
+  "authLoginTitle": "Accedi",
+  "authRegisterTitle": "Registra",
+  "launchWithoutAuth": "Avvia senza Autenticazione",
+
+  "alertInvalid": "Username o password invalidi",
+  "alertNoPass": "Nessuna password impostata, per favore cambia password",
+  "alertUnknown": "Errore sconosciuto, contatta il proprietario del server",
+  "alertAuthNoLogin": "Autenticazione disabilitata, non c'è bisogno di accedere!",
+  "alertLoginSuccess": "Accesso completato! Token copiato negli appunti. Incolla questo token nel campo username del gioco per accedere.",
+
+  "alertUserTaken": "Username è gia in uso",
+  "alertPassMismatch": "Password e conferma password non corrispondono",
+  "alertAuthNoRegister": "Autenticazione disabilitata, non c'è bisogno di registrarsi!",
+  "alertRegisterSuccess": "Registrazione completata!",
+
+  "downloadTitle": "Download",
+  "grassclipperTitle": "GrassClipper",
+  "grasscutterTitle": "Grasscutter",
+  "installerTitle": "Installer",
+  "installerSubtitle": "Installa il proxy e altri strumenti. Richiesto per i server Grasscutter.",
+  "downloadStable": "Scarica Build Stabile Grasscutter",
+  "stableSubtitle": "Installa ramo Stabile Grasscutter. Questa build di solito ha meno bug, ma anche meno funzionalità.",
+  "downloadDev": "Scarica Build Sviluppo Grasscutter",
+  "devSubtitle": "Installa ramo Sviluppo Grasscutter. Questa build a volte presenta bug, ed è aggiornata spesso. Usa a tuo rischio.",
+  "downloadResources": "Scarica Risorse Grasscutter",
+  "resourceSubtitle": "Scarica risorse Grasscutter nella cartella impostata come cartella di Grasscutter. Va fatto a meno che non hai in piano di ottenere le risorse da fonti esterne.",
+  "downloadData": "Scarica Dati Grasscutter",
+  "dataSubtitle": "Scarica i file dati di Grasscutter, come le chiavi, gli spawn, ed altri file vitali.",
+
+  "gcScriptRunning": "In corso...",
+  "stableInstall": "Scarica",
+  "devInstall": "Scarica",
+
+  "updateNotifText": "È disponibile un nuovo aggiornamento! Ultima versione: ",
+
+  "foreignCharacterAlert": "Il percorso file impostato contiene caratteri stranieri, potrebbero causare problemi!",
+
+  "dialogOk": "OK",
+  "dialogNo": "NO",
+  "serverEnableDialogTitle": "Hai trovato il launcher del server Grasscutter!",
+  "serverEnableDialogText": "Se non hai un'installazione già esistente di Grasscutter da impostare, vorresti scaricare una build?"
+
+}
