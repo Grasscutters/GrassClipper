@@ -1,5 +1,5 @@
 # GrassClipper
-[EN](README.md) | [PL](README_PL.md) | ID
+[EN](README.md) | [PL](README_PL.md) | ID | [RU](README_ru.md)
 
 Peluncur eksperimental Grasscutter untuk memudahkan penggantian antara server resmi (Official) dan server pribadi
 

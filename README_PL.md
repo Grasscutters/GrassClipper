@@ -1,5 +1,5 @@
 # GrassClipper
-[EN](README.md) | PL | [ID](README_id.md)
+[EN](README.md) | PL | [ID](README_id.md) | [RU](README_ru.md)
 
 Experymentalny launcher Grasscutter'a stworzony dla łatwego przełączania się pomiędzy serwerami oficjalnymi, a prywatnymi
 
@@ -18,8 +18,8 @@ Experymentalny launcher Grasscutter'a stworzony dla łatwego przełączania się
   * [Błąd 502](#błąd-502)
   * [Błąd 4206](#błąd-4206)
   * [Nieskończone okna CMD](#nieskończone-okna-CMD)
-  * [Niedziałający Discord/Youtube](#discord-nie-pozwala-wysyłać-mi-wiadomości-lub-wczytywać-obrazków/YouTube-dziwnie-się-zachowuje)
-  * [Brak internetu](#nie-mam-dostępu-do-internetu-po-zamknięciu-wszystkiego/restarcie-komputera!)
+  * [Niedziałający Discord/Youtube](#discord-nie-pozwala-wysyłać-mi-wiadomości-lub-wczytywać-obrazkówYouTube-dziwnie-się-zachowuje)
+  * [Brak internetu](#nie-mam-dostępu-do-internetu-po-zamknięciu-wszystkiegorestarcie-komputera!)
 * [Dostępne tłumaczenia oraz ich autorzy](#dostępne-tłumaczenia-oraz-ich-autorzy)
 * [Zrzuty ekranu](#zrzuty-ekranu)
 

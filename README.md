@@ -4,7 +4,7 @@
 A new launcher is in the works that I am a large contributor to. Unfortunately this means I cannot maintain GrassClipper much - if at all - since I am busy on the new one. This is good news, however, because this new launcher is already much more stable and contains many additional features. If you are having too much trouble with GrassClipper, I recommend you wait until the new launcher.
 
 # GrassClipper
-EN | [PL](README_PL.md) | [ID](README_id.md)
+EN | [PL](README_PL.md) | [ID](README_id.md) | [RU](README_ru.md)
 
 Experimental Grasscutter launcher for easily switching between Official and Private servers
 
@@ -23,8 +23,8 @@ Experimental Grasscutter launcher for easily switching between Official and Priv
   * [Error 502](#error-502)
   * [Error 4206](#error-4206)
   * [Infinite CMD Windows](#infinite-cmd-windows)
-  * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
-  * [No internet](#i-have-no-internet-after-closing-everything-restarting-my-pc)
+  * [Broken Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-imagesmy-youtube-is-acting-strange)
+  * [No internet](#i-have-no-internet-after-closing-everythingrestarting-my-pc)
 * [Languages and Translation Credits](#available-languages-and-translation-credits)
 * [Screenshots](#screenshots)
 
