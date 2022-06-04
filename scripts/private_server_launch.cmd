@@ -23,6 +23,9 @@ set ORIGIN=%5
 set ORIGIN=%ORIGIN:"=%
 set ENABLE_KILLSWITCH=%6
 
+:: For registry backups
+set BACKUPS=%ORIGIN%\backups
+
 :: For registry
 set GAME_REG="HKEY_CURRENT_USER\Software\miHoYo\Genshin Impact"
 
@@ -32,6 +35,14 @@ if "%ENABLE_KILLSWITCH%" EQU "true" (
 		set params = %*:"="""%
 		cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %1 %2 %3 "%4" ""%cd%"" %6", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" &&  taskkill /f /fi "WINDOWTITLE eq PS Launcher Script" && exit /b )
 	)
+)
+
+:: Backup official registry
+regedit /E "%BACKUPS%\registries\official.reg" %GAME_REG%
+
+:: Restore private server registry if exist
+IF exist %BACKUPS%\registries\ps.reg (
+	regedit /S "%BACKUPS%\registries\ps.reg"
 )
 
 set PROXY=true
@@ -75,6 +86,12 @@ if "%PROXY%" EQU "" (
 
 	exit /b	
 )
+
+:: Backup private server registry
+regedit /E "%BACKUPS%\registries\ps.reg" %GAME_REG%
+
+:: Restore official registry
+regedit /S "%BACKUPS%\registries\official.reg"
 
 :: Clean proxy settings
 echo Cleaning up proxy settings...
