@@ -130,7 +130,7 @@ Launcher najprawdopodobniej nie został poprawnie zamknięty, przez co nie był 
 
 Dziękujemy dla wszystkich, którzy pomagają w tłumaczeniu! <3
 
-* ZH - nuoxianCN, Scirese & MrAru
+* ZH - nuoxianCN, Yang_qwq(README_zh.md), Scirese & MrAru
 * ZH-TW - Kimi & KormiMeiko
 * PT-BR - na.na
 * VIE - labalityowo

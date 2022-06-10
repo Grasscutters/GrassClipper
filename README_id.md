@@ -129,7 +129,7 @@ Sepertinya peluncur tidak menutup dengan benar dan tidak bisa membersihkan penga
 
 Terima kasih kepada semua orang yang telah menyediakan terjemahan! <3
 
-* ZH - nuoxianCN, Scirese & MrAru
+* ZH - nuoxianCN, Yang_qwq(README_zh.md), Scirese & MrAru
 * ZH-TW - Kimi & KormiMeiko
 * PT-BR - na.na
 * VIE - labalityowo & lunaticwhat

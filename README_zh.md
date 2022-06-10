@@ -97,8 +97,8 @@
 * 右键单击快捷方式，单击 `性能`
 * 在`目标`框中，在最后面添加`--mode=chrome`或`--mode=browser`
   * `chrome` 仅在您安装了Chrome时才有效，并且会创建一个Chrome窗口
-  * `browser` 将……，你猜对了，在你的默认浏览器中打开GrassClipper
-* 点击“确定”
+  * `browser` 它将......，你猜对了，在你的默认浏览器中打开GrassClipper
+* 点击`确定`
 * 从现在开始使用此快捷方式运行GrassClipper！
 
 ## 502错误
@@ -137,7 +137,7 @@ Discord/YouTube（当然还有其他一些应用）似乎不是代理服务器�
 
 # 可用语言和翻译贡献者
 
-Thank you to everyone who has provided translations! <3
+感谢所有提供翻译的人！ <3
 
 * ZH - nuoxianCN, Yang_qwq(README_zh.md), Scirese & MrAru
 * ZH-TW - Kimi & KormiMeiko
