@@ -22,13 +22,13 @@
 * [常见问题](#有一些问题-)
   * [代理安装未打开/失败](#手动安装代理)
   * [白屏修复](#白屏修复)
-  * [502错误](#error-502)
-  * [4206错误](#error-4206)
-  * [无限CMD窗口](#infinite-cmd-windows)
-  * [损坏的 Discord/Youtube](#my-discord-is-not-letting-me-send-messages-or-load-images-my-youtube-is-acting-strange)
-  * [没有网络连接](#i-have-no-internet-after-closing-everything-restarting-my-pc)
-* [语言和翻译者](#available-languages-and-translation-credits)
-* [截图](#screenshots)
+  * [502错误](#502错误)
+  * [4206错误](#4206错误)
+  * [无限CMD窗口](#无限cmd窗口)
+  * [损坏的 Discord/Youtube](#我的Discord不让我发送消息或加载图像/我的Youtube看起来很奇怪)
+  * [没有网络连接](#关闭所有内容或者重新启动PC后，我没有互联网连接)
+* [语言和翻译者](#可用语言和翻译贡献者)
+* [截图](#截图)
 
 # 安装 (对于用户)
 
@@ -40,7 +40,7 @@
 
 0. 克隆本储存库
 1. 确保您已安装了 [NodeJS](https://nodejs.org/en/download/)
-2. 安装 `neu` CLI工具： `npm install -g @neutralinojs/neu`
+2. 安装 `neu` cli工具： `npm install -g @neutralinojs/neu`
 3. 安装依赖项: `setup_win.cmd`
 4. 编译，并运行:
    * 开发/测试环境: `npm run dev`
@@ -101,43 +101,45 @@
 * 点击“确定”
 * 从现在开始使用此快捷方式运行GrassClipper！
 
-## Error 502
+## 502错误
 
-***You may be using the wrong port, ensure your port in GrassClipper is either 443 or nothing (not 0, but literally nothing)***
+***您可能使用了错误的端口，请确保您在GrassClipper中的端口是443或没有（不是0，但实际上什么都没有）***
 
-1. If you are running a local server, ensure the local server is running. Otherwise, ensure the server you are connecting to is actually running.
+1. 如果运行的是本地服务器，请确保本地服务器正在运行。否则，请确保您连接到的服务器实际正在运行
 
-2. If you are able, [use the development branch of Grasscutter](https://github.com/Grasscutters/Grasscutter/tree/development). It is known to work better with GrassClipper.
+2. 如果可以的话，[使用Grasscutter的开发分支](https://github.com/Grasscutters/Grasscutter/tree/development)。众所周知，它与GrassClipper一起工作得更好
 
-If you are still getting an error 502 when attempting to log in to your own server, open your Grasscutter config and add the following to the `DispatchServer` section:
+如果您在尝试登录到自己的服务器时仍然收到错误502，请打开Grasscutter配置并将以下内容添加到`调度服务器`部分：
 
 ```json
-"PublicPort": YOUR_PORT
+"PublicPort": 你的端口
 ```
 
-where `YOUR_PORT` is the same port you use as the `Port` value already. This will probably be 443.
+其中`你的端口`是您已经与`端口`值相同的端口。这可能是443
 
-## Error 4206
+## 4206错误
 
-Ensure you have the correct `keystore.p12` file that comes with your branch (`stable` or `development`). Also ensure the password is set properly in Grasscutters `config.json` (blank for `stable`, "123456" for `development`).
+确保分支附带正确的`keystore.p12`文件（`稳定`或`开发`）。还要确保在Grasscutters `config.json`中正确设置密码（空白表示`稳定`，`123456`表示`开发`）。
 
-## Infinite CMD Windows
+## 无限CMD窗口
 
-If you are getting infinite CMD windows for any of the scripts (such as the proxy installation, or private server start), ensure you have UAC (user access control) set to any option that requires asking. Ensure your user account can open things as Admin.
+*注意：本部分为机器翻译*
 
-## My Discord is not letting me send messages or load images/My Youtube is acting strange
+如果为任何脚本（如代理安装或专用服务器启动）获取无限的 CMD 窗口，请确保已将 UAC（用户访问控制）设置为需要询问的任何选项。确保您的用户帐户可以管理员身份打开内容。
 
-Discord/YouTube (plus surely some others) does not seem to be a fan of the proxy server. You may need to disable it by either closing mitmdump or by disabling your proxy in the Windows proxy settings.
+## 我的Discord不让我发送消息或加载图像/我的Youtube看起来很奇怪
 
-## I have no internet after closing everything/restarting my PC
+Discord/YouTube（当然还有其他一些应用）似乎不是代理服务器的粉丝。您可能需要通过关闭 mitmdump 或在 Windows 代理设置中禁用代理来修复它。
 
-The launcher most likely did not close correctly, and was unable to clean your proxy settings back to what they were. Disable your proxy in the Windows proxy settings.
+## 关闭所有内容或者重新启动PC后，我没有互联网连接
 
-# Available Languages and Translation Credits
+启动器很可能未正确关闭，并且无法将您的代理设置清理回原来的状态。你可以在 Windows 代理设置中禁用代理。
+
+# 可用语言和翻译贡献者
 
 Thank you to everyone who has provided translations! <3
 
-* ZH - nuoxianCN, Scirese & MrAru
+* ZH - nuoxianCN, Yang_qwq(README_zh.md), Scirese & MrAru
 * ZH-TW - Kimi & KormiMeiko
 * PT-BR - na.na & actuallyeunha
 * VIE - labalityowo & lunaticwhat
@@ -153,7 +155,7 @@ Thank you to everyone who has provided translations! <3
 * TH - ongsalt
 * KO - tsukiroku
 
-# Screenshots
+# 截图
 
 ![image](https://user-images.githubusercontent.com/25207995/164574276-645548c2-7ba6-47c3-8df4-77082003648f.png)
 ![image](https://user-images.githubusercontent.com/25207995/164393190-f7e6633c-60bd-4186-bf0c-30d9f30871f4.png)
