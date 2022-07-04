@@ -1,7 +1,8 @@
 # Please for the love of god do not install GrassClipper into a path in OneDrive
 
 # ! NOTICE !
-A new launcher is in the works that I am a large contributor to. Unfortunately this means I cannot maintain GrassClipper much - if at all - since I am busy on the new one. This is good news, however, because this new launcher is already much more stable and contains many additional features. If you are having too much trouble with GrassClipper, I recommend you wait until the new launcher.
+The previously mentioned **new launcher**: [Cultivation](https://github.com/Grasscutters/Cultivation) has been "released"!\
+If you are experiencing problems with GrassClipper, we encourage you to try and checkout the new launcher.
 
 # GrassClipper
 EN | [PL](README_PL.md) | [ID](README_id.md)
